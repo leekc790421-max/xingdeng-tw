@@ -1,4 +1,5 @@
 {
+  "cleanUrls": true,
   "headers": [
     {
       "source": "/(.*)",
@@ -26,21 +27,79 @@
       ]
     },
     {
-      "source": "/admin.html",
+      "source": "/admin",
       "headers": [
         {
           "key": "X-Frame-Options",
           "value": "DENY"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
         }
       ]
     }
   ],
   "redirects": [
     {
+      "source": "/gallery",
+      "destination": "/lab",
+      "permanent": true
+    },
+    {
       "source": "/gallery.html",
-      "destination": "/exhibition.html",
+      "destination": "/lab",
+      "permanent": true
+    },
+    {
+      "source": "/exhibition",
+      "destination": "/lab",
+      "permanent": true
+    },
+    {
+      "source": "/exhibition.html",
+      "destination": "/lab",
+      "permanent": true
+    },
+    {
+      "source": "/services.html",
+      "destination": "/solutions",
+      "permanent": true
+    },
+    {
+      "source": "/pricing.html",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/faq.html",
+      "destination": "/faq",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/privacy.html",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/cookie.html",
+      "destination": "/cookie",
+      "permanent": true
+    },
+    {
+      "source": "/sdk-config.html",
+      "destination": "/sdk-config",
+      "permanent": true
+    },
+    {
+      "source": "/admin.html",
+      "destination": "/admin",
       "permanent": true
     }
   ]
 }
-
