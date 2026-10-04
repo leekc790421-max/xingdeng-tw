@@ -47,7 +47,7 @@
                 <i class="fa-solid fa-tag text-gold"></i> 定價
             </a>
         </nav>
-        <button onclick="document.getElementById('contactMobileMenu').classList.toggle('hidden')" class="md:hidden w-10 h-10 rounded-lg bg-gray-200 hover:bg-gray-900 hover:text-white flex items-center justify-center transition">
+        <button onclick="document.getElementById('contactMobileMenu').classList.toggle('hidden')" class="md:hidden w-10 h-10 rounded-lg bg-gray-900 hover:bg-snt-600 flex items-center justify-center transition">
             <i class="fa-solid fa-bars text-white text-lg"></i>
         </button>
     </div>
@@ -162,6 +162,34 @@
 </div>
 </div>
 </footer>
+
+<!-- Toast -->
+<div id="toast" class="fixed bottom-6 right-6 bg-gray-200 border border-gray-300 text-gray-800 px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3 transition-all transform translate-y-20 opacity-0 z-50 text-xs" style="transition: all 0.3s ease;">
+<i class="fa-solid fa-circle-check text-emerald-400 text-base"></i><span id="toastMsg">操作成功</span>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var forms = document.querySelectorAll('form');
+    forms.forEach(function(form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var toast = document.getElementById('toast');
+            var toastMsg = document.getElementById('toastMsg');
+            if (toast && toastMsg) {
+                toastMsg.textContent = '感謝您的諮詢！我們將盡快與您聯繫。';
+                toast.style.transform = 'translateY(0)';
+                toast.style.opacity = '1';
+                setTimeout(function() {
+                    toast.style.transform = 'translateY(20px)';
+                    toast.style.opacity = '0';
+                }, 3000);
+            }
+            form.reset();
+        });
+    });
+});
+</script>
 
 </body>
 </html>

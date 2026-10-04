@@ -45,7 +45,7 @@
                 <i class="fa-solid fa-phone"></i> 預約諮詢
             </a>
         </nav>
-        <button onclick="document.getElementById('priceMobileMenu').classList.toggle('hidden')" class="md:hidden w-10 h-10 rounded-lg bg-gray-200 hover:bg-gray-900 hover:text-white flex items-center justify-center transition">
+        <button onclick="document.getElementById('priceMobileMenu').classList.toggle('hidden')" class="md:hidden w-10 h-10 rounded-lg bg-gray-900 hover:bg-snt-600 flex items-center justify-center transition">
             <i class="fa-solid fa-bars text-white text-lg"></i>
         </button>
     </div>
@@ -101,7 +101,7 @@
 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald mt-0.5"></i>5 個工作天交付</li>
 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald mt-0.5"></i>Email 客服支援</li>
 </ul>
-<a href="https://xingdeng.tw/pricing.html#contact" class="block text-center bg-gray-200 hover:bg-gray-900 hover:text-white text-white py-2.5 rounded-xl text-sm font-semibold border border-gray-300 transition">免費諮詢 →</a>
+<a href="/pricing#contact" class="block text-center bg-gray-200 hover:bg-gray-900 hover:text-white text-white py-2.5 rounded-xl text-sm font-semibold border border-gray-300 transition">免費諮詢 →</a>
 </div>
 
 <!-- Custom (Popular) -->
@@ -124,7 +124,7 @@
 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald mt-0.5"></i>10 個工作天交付</li>
 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald mt-0.5"></i>LINE + Email 客服支援</li>
 </ul>
-<a href="https://xingdeng.tw/pricing.html#contact" class="block text-center bg-gradient-to-r from-snt-600 to-cyan-600 hover:from-snt-500 hover:to-cyan-500 text-white py-2.5 rounded-xl text-sm font-semibold transition">立即訂閱 →</a>
+<a href="/pricing#contact" class="block text-center bg-gradient-to-r from-snt-600 to-cyan-600 hover:from-snt-500 hover:to-cyan-500 text-white py-2.5 rounded-xl text-sm font-semibold transition">立即訂閱 →</a>
 </div>
 
 <!-- Full Auto -->
@@ -146,7 +146,7 @@
 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald mt-0.5"></i>15 個工作天交付 + 月報</li>
 <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald mt-0.5"></i>專屬客戶成功經理</li>
 </ul>
-<a href="https://xingdeng.tw/pricing.html#contact" class="block text-center bg-purple-600 hover:bg-purple-500 text-white py-2.5 rounded-xl text-sm font-semibold transition">免費諮詢 →</a>
+<a href="/pricing#contact" class="block text-center bg-purple-600 hover:bg-purple-500 text-white py-2.5 rounded-xl text-sm font-semibold transition">免費諮詢 →</a>
 </div>
 
 <!-- Add-ons -->
@@ -184,7 +184,7 @@
 <div class="text-gray-500 text-[10px] mt-1">爛尾樓 / 網站急修</div>
 </div>
 </div>
-<a href="https://xingdeng.tw/pricing.html#contact" class="block text-center bg-gray-200 hover:bg-gray-900 hover:text-white text-white py-2.5 rounded-xl text-sm font-semibold border border-gray-300 transition">聯繫顧問 →</a>
+<a href="/pricing#contact" class="block text-center bg-gray-200 hover:bg-gray-900 hover:text-white text-white py-2.5 rounded-xl text-sm font-semibold border border-gray-300 transition">聯繫顧問 →</a>
 </div>
 
 </div>
@@ -246,14 +246,72 @@
 </section>
 
 <!-- FOOTER -->
-
+<footer class="border-t border-gray-200 py-8 px-4 mt-12">
+<div class="max-w-6xl mx-auto text-center space-y-3">
+<div class="flex justify-center gap-4 text-xs text-gray-500">
+<a href="/" class="hover:text-snt-500 transition">首頁</a>
+<a href="/solutions" class="hover:text-snt-500 transition">服務內容</a>
+<a href="/pricing" class="hover:text-snt-500 transition">方案定價</a>
+<a href="/contact" class="hover:text-snt-500 transition">聯絡我們</a>
+<a href="/privacy" class="hover:text-snt-500 transition">隱私權政策</a>
+</div>
+<p class="text-xs text-gray-400">© 2026 光曜星樞 Singularity Nexus Technology (SNT). All Rights Reserved.</p>
+</div>
+</footer>
 
 <!-- Toast -->
 <div id="toast" class="fixed bottom-6 right-6 bg-gray-200 border border-gray-300 text-gray-800 px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3 transition-all transform translate-y-20 opacity-0 z-50 text-xs">
 <i class="fa-solid fa-circle-check text-emerald-400 text-base"></i><span id="toastMsg">操作成功</span>
 </div>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Pricing toggle
+    var btnMonthly = document.getElementById('btn-monthly');
+    var btnYearly = document.getElementById('btn-yearly');
+    var priceEls = document.querySelectorAll('.plan-price');
 
+    function setPricing(mode) {
+        priceEls.forEach(function(el) {
+            var val = el.getAttribute('data-' + mode);
+            if (val) el.textContent = 'NT$ ' + parseInt(val).toLocaleString();
+        });
+        if (mode === 'monthly') {
+            btnMonthly.className = 'toggle-active px-4 py-2 rounded-lg font-medium transition bg-snt-600 text-white';
+            btnYearly.className = 'bg-gray-200 text-gray-500 px-4 py-2 rounded-lg font-medium border border-gray-300 transition';
+        } else {
+            btnYearly.className = 'toggle-active px-4 py-2 rounded-lg font-medium transition bg-snt-600 text-white';
+            btnMonthly.className = 'bg-gray-200 text-gray-500 px-4 py-2 rounded-lg font-medium border border-gray-300 transition';
+        }
+    }
 
+    if (btnMonthly) btnMonthly.addEventListener('click', function() { setPricing('monthly'); });
+    if (btnYearly) btnYearly.addEventListener('click', function() { setPricing('yearly'); });
+
+    // Form submit
+    var forms = document.querySelectorAll('form');
+    forms.forEach(function(form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            showToast('感謝您的諮詢！我們將盡快與您聯繫。', 'success');
+            form.reset();
+        });
+    });
+});
+
+function showToast(msg, type) {
+    var toast = document.getElementById('toast');
+    var toastMsg = document.getElementById('toastMsg');
+    if (toast && toastMsg) {
+        toastMsg.textContent = msg;
+        toast.style.transform = 'translateY(0)';
+        toast.style.opacity = '1';
+        setTimeout(function() {
+            toast.style.transform = 'translateY(20px)';
+            toast.style.opacity = '0';
+        }, 3000);
+    }
+}
+</script>
 
 </body></html>
