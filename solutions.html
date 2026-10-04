@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-TW" class="dark">
+<!DOCTYPE html><html lang="zh-TW" >
 <head>
 <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -14,48 +14,48 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{snt:{400:'#2dd4bf',500:'#14b8a6',600:'#0d9488',gold:'#fbbf24',cyan:'#06b6d4',purple:'#a855f7'},cyberDark:'#070a12',cyberPanel:'#0f172a',cyberCard:'#1e293b'},fontFamily:{sans:['Inter','Noto Sans TC','sans-serif'],mono:['Fira Code','monospace']}}}}</script>
-<style>body{font-family:'Inter','Noto Sans TC',sans-serif}::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#070a12}::-webkit-scrollbar-thumb{background:#334155;border-radius:3px}</style>
+<style>body{font-family:'Inter','Noto Sans TC',sans-serif}::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#f1f5f9}::-webkit-scrollbar-thumb{background:#94a3b8;border-radius:3px}</style>
 </head>
-<body class="bg-cyberDark text-slate-100 min-h-screen antialiased">
+<body class="bg-gray-50 text-gray-800 min-h-screen antialiased">
 
 <!-- HEADER -->
-<header class="border-b border-slate-800 bg-slate-950/90 backdrop-blur sticky top-0 z-50 px-4 lg:px-8 py-3">
+<header class="border-b border-gray-200 bg-white/90 backdrop-blur sticky top-0 z-50 px-4 lg:px-8 py-3">
     <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
         <a href="/" class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-snt-600 via-cyan-500 to-amber-400 p-0.5 flex items-center justify-center shadow-lg shadow-snt-500/20">
-                <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center font-black text-amber-400 font-mono text-lg">SNT</div>
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-snt-600 via-cyan-500 to-amber-400 p-0.5 flex items-center justify-center shadow-lg shadow-snt-500/10">
+                <div class="w-full h-full bg-slate-900 rounded-[10px] flex items-center justify-center font-black text-amber-400 font-mono text-lg">SNT</div>
             </div>
             <div class="hidden sm:block">
-                <h1 class="font-bold text-base text-white leading-tight">光曜星樞</h1>
-                <p class="text-[10px] text-slate-400 font-mono">15大子系統</p>
+                <h1 class="font-bold text-base text-gray-900 leading-tight">光曜星樞</h1>
+                <p class="text-[10px] text-gray-500 font-mono">15大子系統</p>
             </div>
         </a>
         <nav class="hidden md:flex items-center gap-2 text-xs">
-            <a href="/" class="px-4 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium flex items-center gap-2 transition">
+            <a href="/" class="px-4 py-2.5 rounded-lg bg-white border-2 border-gray-300 text-gray-700 hover:bg-gray-900 hover:text-white hover:border-gray-900 font-medium flex items-center gap-2 transition">
                 <i class="fa-solid fa-home"></i> 首頁
             </a>
-            <a href="/lab" class="px-4 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium flex items-center gap-2 transition">
+            <a href="/lab" class="px-4 py-2.5 rounded-lg bg-white border-2 border-gray-300 text-gray-700 hover:bg-gray-900 hover:text-white hover:border-gray-900 font-medium flex items-center gap-2 transition">
                 <i class="fa-solid fa-flask-vial text-cyan-400"></i> 8K 藝廊
             </a>
-            <a href="/pricing" class="px-4 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium flex items-center gap-2 transition">
+            <a href="/pricing" class="px-4 py-2.5 rounded-lg bg-white border-2 border-gray-300 text-gray-700 hover:bg-gray-900 hover:text-white hover:border-gray-900 font-medium flex items-center gap-2 transition">
                 <i class="fa-solid fa-tag text-gold"></i> 定價
             </a>
             <a href="/contact" class="px-4 py-2.5 rounded-lg bg-gradient-to-r from-snt-600 to-cyan-600 hover:from-snt-500 hover:to-cyan-500 text-white font-medium flex items-center gap-2 transition">
                 <i class="fa-solid fa-phone"></i> 預約諮詢
             </a>
         </nav>
-        <button onclick="document.getElementById('solMobileMenu').classList.toggle('hidden')" class="md:hidden w-10 h-10 rounded-lg bg-slate-800 hover:bg-slate-700 flex items-center justify-center transition">
+        <button onclick="document.getElementById('solMobileMenu').classList.toggle('hidden')" class="md:hidden w-10 h-10 rounded-lg bg-gray-200 hover:bg-gray-900 hover:text-white flex items-center justify-center transition">
             <i class="fa-solid fa-bars text-white text-lg"></i>
         </button>
     </div>
     <div id="solMobileMenu" class="md:hidden hidden mt-4 pb-4 space-y-2">
-        <a href="/" class="block w-full px-4 py-3 rounded-lg bg-slate-800 text-slate-300 font-medium flex items-center gap-3 transition hover:bg-slate-700">
+        <a href="/" class="block w-full px-4 py-3 rounded-lg bg-white border-2 border-gray-300 text-gray-700 font-medium hover:bg-gray-900 hover:text-white hover:border-gray-900 flex items-center gap-3 transition hover:bg-gray-900 hover:text-white">
             <i class="fa-solid fa-home"></i> 首頁
         </a>
-        <a href="/lab" class="block w-full px-4 py-3 rounded-lg bg-slate-800 text-slate-300 font-medium flex items-center gap-3 transition hover:bg-slate-700">
+        <a href="/lab" class="block w-full px-4 py-3 rounded-lg bg-white border-2 border-gray-300 text-gray-700 font-medium hover:bg-gray-900 hover:text-white hover:border-gray-900 flex items-center gap-3 transition hover:bg-gray-900 hover:text-white">
             <i class="fa-solid fa-flask-vial text-cyan-400"></i> 8K 藝廊
         </a>
-        <a href="/pricing" class="block w-full px-4 py-3 rounded-lg bg-slate-800 text-slate-300 font-medium flex items-center gap-3 transition hover:bg-slate-700">
+        <a href="/pricing" class="block w-full px-4 py-3 rounded-lg bg-white border-2 border-gray-300 text-gray-700 font-medium hover:bg-gray-900 hover:text-white hover:border-gray-900 flex items-center gap-3 transition hover:bg-gray-900 hover:text-white">
             <i class="fa-solid fa-tag text-gold"></i> 方案定價
         </a>
         <a href="/contact" class="block w-full px-4 py-3 rounded-lg bg-gradient-to-r from-snt-600 to-cyan-600 text-white font-medium flex items-center gap-3 transition">
@@ -67,48 +67,48 @@
 
 <!-- HERO -->
 <section class="py-16 md:py-20 text-center space-y-6 px-6">
-<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-snt-500/10 border border-snt-500/30 text-snt-400 text-xs font-mono">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-snt-50 border border-snt-300 text-snt-400 text-xs font-mono">
 <i class="fa-solid fa-briefcase"></i> 6 大服務類別 · 一站式數位解決方案
 </div>
-<h2 class="text-3xl md:text-5xl font-black text-white">從建站到營運<br><span class="bg-gradient-to-r from-snt-400 via-cyan-400 to-amber-300 bg-clip-text text-transparent">全自動化一條龍</span></h2>
-<p class="text-slate-400 text-sm max-w-xl mx-auto">不管你需要簡單的模板網站，還是完整的 AI 自動化營運系統，SNT 都能幫你搞定。</p>
+<h2 class="text-3xl md:text-5xl font-black text-gray-900">從建站到營運<br><span class="bg-gradient-to-r from-snt-400 via-cyan-400 to-amber-300 bg-clip-text text-transparent">全自動化一條龍</span></h2>
+<p class="text-gray-500 text-sm max-w-xl mx-auto">不管你需要簡單的模板網站，還是完整的 AI 自動化營運系統，SNT 都能幫你搞定。</p>
 </section>
 
 <!-- SERVICE 1: WEBSITE BUILDING -->
 <section class="max-w-6xl mx-auto px-6 pb-16 space-y-8">
 <div class="flex items-center gap-3 mb-6">
-<div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold text-lg">1</div>
-<h3 class="text-xl font-bold text-white">架設網站接案</h3>
+<div class="w-10 h-10 rounded-xl bg-cyan-100 text-cyan-400 flex items-center justify-center font-bold text-lg">1</div>
+<h3 class="text-xl font-bold text-gray-900">架設網站接案</h3>
 </div>
 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-<div class="svc-card bg-cyberPanel border border-slate-800 rounded-2xl p-5 space-y-3">
-<div class="flex items-center gap-2"><div class="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center"><i class="fa-solid fa-layer-group text-cyan-400 text-sm"></i></div><h4 class="font-bold text-white text-sm">a. 制式模板套</h4></div>
-<p class="text-xs text-slate-400">從 5 套行業模板中選擇（餐飲/命理/醫美/房仲/零售），快速上線。含響應式設計 + 基礎 SEO + AI 客服。</p>
+<div class="svc-card bg-white border border-gray-200 rounded-2xl p-5 space-y-3">
+<div class="flex items-center gap-2"><div class="w-8 h-8 rounded-lg bg-cyan-50 flex items-center justify-center"><i class="fa-solid fa-layer-group text-cyan-400 text-sm"></i></div><h4 class="font-bold text-gray-900 text-sm">a. 制式模板套</h4></div>
+<p class="text-xs text-gray-500">從 5 套行業模板中選擇（餐飲/命理/醫美/房仲/零售），快速上線。含響應式設計 + 基礎 SEO + AI 客服。</p>
 <div class="text-[10px] font-mono text-cyan-400">NT$ 9,800 起 · 5 天交付</div>
 </div>
-<div class="svc-card bg-cyberPanel border border-slate-800 rounded-2xl p-5 space-y-3">
-<div class="flex items-center gap-2"><div class="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center"><i class="fa-solid fa-wand-magic-sparkles text-purple-400 text-sm"></i></div><h4 class="font-bold text-white text-sm">b. 依需求訂製</h4></div>
-<p class="text-xs text-slate-400">完全客製化設計與開發。多頁式網站、特殊功能、API 串接、資料庫整合，依您的需求量身打造。</p>
+<div class="svc-card bg-white border border-gray-200 rounded-2xl p-5 space-y-3">
+<div class="flex items-center gap-2"><div class="w-8 h-8 rounded-lg bg-purple-50 flex items-center justify-center"><i class="fa-solid fa-wand-magic-sparkles text-purple-400 text-sm"></i></div><h4 class="font-bold text-gray-900 text-sm">b. 依需求訂製</h4></div>
+<p class="text-xs text-gray-500">完全客製化設計與開發。多頁式網站、特殊功能、API 串接、資料庫整合，依您的需求量身打造。</p>
 <div class="text-[10px] font-mono text-purple-400">NT$ 28,000 起 · 10 天交付</div>
 </div>
-<div class="svc-card bg-cyberPanel border border-slate-800 rounded-2xl p-5 space-y-3">
-<div class="flex items-center gap-2"><div class="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center"><i class="fa-solid fa-puzzle-piece text-amber-400 text-sm"></i></div><h4 class="font-bold text-white text-sm">c. 模板 + 增減客製</h4></div>
-<p class="text-xs text-slate-400">以模板為基礎，模組化加購功能。勾選需要的模組（金流/AI/SEO/社群），靈活組合。</p>
+<div class="svc-card bg-white border border-gray-200 rounded-2xl p-5 space-y-3">
+<div class="flex items-center gap-2"><div class="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center"><i class="fa-solid fa-puzzle-piece text-amber-400 text-sm"></i></div><h4 class="font-bold text-gray-900 text-sm">c. 模板 + 增減客製</h4></div>
+<p class="text-xs text-gray-500">以模板為基礎，模組化加購功能。勾選需要的模組（金流/AI/SEO/社群），靈活組合。</p>
 <div class="text-[10px] font-mono text-amber-400">NT$ 15,000 起 · 7 天交付</div>
 </div>
-<div class="svc-card bg-cyberPanel border border-slate-800 rounded-2xl p-5 space-y-3">
-<div class="flex items-center gap-2"><div class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center"><i class="fa-solid fa-robot text-emerald-400 text-sm"></i></div><h4 class="font-bold text-white text-sm">d. 全/半自動化</h4></div>
-<p class="text-xs text-slate-400">6 大 AI Agent 自動運行：接客→回覆→收款→好評→回流。你只看數據，AI 幫你做事。</p>
+<div class="svc-card bg-white border border-gray-200 rounded-2xl p-5 space-y-3">
+<div class="flex items-center gap-2"><div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center"><i class="fa-solid fa-robot text-emerald-400 text-sm"></i></div><h4 class="font-bold text-gray-900 text-sm">d. 全/半自動化</h4></div>
+<p class="text-xs text-gray-500">6 大 AI Agent 自動運行：接客→回覆→收款→好評→回流。你只看數據，AI 幫你做事。</p>
 <div class="text-[10px] font-mono text-emerald-400">全自動化方案 NT$ 58,000</div>
 </div>
-<div class="svc-card bg-cyberPanel border border-slate-800 rounded-2xl p-5 space-y-3">
-<div class="flex items-center gap-2"><div class="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center"><i class="fa-solid fa-code text-blue-400 text-sm"></i></div><h4 class="font-bold text-white text-sm">e. 動/靜態網站</h4></div>
-<p class="text-xs text-slate-400">靜態：HTML/CSS/JS 極速載入（Vercel Edge）。動態：Node.js + 資料庫 + API。依需求選擇最佳架構。</p>
+<div class="svc-card bg-white border border-gray-200 rounded-2xl p-5 space-y-3">
+<div class="flex items-center gap-2"><div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center"><i class="fa-solid fa-code text-blue-400 text-sm"></i></div><h4 class="font-bold text-gray-900 text-sm">e. 動/靜態網站</h4></div>
+<p class="text-xs text-gray-500">靜態：HTML/CSS/JS 極速載入（Vercel Edge）。動態：Node.js + 資料庫 + API。依需求選擇最佳架構。</p>
 <div class="text-[10px] font-mono text-blue-400">靜態/動態皆可</div>
 </div>
-<div class="svc-card bg-cyberPanel border border-slate-800 rounded-2xl p-5 space-y-3">
-<div class="flex items-center gap-2"><div class="w-8 h-8 rounded-lg bg-rose-500/10 flex items-center justify-center"><i class="fa-solid fa-microchip text-rose-400 text-sm"></i></div><h4 class="font-bold text-white text-sm">f. AI Agent 整合</h4></div>
-<p class="text-xs text-slate-400">嵌入 AI 客服、AI 內容生成、AI 數據分析。支援 Gemini / Copilot / Groq / Meta / MuleRun 六大平台。</p>
+<div class="svc-card bg-white border border-gray-200 rounded-2xl p-5 space-y-3">
+<div class="flex items-center gap-2"><div class="w-8 h-8 rounded-lg bg-rose-50 flex items-center justify-center"><i class="fa-solid fa-microchip text-rose-400 text-sm"></i></div><h4 class="font-bold text-gray-900 text-sm">f. AI Agent 整合</h4></div>
+<p class="text-xs text-gray-500">嵌入 AI 客服、AI 內容生成、AI 數據分析。支援 Gemini / Copilot / Groq / Meta / MuleRun 六大平台。</p>
 <div class="text-[10px] font-mono text-rose-400">6 大平台混合調度</div>
 </div>
 </div>
@@ -117,21 +117,21 @@
 <!-- SERVICE 2: DEPLOYMENT -->
 <section class="max-w-6xl mx-auto px-6 pb-16 space-y-6">
 <div class="flex items-center gap-3 mb-6">
-<div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold text-lg">2</div>
-<h3 class="text-xl font-bold text-white">部署環境專管</h3>
+<div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-400 flex items-center justify-center font-bold text-lg">2</div>
+<h3 class="text-xl font-bold text-gray-900">部署環境專管</h3>
 </div>
 <div class="grid md:grid-cols-3 gap-5">
-<div class="svc-card bg-cyberPanel border border-slate-800 rounded-2xl p-5 space-y-3">
-<div class="flex items-center gap-2"><i class="fa-brands fa-github text-white text-lg"></i><h4 class="font-bold text-white text-sm">Git 版本控制</h4></div>
-<p class="text-xs text-slate-400">GitHub / GitLab 私有倉庫管理，每次修改都有紀錄，隨時可回溯。Push 自動觸發部署。</p>
+<div class="svc-card bg-white border border-gray-200 rounded-2xl p-5 space-y-3">
+<div class="flex items-center gap-2"><i class="fa-brands fa-github text-white text-lg"></i><h4 class="font-bold text-gray-900 text-sm">Git 版本控制</h4></div>
+<p class="text-xs text-gray-500">GitHub / GitLab 私有倉庫管理，每次修改都有紀錄，隨時可回溯。Push 自動觸發部署。</p>
 </div>
-<div class="svc-card bg-cyberPanel border border-slate-800 rounded-2xl p-5 space-y-3">
-<div class="flex items-center gap-2"><i class="fa-solid fa-server text-cyan-400 text-lg"></i><h4 class="font-bold text-white text-sm">Vercel 部署</h4></div>
-<p class="text-xs text-slate-400">全球 Edge Network 加速，自動 SSL、CDN、Preview Deployments。99.99%  uptime 保證。</p>
+<div class="svc-card bg-white border border-gray-200 rounded-2xl p-5 space-y-3">
+<div class="flex items-center gap-2"><i class="fa-solid fa-server text-cyan-400 text-lg"></i><h4 class="font-bold text-gray-900 text-sm">Vercel 部署</h4></div>
+<p class="text-xs text-gray-500">全球 Edge Network 加速，自動 SSL、CDN、Preview Deployments。99.99%  uptime 保證。</p>
 </div>
-<div class="svc-card bg-cyberPanel border border-slate-800 rounded-2xl p-5 space-y-3">
-<div class="flex items-center gap-2"><i class="fa-solid fa-globe text-amber-400 text-lg"></i><h4 class="font-bold text-white text-sm">網域管理</h4></div>
-<p class="text-xs text-slate-400">DNS 設定、SSL 簽發、子網域管理、自動續期。支援 .tw / .com / .io 等所有主流網域。</p>
+<div class="svc-card bg-white border border-gray-200 rounded-2xl p-5 space-y-3">
+<div class="flex items-center gap-2"><i class="fa-solid fa-globe text-amber-400 text-lg"></i><h4 class="font-bold text-gray-900 text-sm">網域管理</h4></div>
+<p class="text-xs text-gray-500">DNS 設定、SSL 簽發、子網域管理、自動續期。支援 .tw / .com / .io 等所有主流網域。</p>
 </div>
 </div>
 </section>
@@ -139,29 +139,29 @@
 <!-- SERVICE 3: PAYMENT -->
 <section class="max-w-6xl mx-auto px-6 pb-16 space-y-6">
 <div class="flex items-center gap-3 mb-6">
-<div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-lg">3</div>
-<h3 class="text-xl font-bold text-white">金流收支對接</h3>
+<div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-400 flex items-center justify-center font-bold text-lg">3</div>
+<h3 class="text-xl font-bold text-gray-900">金流收支對接</h3>
 </div>
 <div class="grid md:grid-cols-4 gap-4">
-<div class="svc-card bg-cyberPanel border border-slate-800 rounded-xl p-4 space-y-2 text-center">
+<div class="svc-card bg-white border border-gray-200 rounded-xl p-4 space-y-2 text-center">
 <i class="fa-solid fa-credit-card text-blue-400 text-2xl"></i>
 <div class="text-sm font-bold text-white">綠界科技</div>
-<div class="text-[10px] text-slate-500">台灣境內信用卡 / ATM / 超商</div>
+<div class="text-[10px] text-gray-400">台灣境內信用卡 / ATM / 超商</div>
 </div>
-<div class="svc-card bg-cyberPanel border border-slate-800 rounded-xl p-4 space-y-2 text-center">
+<div class="svc-card bg-white border border-gray-200 rounded-xl p-4 space-y-2 text-center">
 <i class="fa-brands fa-stripe text-purple-400 text-2xl"></i>
 <div class="text-sm font-bold text-white">Stripe</div>
-<div class="text-[10px] text-slate-500">國際信用卡 / Apple Pay / Google Pay</div>
+<div class="text-[10px] text-gray-400">國際信用卡 / Apple Pay / Google Pay</div>
 </div>
-<div class="svc-card bg-cyberPanel border border-slate-800 rounded-xl p-4 space-y-2 text-center">
+<div class="svc-card bg-white border border-gray-200 rounded-xl p-4 space-y-2 text-center">
 <i class="fa-solid fa-building-columns text-amber-400 text-2xl"></i>
 <div class="text-sm font-bold text-white">銀行電匯</div>
-<div class="text-[10px] text-slate-500">樂天 / 台銀 / Payoneer 跨境</div>
+<div class="text-[10px] text-gray-400">樂天 / 台銀 / Payoneer 跨境</div>
 </div>
-<div class="svc-card bg-cyberPanel border border-slate-800 rounded-xl p-4 space-y-2 text-center">
+<div class="svc-card bg-white border border-gray-200 rounded-xl p-4 space-y-2 text-center">
 <i class="fa-solid fa-coins text-emerald-400 text-2xl"></i>
 <div class="text-sm font-bold text-white">自動對帳</div>
-<div class="text-[10px] text-slate-500">AI 自動核對每筆款項明細</div>
+<div class="text-[10px] text-gray-400">AI 自動核對每筆款項明細</div>
 </div>
 </div>
 </section>
@@ -170,24 +170,24 @@
 <section class="max-w-6xl mx-auto px-6 pb-16 space-y-6">
 <div class="flex items-center gap-3 mb-6">
 <div class="w-10 h-10 rounded-xl bg-gold/20 text-gold flex items-center justify-center font-bold text-lg">4</div>
-<h3 class="text-xl font-bold text-white">網域分租</h3>
+<h3 class="text-xl font-bold text-gray-900">網域分租</h3>
 </div>
-<div class="bg-cyberPanel border border-slate-800 rounded-2xl p-6 space-y-4">
-<p class="text-xs text-slate-400">將 xingdeng.tw 的子網域分租給需要快速上線的個人或企業。含 DNS 設定、SSL 憑證、CDN 加速，一鍵部署。</p>
+<div class="bg-white border border-gray-200 rounded-2xl p-6 space-y-4">
+<p class="text-xs text-gray-500">將 xingdeng.tw 的子網域分租給需要快速上線的個人或企業。含 DNS 設定、SSL 憑證、CDN 加速，一鍵部署。</p>
 <div class="grid md:grid-cols-3 gap-3 text-xs">
-<div class="bg-slate-900 p-4 rounded-xl border border-slate-800 space-y-1">
+<div class="bg-gray-100 p-4 rounded-xl border border-gray-200 space-y-1">
 <div class="text-gold font-bold font-mono">shop.xingdeng.tw</div>
-<div class="text-slate-500">電商店面</div>
+<div class="text-gray-400">電商店面</div>
 <div class="text-emerald-400 font-mono">NT$ 1,500/月</div>
 </div>
-<div class="bg-slate-900 p-4 rounded-xl border border-slate-800 space-y-1">
+<div class="bg-gray-100 p-4 rounded-xl border border-gray-200 space-y-1">
 <div class="text-gold font-bold font-mono">blog.xingdeng.tw</div>
-<div class="text-slate-500">個人部落格</div>
+<div class="text-gray-400">個人部落格</div>
 <div class="text-emerald-400 font-mono">NT$ 1,500/月</div>
 </div>
-<div class="bg-slate-900 p-4 rounded-xl border border-slate-800 space-y-1">
+<div class="bg-gray-100 p-4 rounded-xl border border-gray-200 space-y-1">
 <div class="text-gold font-bold font-mono">[your-brand].xingdeng.tw</div>
-<div class="text-slate-500">自訂子網域</div>
+<div class="text-gray-400">自訂子網域</div>
 <div class="text-emerald-400 font-mono">NT$ 1,500/月</div>
 </div>
 </div>
@@ -197,28 +197,28 @@
 <!-- SERVICE 5: ADVERTISING -->
 <section class="max-w-6xl mx-auto px-6 pb-16 space-y-6">
 <div class="flex items-center gap-3 mb-6">
-<div class="w-10 h-10 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center font-bold text-lg">5</div>
-<h3 class="text-xl font-bold text-white">廣告品牌推播</h3>
+<div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-400 flex items-center justify-center font-bold text-lg">5</div>
+<h3 class="text-xl font-bold text-gray-900">廣告品牌推播</h3>
 </div>
 <div class="grid md:grid-cols-2 gap-5">
-<div class="svc-card bg-cyberPanel border border-slate-800 rounded-2xl p-5 space-y-3">
-<h4 class="font-bold text-white text-sm flex items-center gap-2"><i class="fa-brands fa-google text-blue-400"></i>Google Ads 代操</h4>
-<p class="text-xs text-slate-400">搜尋廣告、購物廣告、YouTube 廣告。AI 自動優化出價與受眾，最大化 ROAS。</p>
+<div class="svc-card bg-white border border-gray-200 rounded-2xl p-5 space-y-3">
+<h4 class="font-bold text-gray-900 text-sm flex items-center gap-2"><i class="fa-brands fa-google text-blue-400"></i>Google Ads 代操</h4>
+<p class="text-xs text-gray-500">搜尋廣告、購物廣告、YouTube 廣告。AI 自動優化出價與受眾，最大化 ROAS。</p>
 <div class="text-[10px] font-mono text-rose-400">NT$ 8,000/月 + 廣告費</div>
 </div>
-<div class="svc-card bg-cyberPanel border border-slate-800 rounded-2xl p-5 space-y-3">
-<h4 class="font-bold text-white text-sm flex items-center gap-2"><i class="fa-brands fa-meta text-blue-400"></i>Meta Ads 代操</h4>
-<p class="text-xs text-slate-400">Facebook / Instagram 廣告。AI 生成素材 + A/B 測試 + 自動受眾擴展。</p>
+<div class="svc-card bg-white border border-gray-200 rounded-2xl p-5 space-y-3">
+<h4 class="font-bold text-gray-900 text-sm flex items-center gap-2"><i class="fa-brands fa-meta text-blue-400"></i>Meta Ads 代操</h4>
+<p class="text-xs text-gray-500">Facebook / Instagram 廣告。AI 生成素材 + A/B 測試 + 自動受眾擴展。</p>
 <div class="text-[10px] font-mono text-rose-400">NT$ 8,000/月 + 廣告費</div>
 </div>
-<div class="svc-card bg-cyberPanel border border-slate-800 rounded-2xl p-5 space-y-3">
-<h4 class="font-bold text-white text-sm flex items-center gap-2"><i class="fa-solid fa-share-nodes text-cyan-400"></i>社群自動經營</h4>
-<p class="text-xs text-slate-400">Posty AI 自動排程發文至 IG / Threads / LinkedIn / Facebook。AI-02 內容主編每週產出 3+ 篇貼文。</p>
+<div class="svc-card bg-white border border-gray-200 rounded-2xl p-5 space-y-3">
+<h4 class="font-bold text-gray-900 text-sm flex items-center gap-2"><i class="fa-solid fa-share-nodes text-cyan-400"></i>社群自動經營</h4>
+<p class="text-xs text-gray-500">Posty AI 自動排程發文至 IG / Threads / LinkedIn / Facebook。AI-02 內容主編每週產出 3+ 篇貼文。</p>
 <div class="text-[10px] font-mono text-cyan-400">NT$ 6,000/月</div>
 </div>
-<div class="svc-card bg-cyberPanel border border-slate-800 rounded-2xl p-5 space-y-3">
-<h4 class="font-bold text-white text-sm flex items-center gap-2"><i class="fa-solid fa-magnifying-glass-chart text-emerald-400"></i>SEO / GEO 霸榜</h4>
-<p class="text-xs text-slate-400">GrowthBar 關鍵詞研究 + Frase 內容優化 + AI 自動發文。讓 Google 和 ChatGPT 都推薦你。</p>
+<div class="svc-card bg-white border border-gray-200 rounded-2xl p-5 space-y-3">
+<h4 class="font-bold text-gray-900 text-sm flex items-center gap-2"><i class="fa-solid fa-magnifying-glass-chart text-emerald-400"></i>SEO / GEO 霸榜</h4>
+<p class="text-xs text-gray-500">GrowthBar 關鍵詞研究 + Frase 內容優化 + AI 自動發文。讓 Google 和 ChatGPT 都推薦你。</p>
 <div class="text-[10px] font-mono text-emerald-400">NT$ 5,000/月（4 篇文章）</div>
 </div>
 </div>
@@ -227,11 +227,11 @@
 <!-- CTA -->
 <section class="max-w-3xl mx-auto px-6 py-16 text-center space-y-6">
 <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(6,182,212,0.3),transparent)" class="mb-8"></div>
-<h3 class="text-2xl font-bold text-white">準備好開始了嗎？</h3>
-<p class="text-sm text-slate-400">免費諮詢 + 免費 GEO 檢測，零風險了解 SNT 能為你帶來多少收益。</p>
+<h3 class="text-2xl font-bold text-gray-900">準備好開始了嗎？</h3>
+<p class="text-sm text-gray-500">免費諮詢 + 免費 GEO 檢測，零風險了解 SNT 能為你帶來多少收益。</p>
 <div class="flex flex-wrap justify-center gap-3">
 <a href="https://xingdeng.tw/pricing" class="bg-gradient-to-r from-snt-600 to-cyan-600 text-white px-6 py-3 rounded-xl text-sm font-semibold hover:from-snt-500 hover:to-cyan-500 transition">查看方案定價 <i class="fa-solid fa-arrow-right ml-1"></i></a>
-<a href="https://xingdeng.tw/pricing.html#contact" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-6 py-3 rounded-xl text-sm font-semibold border border-slate-700 transition">免費諮詢 →</a>
+<a href="https://xingdeng.tw/pricing.html#contact" class="bg-gray-200 hover:bg-gray-900 hover:text-white text-gray-600 px-6 py-3 rounded-xl text-sm font-semibold border border-gray-300 transition">免費諮詢 →</a>
 </div>
 </section>
 

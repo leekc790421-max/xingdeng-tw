@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-TW" class="dark">
+<html lang="zh-TW" >
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -89,51 +89,51 @@
 <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{snt:{400:'#2dd4bf',500:'#14b8a6',600:'#0d9488',cyan:'#06b6d4',purple:'#a855f7',amber:'#fbbf24'},cyberDark:'#070a12',cyberPanel:'#0f172a'},fontFamily:{sans:['Inter','Noto Sans TC','sans-serif']}}}}</script>
 <style>body{font-family:'Inter','Noto Sans TC',sans-serif}.faq-item{transition:all .2s}.faq-item:hover{background:rgba(6,182,212,.05)}</style>
 </head>
-<body class="bg-cyberDark text-slate-100 min-h-screen">
+<body class="bg-gray-50 text-gray-800 min-h-screen">
 
-<header class="border-b border-slate-800 bg-slate-950/90 backdrop-blur sticky top-0 z-50 px-4 lg:px-8 py-3">
+<header class="border-b border-gray-200 bg-white/90 backdrop-blur sticky top-0 z-50 px-4 lg:px-8 py-3">
     <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
         <a href="/" class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-snt-600 via-cyan-500 to-amber-400 p-0.5 flex items-center justify-center shadow-lg shadow-snt-500/20">
-                <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center font-black text-amber-400 font-mono text-lg">SNT</div>
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-snt-600 via-cyan-500 to-amber-400 p-0.5 flex items-center justify-center shadow-lg shadow-snt-500/10">
+                <div class="w-full h-full bg-slate-900 rounded-[10px] flex items-center justify-center font-black text-amber-400 font-mono text-lg">SNT</div>
             </div>
             <div class="hidden sm:block">
-                <h1 class="font-bold text-base text-white leading-tight">光曜星樞</h1>
-                <p class="text-[10px] text-slate-400 font-mono">常見問題</p>
+                <h1 class="font-bold text-base text-gray-900 leading-tight">光曜星樞</h1>
+                <p class="text-[10px] text-gray-500 font-mono">常見問題</p>
             </div>
         </a>
         <nav class="hidden md:flex items-center gap-2 text-xs">
-            <a href="/" class="px-4 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium flex items-center gap-2 transition">
+            <a href="/" class="px-4 py-2.5 rounded-lg bg-white border-2 border-gray-300 text-gray-700 hover:bg-gray-900 hover:text-white hover:border-gray-900 font-medium flex items-center gap-2 transition">
                 <i class="fa-solid fa-home"></i> 首頁
             </a>
-            <a href="/solutions" class="px-4 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium flex items-center gap-2 transition">
+            <a href="/solutions" class="px-4 py-2.5 rounded-lg bg-white border-2 border-gray-300 text-gray-700 hover:bg-gray-900 hover:text-white hover:border-gray-900 font-medium flex items-center gap-2 transition">
                 <i class="fa-solid fa-briefcase text-purple-400"></i> 15大子系統
             </a>
-            <a href="/lab" class="px-4 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium flex items-center gap-2 transition">
+            <a href="/lab" class="px-4 py-2.5 rounded-lg bg-white border-2 border-gray-300 text-gray-700 hover:bg-gray-900 hover:text-white hover:border-gray-900 font-medium flex items-center gap-2 transition">
                 <i class="fa-solid fa-flask-vial text-cyan-400"></i> 8K 藝廊
             </a>
-            <a href="/pricing" class="px-4 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium flex items-center gap-2 transition">
+            <a href="/pricing" class="px-4 py-2.5 rounded-lg bg-white border-2 border-gray-300 text-gray-700 hover:bg-gray-900 hover:text-white hover:border-gray-900 font-medium flex items-center gap-2 transition">
                 <i class="fa-solid fa-tag text-gold"></i> 定價
             </a>
             <a href="/contact" class="px-4 py-2.5 rounded-lg bg-gradient-to-r from-snt-600 to-cyan-600 hover:from-snt-500 hover:to-cyan-500 text-white font-medium flex items-center gap-2 transition">
                 <i class="fa-solid fa-phone"></i> 預約諮詢
             </a>
         </nav>
-        <button onclick="document.getElementById('faqMobileMenu').classList.toggle('hidden')" class="md:hidden w-10 h-10 rounded-lg bg-slate-800 hover:bg-slate-700 flex items-center justify-center transition">
+        <button onclick="document.getElementById('faqMobileMenu').classList.toggle('hidden')" class="md:hidden w-10 h-10 rounded-lg bg-gray-200 hover:bg-gray-900 hover:text-white flex items-center justify-center transition">
             <i class="fa-solid fa-bars text-white text-lg"></i>
         </button>
     </div>
     <div id="faqMobileMenu" class="md:hidden hidden mt-4 pb-4 space-y-2">
-        <a href="/" class="block w-full px-4 py-3 rounded-lg bg-slate-800 text-slate-300 font-medium flex items-center gap-3 transition hover:bg-slate-700">
+        <a href="/" class="block w-full px-4 py-3 rounded-lg bg-white border-2 border-gray-300 text-gray-700 font-medium hover:bg-gray-900 hover:text-white hover:border-gray-900 flex items-center gap-3 transition hover:bg-gray-900 hover:text-white">
             <i class="fa-solid fa-home"></i> 首頁
         </a>
-        <a href="/solutions" class="block w-full px-4 py-3 rounded-lg bg-slate-800 text-slate-300 font-medium flex items-center gap-3 transition hover:bg-slate-700">
+        <a href="/solutions" class="block w-full px-4 py-3 rounded-lg bg-white border-2 border-gray-300 text-gray-700 font-medium hover:bg-gray-900 hover:text-white hover:border-gray-900 flex items-center gap-3 transition hover:bg-gray-900 hover:text-white">
             <i class="fa-solid fa-briefcase text-purple-400"></i> 15大子系統
         </a>
-        <a href="/lab" class="block w-full px-4 py-3 rounded-lg bg-slate-800 text-slate-300 font-medium flex items-center gap-3 transition hover:bg-slate-700">
+        <a href="/lab" class="block w-full px-4 py-3 rounded-lg bg-white border-2 border-gray-300 text-gray-700 font-medium hover:bg-gray-900 hover:text-white hover:border-gray-900 flex items-center gap-3 transition hover:bg-gray-900 hover:text-white">
             <i class="fa-solid fa-flask-vial text-cyan-400"></i> 8K 藝廊
         </a>
-        <a href="/pricing" class="block w-full px-4 py-3 rounded-lg bg-slate-800 text-slate-300 font-medium flex items-center gap-3 transition hover:bg-slate-700">
+        <a href="/pricing" class="block w-full px-4 py-3 rounded-lg bg-white border-2 border-gray-300 text-gray-700 font-medium hover:bg-gray-900 hover:text-white hover:border-gray-900 flex items-center gap-3 transition hover:bg-gray-900 hover:text-white">
             <i class="fa-solid fa-tag text-gold"></i> 方案定價
         </a>
         <a href="/contact" class="block w-full px-4 py-3 rounded-lg bg-gradient-to-r from-snt-600 to-cyan-600 text-white font-medium flex items-center gap-3 transition">
@@ -144,106 +144,106 @@
 
 <main class="max-w-4xl mx-auto px-4 py-12 space-y-8">
 
-<section class="bg-cyberPanel p-8 rounded-2xl border border-slate-800 space-y-4 text-center">
-<h1 class="text-3xl md:text-4xl font-black text-white">常見問題 <span class="bg-gradient-to-r from-snt-400 via-cyan-400 to-amber-300 bg-clip-text text-transparent">FAQ</span></h1>
-<p class="text-slate-400">關於 AI 雲端辦公室建置，你可能想知道的事</p>
+<section class="bg-white p-8 rounded-2xl border border-gray-200 space-y-4 text-center">
+<h1 class="text-3xl md:text-4xl font-black text-gray-900">常見問題 <span class="bg-gradient-to-r from-snt-400 via-cyan-400 to-amber-300 bg-clip-text text-transparent">FAQ</span></h1>
+<p class="text-gray-500">關於 AI 雲端辦公室建置，你可能想知道的事</p>
 </section>
 
 <section class="space-y-3">
 
-<div class="faq-item bg-cyberPanel p-6 rounded-xl border border-slate-800">
-<h3 class="font-bold text-white flex items-center gap-2 cursor-pointer" onclick="this.nextElementSibling.classList.toggle('hidden')">
+<div class="faq-item bg-white p-6 rounded-xl border border-gray-200">
+<h3 class="font-bold text-gray-900 flex items-center gap-2 cursor-pointer" onclick="this.nextElementSibling.classList.toggle('hidden')">
 <i class="fa-solid fa-circle-question text-snt-400"></i>
 SNT AI 雲端辦公室多久可以上線？
-<i class="fa-solid fa-chevron-down ml-auto text-xs text-slate-400"></i>
+<i class="fa-solid fa-chevron-down ml-auto text-xs text-gray-500"></i>
 </h3>
-<p class="text-sm text-slate-300 mt-3 leading-relaxed">
+<p class="text-sm text-gray-600 mt-3 leading-relaxed">
 最快 5 個工作天即可完成全站系統上線，包含 AI 客服、收款、SEO 等全部模組。模板套版方案 5 天，客製化方案 10 天，全自動化方案 15 天。
 </p>
 </div>
 
-<div class="faq-item bg-cyberPanel p-6 rounded-xl border border-slate-800">
-<h3 class="font-bold text-white flex items-center gap-2 cursor-pointer" onclick="this.nextElementSibling.classList.toggle('hidden')">
+<div class="faq-item bg-white p-6 rounded-xl border border-gray-200">
+<h3 class="font-bold text-gray-900 flex items-center gap-2 cursor-pointer" onclick="this.nextElementSibling.classList.toggle('hidden')">
 <i class="fa-solid fa-circle-question text-cyan-400"></i>
 什麼是 GEO 搜尋霸榜？
-<i class="fa-solid fa-chevron-down ml-auto text-xs text-slate-400"></i>
+<i class="fa-solid fa-chevron-down ml-auto text-xs text-gray-500"></i>
 </h3>
-<p class="text-sm text-slate-300 mt-3 leading-relaxed">
+<p class="text-sm text-gray-600 mt-3 leading-relaxed">
 GEO（Generative Engine Optimization）是針對 ChatGPT、Perplexity、Gemini 等 AI 搜尋引擎的優化策略，讓你的品牌被 AI 主動推薦給用戶。這是 2026 年最重要的流量來源。
 </p>
 </div>
 
-<div class="faq-item bg-cyberPanel p-6 rounded-xl border border-slate-800">
-<h3 class="font-bold text-white flex items-center gap-2 cursor-pointer" onclick="this.nextElementSibling.classList.toggle('hidden')">
+<div class="faq-item bg-white p-6 rounded-xl border border-gray-200">
+<h3 class="font-bold text-gray-900 flex items-center gap-2 cursor-pointer" onclick="this.nextElementSibling.classList.toggle('hidden')">
 <i class="fa-solid fa-circle-question text-purple-400"></i>
 SNT 適合哪些產業？
-<i class="fa-solid fa-chevron-down ml-auto text-xs text-slate-400"></i>
+<i class="fa-solid fa-chevron-down ml-auto text-xs text-gray-500"></i>
 </h3>
-<p class="text-sm text-slate-300 mt-3 leading-relaxed">
+<p class="text-sm text-gray-600 mt-3 leading-relaxed">
 目前已有餐飲、命理、房仲、醫美、零售、教育等 300+ 企業成功案例。任何需要線上攬客的行業皆適用。
 </p>
 </div>
 
-<div class="faq-item bg-cyberPanel p-6 rounded-xl border border-slate-800">
-<h3 class="font-bold text-white flex items-center gap-2 cursor-pointer" onclick="this.nextElementSibling.classList.toggle('hidden')">
+<div class="faq-item bg-white p-6 rounded-xl border border-gray-200">
+<h3 class="font-bold text-gray-900 flex items-center gap-2 cursor-pointer" onclick="this.nextElementSibling.classList.toggle('hidden')">
 <i class="fa-solid fa-circle-question text-amber-400"></i>
 需要技術背景嗎？
-<i class="fa-solid fa-chevron-down ml-auto text-xs text-slate-400"></i>
+<i class="fa-solid fa-chevron-down ml-auto text-xs text-gray-500"></i>
 </h3>
-<p class="text-sm text-slate-300 mt-3 leading-relaxed">
+<p class="text-sm text-gray-600 mt-3 leading-relaxed">
 完全不需要。我們提供一站式建置與維護，你只需專注在本業經營。系統操作介面直覺，也有教學影片。
 </p>
 </div>
 
-<div class="faq-item bg-cyberPanel p-6 rounded-xl border border-slate-800">
-<h3 class="font-bold text-white flex items-center gap-2 cursor-pointer" onclick="this.nextElementSibling.classList.toggle('hidden')">
+<div class="faq-item bg-white p-6 rounded-xl border border-gray-200">
+<h3 class="font-bold text-gray-900 flex items-center gap-2 cursor-pointer" onclick="this.nextElementSibling.classList.toggle('hidden')">
 <i class="fa-solid fa-circle-question text-snt-400"></i>
 收費方式？有合約嗎？
-<i class="fa-solid fa-chevron-down ml-auto text-xs text-slate-400"></i>
+<i class="fa-solid fa-chevron-down ml-auto text-xs text-gray-500"></i>
 </h3>
-<p class="text-sm text-slate-300 mt-3 leading-relaxed">
+<p class="text-sm text-gray-600 mt-3 leading-relaxed">
 提供一次性建置費 + 月繳維護費兩種方式。月繳維護費可隨時取消，無長期合約綁綁。所有方案皆可隨時升級。
 </p>
 </div>
 
-<div class="faq-item bg-cyberPanel p-6 rounded-xl border border-slate-800">
-<h3 class="font-bold text-white flex items-center gap-2 cursor-pointer" onclick="this.nextElementSibling.classList.toggle('hidden')">
+<div class="faq-item bg-white p-6 rounded-xl border border-gray-200">
+<h3 class="font-bold text-gray-900 flex items-center gap-2 cursor-pointer" onclick="this.nextElementSibling.classList.toggle('hidden')">
 <i class="fa-solid fa-circle-question text-cyan-400"></i>
 可以先試用嗎？
-<i class="fa-solid fa-chevron-down ml-auto text-xs text-slate-400"></i>
+<i class="fa-solid fa-chevron-down ml-auto text-xs text-gray-500"></i>
 </h3>
-<p class="text-sm text-slate-300 mt-3 leading-relaxed">
+<p class="text-sm text-gray-600 mt-3 leading-relaxed">
 可以。我們提供免費 GEO 檢測 + 顧問諮詢，讓你先了解系統能為你帶來多少收益再決定。
 </p>
 </div>
 
-<div class="faq-item bg-cyberPanel p-6 rounded-xl border border-slate-800">
-<h3 class="font-bold text-white flex items-center gap-2 cursor-pointer" onclick="this.nextElementSibling.classList.toggle('hidden')">
+<div class="faq-item bg-white p-6 rounded-xl border border-gray-200">
+<h3 class="font-bold text-gray-900 flex items-center gap-2 cursor-pointer" onclick="this.nextElementSibling.classList.toggle('hidden')">
 <i class="fa-solid fa-circle-question text-purple-400"></i>
 六大 AI 數位員工是什麼？
-<i class="fa-solid fa-chevron-down ml-auto text-xs text-slate-400"></i>
+<i class="fa-solid fa-chevron-down ml-auto text-xs text-gray-500"></i>
 </h3>
-<p class="text-sm text-slate-300 mt-3 leading-relaxed">
+<p class="text-sm text-gray-600 mt-3 leading-relaxed">
 SNT 雲端辦公室包含 6 位 AI 數位員工：AI-00 總調度官、AI-01 業務諮詢、AI-02 內容行銷、AI-03 系統維運、AI-04 交付專員、AI-05 合規審查。24H 自動運行，處理接客、回覆、收款、好評、回流全流程。
 </p>
 </div>
 
-<div class="faq-item bg-cyberPanel p-6 rounded-xl border border-slate-800">
-<h3 class="font-bold text-white flex items-center gap-2 cursor-pointer" onclick="this.nextElementSibling.classList.toggle('hidden')">
+<div class="faq-item bg-white p-6 rounded-xl border border-gray-200">
+<h3 class="font-bold text-gray-900 flex items-center gap-2 cursor-pointer" onclick="this.nextElementSibling.classList.toggle('hidden')">
 <i class="fa-solid fa-circle-question text-amber-400"></i>
 什麼是 SNT Nexus SDK？
-<i class="fa-solid fa-chevron-down ml-auto text-xs text-slate-400"></i>
+<i class="fa-solid fa-chevron-down ml-auto text-xs text-gray-500"></i>
 </h3>
-<p class="text-sm text-slate-300 mt-3 leading-relaxed">
+<p class="text-sm text-gray-600 mt-3 leading-relaxed">
 SNT Nexus SDK 是輕量化的 JavaScript 腳本，嵌入客戶網站後可實現一鍵呼叫雲端客服、自動傳送錯誤日誌、反向鏈結引流等功能。是 Trojan Horse 病毒式擴散的關鍵模組。
 </p>
 </div>
 
 </section>
 
-<section class="bg-gradient-to-br from-snt-600/10 to-cyan-500/10 p-8 rounded-2xl border border-snt-500/30 text-center space-y-4">
-<h2 class="text-2xl font-bold text-white">還有其他問題？</h2>
-<p class="text-slate-300 text-sm">專屬顧問 24H 內回覆，免費諮詢 + GEO 檢測</p>
+<section class="bg-gradient-to-br from-snt-50 to-cyan-50 p-8 rounded-2xl border border-snt-300 text-center space-y-4">
+<h2 class="text-2xl font-bold text-gray-900">還有其他問題？</h2>
+<p class="text-gray-600 text-sm">專屬顧問 24H 內回覆，免費諮詢 + GEO 檢測</p>
 <a href="/contact" class="inline-block bg-gradient-to-r from-snt-600 to-cyan-500 hover:from-snt-500 hover:to-cyan-400 text-white font-bold px-8 py-3 rounded-xl transition">
 <i class="fa-solid fa-paper-plane mr-2"></i>聯繫我們
 </a>
@@ -251,8 +251,8 @@ SNT Nexus SDK 是輕量化的 JavaScript 腳本，嵌入客戶網站後可實現
 
 </main>
 
-<footer class="border-t border-slate-800 py-8 px-4 mt-12">
-<div class="max-w-4xl mx-auto text-center text-xs text-slate-500">
+<footer class="border-t border-gray-200 py-8 px-4 mt-12">
+<div class="max-w-4xl mx-auto text-center text-xs text-gray-400">
 <p>© 2026 光曜星樞 Singularity Nexus Technology (SNT)</p>
 <div class="flex items-center justify-center gap-4 mt-2">
 <a href="/privacy" class="hover:text-snt-400 transition">隱私權政策</a>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-TW" class="dark">
+<html lang="zh-TW" >
 <head>
 <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -17,29 +17,29 @@ body{font-family:'Inter','Noto Sans TC',sans-serif}
 .hud-border{position:relative;border:1px solid rgba(6,182,212,0.3)}
 .hud-border::before{content:'';position:absolute;top:-2px;left:-2px;width:8px;height:8px;border-top:2px solid #06b6d4;border-left:2px solid #06b6d4}
 .hud-border::after{content:'';position:absolute;bottom:-2px;right:-2px;width:8px;height:8px;border-bottom:2px solid #06b6d4;border-right:2px solid #06b6d4}
-::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#070a12}::-webkit-scrollbar-thumb{background:#334155;border-radius:3px}
-.code-block{background:#0f172a;border:1px solid #1e293b;border-radius:8px;padding:16px;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.6;overflow-x:auto;position:relative}
-.code-block .copy-btn{position:absolute;top:8px;right:8px;padding:4px 12px;background:#1e293b;border:1px solid #334155;border-radius:6px;color:#94a3b8;font-size:11px;cursor:pointer;transition:all 0.2s}
-.code-block .copy-btn:hover{background:#334155;color:#e2e8f0}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#f1f5f9}::-webkit-scrollbar-thumb{background:#94a3b8;border-radius:3px}
+.code-block{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:16px;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.6;overflow-x:auto;position:relative}
+.code-block .copy-btn{position:absolute;top:8px;right:8px;padding:4px 12px;background:#e2e8f0;border:1px solid #cbd5e1;border-radius:6px;color:#475569;font-size:11px;cursor:pointer;transition:all 0.2s}
+.code-block .copy-btn:hover{background:#cbd5e1;color:#1e293b}
 .agent-toggle{transition:all 0.2s}
 .agent-toggle.active{background:linear-gradient(135deg,#0d9488,#06b6d4);color:white;border-color:transparent}
 </style>
 </head>
-<body class="bg-cyberDark text-slate-100 min-h-screen antialiased">
+<body class="bg-gray-50 text-gray-800 min-h-screen antialiased">
 
 <!-- HEADER -->
-<header class="border-b border-slate-800 bg-slate-950/90 backdrop-blur sticky top-0 z-50 px-4 lg:px-8 py-3 flex items-center justify-between">
+<header class="border-b border-gray-200 bg-white/90 backdrop-blur sticky top-0 z-50 px-4 lg:px-8 py-3 flex items-center justify-between">
 <a href="/" class="flex items-center gap-3">
 <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-snt-600 via-cyan-500 to-amber-400 p-0.5 flex items-center justify-center">
-<div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center font-black text-amber-400 font-mono text-sm">SNT</div>
+<div class="w-full h-full bg-slate-900 rounded-[10px] flex items-center justify-center font-black text-amber-400 font-mono text-sm">SNT</div>
 </div>
 <div>
-<h1 class="font-bold text-sm text-white leading-tight">SDK 配置管理</h1>
-<p class="text-[10px] text-slate-500 font-mono">六大 AI Agent 自動對接系統</p>
+<h1 class="font-bold text-sm text-gray-900 leading-tight">SDK 配置管理</h1>
+<p class="text-[10px] text-gray-400 font-mono">六大 AI Agent 自動對接系統</p>
 </div>
 </a>
 <nav class="flex items-center gap-2 text-xs">
-<a href="/" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg border border-slate-700 transition"><i class="fa-solid fa-home mr-1"></i>首頁</a>
+<a href="/" class="bg-gray-200 hover:bg-gray-900 hover:text-white text-gray-600 px-3 py-1.5 rounded-lg border border-gray-300 transition"><i class="fa-solid fa-home mr-1"></i>首頁</a>
 
 </nav>
 </header>
@@ -48,112 +48,112 @@ body{font-family:'Inter','Noto Sans TC',sans-serif}
 
 <!-- HERO -->
 <section class="text-center space-y-4">
-<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-snt-500/10 border border-snt-500/30 text-snt-400 text-xs font-mono">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-snt-50 border border-snt-300 text-snt-400 text-xs font-mono">
 <i class="fa-solid fa-microchip"></i> SNT NEXUS SDK v2.0
 </div>
-<h2 class="text-3xl md:text-4xl font-black text-white">
+<h2 class="text-3xl md:text-4xl font-black text-gray-900">
 六大 AI Agent <span class="bg-gradient-to-r from-snt-400 via-cyan-400 to-amber-300 bg-clip-text text-transparent">自動對接系統</span>
 </h2>
-<p class="text-slate-400 text-sm max-w-2xl mx-auto">
-只需嵌入一行 <code class="bg-slate-900 px-2 py-0.5 rounded text-cyan-400">&lt;script&gt;</code>，任何網站都能自動獲得完整的 AI 客服、業務諮詢、內容生成、技術支援、專案追蹤與合規審查能力。
+<p class="text-gray-500 text-sm max-w-2xl mx-auto">
+只需嵌入一行 <code class="bg-gray-100 px-2 py-0.5 rounded text-cyan-400">&lt;script&gt;</code>，任何網站都能自動獲得完整的 AI 客服、業務諮詢、內容生成、技術支援、專案追蹤與合規審查能力。
 </p>
 </section>
 
 <!-- AI AGENTS OVERVIEW -->
 <section class="space-y-6">
 <div class="flex items-center gap-2">
-<div class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold text-sm">1</div>
-<h3 class="text-xl font-bold text-white">六大 AI Agent 矩陣</h3>
+<div class="w-8 h-8 rounded-lg bg-cyan-100 text-cyan-400 flex items-center justify-center font-bold text-sm">1</div>
+<h3 class="text-xl font-bold text-gray-900">六大 AI Agent 矩陣</h3>
 </div>
 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-<div class="bg-cyberPanel border border-slate-800 rounded-xl p-5 space-y-3">
+<div class="bg-white border border-gray-200 rounded-xl p-5 space-y-3">
 <div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-2xl">🎯</div>
+<div class="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center text-2xl">🎯</div>
 <div>
 <div class="font-bold text-white text-sm">AI-00 星樞總調度官</div>
-<div class="text-[10px] text-slate-500 font-mono">Groq · 優先級 0</div>
+<div class="text-[10px] text-gray-400 font-mono">Groq · 優先級 0</div>
 </div>
 </div>
-<p class="text-xs text-slate-400">30秒內完成研判、安撫預答覆與工單路由</p>
+<p class="text-xs text-gray-500">30秒內完成研判、安撫預答覆與工單路由</p>
 <div class="flex flex-wrap gap-1">
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">緊急</span>
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">問題</span>
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">help</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500">緊急</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500">問題</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500">help</span>
 </div>
 </div>
-<div class="bg-cyberPanel border border-slate-800 rounded-xl p-5 space-y-3">
+<div class="bg-white border border-gray-200 rounded-xl p-5 space-y-3">
 <div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center text-2xl">💼</div>
+<div class="w-10 h-10 rounded-lg bg-cyan-50 flex items-center justify-center text-2xl">💼</div>
 <div>
 <div class="font-bold text-white text-sm">AI-01 業務諮詢專家</div>
-<div class="text-[10px] text-slate-500 font-mono">Gemini · 優先級 1</div>
+<div class="text-[10px] text-gray-400 font-mono">Gemini · 優先級 1</div>
 </div>
 </div>
-<p class="text-xs text-slate-400">24H 接待潛在客戶、需求剖析、預算估算</p>
+<p class="text-xs text-gray-500">24H 接待潛在客戶、需求剖析、預算估算</p>
 <div class="flex flex-wrap gap-1">
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">價格</span>
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">方案</span>
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">pricing</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500">價格</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500">方案</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500">pricing</span>
 </div>
 </div>
-<div class="bg-cyberPanel border border-slate-800 rounded-xl p-5 space-y-3">
+<div class="bg-white border border-gray-200 rounded-xl p-5 space-y-3">
 <div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-2xl">✍️</div>
+<div class="w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center text-2xl">✍️</div>
 <div>
 <div class="font-bold text-white text-sm">AI-02 內容行銷主編</div>
-<div class="text-[10px] text-slate-500 font-mono">Gemini + Meta · 優先級 2</div>
+<div class="text-[10px] text-gray-400 font-mono">Gemini + Meta · 優先級 2</div>
 </div>
 </div>
-<p class="text-xs text-slate-400">自動生成文案、SEO 文章、社群貼文</p>
+<p class="text-xs text-gray-500">自動生成文案、SEO 文章、社群貼文</p>
 <div class="flex flex-wrap gap-1">
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">內容</span>
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">文章</span>
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">content</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500">內容</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500">文章</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500">content</span>
 </div>
 </div>
-<div class="bg-cyberPanel border border-slate-800 rounded-xl p-5 space-y-3">
+<div class="bg-white border border-gray-200 rounded-xl p-5 space-y-3">
 <div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-2xl">🔧</div>
+<div class="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center text-2xl">🔧</div>
 <div>
 <div class="font-bold text-white text-sm">AI-03 系統維運管家</div>
-<div class="text-[10px] text-slate-500 font-mono">Copilot + Meta · 優先級 3</div>
+<div class="text-[10px] text-gray-400 font-mono">Copilot + Meta · 優先級 3</div>
 </div>
 </div>
-<p class="text-xs text-slate-400">監控系統狀態、Log 診斷、技術排障</p>
+<p class="text-xs text-gray-500">監控系統狀態、Log 診斷、技術排障</p>
 <div class="flex flex-wrap gap-1">
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">技術</span>
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">錯誤</span>
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">error</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500">技術</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500">錯誤</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500">error</span>
 </div>
 </div>
-<div class="bg-cyberPanel border border-slate-800 rounded-xl p-5 space-y-3">
+<div class="bg-white border border-gray-200 rounded-xl p-5 space-y-3">
 <div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-lg bg-rose-500/10 flex items-center justify-center text-2xl">📦</div>
+<div class="w-10 h-10 rounded-lg bg-rose-50 flex items-center justify-center text-2xl">📦</div>
 <div>
 <div class="font-bold text-white text-sm">AI-04 交付與工單專員</div>
-<div class="text-[10px] text-slate-500 font-mono">MuleRun · 優先級 4</div>
+<div class="text-[10px] text-gray-400 font-mono">MuleRun · 優先級 4</div>
 </div>
 </div>
-<p class="text-xs text-slate-400">追蹤專案進度、收集修改建議、自動回傳報告</p>
+<p class="text-xs text-gray-500">追蹤專案進度、收集修改建議、自動回傳報告</p>
 <div class="flex flex-wrap gap-1">
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">進度</span>
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">專案</span>
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">delivery</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500">進度</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500">專案</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500">delivery</span>
 </div>
 </div>
-<div class="bg-cyberPanel border border-slate-800 rounded-xl p-5 space-y-3">
+<div class="bg-white border border-gray-200 rounded-xl p-5 space-y-3">
 <div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-lg bg-violet-500/10 flex items-center justify-center text-2xl">🛡️</div>
+<div class="w-10 h-10 rounded-lg bg-violet-50 flex items-center justify-center text-2xl">🛡️</div>
 <div>
 <div class="font-bold text-white text-sm">AI-05 合規審查專員</div>
-<div class="text-[10px] text-slate-500 font-mono">Manus · 優先級 5</div>
+<div class="text-[10px] text-gray-400 font-mono">Manus · 優先級 5</div>
 </div>
 </div>
-<p class="text-xs text-slate-400">審查合約、檢核輸入、管理 API 權限</p>
+<p class="text-xs text-gray-500">審查合約、檢核輸入、管理 API 權限</p>
 <div class="flex flex-wrap gap-1">
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">合約</span>
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">法律</span>
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400">legal</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500">合約</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500">法律</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500">legal</span>
 </div>
 </div>
 </div>
@@ -162,29 +162,29 @@ body{font-family:'Inter','Noto Sans TC',sans-serif}
 <!-- QUICK START -->
 <section class="space-y-6">
 <div class="flex items-center gap-2">
-<div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-sm">2</div>
-<h3 class="text-xl font-bold text-white">快速開始：3 步驟嵌入</h3>
+<div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-400 flex items-center justify-center font-bold text-sm">2</div>
+<h3 class="text-xl font-bold text-gray-900">快速開始：3 步驟嵌入</h3>
 </div>
 
 <div class="space-y-4">
-<div class="bg-cyberPanel border border-slate-800 rounded-xl p-6 space-y-4">
+<div class="bg-white border border-gray-200 rounded-xl p-6 space-y-4">
 <div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold text-sm">1</div>
-<h4 class="font-bold text-white">註冊網站並取得 Site ID</h4>
+<div class="w-8 h-8 rounded-full bg-cyan-100 text-cyan-400 flex items-center justify-center font-bold text-sm">1</div>
+<h4 class="font-bold text-gray-900">註冊網站並取得 Site ID</h4>
 </div>
-<p class="text-xs text-slate-400">在下方表單輸入網站資訊，系統會自動產生唯一的 Site ID。</p>
+<p class="text-xs text-gray-500">在下方表單輸入網站資訊，系統會自動產生唯一的 Site ID。</p>
 <form id="registerForm" class="grid md:grid-cols-2 gap-4 pt-2">
 <div>
-<label class="text-xs text-slate-400 mb-1 block">網站名稱 *</label>
-<input type="text" id="siteName" required placeholder="例如：陳老闆餐飲官網" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:border-snt-500 focus:outline-none">
+<label class="text-xs text-gray-500 mb-1 block">網站名稱 *</label>
+<input type="text" id="siteName" required placeholder="例如：陳老闆餐飲官網" class="w-full bg-gray-100 border border-gray-300 rounded-lg px-3 py-2 text-sm text-white focus:border-snt-500 focus:outline-none">
 </div>
 <div>
-<label class="text-xs text-slate-400 mb-1 block">網站網址 *</label>
-<input type="url" id="siteUrl" required placeholder="https://example.com" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:border-snt-500 focus:outline-none">
+<label class="text-xs text-gray-500 mb-1 block">網站網址 *</label>
+<input type="url" id="siteUrl" required placeholder="https://example.com" class="w-full bg-gray-100 border border-gray-300 rounded-lg px-3 py-2 text-sm text-white focus:border-snt-500 focus:outline-none">
 </div>
 <div>
-<label class="text-xs text-slate-400 mb-1 block">產業類別</label>
-<select id="siteIndustry" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:border-snt-500 focus:outline-none">
+<label class="text-xs text-gray-500 mb-1 block">產業類別</label>
+<select id="siteIndustry" class="w-full bg-gray-100 border border-gray-300 rounded-lg px-3 py-2 text-sm text-white focus:border-snt-500 focus:outline-none">
 <option>餐飲業</option>
 <option>命理業</option>
 <option>醫美業</option>
@@ -195,8 +195,8 @@ body{font-family:'Inter','Noto Sans TC',sans-serif}
 </select>
 </div>
 <div>
-<label class="text-xs text-slate-400 mb-1 block">聯絡 Email</label>
-<input type="email" id="siteEmail" placeholder="admin@example.com" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:border-snt-500 focus:outline-none">
+<label class="text-xs text-gray-500 mb-1 block">聯絡 Email</label>
+<input type="email" id="siteEmail" placeholder="admin@example.com" class="w-full bg-gray-100 border border-gray-300 rounded-lg px-3 py-2 text-sm text-white focus:border-snt-500 focus:outline-none">
 </div>
 <div class="md:col-span-2">
 <button type="submit" class="bg-gradient-to-r from-snt-600 to-cyan-600 hover:from-snt-500 hover:to-cyan-500 text-white font-semibold py-2.5 px-6 rounded-lg transition">
@@ -206,39 +206,39 @@ body{font-family:'Inter','Noto Sans TC',sans-serif}
 </form>
 </div>
 
-<div class="bg-cyberPanel border border-slate-800 rounded-xl p-6 space-y-4">
+<div class="bg-white border border-gray-200 rounded-xl p-6 space-y-4">
 <div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold text-sm">2</div>
-<h4 class="font-bold text-white">選擇啟用的 AI Agent</h4>
+<div class="w-8 h-8 rounded-full bg-purple-100 text-purple-400 flex items-center justify-center font-bold text-sm">2</div>
+<h4 class="font-bold text-gray-900">選擇啟用的 AI Agent</h4>
 </div>
-<p class="text-xs text-slate-400">預設啟用全部 6 大 Agent，也可依需求勾選。</p>
+<p class="text-xs text-gray-500">預設啟用全部 6 大 Agent，也可依需求勾選。</p>
 <div class="grid grid-cols-2 md:grid-cols-3 gap-3" id="agentToggles">
-<label class="agent-toggle active flex items-center gap-2 p-3 rounded-lg border border-slate-700 cursor-pointer">
+<label class="agent-toggle active flex items-center gap-2 p-3 rounded-lg border border-gray-300 cursor-pointer">
 <input type="checkbox" value="AI-00" checked class="hidden">
 <span class="text-lg">🎯</span>
 <span class="text-xs font-medium">AI-00 總調度</span>
 </label>
-<label class="agent-toggle active flex items-center gap-2 p-3 rounded-lg border border-slate-700 cursor-pointer">
+<label class="agent-toggle active flex items-center gap-2 p-3 rounded-lg border border-gray-300 cursor-pointer">
 <input type="checkbox" value="AI-01" checked class="hidden">
 <span class="text-lg">💼</span>
 <span class="text-xs font-medium">AI-01 業務</span>
 </label>
-<label class="agent-toggle active flex items-center gap-2 p-3 rounded-lg border border-slate-700 cursor-pointer">
+<label class="agent-toggle active flex items-center gap-2 p-3 rounded-lg border border-gray-300 cursor-pointer">
 <input type="checkbox" value="AI-02" checked class="hidden">
 <span class="text-lg">✍️</span>
 <span class="text-xs font-medium">AI-02 內容</span>
 </label>
-<label class="agent-toggle active flex items-center gap-2 p-3 rounded-lg border border-slate-700 cursor-pointer">
+<label class="agent-toggle active flex items-center gap-2 p-3 rounded-lg border border-gray-300 cursor-pointer">
 <input type="checkbox" value="AI-03" checked class="hidden">
 <span class="text-lg">🔧</span>
 <span class="text-xs font-medium">AI-03 維運</span>
 </label>
-<label class="agent-toggle active flex items-center gap-2 p-3 rounded-lg border border-slate-700 cursor-pointer">
+<label class="agent-toggle active flex items-center gap-2 p-3 rounded-lg border border-gray-300 cursor-pointer">
 <input type="checkbox" value="AI-04" checked class="hidden">
 <span class="text-lg">📦</span>
 <span class="text-xs font-medium">AI-04 交付</span>
 </label>
-<label class="agent-toggle active flex items-center gap-2 p-3 rounded-lg border border-slate-700 cursor-pointer">
+<label class="agent-toggle active flex items-center gap-2 p-3 rounded-lg border border-gray-300 cursor-pointer">
 <input type="checkbox" value="AI-05" checked class="hidden">
 <span class="text-lg">🛡️</span>
 <span class="text-xs font-medium">AI-05 合規</span>
@@ -246,15 +246,15 @@ body{font-family:'Inter','Noto Sans TC',sans-serif}
 </div>
 </div>
 
-<div class="bg-cyberPanel border border-slate-800 rounded-xl p-6 space-y-4">
+<div class="bg-white border border-gray-200 rounded-xl p-6 space-y-4">
 <div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-sm">3</div>
-<h4 class="font-bold text-white">複製嵌入代碼</h4>
+<div class="w-8 h-8 rounded-full bg-amber-100 text-amber-400 flex items-center justify-center font-bold text-sm">3</div>
+<h4 class="font-bold text-gray-900">複製嵌入代碼</h4>
 </div>
-<p class="text-xs text-slate-400">將以下代碼貼到網站的 <code class="bg-slate-900 px-1.5 py-0.5 rounded text-cyan-400">&lt;/body&gt;</code> 前。</p>
+<p class="text-xs text-gray-500">將以下代碼貼到網站的 <code class="bg-gray-100 px-1.5 py-0.5 rounded text-cyan-400">&lt;/body&gt;</code> 前。</p>
 <div class="code-block" id="embedCode">
 <button class="copy-btn" onclick="copyEmbedCode()"><i class="fa-solid fa-copy mr-1"></i>複製</button>
-<span class="text-slate-500">&lt;!-- SNT Nexus SDK - 六大 AI Agent 自動對接 --&gt;</span><br>
+<span class="text-gray-400">&lt;!-- SNT Nexus SDK - 六大 AI Agent 自動對接 --&gt;</span><br>
 <span class="text-rose-400">&lt;script</span> <span class="text-amber-300">src</span>=<span class="text-emerald-300">"https://xingdeng.tw/sdk/snt-nexus-sdk.js"</span><br>
   <span class="text-amber-300">data-site-id</span>=<span class="text-emerald-300">"<span id="generatedSiteId">your-site-id</span>"</span><br>
   <span class="text-amber-300">data-agents</span>=<span class="text-emerald-300">"<span id="generatedAgents">AI-00,AI-01,AI-02,AI-03,AI-04,AI-05</span>"</span><br>
@@ -262,18 +262,18 @@ body{font-family:'Inter','Noto Sans TC',sans-serif}
   <span class="text-amber-300">data-position</span>=<span class="text-emerald-300">"bottom-right"</span><br>
 <span class="text-rose-400">&gt;&lt;/script&gt;</span>
 </div>
-<div class="bg-slate-900/50 border border-slate-800 rounded-lg p-4 text-xs text-slate-400 space-y-2">
+<div class="bg-gray-50/70 border border-gray-200 rounded-lg p-4 text-xs text-gray-500 space-y-2">
 <div class="flex items-start gap-2">
 <i class="fa-solid fa-circle-info text-cyan-400 mt-0.5"></i>
-<div><strong class="text-white">自動偵測：</strong>SDK 會根據使用者訊息自動選擇最適合的 AI Agent 回應。</div>
+<div><strong class="text-gray-900">自動偵測：</strong>SDK 會根據使用者訊息自動選擇最適合的 AI Agent 回應。</div>
 </div>
 <div class="flex items-start gap-2">
 <i class="fa-solid fa-chart-line text-emerald-400 mt-0.5"></i>
-<div><strong class="text-white">內建分析：</strong>自動追蹤頁面瀏覽、互動次數、轉換率等數據。</div>
+<div><strong class="text-gray-900">內建分析：</strong>自動追蹤頁面瀏覽、互動次數、轉換率等數據。</div>
 </div>
 <div class="flex items-start gap-2">
 <i class="fa-solid fa-mobile-screen text-purple-400 mt-0.5"></i>
-<div><strong class="text-white">響應式設計：</strong>聊天小工具自動適配手機/平板/桌面。</div>
+<div><strong class="text-gray-900">響應式設計：</strong>聊天小工具自動適配手機/平板/桌面。</div>
 </div>
 </div>
 </div>
@@ -285,12 +285,12 @@ body{font-family:'Inter','Noto Sans TC',sans-serif}
 <div class="flex items-center justify-between">
 <div class="flex items-center gap-2">
 <div class="w-8 h-8 rounded-lg bg-gold/20 text-gold flex items-center justify-center font-bold text-sm">3</div>
-<h3 class="text-xl font-bold text-white">已註冊網站</h3>
+<h3 class="text-xl font-bold text-gray-900">已註冊網站</h3>
 </div>
-<div class="text-xs text-slate-500 font-mono">共 <span id="siteCount">0</span> 個網站</div>
+<div class="text-xs text-gray-400 font-mono">共 <span id="siteCount">0</span> 個網站</div>
 </div>
 <div id="sitesList" class="space-y-3">
-<div class="text-center py-12 text-slate-500 text-sm">
+<div class="text-center py-12 text-gray-400 text-sm">
 <i class="fa-solid fa-inbox text-3xl mb-3 block opacity-30"></i>
 尚無已註冊網站，請在上方表單註冊
 </div>
@@ -300,20 +300,20 @@ body{font-family:'Inter','Noto Sans TC',sans-serif}
 <!-- API DOCUMENTATION -->
 <section class="space-y-6">
 <div class="flex items-center gap-2">
-<div class="w-8 h-8 rounded-lg bg-rose-500/20 text-rose-400 flex items-center justify-center font-bold text-sm">4</div>
-<h3 class="text-xl font-bold text-white">SDK API 文件</h3>
+<div class="w-8 h-8 rounded-lg bg-rose-100 text-rose-400 flex items-center justify-center font-bold text-sm">4</div>
+<h3 class="text-xl font-bold text-gray-900">SDK API 文件</h3>
 </div>
-<div class="bg-cyberPanel border border-slate-800 rounded-xl p-6 space-y-4">
-<h4 class="font-bold text-white text-sm">手動初始化（進階用法）</h4>
+<div class="bg-white border border-gray-200 rounded-xl p-6 space-y-4">
+<h4 class="font-bold text-gray-900 text-sm">手動初始化（進階用法）</h4>
 <div class="code-block">
-<span class="text-slate-500">// 載入 SDK</span><br>
+<span class="text-gray-400">// 載入 SDK</span><br>
 <span class="text-rose-400">&lt;script</span> <span class="text-amber-300">src</span>=<span class="text-emerald-300">"https://xingdeng.tw/sdk/snt-nexus-sdk.js"</span><span class="text-rose-400">&gt;&lt;/script&gt;</span><br>
 <br>
-<span class="text-slate-500">// 手動初始化</span><br>
+<span class="text-gray-400">// 手動初始化</span><br>
 <span class="text-rose-400">&lt;script&gt;</span><br>
 &nbsp;&nbsp;window.SNT.init({<br>
 &nbsp;&nbsp;&nbsp;&nbsp;siteId: <span class="text-emerald-300">'your-site-id'</span>,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;agents: [<span class="text-emerald-300">'AI-00'</span>, <span class="text-emerald-300">'AI-01'</span>, <span class="text-emerald-300">'AI-02'</span>], <span class="text-slate-500">// 只啟用部分 Agent</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;agents: [<span class="text-emerald-300">'AI-00'</span>, <span class="text-emerald-300">'AI-01'</span>, <span class="text-emerald-300">'AI-02'</span>], <span class="text-gray-400">// 只啟用部分 Agent</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;theme: <span class="text-emerald-300">'dark'</span>,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;position: <span class="text-emerald-300">'bottom-right'</span>,<br>
 &nbsp;&nbsp;&nbsp;&nbsp;autoDetect: <span class="text-cyan-400">true</span>,<br>
@@ -324,21 +324,21 @@ body{font-family:'Inter','Noto Sans TC',sans-serif}
 <span class="text-rose-400">&lt;/script&gt;</span>
 </div>
 </div>
-<div class="bg-cyberPanel border border-slate-800 rounded-xl p-6 space-y-4">
-<h4 class="font-bold text-white text-sm">公開 API 方法</h4>
+<div class="bg-white border border-gray-200 rounded-xl p-6 space-y-4">
+<h4 class="font-bold text-gray-900 text-sm">公開 API 方法</h4>
 <div class="code-block">
-<span class="text-slate-500">// 切換聊天面板</span><br>
+<span class="text-gray-400">// 切換聊天面板</span><br>
 window.SNT.toggleChat();<br>
 <br>
-<span class="text-slate-500">// 選擇特定 Agent</span><br>
+<span class="text-gray-400">// 選擇特定 Agent</span><br>
 window.SNT.selectAgent(<span class="text-emerald-300">'AI-01'</span>);<br>
 <br>
-<span class="text-slate-500">// 取得目前 Agent</span><br>
+<span class="text-gray-400">// 取得目前 Agent</span><br>
 <span class="text-cyan-400">const</span> agent = window.SNT.getCurrentAgent();<br>
 <br>
-<span class="text-slate-500">// 取得分析數據</span><br>
+<span class="text-gray-400">// 取得分析數據</span><br>
 <span class="text-cyan-400">const</span> stats = window.SNT.getAnalytics();<br>
-console.log(stats); <span class="text-slate-500">// { pageViews: 5, interactions: 12, conversions: 2 }</span>
+console.log(stats); <span class="text-gray-400">// { pageViews: 5, interactions: 12, conversions: 2 }</span>
 </div>
 </div>
 </section>
@@ -346,9 +346,9 @@ console.log(stats); <span class="text-slate-500">// { pageViews: 5, interactions
 </main>
 
 <!-- FOOTER -->
-<footer class="border-t border-slate-800 bg-slate-950 px-6 py-8 mt-12">
-<div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4 text-xs text-slate-500 font-mono">
-<div>© 2026 光曜星樞 SNT · <a href="/" class="hover:text-slate-300">首頁</a> · <a href="/privacy" class="hover:text-slate-300">法律條款</a></div>
+<footer class="border-t border-gray-200 bg-white px-6 py-8 mt-12">
+<div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4 text-xs text-gray-400 font-mono">
+<div>© 2026 光曜星樞 SNT · <a href="/" class="hover:text-gray-600">首頁</a> · <a href="/privacy" class="hover:text-gray-600">法律條款</a></div>
 <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> xingdeng.tw</div>
 </div>
 </footer>
@@ -365,7 +365,7 @@ function renderSites() {
   
   if (registeredSites.length === 0) {
     list.innerHTML = `
-      <div class="text-center py-12 text-slate-500 text-sm">
+      <div class="text-center py-12 text-gray-400 text-sm">
         <i class="fa-solid fa-inbox text-3xl mb-3 block opacity-30"></i>
         尚無已註冊網站，請在上方表單註冊
       </div>
@@ -374,7 +374,7 @@ function renderSites() {
   }
   
   list.innerHTML = registeredSites.map((site, idx) => `
-    <div class="bg-cyberPanel border border-slate-800 rounded-xl p-5 space-y-3">
+    <div class="bg-white border border-gray-200 rounded-xl p-5 space-y-3">
       <div class="flex items-start justify-between">
         <div class="flex items-start gap-3">
           <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-snt-500 to-cyan-500 flex items-center justify-center text-white font-bold">
@@ -382,15 +382,15 @@ function renderSites() {
           </div>
           <div>
             <div class="font-bold text-white text-sm">${site.name}</div>
-            <div class="text-xs text-slate-400 font-mono">${site.url}</div>
-            <div class="text-[10px] text-slate-500 mt-1">
+            <div class="text-xs text-gray-500 font-mono">${site.url}</div>
+            <div class="text-[10px] text-gray-400 mt-1">
               <span class="text-cyan-400 font-mono">${site.siteId}</span> · 
               ${site.industry} · 
               ${site.agents.length} 個 Agent
             </div>
           </div>
         </div>
-        <button onclick="deleteSite(${idx})" class="text-slate-500 hover:text-rose-400 transition">
+        <button onclick="deleteSite(${idx})" class="text-gray-400 hover:text-rose-400 transition">
           <i class="fa-solid fa-trash"></i>
         </button>
       </div>

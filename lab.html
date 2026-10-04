@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-TW" class="dark">
+<!DOCTYPE html><html lang="zh-TW" >
 <head>
 <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -14,48 +14,48 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{snt:{400:'#2dd4bf',500:'#14b8a6',600:'#0d9488',gold:'#fbbf24',cyan:'#06b6d4',purple:'#a855f7'},cyberDark:'#070a12',cyberPanel:'#0f172a',cyberCard:'#1e293b'},fontFamily:{sans:['Inter','Noto Sans TC','sans-serif'],mono:['Fira Code','monospace']}}}}</script>
-<style>body{font-family:'Inter','Noto Sans TC',sans-serif}::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#070a12}::-webkit-scrollbar-thumb{background:#334155;border-radius:3px}</style>
+<style>body{font-family:'Inter','Noto Sans TC',sans-serif}::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#f1f5f9}::-webkit-scrollbar-thumb{background:#94a3b8;border-radius:3px}.hud-border{border:1.5px solid rgba(6,182,212,0.5);box-shadow:0 4px 6px -1px rgba(0,0,0,0.08),0 2px 4px -1px rgba(0,0,0,0.04)}.card-elevated{border:1px solid #E5E7EB;box-shadow:0 4px 6px -1px rgba(0,0,0,0.08),0 2px 4px -1px rgba(0,0,0,0.04);transition:all 0.2s ease}.card-elevated:hover{box-shadow:0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05);transform:translateY(-2px)}</style>
 </head>
-<body class="bg-cyberDark text-slate-100 min-h-screen antialiased">
+<body class="bg-gray-50 text-gray-800 min-h-screen antialiased">
 
 <!-- HEADER -->
-<header class="border-b border-slate-800 bg-slate-950/90 backdrop-blur sticky top-0 z-50 px-4 lg:px-8 py-3">
+<header class="border-b border-gray-200 bg-white/90 backdrop-blur sticky top-0 z-50 px-4 lg:px-8 py-3">
     <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
         <a href="/" class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-snt-600 via-cyan-500 to-amber-400 p-0.5 flex items-center justify-center shadow-lg shadow-snt-500/20">
-                <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center font-black text-amber-400 font-mono text-lg">SNT</div>
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-snt-600 via-cyan-500 to-amber-400 p-0.5 flex items-center justify-center shadow-lg shadow-snt-500/10">
+                <div class="w-full h-full bg-slate-900 rounded-[10px] flex items-center justify-center font-black text-amber-400 font-mono text-lg">SNT</div>
             </div>
             <div class="hidden sm:block">
-                <h1 class="font-bold text-base text-white leading-tight">光曜星樞</h1>
-                <p class="text-[10px] text-slate-400 font-mono">8K 沉浸式科技藝廊</p>
+                <h1 class="font-bold text-base text-gray-900 leading-tight">光曜星樞</h1>
+                <p class="text-[10px] text-gray-500 font-mono">8K 沉浸式科技藝廊</p>
             </div>
         </a>
         <nav class="hidden md:flex items-center gap-2 text-xs">
-            <a href="/" class="px-4 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium flex items-center gap-2 transition">
+            <a href="/" class="px-4 py-2.5 rounded-lg bg-white border-2 border-gray-300 text-gray-700 hover:bg-gray-900 hover:text-white hover:border-gray-900 font-medium flex items-center gap-2 transition">
                 <i class="fa-solid fa-home"></i> 首頁
             </a>
-            <a href="/solutions" class="px-4 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium flex items-center gap-2 transition">
+            <a href="/solutions" class="px-4 py-2.5 rounded-lg bg-white border-2 border-gray-300 text-gray-700 hover:bg-gray-900 hover:text-white hover:border-gray-900 font-medium flex items-center gap-2 transition">
                 <i class="fa-solid fa-briefcase text-purple-400"></i> 15大子系統
             </a>
-            <a href="/pricing" class="px-4 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium flex items-center gap-2 transition">
+            <a href="/pricing" class="px-4 py-2.5 rounded-lg bg-white border-2 border-gray-300 text-gray-700 hover:bg-gray-900 hover:text-white hover:border-gray-900 font-medium flex items-center gap-2 transition">
                 <i class="fa-solid fa-tag text-gold"></i> 定價
             </a>
             <a href="/contact" class="px-4 py-2.5 rounded-lg bg-gradient-to-r from-snt-600 to-cyan-600 hover:from-snt-500 hover:to-cyan-500 text-white font-medium flex items-center gap-2 transition">
                 <i class="fa-solid fa-phone"></i> 預約諮詢
             </a>
         </nav>
-        <button onclick="document.getElementById('labMobileMenu').classList.toggle('hidden')" class="md:hidden w-10 h-10 rounded-lg bg-slate-800 hover:bg-slate-700 flex items-center justify-center transition">
+        <button onclick="document.getElementById('labMobileMenu').classList.toggle('hidden')" class="md:hidden w-10 h-10 rounded-lg bg-gray-200 hover:bg-gray-900 hover:text-white flex items-center justify-center transition">
             <i class="fa-solid fa-bars text-white text-lg"></i>
         </button>
     </div>
     <div id="labMobileMenu" class="md:hidden hidden mt-4 pb-4 space-y-2">
-        <a href="/" class="block w-full px-4 py-3 rounded-lg bg-slate-800 text-slate-300 font-medium flex items-center gap-3 transition hover:bg-slate-700">
+        <a href="/" class="block w-full px-4 py-3 rounded-lg bg-white border-2 border-gray-300 text-gray-700 font-medium hover:bg-gray-900 hover:text-white hover:border-gray-900 flex items-center gap-3 transition hover:bg-gray-900 hover:text-white">
             <i class="fa-solid fa-home"></i> 首頁
         </a>
-        <a href="/solutions" class="block w-full px-4 py-3 rounded-lg bg-slate-800 text-slate-300 font-medium flex items-center gap-3 transition hover:bg-slate-700">
+        <a href="/solutions" class="block w-full px-4 py-3 rounded-lg bg-white border-2 border-gray-300 text-gray-700 font-medium hover:bg-gray-900 hover:text-white hover:border-gray-900 flex items-center gap-3 transition hover:bg-gray-900 hover:text-white">
             <i class="fa-solid fa-briefcase text-purple-400"></i> 15大子系統
         </a>
-        <a href="/pricing" class="block w-full px-4 py-3 rounded-lg bg-slate-800 text-slate-300 font-medium flex items-center gap-3 transition hover:bg-slate-700">
+        <a href="/pricing" class="block w-full px-4 py-3 rounded-lg bg-white border-2 border-gray-300 text-gray-700 font-medium hover:bg-gray-900 hover:text-white hover:border-gray-900 flex items-center gap-3 transition hover:bg-gray-900 hover:text-white">
             <i class="fa-solid fa-tag text-gold"></i> 方案定價
         </a>
         <a href="/contact" class="block w-full px-4 py-3 rounded-lg bg-gradient-to-r from-snt-600 to-cyan-600 text-white font-medium flex items-center gap-3 transition">
@@ -69,24 +69,24 @@
 <section class="relative overflow-hidden py-16 md:py-24">
 <div class="absolute inset-0 bg-gradient-to-b from-purple-900/10 via-transparent to-transparent"></div>
 <div class="absolute top-1/3 left-1/4 w-96 h-96 bg-snt-500/5 rounded-full blur-[120px]"></div>
-<div class="absolute bottom-1/3 right-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-1/3 right-1/4 w-96 h-96 bg-cyan-50 rounded-full blur-[120px]"></div>
 <div class="relative z-10 max-w-5xl mx-auto px-6 text-center space-y-6">
-<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-snt-500/10 border border-snt-500/30 text-snt-400 text-xs font-mono">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-snt-50 border border-snt-300 text-snt-400 text-xs font-mono">
 <i class="fa-solid fa-flask-vial"></i> SNT CYBER LAB · 9 EXHIBITS · 8K RESOLUTION
 </div>
-<h2 class="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight">
+<h2 class="text-3xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-tight">
 微型機器人<span class="bg-gradient-to-r from-snt-400 via-cyan-400 to-amber-300 bg-clip-text text-transparent">沙盒展覽館</span>
 </h2>
-<p class="text-slate-400 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+<p class="text-gray-500 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
 將抽象的 AI Agent 運算，高規格包裝為微型機器人在晶體沙盒內銲接鋪線的沉浸式展覽。<br>
 每一件展品都是一個獨立運作的 AI 核心宇宙，由 6 大 AI 數位員工協同建構。
 </p>
 <div class="flex flex-wrap justify-center gap-3 text-xs font-mono">
-<span class="px-3 py-1.5 rounded-lg bg-amber-500/10 text-amber-400 border border-amber-500/20">琥珀金 · 3 件</span>
-<span class="px-3 py-1.5 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">霓虹綠 · 1 件</span>
-<span class="px-3 py-1.5 rounded-lg bg-rose-500/10 text-rose-400 border border-rose-500/20">危機紅 · 1 件</span>
-<span class="px-3 py-1.5 rounded-lg bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">冷光藍 · 3 件</span>
-<span class="px-3 py-1.5 rounded-lg bg-purple-500/10 text-purple-400 border border-purple-500/20">品牌主視覺 · 1 件</span>
+<span class="px-3 py-1.5 rounded-lg bg-amber-50 text-amber-400 border border-amber-200">琥珀金 · 3 件</span>
+<span class="px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-400 border border-emerald-500/20">霓虹綠 · 1 件</span>
+<span class="px-3 py-1.5 rounded-lg bg-rose-50 text-rose-400 border border-rose-200">危機紅 · 1 件</span>
+<span class="px-3 py-1.5 rounded-lg bg-cyan-50 text-cyan-400 border border-cyan-200">冷光藍 · 3 件</span>
+<span class="px-3 py-1.5 rounded-lg bg-purple-50 text-purple-400 border border-purple-200">品牌主視覺 · 1 件</span>
 </div>
 </div>
 </section>
@@ -94,12 +94,12 @@
 <!-- FILTER BAR -->
 <div class="max-w-7xl mx-auto px-6 mb-8">
 <div class="flex flex-wrap gap-2 justify-center">
-<button class="filter-btn active px-4 py-2 rounded-lg text-xs font-medium border border-slate-700 transition">全部 (9)</button>
-<button class="filter-btn bg-slate-800 text-amber-400 px-4 py-2 rounded-lg text-xs font-medium border border-slate-700 hover:bg-slate-700 transition">琥珀金系列</button>
-<button class="filter-btn bg-slate-800 text-emerald-400 px-4 py-2 rounded-lg text-xs font-medium border border-slate-700 hover:bg-slate-700 transition">神經網絡</button>
-<button class="filter-btn bg-slate-800 text-rose-400 px-4 py-2 rounded-lg text-xs font-medium border border-slate-700 hover:bg-slate-700 transition">危機實驗</button>
-<button class="filter-btn bg-slate-800 text-cyan-400 px-4 py-2 rounded-lg text-xs font-medium border border-slate-700 hover:bg-slate-700 transition">冷光藍系列</button>
-<button class="filter-btn bg-slate-800 text-purple-400 px-4 py-2 rounded-lg text-xs font-medium border border-slate-700 hover:bg-slate-700 transition">品牌主視覺</button>
+<button class="filter-btn active px-4 py-2 rounded-lg text-xs font-medium border border-gray-300 transition">全部 (9)</button>
+<button class="filter-btn bg-white border-2 border-amber-300 text-amber-600 px-4 py-2 rounded-lg text-xs font-medium border border-gray-300 hover:bg-gray-900 hover:text-white transition">琥珀金系列</button>
+<button class="filter-btn bg-white border-2 border-emerald-300 text-emerald-600 px-4 py-2 rounded-lg text-xs font-medium border border-gray-300 hover:bg-gray-900 hover:text-white transition">神經網絡</button>
+<button class="filter-btn bg-white border-2 border-rose-300 text-rose-600 px-4 py-2 rounded-lg text-xs font-medium border border-gray-300 hover:bg-gray-900 hover:text-white transition">危機實驗</button>
+<button class="filter-btn bg-white border-2 border-cyan-300 text-cyan-600 px-4 py-2 rounded-lg text-xs font-medium border border-gray-300 hover:bg-gray-900 hover:text-white transition">冷光藍系列</button>
+<button class="filter-btn bg-white border-2 border-purple-300 text-purple-600 px-4 py-2 rounded-lg text-xs font-medium border border-gray-300 hover:bg-gray-900 hover:text-white transition">品牌主視覺</button>
 </div>
 </div>
 
@@ -107,221 +107,221 @@
 <main class="max-w-7xl mx-auto px-6 pb-20 space-y-8" id="exhibitGrid">
 
 <!-- EXHIBIT 01 -->
-<article class="exhibit-card bg-cyberPanel border border-slate-800 rounded-2xl overflow-hidden" data-cat="gold">
+<article class="exhibit-card bg-white border border-gray-200 rounded-2xl overflow-hidden" data-cat="gold">
 <div class="grid md:grid-cols-2 gap-0">
 <div class="relative overflow-hidden cursor-pointer">
 <img src="https://xingdeng.tw/images/exhibit-01.svg" alt="展品 #01：AI 進化核心 — 琥珀金升級儀式" class="exhibit-img w-full h-64 md:h-80 object-cover" loading="lazy">
-<div class="absolute top-3 left-3 px-2 py-1 rounded bg-amber-500/20 text-amber-400 text-[10px] font-mono border border-amber-500/30">#01 · 琥珀金</div>
-<div class="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-black/50 flex items-center justify-center text-white/70 hover:text-white"><i class="fa-solid fa-expand"></i></div>
+<div class="absolute top-3 left-3 px-2 py-1 rounded bg-amber-100 text-amber-400 text-[10px] font-mono border border-amber-300">#01 · 琥珀金</div>
+<div class="absolute bottom-3 right-3 w-8 h-8 rounded-full bg-black/50 flex items-center justify-center text-gray-500 hover:text-white"><i class="fa-solid fa-expand"></i></div>
 </div>
 <div class="p-6 space-y-3">
-<div class="flex items-center gap-2 text-[10px] font-mono text-slate-500">
+<div class="flex items-center gap-2 text-[10px] font-mono text-gray-400">
 <span>展品 #01</span><span>·</span><span>AI-00 總調度官</span><span>·</span><span>Groq 超低延遲驅動</span>
 </div>
-<h3 class="text-lg font-bold text-white">AI 進化核心 — 琥珀金升級儀式</h3>
-<p class="text-xs text-slate-400 leading-relaxed">
+<h3 class="text-lg font-bold text-gray-900">AI 進化核心 — 琥珀金升級儀式</h3>
+<p class="text-xs text-gray-500 leading-relaxed">
 透明立方體容器內，中央發光圓形平台刻有向上箭頭符號，散發強烈金色光芒。多隻機械臂對稱環繞，協同進行高精度組裝與能量傳輸。懸浮的小型飛行器在上方盤旋。象徵 <strong class="text-amber-300">AI-00 星樞總調度官</strong> 的升級進化時刻 — 30 秒內完成研判、安撫預答覆與工單路由。
 </p>
 <div class="flex flex-wrap gap-1.5 pt-1">
-<span class="px-2 py-0.5 rounded text-[10px] bg-amber-500/10 text-amber-400 border border-amber-500/20">能量升級</span>
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400 border border-slate-700">自動化組裝</span>
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400 border border-slate-700">飛行器盤旋</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-amber-50 text-amber-400 border border-amber-200">能量升級</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500 border border-gray-300">自動化組裝</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500 border border-gray-300">飛行器盤旋</span>
 </div>
 </div>
 </div>
 </article>
 
 <!-- EXHIBIT 02 -->
-<article class="exhibit-card bg-cyberPanel border border-slate-800 rounded-2xl overflow-hidden" data-cat="green">
+<article class="exhibit-card bg-white border border-gray-200 rounded-2xl overflow-hidden" data-cat="green">
 <div class="grid md:grid-cols-2 gap-0">
 <div class="p-6 space-y-3 order-2 md:order-1">
-<div class="flex items-center gap-2 text-[10px] font-mono text-slate-500">
+<div class="flex items-center gap-2 text-[10px] font-mono text-gray-400">
 <span>展品 #02</span><span>·</span><span>AI-02 內容主編</span><span>·</span><span>Gemini + Meta Llama</span>
 </div>
-<h3 class="text-lg font-bold text-white">神經網絡覺醒 — 綠色數據之樹</h3>
-<p class="text-xs text-slate-400 leading-relaxed">
+<h3 class="text-lg font-bold text-gray-900">神經網絡覺醒 — 綠色數據之樹</h3>
+<p class="text-xs text-gray-500 leading-relaxed">
 立方體內部充滿複雜的綠色光線與節點，形成一棵發光的數位樹狀結構 — 人工神經元網路的視覺化。根部紮於底部，枝椏向上延伸連接至無數閃爍光點。外圍機械臂與無人機掃描互動，背景佈滿 Matrix 式代碼雨。象徵 <strong class="text-emerald-300">AI-02 內容行銷主編</strong> 的創作神經 — 自動生成 LinkedIn / Threads / YouTube 多平台文案。
 </p>
 <div class="flex flex-wrap gap-1.5 pt-1">
-<span class="px-2 py-0.5 rounded text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">神經網絡</span>
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400 border border-slate-700">代碼雨</span>
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400 border border-slate-700">自我進化</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-emerald-50 text-emerald-400 border border-emerald-500/20">神經網絡</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500 border border-gray-300">代碼雨</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500 border border-gray-300">自我進化</span>
 </div>
 </div>
 <div class="relative overflow-hidden cursor-pointer order-1 md:order-2">
 <img src="https://xingdeng.tw/images/exhibit-02.svg" alt="展品 #02：神經網絡覺醒 — 綠色數據之樹" class="exhibit-img w-full h-64 md:h-80 object-cover" loading="lazy">
-<div class="absolute top-3 right-3 px-2 py-1 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-mono border border-emerald-500/30">#02 · 霓虹綠</div>
+<div class="absolute top-3 right-3 px-2 py-1 rounded bg-emerald-100 text-emerald-400 text-[10px] font-mono border border-emerald-300">#02 · 霓虹綠</div>
 </div>
 </div>
 </article>
 
 <!-- EXHIBIT 03 -->
-<article class="exhibit-card bg-cyberPanel border border-slate-800 rounded-2xl overflow-hidden" data-cat="red">
+<article class="exhibit-card bg-white border border-gray-200 rounded-2xl overflow-hidden" data-cat="red">
 <div class="grid md:grid-cols-2 gap-0">
 <div class="relative overflow-hidden cursor-pointer">
 <img src="https://xingdeng.tw/images/exhibit-03.svg" alt="展品 #03：科技臨界點 — 紅藍能量對決" class="exhibit-img w-full h-64 md:h-80 object-cover" loading="lazy">
-<div class="absolute top-3 left-3 px-2 py-1 rounded bg-rose-500/20 text-rose-400 text-[10px] font-mono border border-rose-500/30">#03 · 危機紅</div>
+<div class="absolute top-3 left-3 px-2 py-1 rounded bg-rose-100 text-rose-400 text-[10px] font-mono border border-rose-300">#03 · 危機紅</div>
 </div>
 <div class="p-6 space-y-3">
-<div class="flex items-center gap-2 text-[10px] font-mono text-slate-500">
+<div class="flex items-center gap-2 text-[10px] font-mono text-gray-400">
 <span>展品 #03</span><span>·</span><span>AI-03 系統維運</span><span>·</span><span>Copilot + Meta 自託管</span>
 </div>
-<h3 class="text-lg font-bold text-white">科技臨界點 — 紅藍能量對決</h3>
-<p class="text-xs text-slate-400 leading-relaxed">
+<h3 class="text-lg font-bold text-gray-900">科技臨界點 — 紅藍能量對決</h3>
+<p class="text-xs text-gray-500 leading-relaxed">
 巨大透明立方體內，複雜機械臂與發光藍色圓環運作中。後方巨大半透明紅色球體表面帶裂紋，散發強烈紅光。藍色代表穩定控制，紅色代表危險混沌 — 兩者交織象徵科技雙刃劍。濕滑金屬地面反射紅藍光影，右側濃煙瀰漫。象徵 <strong class="text-rose-300">AI-03 系統維運管家</strong> 在高壓環境下的危機處理 — 監控、診斷、自動化排障。
 </p>
 <div class="flex flex-wrap gap-1.5 pt-1">
-<span class="px-2 py-0.5 rounded text-[10px] bg-rose-500/10 text-rose-400 border border-rose-500/20">臨界狀態</span>
-<span class="px-2 py-0.5 rounded text-[10px] bg-blue-500/10 text-blue-400 border border-blue-500/20">藍紅對抗</span>
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400 border border-slate-700">危機處理</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-rose-50 text-rose-400 border border-rose-200">臨界狀態</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-blue-50 text-blue-400 border border-blue-200">藍紅對抗</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500 border border-gray-300">危機處理</span>
 </div>
 </div>
 </div>
 </article>
 
 <!-- EXHIBIT 04 -->
-<article class="exhibit-card bg-cyberPanel border border-slate-800 rounded-2xl overflow-hidden" data-cat="blue">
+<article class="exhibit-card bg-white border border-gray-200 rounded-2xl overflow-hidden" data-cat="blue">
 <div class="grid md:grid-cols-2 gap-0">
 <div class="p-6 space-y-3 order-2 md:order-1">
-<div class="flex items-center gap-2 text-[10px] font-mono text-slate-500">
+<div class="flex items-center gap-2 text-[10px] font-mono text-gray-400">
 <span>展品 #04</span><span>·</span><span>AI-01 業務諮詢</span><span>·</span><span>Gemini 多模態</span>
 </div>
-<h3 class="text-lg font-bold text-white">未來能源核心 — 六臂協同校準</h3>
-<p class="text-xs text-slate-400 leading-relaxed">
+<h3 class="text-lg font-bold text-gray-900">未來能源核心 — 六臂協同校準</h3>
+<p class="text-xs text-gray-500 leading-relaxed">
 透明玻璃罩保護的複雜機械裝置，核心是發光的藍白色球體 — 多層同心圓環構成，由六隻精密機械臂從不同方向同時操作。每隻手臂配備不同工具頭（鑽頭、雷射、感測器），進行能量注入與數據傳輸。底座佈滿電路線路與冷卻管。象徵 <strong class="text-cyan-300">AI-01 業務諮詢專家</strong> 的 24H 接待 — 多工處理、精準需求剖析。
 </p>
 <div class="flex flex-wrap gap-1.5 pt-1">
-<span class="px-2 py-0.5 rounded text-[10px] bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">六臂協同</span>
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400 border border-slate-700">能量注入</span>
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400 border border-slate-700">精密校準</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-cyan-50 text-cyan-400 border border-cyan-200">六臂協同</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500 border border-gray-300">能量注入</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500 border border-gray-300">精密校準</span>
 </div>
 </div>
 <div class="relative overflow-hidden cursor-pointer order-1 md:order-2">
 <img src="https://xingdeng.tw/images/exhibit-04.svg" alt="展品 #04：未來能源核心 — 六臂協同校準" class="exhibit-img w-full h-64 md:h-80 object-cover" loading="lazy">
-<div class="absolute top-3 right-3 px-2 py-1 rounded bg-cyan-500/20 text-cyan-400 text-[10px] font-mono border border-cyan-500/30">#04 · 冷光藍</div>
+<div class="absolute top-3 right-3 px-2 py-1 rounded bg-cyan-100 text-cyan-400 text-[10px] font-mono border border-cyan-300">#04 · 冷光藍</div>
 </div>
 </div>
 </article>
 
 <!-- EXHIBIT 05 -->
-<article class="exhibit-card bg-cyberPanel border border-slate-800 rounded-2xl overflow-hidden" data-cat="blue">
+<article class="exhibit-card bg-white border border-gray-200 rounded-2xl overflow-hidden" data-cat="blue">
 <div class="grid md:grid-cols-2 gap-0">
 <div class="relative overflow-hidden cursor-pointer">
 <img src="https://xingdeng.tw/images/exhibit-05.svg" alt="展品 #05：數據星圖 — 全球神經網絡" class="exhibit-img w-full h-64 md:h-80 object-cover" loading="lazy">
-<div class="absolute top-3 left-3 px-2 py-1 rounded bg-cyan-500/20 text-cyan-400 text-[10px] font-mono border border-cyan-500/30">#05 · 冷光藍</div>
+<div class="absolute top-3 left-3 px-2 py-1 rounded bg-cyan-100 text-cyan-400 text-[10px] font-mono border border-cyan-300">#05 · 冷光藍</div>
 </div>
 <div class="p-6 space-y-3">
-<div class="flex items-center gap-2 text-[10px] font-mono text-slate-500">
+<div class="flex items-center gap-2 text-[10px] font-mono text-gray-400">
 <span>展品 #05</span><span>·</span><span>AI-04 交付專員</span><span>·</span><span>MuleRun 編排</span>
 </div>
-<h3 class="text-lg font-bold text-white">數據星圖 — 全球神經網絡</h3>
-<p class="text-xs text-slate-400 leading-relaxed">
+<h3 class="text-lg font-bold text-gray-900">數據星圖 — 全球神經網絡</h3>
+<p class="text-xs text-gray-500 leading-relaxed">
 發光藍色球體由網格狀結構組成，類似地球儀或數據核心。多支機械手臂從不同方向伸向球體，進行操作與連接。底部層疊電路板與晶片模組，底座散發幽藍光。象徵 <strong class="text-cyan-300">AI-04 交付與工單專員</strong> 的全球交付網絡 — 追蹤里程碑、收集修改、自動回傳進度。
 </p>
 <div class="flex flex-wrap gap-1.5 pt-1">
-<span class="px-2 py-0.5 rounded text-[10px] bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">全球網絡</span>
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400 border border-slate-700">數據核心</span>
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400 border border-slate-700">交付追蹤</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-cyan-50 text-cyan-400 border border-cyan-200">全球網絡</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500 border border-gray-300">數據核心</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500 border border-gray-300">交付追蹤</span>
 </div>
 </div>
 </div>
 </article>
 
 <!-- EXHIBIT 06 -->
-<article class="exhibit-card bg-cyberPanel border border-slate-800 rounded-2xl overflow-hidden" data-cat="blue">
+<article class="exhibit-card bg-white border border-gray-200 rounded-2xl overflow-hidden" data-cat="blue">
 <div class="grid md:grid-cols-2 gap-0">
 <div class="p-6 space-y-3 order-2 md:order-1">
-<div class="flex items-center gap-2 text-[10px] font-mono text-slate-500">
+<div class="flex items-center gap-2 text-[10px] font-mono text-gray-400">
 <span>展品 #06</span><span>·</span><span>AI-05 合規審查</span><span>·</span><span>Manus 自主</span>
 </div>
-<h3 class="text-lg font-bold text-white">群體智能 — 機械蜘蛛光纖鋪設</h3>
-<p class="text-xs text-slate-400 leading-relaxed">
+<h3 class="text-lg font-bold text-gray-900">群體智能 — 機械蜘蛛光纖鋪設</h3>
+<p class="text-xs text-gray-500 leading-relaxed">
 透明立方體內，多隻機械蜘蛛擁有金屬外殼、多節肢體、發光藍色感應器，從前端發射藍色光束進行數據傳輸。牠們圍繞圓柱形核心節點運作，節點間由光纖相連形成動態神經網絡。底部佈滿微縮電子元件。象徵 <strong class="text-purple-300">AI-05 合規審查專員</strong> 的分散式監控 — 群體智能協同審查合約、檢核輸入、管理權限。
 </p>
 <div class="flex flex-wrap gap-1.5 pt-1">
-<span class="px-2 py-0.5 rounded text-[10px] bg-blue-500/10 text-blue-400 border border-blue-500/20">群體智能</span>
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400 border border-slate-700">光纖鋪設</span>
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400 border border-slate-700">分散式監控</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-blue-50 text-blue-400 border border-blue-200">群體智能</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500 border border-gray-300">光纖鋪設</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500 border border-gray-300">分散式監控</span>
 </div>
 </div>
 <div class="relative overflow-hidden cursor-pointer order-1 md:order-2">
 <img src="https://xingdeng.tw/images/exhibit-06.svg" alt="展品 #06：群體智能 — 機械蜘蛛光纖鋪設" class="exhibit-img w-full h-64 md:h-80 object-cover" loading="lazy">
-<div class="absolute top-3 right-3 px-2 py-1 rounded bg-cyan-500/20 text-cyan-400 text-[10px] font-mono border border-cyan-500/30">#06 · 冷光藍</div>
+<div class="absolute top-3 right-3 px-2 py-1 rounded bg-cyan-100 text-cyan-400 text-[10px] font-mono border border-cyan-300">#06 · 冷光藍</div>
 </div>
 </div>
 </article>
 
 <!-- EXHIBIT 07 -->
-<article class="exhibit-card bg-cyberPanel border border-slate-800 rounded-2xl overflow-hidden" data-cat="blue">
+<article class="exhibit-card bg-white border border-gray-200 rounded-2xl overflow-hidden" data-cat="blue">
 <div class="grid md:grid-cols-2 gap-0">
 <div class="relative overflow-hidden cursor-pointer">
 <img src="https://xingdeng.tw/images/exhibit-07.svg" alt="展品 #07：全息數據樞紐 — 城市夜景中的智慧核心" class="exhibit-img w-full h-64 md:h-80 object-cover" loading="lazy">
-<div class="absolute top-3 left-3 px-2 py-1 rounded bg-cyan-500/20 text-cyan-400 text-[10px] font-mono border border-cyan-500/30">#07 · 全息藍</div>
+<div class="absolute top-3 left-3 px-2 py-1 rounded bg-cyan-100 text-cyan-400 text-[10px] font-mono border border-cyan-300">#07 · 全息藍</div>
 </div>
 <div class="p-6 space-y-3">
-<div class="flex items-center gap-2 text-[10px] font-mono text-slate-500">
+<div class="flex items-center gap-2 text-[10px] font-mono text-gray-400">
 <span>展品 #07</span><span>·</span><span>SNT Nexus SDK</span><span>·</span><span>六大平台混合調度</span>
 </div>
-<h3 class="text-lg font-bold text-white">全息數據樞紐 — 城市夜景中的智慧核心</h3>
-<p class="text-xs text-slate-400 leading-relaxed">
+<h3 class="text-lg font-bold text-gray-900">全息數據樞紐 — 城市夜景中的智慧核心</h3>
+<p class="text-xs text-gray-500 leading-relaxed">
 透明立方體容器內，由無數發光藍色節點與連接線組成的全息投影結構 — 放射狀、網格狀與螺旋狀交織的立體網路。中央更明亮的多層環繞球形主體如系統的心臟。背景是模糊的城市夜景，地面反射藍光。象徵 <strong class="text-cyan-300">SNT Nexus SDK</strong> 的客戶端一鍵連動 — 將 AI 核心能力嵌入客戶網站，形成 Trojan Horse 病毒式引流網絡。
 </p>
 <div class="flex flex-wrap gap-1.5 pt-1">
-<span class="px-2 py-0.5 rounded text-[10px] bg-purple-500/10 text-purple-400 border border-purple-500/20">全息投影</span>
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400 border border-slate-700">城市樞紐</span>
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400 border border-slate-700">SDK 嵌入</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-purple-50 text-purple-400 border border-purple-200">全息投影</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500 border border-gray-300">城市樞紐</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500 border border-gray-300">SDK 嵌入</span>
 </div>
 </div>
 </div>
 </article>
 
 <!-- EXHIBIT 08 -->
-<article class="exhibit-card bg-cyberPanel border border-slate-800 rounded-2xl overflow-hidden" data-cat="gold">
+<article class="exhibit-card bg-white border border-gray-200 rounded-2xl overflow-hidden" data-cat="gold">
 <div class="grid md:grid-cols-2 gap-0">
 <div class="p-6 space-y-3 order-2 md:order-1">
-<div class="flex items-center gap-2 text-[10px] font-mono text-slate-500">
+<div class="flex items-center gap-2 text-[10px] font-mono text-gray-400">
 <span>展品 #08</span><span>·</span><span>SNT 雲端辦公室</span><span>·</span><span>6 平台混合調度</span>
 </div>
-<h3 class="text-lg font-bold text-white">科技聖物 — 封存於立方體的智慧之光</h3>
-<p class="text-xs text-slate-400 leading-relaxed">
+<h3 class="text-lg font-bold text-gray-900">科技聖物 — 封存於立方體的智慧之光</h3>
+<p class="text-xs text-gray-500 leading-relaxed">
 透明立方體由金屬框架與強化玻璃構成，四角工業風加固結構。內部懸浮發光球體 — 由藍色光點與連線構成的神經網絡。下方多層階梯狀平台散發冷冽藍光。內壁投影流動電路紋路與六邊形幾何。背景黑暗城市夜景，地面濕潤反光。象徵 <strong class="text-amber-300">SNT 雲端辦公室</strong> — 6 大 AI 數位員工被封存於精密控制的環境中，隨時待命為客戶服務。
 </p>
 <div class="flex flex-wrap gap-1.5 pt-1">
-<span class="px-2 py-0.5 rounded text-[10px] bg-amber-500/10 text-amber-400 border border-amber-500/20">科技聖物</span>
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400 border border-slate-700">精密封存</span>
-<span class="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-slate-400 border border-slate-700">隨時待命</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-amber-50 text-amber-400 border border-amber-200">科技聖物</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500 border border-gray-300">精密封存</span>
+<span class="px-2 py-0.5 rounded text-[10px] bg-gray-200 text-gray-500 border border-gray-300">隨時待命</span>
 </div>
 </div>
 <div class="relative overflow-hidden cursor-pointer order-1 md:order-2">
 <img src="https://xingdeng.tw/images/exhibit-08.svg" alt="展品 #08：科技聖物 — 封存於立方體的智慧之光" class="exhibit-img w-full h-64 md:h-80 object-cover" loading="lazy">
-<div class="absolute top-3 right-3 px-2 py-1 rounded bg-amber-500/20 text-amber-400 text-[10px] font-mono border border-amber-500/30">#08 · 琥珀金</div>
+<div class="absolute top-3 right-3 px-2 py-1 rounded bg-amber-100 text-amber-400 text-[10px] font-mono border border-amber-300">#08 · 琥珀金</div>
 </div>
 </div>
 </article>
 
 <!-- EXHIBIT 09 - BRAND HERO -->
-<article class="exhibit-card bg-gradient-to-br from-cyberPanel via-slate-900 to-cyberPanel border border-snt-500/30 rounded-2xl overflow-hidden hud-border" data-cat="brand">
+<article class="exhibit-card bg-gradient-to-br from-gray-50 via-white to-gray-50 border border-snt-300 rounded-2xl overflow-hidden hud-border" data-cat="brand">
 <div class="relative overflow-hidden cursor-pointer">
 <img src="https://xingdeng.tw/images/exhibit-09.svg" alt="展品 #09：ORBIT 2.0 光曜星樞 — 品牌主視覺" class="exhibit-img w-full h-64 md:h-96 object-cover" loading="lazy">
-<div class="absolute top-3 left-3 px-2 py-1 rounded bg-purple-500/20 text-purple-400 text-[10px] font-mono border border-purple-500/30">#09 · 品牌主視覺</div>
+<div class="absolute top-3 left-3 px-2 py-1 rounded bg-purple-100 text-purple-400 text-[10px] font-mono border border-purple-300">#09 · 品牌主視覺</div>
 </div>
 <div class="p-6 md:p-8 space-y-4 text-center">
-<div class="flex items-center justify-center gap-2 text-[10px] font-mono text-slate-500">
+<div class="flex items-center justify-center gap-2 text-[10px] font-mono text-gray-400">
 <span>展品 #09</span><span>·</span><span>ORBIT 2.0 光曜星樞</span><span>·</span><span>品牌主視覺海報</span>
 </div>
-<h3 class="text-xl md:text-2xl font-black text-white">萬流歸樞，萬智歸一</h3>
-<p class="text-xs md:text-sm text-slate-400 leading-relaxed max-w-2xl mx-auto">
+<h3 class="text-xl md:text-2xl font-black text-gray-900">萬流歸樞，萬智歸一</h3>
+<p class="text-xs md:text-sm text-gray-500 leading-relaxed max-w-2xl mx-auto">
 ORBIT 2.0 品牌主視覺海報。中央由網格線構成的數據星體內部爆發強烈光芒，多層同心圓軌道象徵系統架構。六大功能模組（GEO 搜尋、AI 客服、行銷推播、戰情分析、裂變矩陣、自動收款）以水晶球狀圖標環繞分布，透過光線相互連接。底部控制台顯示「AI Agent 沙盒架設中... [Sandbox Active]」。
 <br><br>
 <strong class="text-snt-400">UNITED IN LIGHT</strong> — 整合全域流量、匯聚多元智能，透過 AI Agent 沙盒環境實現自動化行銷、客服、財務與決策支持，打造一站式數位生態樞紐。
 </p>
 <div class="flex flex-wrap justify-center gap-2 pt-2">
-<span class="px-3 py-1 rounded-full text-[10px] bg-snt-500/10 text-snt-400 border border-snt-500/20">GEO 搜尋</span>
-<span class="px-3 py-1 rounded-full text-[10px] bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">AI 客服</span>
-<span class="px-3 py-1 rounded-full text-[10px] bg-amber-500/10 text-amber-400 border border-amber-500/20">行銷推播</span>
-<span class="px-3 py-1 rounded-full text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">戰情分析</span>
-<span class="px-3 py-1 rounded-full text-[10px] bg-purple-500/10 text-purple-400 border border-purple-500/20">裂變矩陣</span>
-<span class="px-3 py-1 rounded-full text-[10px] bg-rose-500/10 text-rose-400 border border-rose-500/20">自動收款</span>
+<span class="px-3 py-1 rounded-full text-[10px] bg-snt-50 text-snt-400 border border-snt-200">GEO 搜尋</span>
+<span class="px-3 py-1 rounded-full text-[10px] bg-cyan-50 text-cyan-400 border border-cyan-200">AI 客服</span>
+<span class="px-3 py-1 rounded-full text-[10px] bg-amber-50 text-amber-400 border border-amber-200">行銷推播</span>
+<span class="px-3 py-1 rounded-full text-[10px] bg-emerald-50 text-emerald-400 border border-emerald-500/20">戰情分析</span>
+<span class="px-3 py-1 rounded-full text-[10px] bg-purple-50 text-purple-400 border border-purple-200">裂變矩陣</span>
+<span class="px-3 py-1 rounded-full text-[10px] bg-rose-50 text-rose-400 border border-rose-200">自動收款</span>
 </div>
 </div>
 </article>
@@ -330,18 +330,18 @@ ORBIT 2.0 品牌主視覺海報。中央由網格線構成的數據星體內部�
 
 <!-- LIGHTBOX -->
 <div id="lightbox" class="lightbox">
-<button class="absolute top-6 right-6 text-white/60 hover:text-white text-2xl z-10"><i class="fa-solid fa-xmark"></i></button>
+<button class="absolute top-6 right-6 text-gray-500 hover:text-white text-2xl z-10"><i class="fa-solid fa-xmark"></i></button>
 <img id="lightboxImg" src="" alt="">
 </div>
 
 <!-- CTA -->
 <section class="max-w-4xl mx-auto px-6 py-16 text-center space-y-6">
 <div class="glow-line mb-8" style="height:1px;background:linear-gradient(90deg,transparent,rgba(6,182,212,0.3),transparent)"></div>
-<h3 class="text-2xl font-bold text-white">想擁有專屬的 AI 沙盒展覽？</h3>
-<p class="text-sm text-slate-400">每一件展品都是 SNT AI Agent 協同創作的成果。您的品牌也能擁有同樣規格的 8K 沉浸式展示。</p>
+<h3 class="text-2xl font-bold text-gray-900">想擁有專屬的 AI 沙盒展覽？</h3>
+<p class="text-sm text-gray-500">每一件展品都是 SNT AI Agent 協同創作的成果。您的品牌也能擁有同樣規格的 8K 沉浸式展示。</p>
 <div class="flex flex-wrap justify-center gap-3">
 <a href="https://xingdeng.tw/pricing" class="bg-gradient-to-r from-snt-600 to-cyan-600 text-white px-6 py-3 rounded-xl text-sm font-semibold hover:from-snt-500 hover:to-cyan-500 transition">查看方案定價 <i class="fa-solid fa-arrow-right ml-1"></i></a>
-<a href="https://xingdeng.tw/solutions" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-6 py-3 rounded-xl text-sm font-semibold border border-slate-700 transition">了解服務內容</a>
+<a href="https://xingdeng.tw/solutions" class="bg-gray-200 hover:bg-gray-900 hover:text-white text-gray-600 px-6 py-3 rounded-xl text-sm font-semibold border border-gray-300 transition">了解服務內容</a>
 </div>
 </section>
 

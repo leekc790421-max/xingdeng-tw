@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-TW" class="dark">
+<html lang="zh-TW" >
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -26,12 +26,12 @@
     </script>
     <style>
         body { font-family: 'Inter', 'Noto Sans TC', sans-serif; }
-        .hud-border { position:relative; border:1px solid rgba(6,182,212,0.3); }
+        .hud-border { position:relative; border:1.5px solid rgba(6,182,212,0.5); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04); }
         .hud-border::before { content:''; position:absolute; top:-2px; left:-2px; width:8px; height:8px; border-top:2px solid #06b6d4; border-left:2px solid #06b6d4; }
         .hud-border::after { content:''; position:absolute; bottom:-2px; right:-2px; width:8px; height:8px; border-bottom:2px solid #06b6d4; border-right:2px solid #06b6d4; }
         ::-webkit-scrollbar { width:6px; height:6px; }
-        ::-webkit-scrollbar-track { background:#070a12; }
-        ::-webkit-scrollbar-thumb { background:#334155; border-radius:3px; }
+        ::-webkit-scrollbar-track { background:#f1f5f9; }
+        ::-webkit-scrollbar-thumb { background:#94a3b8; border-radius:3px; }
         ::-webkit-scrollbar-thumb:hover { background:#0d9488; }
         .tab-active { background: linear-gradient(135deg, #0d9488, #06b6d4); color: white; }
         .pulse-dot { animation: pulse-dot 2s infinite; }
@@ -46,83 +46,83 @@
         .stat-card { transition: all 0.2s ease; }
     </style>
 </head>
-<body class="bg-cyberDark text-slate-100 min-h-screen flex flex-col antialiased">
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col antialiased">
 
     <!-- Password Gate -->
-    <div id="passwordGate" class="fixed inset-0 z-[200] bg-cyberDark flex items-center justify-center p-4">
-        <div class="bg-cyberPanel border border-slate-700 rounded-2xl p-8 max-w-sm w-full hud-border space-y-6">
+    <div id="passwordGate" class="fixed inset-0 z-[200] bg-gray-50 flex items-center justify-center p-4">
+        <div class="bg-white border border-gray-300 rounded-2xl p-8 max-w-sm w-full hud-border space-y-6">
             <div class="text-center space-y-2">
                 <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-tr from-snt-600 via-cyan-500 to-amber-400 p-0.5 flex items-center justify-center">
-                    <div class="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center font-black text-amber-400 font-mono text-2xl">SNT</div>
+                    <div class="w-full h-full bg-slate-900 rounded-[14px] flex items-center justify-center font-black text-amber-400 font-mono text-2xl">SNT</div>
                 </div>
-                <h2 class="text-xl font-bold text-white">管理者驗證</h2>
-                <p class="text-sm text-slate-400">請輸入管理者密碼以存取後台</p>
+                <h2 class="text-xl font-bold text-gray-900">管理者驗證</h2>
+                <p class="text-sm text-gray-500">請輸入管理者密碼以存取後台</p>
             </div>
             <div class="space-y-4">
                 <div>
-                    <label class="text-xs text-slate-400 font-mono mb-1 block">密碼</label>
-                    <input id="inputAdminPassword" type="password" placeholder="請輸入管理者密碼" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-600 focus:border-snt-500 focus:outline-none" onkeydown="if(event.key==='Enter')verifyPassword()">
+                    <label class="text-xs text-gray-500 font-mono mb-1 block">密碼</label>
+                    <input id="inputAdminPassword" type="password" placeholder="請輸入管理者密碼" class="w-full bg-gray-100 border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-800 placeholder-gray-400 focus:border-snt-500 focus:outline-none" onkeydown="if(event.key==='Enter')verifyPassword()">
                 </div>
                 <div id="passwordError" class="text-xs text-red-400 hidden">密碼錯誤，請重新輸入</div>
                 <button onclick="verifyPassword()" class="w-full bg-gradient-to-r from-snt-600 to-cyan-600 text-white font-semibold py-2.5 rounded-lg hover:from-snt-500 hover:to-cyan-500 transition">
                     <i class="fa-solid fa-lock-open mr-2"></i>驗證並進入
                 </button>
             </div>
-            <p class="text-[11px] text-slate-500 text-center font-mono">僅限授權管理者存取</p>
+            <p class="text-[11px] text-gray-400 text-center font-mono">僅限授權管理者存取</p>
         </div>
     </div>
 
     <!-- Login / Settings Overlay -->
-    <div id="loginOverlay" class="fixed inset-0 z-[100] bg-cyberDark/95 backdrop-blur-sm flex items-center justify-center p-4 hidden">
-        <div class="bg-cyberPanel border border-slate-700 rounded-2xl p-8 max-w-md w-full hud-border space-y-6">
+    <div id="loginOverlay" class="fixed inset-0 z-[100] bg-gray-50/95 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="bg-white border border-gray-300 rounded-2xl p-8 max-w-md w-full hud-border space-y-6">
             <div class="text-center space-y-2">
                 <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-tr from-snt-600 via-cyan-500 to-amber-400 p-0.5 flex items-center justify-center">
-                    <div class="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center font-black text-amber-400 font-mono text-2xl">SNT</div>
+                    <div class="w-full h-full bg-slate-900 rounded-[14px] flex items-center justify-center font-black text-amber-400 font-mono text-2xl">SNT</div>
                 </div>
-                <h2 class="text-xl font-bold text-white">AI 管理後台</h2>
-                <p class="text-sm text-slate-400">Vercel & 網域智慧管理系統</p>
+                <h2 class="text-xl font-bold text-gray-900">AI 管理後台</h2>
+                <p class="text-sm text-gray-500">Vercel & 網域智慧管理系統</p>
             </div>
             <div class="space-y-4">
                 <div>
-                    <label class="text-xs text-slate-400 font-mono mb-1 block">Vercel API Token</label>
-                    <input id="inputVercelToken" type="password" placeholder="vcp_xxxxx..." class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-600 focus:border-snt-500 focus:outline-none">
+                    <label class="text-xs text-gray-500 font-mono mb-1 block">Vercel API Token</label>
+                    <input id="inputVercelToken" type="password" placeholder="vcp_xxxxx..." class="w-full bg-gray-100 border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-800 placeholder-gray-400 focus:border-snt-500 focus:outline-none">
                 </div>
                 <div>
-                    <label class="text-xs text-slate-400 font-mono mb-1 block">Gemini API Key</label>
-                    <input id="inputGeminiKey" type="password" placeholder="AIza..." class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-600 focus:border-snt-500 focus:outline-none">
+                    <label class="text-xs text-gray-500 font-mono mb-1 block">Gemini API Key</label>
+                    <input id="inputGeminiKey" type="password" placeholder="AIza..." class="w-full bg-gray-100 border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-800 placeholder-gray-400 focus:border-snt-500 focus:outline-none">
                 </div>
                 <div>
-                    <label class="text-xs text-slate-400 font-mono mb-1 block">Vercel Team ID (選填)</label>
-                    <input id="inputTeamId" type="text" placeholder="team_xxxxx (個人帳號留空)" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-600 focus:border-snt-500 focus:outline-none">
+                    <label class="text-xs text-gray-500 font-mono mb-1 block">Vercel Team ID (選填)</label>
+                    <input id="inputTeamId" type="text" placeholder="team_xxxxx (個人帳號留空)" class="w-full bg-gray-100 border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-800 placeholder-gray-400 focus:border-snt-500 focus:outline-none">
                 </div>
                 <button onclick="saveConfig()" class="w-full bg-gradient-to-r from-snt-600 to-cyan-600 text-white font-semibold py-2.5 rounded-lg hover:from-snt-500 hover:to-cyan-500 transition">
                     <i class="fa-solid fa-right-to-bracket mr-2"></i>進入管理後台
                 </button>
             </div>
-            <p class="text-[11px] text-slate-500 text-center font-mono">憑據僅存於本機 localStorage，不會上傳至任何伺服器</p>
+            <p class="text-[11px] text-gray-400 text-center font-mono">憑據僅存於本機 localStorage，不會上傳至任何伺服器</p>
         </div>
     </div>
 
     <!-- Header -->
     <div id="adminContent" class="hidden">
-    <header class="border-b border-slate-800 bg-slate-950/90 backdrop-blur sticky top-0 z-50 px-4 lg:px-8 py-3 flex items-center justify-between">
+    <header class="border-b border-gray-200 bg-white/90 backdrop-blur sticky top-0 z-50 px-4 lg:px-8 py-3 flex items-center justify-between">
         <div class="flex items-center gap-3">
             <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-snt-600 via-cyan-500 to-amber-400 p-0.5 flex items-center justify-center">
-                <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center font-black text-amber-400 font-mono text-sm">SNT</div>
+                <div class="w-full h-full bg-slate-900 rounded-[10px] flex items-center justify-center font-black text-amber-400 font-mono text-sm">SNT</div>
             </div>
             <div>
-                <h1 class="font-bold text-sm text-white leading-tight">AI 管理後台</h1>
-                <p class="text-[10px] text-slate-500 font-mono">xingdeng.tw · Vercel + Gemini</p>
+                <h1 class="font-bold text-sm text-gray-900 leading-tight">AI 管理後台</h1>
+                <p class="text-[10px] text-gray-400 font-mono">xingdeng.tw · Vercel + Gemini</p>
             </div>
         </div>
         <div class="flex items-center gap-3">
-            <div id="connStatus" class="flex items-center gap-1.5 text-[11px] font-mono px-2 py-1 rounded border bg-slate-900 border-slate-700 text-slate-400">
+            <div id="connStatus" class="flex items-center gap-1.5 text-[11px] font-mono px-2 py-1 rounded border bg-gray-100 border-gray-300 text-gray-500">
                 <span class="w-1.5 h-1.5 rounded-full bg-slate-500"></span> 未連線
             </div>
-            <button onclick="refreshAll()" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg border border-slate-700 transition">
+            <button onclick="refreshAll()" class="text-xs bg-gray-200 hover:bg-gray-900 hover:text-white text-gray-600 px-3 py-1.5 rounded-lg border border-gray-300 transition">
                 <i class="fa-solid fa-arrows-rotate mr-1"></i>重新整理
             </button>
-            <button onclick="logout()" class="text-xs bg-slate-800 hover:bg-red-900/50 text-slate-400 hover:text-red-300 px-3 py-1.5 rounded-lg border border-slate-700 transition">
+            <button onclick="logout()" class="text-xs bg-gray-200 hover:bg-red-900/50 text-gray-500 hover:text-red-300 px-3 py-1.5 rounded-lg border border-gray-300 transition">
                 <i class="fa-solid fa-right-from-bracket mr-1"></i>登出
             </button>
         </div>
@@ -135,19 +135,19 @@
             <button onclick="switchTab('dashboard')" id="tab-dashboard" class="tab-active px-4 py-2 rounded-lg font-medium whitespace-nowrap flex items-center gap-2 transition">
                 <i class="fa-solid fa-gauge-high"></i>總覽
             </button>
-            <button onclick="switchTab('deploy')" id="tab-deploy" class="bg-slate-800 text-slate-300 px-4 py-2 rounded-lg font-medium whitespace-nowrap flex items-center gap-2 hover:bg-slate-700 transition">
+            <button onclick="switchTab('deploy')" id="tab-deploy" class="bg-gray-200 text-gray-600 px-4 py-2 rounded-lg font-medium whitespace-nowrap flex items-center gap-2 hover:bg-gray-900 hover:text-white transition">
                 <i class="fa-solid fa-rocket text-cyan-400"></i>部署管理
             </button>
-            <button onclick="switchTab('domain')" id="tab-domain" class="bg-slate-800 text-slate-300 px-4 py-2 rounded-lg font-medium whitespace-nowrap flex items-center gap-2 hover:bg-slate-700 transition">
+            <button onclick="switchTab('domain')" id="tab-domain" class="bg-gray-200 text-gray-600 px-4 py-2 rounded-lg font-medium whitespace-nowrap flex items-center gap-2 hover:bg-gray-900 hover:text-white transition">
                 <i class="fa-solid fa-globe text-amber-400"></i>網域管理
             </button>
-            <button onclick="switchTab('agents')" id="tab-agents" class="bg-slate-800 text-slate-300 px-4 py-2 rounded-lg font-medium whitespace-nowrap flex items-center gap-2 hover:bg-slate-700 transition">
+            <button onclick="switchTab('agents')" id="tab-agents" class="bg-gray-200 text-gray-600 px-4 py-2 rounded-lg font-medium whitespace-nowrap flex items-center gap-2 hover:bg-gray-900 hover:text-white transition">
                 <i class="fa-solid fa-robot text-purple-400"></i>AI Agent 編派
             </button>
-            <button onclick="switchTab('logs')" id="tab-logs" class="bg-slate-800 text-slate-300 px-4 py-2 rounded-lg font-medium whitespace-nowrap flex items-center gap-2 hover:bg-slate-700 transition">
+            <button onclick="switchTab('logs')" id="tab-logs" class="bg-gray-200 text-gray-600 px-4 py-2 rounded-lg font-medium whitespace-nowrap flex items-center gap-2 hover:bg-gray-900 hover:text-white transition">
                 <i class="fa-solid fa-scroll text-emerald-400"></i>系統日誌
             </button>
-            <button onclick="switchTab('sdk')" id="tab-sdk" class="bg-slate-800 text-slate-300 px-4 py-2 rounded-lg font-medium whitespace-nowrap flex items-center gap-2 hover:bg-slate-700 transition">
+            <button onclick="switchTab('sdk')" id="tab-sdk" class="bg-gray-200 text-gray-600 px-4 py-2 rounded-lg font-medium whitespace-nowrap flex items-center gap-2 hover:bg-gray-900 hover:text-white transition">
                 <i class="fa-solid fa-microchip text-cyan-400"></i>SDK 站點
             </button>
         </nav>
@@ -156,53 +156,53 @@
         <div id="panel-dashboard" class="space-y-6 fade-in">
             <!-- KPI Cards -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="stat-card bg-cyberPanel border border-slate-800 rounded-xl p-4 hud-border">
-                    <div class="text-xs text-slate-500 font-mono mb-1">部署狀態</div>
+                <div class="stat-card bg-white border border-gray-200 rounded-xl p-4 hud-border">
+                    <div class="text-xs text-gray-400 font-mono mb-1">部署狀態</div>
                     <div id="kpi-deploy" class="text-2xl font-bold text-emerald-400">--</div>
-                    <div class="text-[11px] text-slate-500 mt-1"><i class="fa-solid fa-circle-check mr-1"></i>Production Ready</div>
+                    <div class="text-[11px] text-gray-400 mt-1"><i class="fa-solid fa-circle-check mr-1"></i>Production Ready</div>
                 </div>
-                <div class="stat-card bg-cyberPanel border border-slate-800 rounded-xl p-4 hud-border">
-                    <div class="text-xs text-slate-500 font-mono mb-1">網域數量</div>
+                <div class="stat-card bg-white border border-gray-200 rounded-xl p-4 hud-border">
+                    <div class="text-xs text-gray-400 font-mono mb-1">網域數量</div>
                     <div id="kpi-domains" class="text-2xl font-bold text-cyan-400">--</div>
-                    <div class="text-[11px] text-slate-500 mt-1"><i class="fa-solid fa-shield-halved mr-1"></i>SSL Active</div>
+                    <div class="text-[11px] text-gray-400 mt-1"><i class="fa-solid fa-shield-halved mr-1"></i>SSL Active</div>
                 </div>
-                <div class="stat-card bg-cyberPanel border border-slate-800 rounded-xl p-4 hud-border">
-                    <div class="text-xs text-slate-500 font-mono mb-1">本月部署</div>
+                <div class="stat-card bg-white border border-gray-200 rounded-xl p-4 hud-border">
+                    <div class="text-xs text-gray-400 font-mono mb-1">本月部署</div>
                     <div id="kpi-monthly" class="text-2xl font-bold text-amber-400">--</div>
-                    <div class="text-[11px] text-slate-500 mt-1"><i class="fa-solid fa-chart-line mr-1"></i>近 30 天</div>
+                    <div class="text-[11px] text-gray-400 mt-1"><i class="fa-solid fa-chart-line mr-1"></i>近 30 天</div>
                 </div>
-                <div class="stat-card bg-cyberPanel border border-slate-800 rounded-xl p-4 hud-border">
-                    <div class="text-xs text-slate-500 font-mono mb-1">AI Agent</div>
+                <div class="stat-card bg-white border border-gray-200 rounded-xl p-4 hud-border">
+                    <div class="text-xs text-gray-400 font-mono mb-1">AI Agent</div>
                     <div id="kpi-agents" class="text-2xl font-bold text-purple-400">6</div>
-                    <div class="text-[11px] text-slate-500 mt-1"><i class="fa-solid fa-microchip mr-1"></i>待命中</div>
+                    <div class="text-[11px] text-gray-400 mt-1"><i class="fa-solid fa-microchip mr-1"></i>待命中</div>
                 </div>
             </div>
 
             <!-- Project Info + Gemini Quick Actions -->
             <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-cyberPanel border border-slate-800 rounded-xl p-5 space-y-4">
-                    <h3 class="text-sm font-semibold text-white flex items-center gap-2"><i class="fa-solid fa-server text-snt-400"></i>專案資訊</h3>
+                <div class="bg-white border border-gray-200 rounded-xl p-5 space-y-4">
+                    <h3 class="text-sm font-semibold text-gray-900 flex items-center gap-2"><i class="fa-solid fa-server text-snt-400"></i>專案資訊</h3>
                     <div id="projectInfo" class="space-y-2 text-sm">
-                        <div class="flex justify-between"><span class="text-slate-500">專案名稱</span><span class="text-white font-mono" id="proj-name">xingdeng-tw</span></div>
-                        <div class="flex justify-between"><span class="text-slate-500">Framework</span><span class="text-slate-300" id="proj-framework">Static HTML</span></div>
-                        <div class="flex justify-between"><span class="text-slate-500">Production URL</span><a href="https://xingdeng.tw" target="_blank" class="text-cyan-400 hover:underline font-mono text-xs">xingdeng.tw</a></div>
-                        <div class="flex justify-between"><span class="text-slate-500">最近更新</span><span class="text-slate-300 font-mono text-xs" id="proj-updated">--</span></div>
-                        <div class="flex justify-between"><span class="text-slate-500">Environment</span><span class="text-emerald-400 font-mono text-xs">Production</span></div>
+                        <div class="flex justify-between"><span class="text-gray-400">專案名稱</span><span class="text-white font-mono" id="proj-name">xingdeng-tw</span></div>
+                        <div class="flex justify-between"><span class="text-gray-400">Framework</span><span class="text-gray-600" id="proj-framework">Static HTML</span></div>
+                        <div class="flex justify-between"><span class="text-gray-400">Production URL</span><a href="https://xingdeng.tw" target="_blank" class="text-cyan-400 hover:underline font-mono text-xs">xingdeng.tw</a></div>
+                        <div class="flex justify-between"><span class="text-gray-400">最近更新</span><span class="text-gray-600 font-mono text-xs" id="proj-updated">--</span></div>
+                        <div class="flex justify-between"><span class="text-gray-400">Environment</span><span class="text-emerald-400 font-mono text-xs">Production</span></div>
                     </div>
                 </div>
-                <div class="bg-cyberPanel border border-slate-800 rounded-xl p-5 space-y-4">
-                    <h3 class="text-sm font-semibold text-white flex items-center gap-2"><i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>Gemini AI 快速指令</h3>
+                <div class="bg-white border border-gray-200 rounded-xl p-5 space-y-4">
+                    <h3 class="text-sm font-semibold text-gray-900 flex items-center gap-2"><i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>Gemini AI 快速指令</h3>
                     <div class="grid grid-cols-2 gap-2">
-                        <button onclick="geminiQuickAction('分析目前部署狀態並給出優化建議')" class="text-left text-xs bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-lg p-3 text-slate-300 transition">
+                        <button onclick="geminiQuickAction('分析目前部署狀態並給出優化建議')" class="text-left text-xs bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg p-3 text-gray-600 transition">
                             <i class="fa-solid fa-magnifying-glass-chart text-cyan-400 mr-1"></i>部署健康檢查
                         </button>
-                        <button onclick="geminiQuickAction('檢查網域 DNS 設定是否正確，SSL 憑證狀態')" class="text-left text-xs bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-lg p-3 text-slate-300 transition">
+                        <button onclick="geminiQuickAction('檢查網域 DNS 設定是否正確，SSL 憑證狀態')" class="text-left text-xs bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg p-3 text-gray-600 transition">
                             <i class="fa-solid fa-shield-halved text-emerald-400 mr-1"></i>網域安全掃描
                         </button>
-                        <button onclick="geminiQuickAction('分析近期部署頻率，建議最佳部署時間窗口')" class="text-left text-xs bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-lg p-3 text-slate-300 transition">
+                        <button onclick="geminiQuickAction('分析近期部署頻率，建議最佳部署時間窗口')" class="text-left text-xs bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg p-3 text-gray-600 transition">
                             <i class="fa-solid fa-clock text-amber-400 mr-1"></i>部署時間分析
                         </button>
-                        <button onclick="geminiQuickAction('根據目前架構，建議 SEO 和效能優化方案')" class="text-left text-xs bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-lg p-3 text-slate-300 transition">
+                        <button onclick="geminiQuickAction('根據目前架構，建議 SEO 和效能優化方案')" class="text-left text-xs bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg p-3 text-gray-600 transition">
                             <i class="fa-solid fa-gauge-high text-purple-400 mr-1"></i>效能優化建議
                         </button>
                     </div>
@@ -210,114 +210,114 @@
             </div>
 
             <!-- Recent Activity -->
-            <div class="bg-cyberPanel border border-slate-800 rounded-xl p-5 space-y-4">
-                <h3 class="text-sm font-semibold text-white flex items-center gap-2"><i class="fa-solid fa-timeline text-snt-400"></i>最近活動</h3>
+            <div class="bg-white border border-gray-200 rounded-xl p-5 space-y-4">
+                <h3 class="text-sm font-semibold text-gray-900 flex items-center gap-2"><i class="fa-solid fa-timeline text-snt-400"></i>最近活動</h3>
                 <div id="recentActivity" class="space-y-2 text-sm">
-                    <div class="text-slate-500 text-center py-4">載入中...</div>
+                    <div class="text-gray-400 text-center py-4">載入中...</div>
                 </div>
             </div>
         </div>
 
         <!-- Tab: Deploy -->
         <div id="panel-deploy" class="space-y-6 hidden fade-in">
-            <div class="bg-cyberPanel border border-slate-800 rounded-xl p-5 space-y-4">
+            <div class="bg-white border border-gray-200 rounded-xl p-5 space-y-4">
                 <div class="flex items-center justify-between">
-                    <h3 class="text-sm font-semibold text-white flex items-center gap-2"><i class="fa-solid fa-rocket text-cyan-400"></i>部署歷史</h3>
-                    <button onclick="refreshDeployments()" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg border border-slate-700"><i class="fa-solid fa-arrows-rotate mr-1"></i>更新</button>
+                    <h3 class="text-sm font-semibold text-gray-900 flex items-center gap-2"><i class="fa-solid fa-rocket text-cyan-400"></i>部署歷史</h3>
+                    <button onclick="refreshDeployments()" class="text-xs bg-gray-200 hover:bg-gray-900 hover:text-white text-gray-600 px-3 py-1.5 rounded-lg border border-gray-300"><i class="fa-solid fa-arrows-rotate mr-1"></i>更新</button>
                 </div>
                 <div id="deployList" class="space-y-3">
-                    <div class="text-slate-500 text-center py-8">載入部署紀錄中...</div>
+                    <div class="text-gray-400 text-center py-8">載入部署紀錄中...</div>
                 </div>
             </div>
         </div>
 
         <!-- Tab: Domain -->
         <div id="panel-domain" class="space-y-6 hidden fade-in">
-            <div class="bg-cyberPanel border border-slate-800 rounded-xl p-5 space-y-4">
+            <div class="bg-white border border-gray-200 rounded-xl p-5 space-y-4">
                 <div class="flex items-center justify-between">
-                    <h3 class="text-sm font-semibold text-white flex items-center gap-2"><i class="fa-solid fa-globe text-amber-400"></i>網域列表</h3>
-                    <button onclick="refreshDomains()" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg border border-slate-700"><i class="fa-solid fa-arrows-rotate mr-1"></i>更新</button>
+                    <h3 class="text-sm font-semibold text-gray-900 flex items-center gap-2"><i class="fa-solid fa-globe text-amber-400"></i>網域列表</h3>
+                    <button onclick="refreshDomains()" class="text-xs bg-gray-200 hover:bg-gray-900 hover:text-white text-gray-600 px-3 py-1.5 rounded-lg border border-gray-300"><i class="fa-solid fa-arrows-rotate mr-1"></i>更新</button>
                 </div>
                 <div id="domainList" class="space-y-3">
-                    <div class="text-slate-500 text-center py-8">載入網域資訊中...</div>
+                    <div class="text-gray-400 text-center py-8">載入網域資訊中...</div>
                 </div>
             </div>
         </div>
 
         <!-- Tab: AI Agents -->
         <div id="panel-agents" class="space-y-6 hidden fade-in">
-            <div class="bg-cyberPanel border border-slate-800 rounded-xl p-5 space-y-4">
-                <h3 class="text-sm font-semibold text-white flex items-center gap-2"><i class="fa-solid fa-robot text-purple-400"></i>AI Agent 編派矩陣</h3>
-                <p class="text-xs text-slate-400">六大 AI Agent 各自負責不同任務領域，Gemini 統籌調度</p>
+            <div class="bg-white border border-gray-200 rounded-xl p-5 space-y-4">
+                <h3 class="text-sm font-semibold text-gray-900 flex items-center gap-2"><i class="fa-solid fa-robot text-purple-400"></i>AI Agent 編派矩陣</h3>
+                <p class="text-xs text-gray-500">六大 AI Agent 各自負責不同任務領域，Gemini 統籌調度</p>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4" id="agentGrid">
                     <!-- Filled by JS -->
                 </div>
             </div>
-            <div class="bg-cyberPanel border border-slate-800 rounded-xl p-5 space-y-4">
-                <h3 class="text-sm font-semibold text-white flex items-center gap-2"><i class="fa-solid fa-diagram-project text-cyan-400"></i>Gemini 調度指令</h3>
+            <div class="bg-white border border-gray-200 rounded-xl p-5 space-y-4">
+                <h3 class="text-sm font-semibold text-gray-900 flex items-center gap-2"><i class="fa-solid fa-diagram-project text-cyan-400"></i>Gemini 調度指令</h3>
                 <div class="flex gap-2">
-                    <input id="agentCommand" type="text" placeholder="輸入指令，例如：指派 AI-02 執行 SEO  audit..." class="flex-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-600 focus:border-snt-500 focus:outline-none">
+                    <input id="agentCommand" type="text" placeholder="輸入指令，例如：指派 AI-02 執行 SEO  audit..." class="flex-1 bg-gray-100 border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-800 placeholder-gray-400 focus:border-snt-500 focus:outline-none">
                     <button onclick="sendAgentCommand()" class="bg-gradient-to-r from-purple-600 to-cyan-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:from-purple-500 hover:to-cyan-500 transition">
                         <i class="fa-solid fa-paper-plane mr-1"></i>派工
                     </button>
                 </div>
-                <div id="agentResponse" class="bg-slate-900 border border-slate-800 rounded-lg p-4 text-sm text-slate-300 min-h-[120px] font-mono whitespace-pre-wrap">等待指令...</div>
+                <div id="agentResponse" class="bg-gray-100 border border-gray-200 rounded-lg p-4 text-sm text-gray-600 min-h-[120px] font-mono whitespace-pre-wrap">等待指令...</div>
             </div>
         </div>
 
         <!-- Tab: Logs -->
         <div id="panel-logs" class="space-y-6 hidden fade-in">
-            <div class="bg-cyberPanel border border-slate-800 rounded-xl p-5 space-y-4">
+            <div class="bg-white border border-gray-200 rounded-xl p-5 space-y-4">
                 <div class="flex items-center justify-between">
-                    <h3 class="text-sm font-semibold text-white flex items-center gap-2"><i class="fa-solid fa-scroll text-emerald-400"></i>系統日誌</h3>
+                    <h3 class="text-sm font-semibold text-gray-900 flex items-center gap-2"><i class="fa-solid fa-scroll text-emerald-400"></i>系統日誌</h3>
                     <div class="flex gap-2">
-                        <select id="logFilter" onchange="filterLogs()" class="bg-slate-900 border border-slate-700 rounded-lg px-2 py-1 text-xs text-slate-300">
+                        <select id="logFilter" onchange="filterLogs()" class="bg-gray-100 border border-gray-300 rounded-lg px-2 py-1 text-xs text-gray-600">
                             <option value="all">全部</option>
                             <option value="info">INFO</option>
                             <option value="warn">WARN</option>
                             <option value="error">ERROR</option>
                         </select>
-                        <button onclick="clearLogs()" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-400 px-2 py-1 rounded border border-slate-700">清空</button>
+                        <button onclick="clearLogs()" class="text-xs bg-gray-200 hover:bg-gray-900 hover:text-white text-gray-500 px-2 py-1 rounded border border-gray-300">清空</button>
                     </div>
                 </div>
-                <div id="logContainer" class="bg-slate-950 border border-slate-800 rounded-lg p-3 max-h-[500px] overflow-y-auto font-mono text-xs space-y-1">
-                    <div class="text-slate-500">日誌將顯示在此處...</div>
+                <div id="logContainer" class="bg-white border border-gray-200 rounded-lg p-3 max-h-[500px] overflow-y-auto font-mono text-xs space-y-1">
+                    <div class="text-gray-400">日誌將顯示在此處...</div>
                 </div>
             </div>
         </div>
 
         <!-- Tab: SDK Sites -->
         <div id="panel-sdk" class="space-y-6 hidden fade-in">
-            <div class="bg-cyberPanel border border-slate-800 rounded-xl p-5 space-y-4">
+            <div class="bg-white border border-gray-200 rounded-xl p-5 space-y-4">
                 <div class="flex items-center justify-between">
-                    <h3 class="text-sm font-semibold text-white flex items-center gap-2"><i class="fa-solid fa-microchip text-cyan-400"></i>SDK 客戶站點管理</h3>
+                    <h3 class="text-sm font-semibold text-gray-900 flex items-center gap-2"><i class="fa-solid fa-microchip text-cyan-400"></i>SDK 客戶站點管理</h3>
                     <a href="/sdk-config" class="text-xs bg-gradient-to-r from-snt-600 to-cyan-600 hover:from-snt-500 hover:to-cyan-500 text-white px-3 py-1.5 rounded-lg transition">
                         <i class="fa-solid fa-plus mr-1"></i>新增站點
                     </a>
                 </div>
-                <p class="text-xs text-slate-400">所有已嵌入 SNT SDK 的客戶網站，自動對接六大 AI Agent</p>
+                <p class="text-xs text-gray-500">所有已嵌入 SNT SDK 的客戶網站，自動對接六大 AI Agent</p>
                 <div id="sdkSitesList" class="space-y-3">
-                    <div class="text-slate-500 text-center py-8">載入中...</div>
+                    <div class="text-gray-400 text-center py-8">載入中...</div>
                 </div>
             </div>
-            <div class="bg-cyberPanel border border-slate-800 rounded-xl p-5 space-y-4">
-                <h3 class="text-sm font-semibold text-white flex items-center gap-2"><i class="fa-solid fa-chart-simple text-amber-400"></i>SDK 使用統計</h3>
+            <div class="bg-white border border-gray-200 rounded-xl p-5 space-y-4">
+                <h3 class="text-sm font-semibold text-gray-900 flex items-center gap-2"><i class="fa-solid fa-chart-simple text-amber-400"></i>SDK 使用統計</h3>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 text-center">
+                    <div class="bg-gray-100 p-4 rounded-xl border border-gray-200 text-center">
                         <div class="text-2xl font-bold text-cyan-400" id="sdkTotalSites">0</div>
-                        <div class="text-[10px] text-slate-500 mt-1">已接入站點</div>
+                        <div class="text-[10px] text-gray-400 mt-1">已接入站點</div>
                     </div>
-                    <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 text-center">
+                    <div class="bg-gray-100 p-4 rounded-xl border border-gray-200 text-center">
                         <div class="text-2xl font-bold text-emerald-400" id="sdkTotalInteractions">0</div>
-                        <div class="text-[10px] text-slate-500 mt-1">總互動次數</div>
+                        <div class="text-[10px] text-gray-400 mt-1">總互動次數</div>
                     </div>
-                    <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 text-center">
+                    <div class="bg-gray-100 p-4 rounded-xl border border-gray-200 text-center">
                         <div class="text-2xl font-bold text-amber-400" id="sdkTotalConversions">0</div>
-                        <div class="text-[10px] text-slate-500 mt-1">總轉換數</div>
+                        <div class="text-[10px] text-gray-400 mt-1">總轉換數</div>
                     </div>
-                    <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 text-center">
+                    <div class="bg-gray-100 p-4 rounded-xl border border-gray-200 text-center">
                         <div class="text-2xl font-bold text-purple-400">6</div>
-                        <div class="text-[10px] text-slate-500 mt-1">AI Agent 運行中</div>
+                        <div class="text-[10px] text-gray-400 mt-1">AI Agent 運行中</div>
                     </div>
                 </div>
             </div>
@@ -325,13 +325,13 @@
     </main>
 
     <!-- Floating Gemini Chat Toggle -->
-    <button onclick="toggleGeminiChat()" id="geminiToggle" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gradient-to-tr from-purple-600 to-cyan-500 text-white shadow-lg shadow-purple-500/30 flex items-center justify-center hover:scale-110 transition">
+    <button onclick="toggleGeminiChat()" id="geminiToggle" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gradient-to-tr from-purple-600 to-cyan-500 text-white shadow-lg shadow-purple-500/15 flex items-center justify-center hover:scale-110 transition">
         <i class="fa-solid fa-robot text-xl"></i>
     </button>
 
     <!-- Gemini Chat Panel -->
-    <div id="geminiChatPanel" class="fixed bottom-24 right-6 z-50 w-[380px] max-w-[calc(100vw-2rem)] bg-cyberPanel border border-slate-700 rounded-2xl shadow-2xl hidden flex flex-col hud-border" style="height:500px">
-        <div class="flex items-center justify-between px-4 py-3 border-b border-slate-800">
+    <div id="geminiChatPanel" class="fixed bottom-24 right-6 z-50 w-[380px] max-w-[calc(100vw-2rem)] bg-white border border-gray-300 rounded-2xl shadow-2xl hidden flex flex-col hud-border" style="height:500px">
+        <div class="flex items-center justify-between px-4 py-3 border-b border-gray-200">
             <div class="flex items-center gap-2">
                 <div class="w-7 h-7 rounded-lg bg-gradient-to-tr from-purple-500 to-cyan-500 flex items-center justify-center"><i class="fa-solid fa-robot text-white text-xs"></i></div>
                 <div>
@@ -339,12 +339,12 @@
                     <div class="text-[10px] text-emerald-400 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 pulse-dot"></span>線上</div>
                 </div>
             </div>
-            <button onclick="toggleGeminiChat()" class="text-slate-500 hover:text-white transition"><i class="fa-solid fa-xmark"></i></button>
+            <button onclick="toggleGeminiChat()" class="text-gray-400 hover:text-white transition"><i class="fa-solid fa-xmark"></i></button>
         </div>
         <div id="geminiChatMessages" class="flex-1 overflow-y-auto p-4 space-y-3 text-sm">
             <div class="flex gap-2">
-                <div class="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-robot text-purple-400 text-[10px]"></i></div>
-                <div class="bg-slate-800 rounded-lg rounded-tl-none px-3 py-2 text-slate-300 text-xs max-w-[280px]">
+                <div class="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-robot text-purple-400 text-[10px]"></i></div>
+                <div class="bg-gray-200 rounded-lg rounded-tl-none px-3 py-2 text-gray-600 text-xs max-w-[280px]">
                     你好！我是 Gemini AI 管理顧問。我可以幫你：<br>
                     • 分析部署狀態與效能<br>
                     • 檢查網域與 DNS 設定<br>
@@ -354,9 +354,9 @@
                 </div>
             </div>
         </div>
-        <div class="px-4 py-3 border-t border-slate-800">
+        <div class="px-4 py-3 border-t border-gray-200">
             <div class="flex gap-2">
-                <input id="geminiInput" type="text" placeholder="輸入問題..." class="flex-1 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-xs text-white placeholder-slate-600 focus:border-purple-500 focus:outline-none" onkeydown="if(event.key==='Enter')sendGeminiMessage()">
+                <input id="geminiInput" type="text" placeholder="輸入問題..." class="flex-1 bg-gray-100 border border-gray-300 rounded-lg px-3 py-2 text-xs text-white placeholder-gray-400 focus:border-purple-500 focus:outline-none" onkeydown="if(event.key==='Enter')sendGeminiMessage()">
                 <button onclick="sendGeminiMessage()" class="bg-purple-600 hover:bg-purple-500 text-white px-3 py-2 rounded-lg transition"><i class="fa-solid fa-paper-plane text-xs"></i></button>
             </div>
         </div>
@@ -470,13 +470,13 @@
         const el = document.getElementById('connStatus');
         if (state === 'connected') {
             el.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 pulse-dot"></span> 已連線';
-            el.className = 'flex items-center gap-1.5 text-[11px] font-mono px-2 py-1 rounded border bg-emerald-950/60 border-emerald-800/50 text-emerald-400';
+            el.className = 'flex items-center gap-1.5 text-[11px] font-mono px-2 py-1 rounded border bg-emerald-50 border-emerald-200 text-emerald-400';
         } else if (state === 'connecting') {
             el.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-amber-400 pulse-dot"></span> 連線中...';
-            el.className = 'flex items-center gap-1.5 text-[11px] font-mono px-2 py-1 rounded border bg-amber-950/60 border-amber-800/50 text-amber-400';
+            el.className = 'flex items-center gap-1.5 text-[11px] font-mono px-2 py-1 rounded border bg-amber-50 border-amber-200/50 text-amber-400';
         } else {
             el.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-red-400"></span> 連線失敗';
-            el.className = 'flex items-center gap-1.5 text-[11px] font-mono px-2 py-1 rounded border bg-red-950/60 border-red-800/50 text-red-400';
+            el.className = 'flex items-center gap-1.5 text-[11px] font-mono px-2 py-1 rounded border bg-red-50 border-red-200/50 text-red-400';
         }
     }
 
@@ -505,19 +505,19 @@
 
         // Recent activity
         const actEl = document.getElementById('recentActivity');
-        if (deps.length === 0) { actEl.innerHTML = '<div class="text-slate-500 text-center py-4">暫無活動</div>'; return; }
+        if (deps.length === 0) { actEl.innerHTML = '<div class="text-gray-400 text-center py-4">暫無活動</div>'; return; }
         actEl.innerHTML = deps.slice(0, 8).map(d => {
             const status = d.readyState === 'READY' ? 'text-emerald-400' : d.readyState === 'ERROR' ? 'text-red-400' : 'text-amber-400';
             const icon = d.readyState === 'READY' ? 'fa-circle-check' : d.readyState === 'ERROR' ? 'fa-circle-xmark' : 'fa-clock';
             const time = new Date(d.created).toLocaleString('zh-TW');
             const url = d.url || '';
-            return `<div class="flex items-center gap-3 p-2 rounded-lg bg-slate-900/50 hover:bg-slate-900 transition">
+            return `<div class="flex items-center gap-3 p-2 rounded-lg bg-gray-50/70 hover:bg-gray-100 transition">
                 <i class="fa-solid ${icon} ${status}"></i>
                 <div class="flex-1 min-w-0">
                     <div class="text-xs text-white truncate">${d.target || 'deployment'}</div>
-                    <div class="text-[10px] text-slate-500 font-mono truncate">${url}</div>
+                    <div class="text-[10px] text-gray-400 font-mono truncate">${url}</div>
                 </div>
-                <div class="text-[10px] text-slate-500 whitespace-nowrap">${time}</div>
+                <div class="text-[10px] text-gray-400 whitespace-nowrap">${time}</div>
             </div>`;
         }).join('');
     }
@@ -535,22 +535,22 @@
     function updateDeployList(data) {
         const el = document.getElementById('deployList');
         const deps = data.deployments || [];
-        if (deps.length === 0) { el.innerHTML = '<div class="text-slate-500 text-center py-8">尚無部署紀錄</div>'; return; }
+        if (deps.length === 0) { el.innerHTML = '<div class="text-gray-400 text-center py-8">尚無部署紀錄</div>'; return; }
         el.innerHTML = deps.map(d => {
             const state = d.readyState;
-            const badge = state === 'READY' ? 'bg-emerald-500/20 text-emerald-400 border-emerald-800' : state === 'ERROR' ? 'bg-red-500/20 text-red-400 border-red-800' : 'bg-amber-500/20 text-amber-400 border-amber-800';
+            const badge = state === 'READY' ? 'bg-emerald-100 text-emerald-400 border-emerald-200' : state === 'ERROR' ? 'bg-red-500/20 text-red-400 border-red-200' : 'bg-amber-100 text-amber-400 border-amber-200';
             const time = new Date(d.created).toLocaleString('zh-TW');
-            return `<div class="bg-slate-900/60 border border-slate-800 rounded-lg p-4 flex items-center gap-4 hover:border-slate-700 transition">
+            return `<div class="bg-gray-50/80 border border-gray-200 rounded-lg p-4 flex items-center gap-4 hover:border-gray-300 transition">
                 <div class="flex-shrink-0">
                     <span class="text-[10px] font-mono px-2 py-1 rounded border ${badge}">${state}</span>
                 </div>
                 <div class="flex-1 min-w-0">
                     <div class="text-xs text-white font-medium">${d.target || 'deployment'}</div>
-                    <div class="text-[10px] text-slate-500 font-mono truncate">${d.url || d.id}</div>
+                    <div class="text-[10px] text-gray-400 font-mono truncate">${d.url || d.id}</div>
                 </div>
                 <div class="text-right flex-shrink-0">
-                    <div class="text-[10px] text-slate-400">${time}</div>
-                    <div class="text-[10px] text-slate-600 font-mono">${d.uid?.slice(0,8) || ''}</div>
+                    <div class="text-[10px] text-gray-500">${time}</div>
+                    <div class="text-[10px] text-gray-400 font-mono">${d.uid?.slice(0,8) || ''}</div>
                 </div>
             </div>`;
         }).join('');
@@ -568,16 +568,16 @@
 
     function updateDomainList(domains) {
         const el = document.getElementById('domainList');
-        if (domains.length === 0) { el.innerHTML = '<div class="text-slate-500 text-center py-8">尚未設定網域</div>'; return; }
+        if (domains.length === 0) { el.innerHTML = '<div class="text-gray-400 text-center py-8">尚未設定網域</div>'; return; }
         el.innerHTML = domains.map(d => {
             const verified = d.verified ? '<span class="text-emerald-400"><i class="fa-solid fa-circle-check mr-1"></i>已驗證</span>' : '<span class="text-red-400"><i class="fa-solid fa-circle-xmark mr-1"></i>未驗證</span>';
-            return `<div class="bg-slate-900/60 border border-slate-800 rounded-lg p-4 flex items-center gap-4 hover:border-slate-700 transition">
-                <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center flex-shrink-0">
+            return `<div class="bg-gray-50/80 border border-gray-200 rounded-lg p-4 flex items-center gap-4 hover:border-gray-300 transition">
+                <div class="w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center flex-shrink-0">
                     <i class="fa-solid fa-globe text-amber-400"></i>
                 </div>
                 <div class="flex-1 min-w-0">
                     <div class="text-sm text-white font-mono">${d.name}</div>
-                    <div class="text-[10px] text-slate-500 mt-1">Apex: ${d.apex ? '是' : '否'} · CNAME: ${d.cname || 'N/A'}</div>
+                    <div class="text-[10px] text-gray-400 mt-1">Apex: ${d.apex ? '是' : '否'} · CNAME: ${d.cname || 'N/A'}</div>
                 </div>
                 <div class="text-xs flex-shrink-0">${verified}</div>
             </div>`;
@@ -598,9 +598,9 @@
         const el = document.getElementById('agentGrid');
         el.innerHTML = AGENTS.map(a => {
             const statusBadge = a.status === 'active'
-                ? '<span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-800">運行中</span>'
-                : '<span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-700 text-slate-400 border border-slate-600">待命</span>';
-            return `<div class="bg-slate-900/60 border border-slate-800 rounded-xl p-4 hover:border-${a.color}-500/30 transition">
+                ? '<span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-400 border border-emerald-200">運行中</span>'
+                : '<span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-700 text-gray-500 border border-gray-300">待命</span>';
+            return `<div class="bg-gray-50/80 border border-gray-200 rounded-xl p-4 hover:border-${a.color}-500/30 transition">
                 <div class="flex items-center justify-between mb-3">
                     <div class="flex items-center gap-2">
                         <div class="w-8 h-8 rounded-lg bg-${a.color}-500/10 flex items-center justify-center">
@@ -608,12 +608,12 @@
                         </div>
                         <div>
                             <div class="text-xs font-bold text-white">${a.name}</div>
-                            <div class="text-[10px] text-slate-500 font-mono">${a.id}</div>
+                            <div class="text-[10px] text-gray-400 font-mono">${a.id}</div>
                         </div>
                     </div>
                     ${statusBadge}
                 </div>
-                <p class="text-[11px] text-slate-400">${a.desc}</p>
+                <p class="text-[11px] text-gray-500">${a.desc}</p>
             </div>`;
         }).join('');
     }
@@ -700,13 +700,13 @@ ${context}
             </div>`;
         } else if (type === 'bot') {
             container.innerHTML += `<div class="flex gap-2 fade-in">
-                <div class="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-robot text-purple-400 text-[10px]"></i></div>
-                <div class="bg-slate-800 rounded-lg rounded-tl-none px-3 py-2 text-slate-300 text-xs max-w-[280px] whitespace-pre-wrap">${escHtml(text)}</div>
+                <div class="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-robot text-purple-400 text-[10px]"></i></div>
+                <div class="bg-gray-200 rounded-lg rounded-tl-none px-3 py-2 text-gray-600 text-xs max-w-[280px] whitespace-pre-wrap">${escHtml(text)}</div>
             </div>`;
         } else if (type === 'typing') {
             container.innerHTML += `<div id="typingIndicator" class="flex gap-2 fade-in">
-                <div class="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-robot text-purple-400 text-[10px]"></i></div>
-                <div class="bg-slate-800 rounded-lg rounded-tl-none px-3 py-2 text-slate-400 text-xs typing-dots"><span>●</span><span>●</span><span>●</span></div>
+                <div class="w-6 h-6 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-robot text-purple-400 text-[10px]"></i></div>
+                <div class="bg-gray-200 rounded-lg rounded-tl-none px-3 py-2 text-gray-500 text-xs typing-dots"><span>●</span><span>●</span><span>●</span></div>
             </div>`;
         }
         container.scrollTop = container.scrollHeight;
@@ -725,11 +725,11 @@ ${context}
     // ── Tabs ──
     function switchTab(tab) {
         document.querySelectorAll('[id^="panel-"]').forEach(p => p.classList.add('hidden'));
-        document.querySelectorAll('[id^="tab-"]').forEach(t => { t.classList.remove('tab-active'); t.classList.add('bg-slate-800','text-slate-300'); });
+        document.querySelectorAll('[id^="tab-"]').forEach(t => { t.classList.remove('tab-active'); t.classList.add('bg-gray-200','text-gray-600'); });
         document.getElementById(`panel-${tab}`).classList.remove('hidden');
         const btn = document.getElementById(`tab-${tab}`);
         btn.classList.add('tab-active');
-        btn.classList.remove('bg-slate-800','text-slate-300');
+        btn.classList.remove('bg-gray-200','text-gray-600');
         
         // Load SDK sites when switching to SDK tab
         if (tab === 'sdk') {
@@ -749,7 +749,7 @@ ${context}
         const filter = document.getElementById('logFilter')?.value || 'all';
         const filtered = filter === 'all' ? logs : logs.filter(l => l.level === filter);
         const colors = { info:'text-cyan-400', warn:'text-amber-400', error:'text-red-400' };
-        el.innerHTML = filtered.map(l => `<div><span class="text-slate-600">[${l.time}]</span> <span class="${colors[l.level]||'text-slate-400'}">[${l.level.toUpperCase()}]</span> ${escHtml(l.msg)}</div>`).join('');
+        el.innerHTML = filtered.map(l => `<div><span class="text-gray-400">[${l.time}]</span> <span class="${colors[l.level]||'text-gray-500'}">[${l.level.toUpperCase()}]</span> ${escHtml(l.msg)}</div>`).join('');
         el.scrollTop = el.scrollHeight;
     }
 
@@ -763,7 +763,7 @@ ${context}
         document.getElementById('sdkTotalSites').textContent = sites.length;
         
         if (sites.length === 0) {
-            el.innerHTML = '<div class="text-slate-500 text-center py-8 text-xs">尚無已接入站點<br><a href="/sdk-config" class="text-cyan-400 hover:underline">前往註冊第一個站點 →</a></div>';
+            el.innerHTML = '<div class="text-gray-400 text-center py-8 text-xs">尚無已接入站點<br><a href="/sdk-config" class="text-cyan-400 hover:underline">前往註冊第一個站點 →</a></div>';
             return;
         }
         
@@ -773,14 +773,14 @@ ${context}
         el.innerHTML = sites.map(site => {
             const created = new Date(site.createdAt).toLocaleDateString('zh-TW');
             const agents = site.agents || [];
-            return `<div class="bg-slate-900/60 border border-slate-800 rounded-lg p-4 flex items-center gap-4 hover:border-slate-700 transition">
+            return `<div class="bg-gray-50/80 border border-gray-200 rounded-lg p-4 flex items-center gap-4 hover:border-gray-300 transition">
                 <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-snt-500 to-cyan-500 flex items-center justify-center text-white font-bold flex-shrink-0">
                     ${site.name.charAt(0)}
                 </div>
                 <div class="flex-1 min-w-0">
                     <div class="text-sm text-white font-medium truncate">${escHtml(site.name)}</div>
-                    <div class="text-[10px] text-slate-500 font-mono truncate">${escHtml(site.url)}</div>
-                    <div class="text-[10px] text-slate-400 mt-1">
+                    <div class="text-[10px] text-gray-400 font-mono truncate">${escHtml(site.url)}</div>
+                    <div class="text-[10px] text-gray-500 mt-1">
                         <span class="text-cyan-400 font-mono">${site.siteId}</span> · 
                         ${site.industry || '未分類'} · 
                         ${agents.length} Agent · 
@@ -788,7 +788,7 @@ ${context}
                     </div>
                 </div>
                 <div class="flex-shrink-0">
-                    <span class="text-[10px] px-2 py-1 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-800">運行中</span>
+                    <span class="text-[10px] px-2 py-1 rounded bg-emerald-100 text-emerald-400 border border-emerald-200">運行中</span>
                 </div>
             </div>`;
         }).join('');
