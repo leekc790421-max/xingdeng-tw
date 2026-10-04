@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://xingdeng.tw/pricing">
 <meta property="og:title" content="SNT 方案定價 | 光耀星樞 AI 自動化方案">
 <meta property="og:description" content="Starter $15K / Pro $58K / Enterprise $128K，透明定價無隱藏費用。">
-<meta property="og:url" content="https://xingdeng.tw/pricing.html">
+<meta property="og:url" content="https://xingdeng.tw/pricing">
 <meta property="og:type" content="website">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","itemListElement":[{"@type":"Offer","name":"Starter","price":"15000","priceCurrency":"TWD"},{"@type":"Offer","name":"Pro","price":"58000","priceCurrency":"TWD"},{"@type":"Offer","name":"Enterprise","price":"128000","priceCurrency":"TWD"}]}</script>
 <script src="https://cdn.tailwindcss.com"></script>
@@ -20,6 +20,50 @@
 <body class="bg-cyberDark text-slate-100 min-h-screen antialiased">
 
 <!-- HEADER -->
+<header class="border-b border-slate-800 bg-slate-950/90 backdrop-blur sticky top-0 z-50 px-4 lg:px-8 py-3">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+        <a href="/" class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-snt-600 via-cyan-500 to-amber-400 p-0.5 flex items-center justify-center shadow-lg shadow-snt-500/20">
+                <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center font-black text-amber-400 font-mono text-lg">SNT</div>
+            </div>
+            <div class="hidden sm:block">
+                <h1 class="font-bold text-base text-white leading-tight">光曜星樞</h1>
+                <p class="text-[10px] text-slate-400 font-mono">方案定價</p>
+            </div>
+        </a>
+        <nav class="hidden md:flex items-center gap-2 text-xs">
+            <a href="/" class="px-4 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium flex items-center gap-2 transition">
+                <i class="fa-solid fa-home"></i> 首頁
+            </a>
+            <a href="/solutions" class="px-4 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium flex items-center gap-2 transition">
+                <i class="fa-solid fa-briefcase text-purple-400"></i> 15大子系統
+            </a>
+            <a href="/lab" class="px-4 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-medium flex items-center gap-2 transition">
+                <i class="fa-solid fa-flask-vial text-cyan-400"></i> 8K 藝廊
+            </a>
+            <a href="/contact" class="px-4 py-2.5 rounded-lg bg-gradient-to-r from-snt-600 to-cyan-600 hover:from-snt-500 hover:to-cyan-500 text-white font-medium flex items-center gap-2 transition">
+                <i class="fa-solid fa-phone"></i> 預約諮詢
+            </a>
+        </nav>
+        <button onclick="document.getElementById('priceMobileMenu').classList.toggle('hidden')" class="md:hidden w-10 h-10 rounded-lg bg-slate-800 hover:bg-slate-700 flex items-center justify-center transition">
+            <i class="fa-solid fa-bars text-white text-lg"></i>
+        </button>
+    </div>
+    <div id="priceMobileMenu" class="md:hidden hidden mt-4 pb-4 space-y-2">
+        <a href="/" class="block w-full px-4 py-3 rounded-lg bg-slate-800 text-slate-300 font-medium flex items-center gap-3 transition hover:bg-slate-700">
+            <i class="fa-solid fa-home"></i> 首頁
+        </a>
+        <a href="/solutions" class="block w-full px-4 py-3 rounded-lg bg-slate-800 text-slate-300 font-medium flex items-center gap-3 transition hover:bg-slate-700">
+            <i class="fa-solid fa-briefcase text-purple-400"></i> 15大子系統
+        </a>
+        <a href="/lab" class="block w-full px-4 py-3 rounded-lg bg-slate-800 text-slate-300 font-medium flex items-center gap-3 transition hover:bg-slate-700">
+            <i class="fa-solid fa-flask-vial text-cyan-400"></i> 8K 藝廊
+        </a>
+        <a href="/contact" class="block w-full px-4 py-3 rounded-lg bg-gradient-to-r from-snt-600 to-cyan-600 text-white font-medium flex items-center gap-3 transition">
+            <i class="fa-solid fa-phone"></i> 預約諮詢
+        </a>
+    </div>
+</header>
 
 
 <!-- HERO -->

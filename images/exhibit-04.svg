@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="g04" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6366f1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g04)"/>
+  <text x="400" y="300" font-family="Arial" font-size="48" fill="#070a12" text-anchor="middle" dominant-baseline="middle">展品 #04</text>
+  <text x="400" y="360" font-family="Arial" font-size="24" fill="#070a12" text-anchor="middle" dominant-baseline="middle">未來能源核心</text>
+</svg>
