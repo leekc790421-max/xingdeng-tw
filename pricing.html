@@ -223,25 +223,26 @@
 <div class="glow-line mb-4" style="height:1px;background:linear-gradient(90deg,transparent,rgba(6,182,212,0.3),transparent)"></div>
 <h3 class="text-xl font-bold text-gray-900 text-center flex items-center justify-center gap-2"><i class="fa-solid fa-paper-plane text-snt-400"></i>免費諮詢 / 索取報價</h3>
 <p class="text-xs text-gray-500 text-center">填寫以下表單，專屬顧問將於 24 小時內與您聯繫</p>
-<form class="bg-white border border-gray-200 rounded-2xl p-6 space-y-4">
+<form id="pricingForm" class="bg-white border border-gray-200 rounded-2xl p-6 space-y-4">
 <div class="grid md:grid-cols-2 gap-4">
-<div><label class="text-xs text-gray-500 mb-1 block">姓名 *</label><input required="" type="text" class="w-full bg-gray-100 border border-gray-300 rounded-lg px-3 py-2 text-sm text-white focus:border-snt-500 focus:outline-none"></div>
-<div><label class="text-xs text-gray-500 mb-1 block">公司/品牌</label><input type="text" class="w-full bg-gray-100 border border-gray-300 rounded-lg px-3 py-2 text-sm text-white focus:border-snt-500 focus:outline-none"></div>
+<div><label class="text-xs text-gray-500 mb-1 block">姓名 *</label><input required name="name" type="text" class="w-full bg-gray-100 border border-gray-300 rounded-lg px-3 py-2 text-sm text-white focus:border-snt-500 focus:outline-none"></div>
+<div><label class="text-xs text-gray-500 mb-1 block">公司/品牌</label><input name="company" type="text" class="w-full bg-gray-100 border border-gray-300 rounded-lg px-3 py-2 text-sm text-white focus:border-snt-500 focus:outline-none"></div>
 </div>
 <div class="grid md:grid-cols-2 gap-4">
-<div><label class="text-xs text-gray-500 mb-1 block">Email *</label><input required="" type="email" class="w-full bg-gray-100 border border-gray-300 rounded-lg px-3 py-2 text-sm text-white focus:border-snt-500 focus:outline-none"></div>
-<div><label class="text-xs text-gray-500 mb-1 block">電話 / LINE</label><input type="text" class="w-full bg-gray-100 border border-gray-300 rounded-lg px-3 py-2 text-sm text-white focus:border-snt-500 focus:outline-none"></div>
+<div><label class="text-xs text-gray-500 mb-1 block">Email *</label><input required name="email" type="email" class="w-full bg-gray-100 border border-gray-300 rounded-lg px-3 py-2 text-sm text-white focus:border-snt-500 focus:outline-none"></div>
+<div><label class="text-xs text-gray-500 mb-1 block">電話 / LINE</label><input name="phone" type="text" class="w-full bg-gray-100 border border-gray-300 rounded-lg px-3 py-2 text-sm text-white focus:border-snt-500 focus:outline-none"></div>
 </div>
 <div><label class="text-xs text-gray-500 mb-1 block">感興趣的方案</label>
-<select class="w-full bg-gray-100 border border-gray-300 rounded-lg px-3 py-2 text-sm text-white focus:border-snt-500 focus:outline-none">
+<select name="plan" class="w-full bg-gray-100 border border-gray-300 rounded-lg px-3 py-2 text-sm text-white focus:border-snt-500 focus:outline-none">
 <option>模板套版方案 (NT$ 9,800)</option>
 <option>客製化方案 (NT$ 28,000)</option>
 <option>全自動化方案 (NT$ 58,000)</option>
 <option>加值服務（網域/廣告/SEO）</option>
 <option>不確定，需要諮詢</option>
 </select></div>
-<div><label class="text-xs text-gray-500 mb-1 block">需求描述</label><textarea rows="3" class="w-full bg-gray-100 border border-gray-300 rounded-lg px-3 py-2 text-sm text-white focus:border-snt-500 focus:outline-none" placeholder="請簡述您的需求、預算範圍、期望上線時間..."></textarea></div>
-<button type="submit" class="w-full bg-gradient-to-r from-snt-600 to-cyan-600 hover:from-snt-500 hover:to-cyan-500 text-white font-semibold py-3 rounded-xl transition"><i class="fa-solid fa-paper-plane mr-2"></i>送出諮詢</button>
+<div><label class="text-xs text-gray-500 mb-1 block">需求描述</label><textarea name="message" rows="3" class="w-full bg-gray-100 border border-gray-300 rounded-lg px-3 py-2 text-sm text-white focus:border-snt-500 focus:outline-none" placeholder="請簡述您的需求、預算範圍、期望上線時間..."></textarea></div>
+<input type="hidden" name="source" value="pricing-page">
+<button type="submit" id="pricingSubmitBtn" class="w-full bg-gradient-to-r from-snt-600 to-cyan-600 hover:from-snt-500 hover:to-cyan-500 text-white font-semibold py-3 rounded-xl transition"><i class="fa-solid fa-paper-plane mr-2"></i>送出諮詢</button>
 </form>
 </section>
 
@@ -288,14 +289,46 @@ document.addEventListener('DOMContentLoaded', function() {
     if (btnMonthly) btnMonthly.addEventListener('click', function() { setPricing('monthly'); });
     if (btnYearly) btnYearly.addEventListener('click', function() { setPricing('yearly'); });
 
-    // Form submit
-    var forms = document.querySelectorAll('form');
-    forms.forEach(function(form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            showToast('感謝您的諮詢！我們將盡快與您聯繫。', 'success');
-            form.reset();
-        });
+    // Form submission
+    document.getElementById('pricingForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('pricingSubmitBtn');
+        const originalText = btn.innerHTML;
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i>送出中...';
+        
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData);
+        
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            
+            const result = await res.json();
+            
+            if (result.success) {
+                showToast('感謝您的諮詢！我們將盡快與您聯繫。', 'success');
+                this.reset();
+                // Track conversion
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'form_submit', {
+                        event_category: 'pricing',
+                        event_label: data.plan
+                    });
+                }
+            } else {
+                showToast(result.message || '提交失敗，請稍後再試', 'error');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            showToast('網路錯誤，請稍後再試', 'error');
+        } finally {
+            btn.disabled = false;
+            btn.innerHTML = originalText;
+        }
     });
 });
 
