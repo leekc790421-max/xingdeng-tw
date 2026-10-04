@@ -3,7 +3,17 @@
   "trailingSlash": false,
   "rewrites": [
     { "source": "/lab", "destination": "/lab.html" },
-    { "source": "/solutions", "destination": "/solutions.html" }
+    { "source": "/solutions", "destination": "/solutions.html" },
+    { "source": "/pricing", "destination": "/pricing.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/faq", "destination": "/faq.html" },
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/cookie", "destination": "/cookie.html" },
+    { "source": "/admin", "destination": "/admin.html" },
+    { "source": "/sdk-config", "destination": "/sdk-config.html" }
+  ],
+  "redirects": [
+    { "source": "/(.*)\\.html", "destination": "/$1", "permanent": true }
   ],
   "headers": [
     {
@@ -32,7 +42,7 @@
       ]
     },
     {
-      "source": "/admin",
+      "source": "/admin(.*)",
       "headers": [
         {
           "key": "X-Frame-Options",

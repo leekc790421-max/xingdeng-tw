@@ -352,7 +352,7 @@
                     <div class="grid md:grid-cols-3 gap-4 font-normal">
                         <div class="bg-gray-100/90 p-4 rounded-xl border border-gray-200 space-y-2">
                             <div class="text-snt-400 font-bold flex items-center gap-2"><i class="fa-solid fa-shield-check"></i> 1. 品牌定錨與合規</div>
-                            <p class="text-xs text-gray-500">完成 SNT 官網全面煥新，建立多語系識別與嚴格的法律免責防護屏障 (privacy.html)。</p>
+                            <p class="text-xs text-gray-500">完成 SNT 官網全面煥新，建立多語系識別與嚴格的法律免責防護屏障 (/privacy)。</p>
                         </div>
                         <div class="bg-gray-100/90 p-4 rounded-xl border border-gray-200 space-y-2">
                             <div class="text-cyan-400 font-bold flex items-center gap-2"><i class="fa-solid fa-video"></i> 2. Build in Public 行銷</div>
@@ -424,7 +424,7 @@
                                 <td class="p-3"><div class="flex gap-1.5"><span class="w-5 h-5 rounded bg-white border border-slate-400"></span><span class="w-5 h-5 rounded bg-blue-500"></span><span class="w-5 h-5 rounded bg-rose-500"></span><span class="w-5 h-5 rounded bg-amber-400"></span><span class="w-5 h-5 rounded bg-emerald-500"></span><span class="w-5 h-5 rounded bg-purple-500"></span></div></td>
                                 <td class="p-3 text-gray-500">背板亮白底 / 藍 / 紅 / 黃 / 綠 / 紫，可調控變換</td>
                             </tr>
-                            <tr><td class="p-3 font-bold text-snt-400">法律免責聲明</td><td class="p-3 font-mono text-rose-400">privacy.html 條款</td><td class="p-3 text-gray-500">包含國家安全、第三方權益侵害及刑事責任免責，作為企業法律防火牆</td></tr>
+                            <tr><td class="p-3 font-bold text-snt-400">法律免責聲明</td><td class="p-3 font-mono text-rose-400">/privacy 條款</td><td class="p-3 text-gray-500">包含國家安全、第三方權益侵害及刑事責任免責，作為企業法律防火牆</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -623,7 +623,7 @@
                     <div class="relative pl-6">
                         <span class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-snt-500 border-4 border-slate-950"></span>
                         <div class="font-bold text-snt-400 font-mono text-sm">Phase 1 | M1: 品牌煥新與法律生效 (1 - 2 天)</div>
-                        <p class="text-gray-600 mt-1">更新 index.html Meta 與 Logo，配置 privacy.html 免責條款，Git Push 觸發 Vercel 自動部署。</p>
+                        <p class="text-gray-600 mt-1">更新首頁 Meta 與 Logo，配置 /privacy 免責條款，Git Push 觸發 Vercel 自動部署。</p>
                         <span class="inline-block mt-1 bg-gray-100 text-gray-500 px-2 py-0.5 rounded text-[10px] font-mono">交付物：SNT 官方網站正式上線 + 法律條款生效</span>
                     </div>
                     <div class="relative pl-6">
@@ -789,7 +789,19 @@
 
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
+            const btn = menu.previousElementSibling.querySelector('button') || document.querySelector('.lg\\:hidden .fa-bars');
             menu.classList.toggle('hidden');
+            // Toggle hamburger/X icon
+            const icon = document.querySelector('[onclick="toggleMobileMenu()"] i');
+            if (icon) {
+                if (menu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                }
+            }
         }
 
         function switchView(viewName) {
@@ -799,6 +811,10 @@
             });
             document.getElementById('view-' + viewName).classList.remove('hidden');
             document.getElementById('btn-view-' + viewName).className = "px-3.5 py-2 rounded-lg bg-snt-600 text-white font-medium flex items-center gap-2 transition hover:bg-snt-500";
+            // Scroll to top of main content on mobile
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // Re-init canvas if switching to lab view
+            if (viewName === 'lab') { setTimeout(initSandboxCanvas, 100); }
         }
 
         function setLabFilter(filterType) {

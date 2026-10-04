@@ -1,6 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /admin
 Disallow: /admin.html
+Disallow: /sdk-config
 Disallow: /sdk-config.html
 
 Sitemap: https://xingdeng.tw/sitemap.xml
