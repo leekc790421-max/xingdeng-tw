@@ -1,15 +1,90 @@
 {
-  "version": "2026.10-25.1",
+  "version": "2026.10-25.2",
   "updated": "2026-10-25",
   "public_note": "本檔為集团公开变更广播源。各机器人／站内AI作业规范：先读本檔与 fleet-brief（tower.xingdeng.tw/assets/fleet-brief.json），产品范围与公开价格一律以此为准；逐件模块单价属缴订后机密交付目录，任何公开面不得列出。谈价一律导向 /contact 报价单。",
   "items": [
-    { "date": "2026-10-25", "title": "24/7 脉动上线：办公室站心跳接入集团事件汇流排", "summary": "每日保底 cron＋外部主时钟双层驱动；corps 网关 ev/flags/board 可查全站存活。", "tags": ["ops", "platform"], "public": true },
-    { "date": "2026-10-25", "title": "双模式站内搜索系统上线", "summary": "MODE A 立即定位（LOCATE）／MODE B 理解分析（ANALYZE）；端点 /api/search?query=（兼容 q=）。", "tags": ["platform"], "public": true },
-    { "date": "2026-10-25", "title": "六项产品页与四款活动模板上架", "summary": "/products：A1 智能名片、B2B 行业版、R2.5 内容引擎、S1 快闪页、T4 电商整合、VIP 年约；/templates：限时特价／新客获取／异业合作／升级转化。", "tags": ["product"], "public": true },
-    { "date": "2026-10-24", "title": "获客蓝图 P0：五维诊断漏斗上线（军团站）", "summary": "真扫描→分享图卡（带归因）→60秒配对测验直连报价单；名单入 corps 漏斗分流。", "tags": ["growth"], "public": true },
-    { "date": "2026-10-24", "title": "单一信息源广播机制发布（fleet-brief）", "summary": "产品范围、公开价格口径、七项政策、机密边界集中一处；十岗排程提示词全员先读简报。", "tags": ["ops"], "public": true },
-    { "date": "2026-10-23", "title": "法律中枢大扩编", "summary": "合约中枢＋五份制式合约（繁体／EN／日叠加三语）；legal 区约本深链、llms 法律节。", "tags": ["legal"], "public": true },
-    { "date": "2026-10-23", "title": "SNT 脉搏主干 v1", "summary": "corps 网关挂 ev/flags/board 三分支、pulse.js SDK、health snt-health-v1 上线。", "tags": ["platform"], "public": true },
-    { "date": "2026-10-10", "title": "主站商业改版：.tech 展示 → 高效能接单提案", "summary": "全站从技术展示重构为接单导向；3D 总部（Orbit Tower）持续导流。", "tags": ["product"], "public": true }
+    {
+      "date": "2026-10-25",
+      "title": "模板工廠 v1 上線:8 款拆裝產業模板發布",
+      "summary": "軍團站 /factory 目錄上線(餐飲/診所/律所/健身/網店/SaaS/美髮/建案),每款內建 AI 接待留單+維修區值班+報價導流;機器可讀清單 /factory/factory.json。",
+      "tags": [
+        "product",
+        "factory"
+      ],
+      "public": true
+    },
+    {
+      "date": "2026-10-25",
+      "title": "24/7 脉动上线：办公室站心跳接入集团事件汇流排",
+      "summary": "每日保底 cron＋外部主时钟双层驱动；corps 网关 ev/flags/board 可查全站存活。",
+      "tags": [
+        "ops",
+        "platform"
+      ],
+      "public": true
+    },
+    {
+      "date": "2026-10-25",
+      "title": "双模式站内搜索系统上线",
+      "summary": "MODE A 立即定位（LOCATE）／MODE B 理解分析（ANALYZE）；端点 /api/search?query=（兼容 q=）。",
+      "tags": [
+        "platform"
+      ],
+      "public": true
+    },
+    {
+      "date": "2026-10-25",
+      "title": "六项产品页与四款活动模板上架",
+      "summary": "/products：A1 智能名片、B2B 行业版、R2.5 内容引擎、S1 快闪页、T4 电商整合、VIP 年约；/templates：限时特价／新客获取／异业合作／升级转化。",
+      "tags": [
+        "product"
+      ],
+      "public": true
+    },
+    {
+      "date": "2026-10-24",
+      "title": "获客蓝图 P0：五维诊断漏斗上线（军团站）",
+      "summary": "真扫描→分享图卡（带归因）→60秒配对测验直连报价单；名单入 corps 漏斗分流。",
+      "tags": [
+        "growth"
+      ],
+      "public": true
+    },
+    {
+      "date": "2026-10-24",
+      "title": "单一信息源广播机制发布（fleet-brief）",
+      "summary": "产品范围、公开价格口径、七项政策、机密边界集中一处；十岗排程提示词全员先读简报。",
+      "tags": [
+        "ops"
+      ],
+      "public": true
+    },
+    {
+      "date": "2026-10-23",
+      "title": "法律中枢大扩编",
+      "summary": "合约中枢＋五份制式合约（繁体／EN／日叠加三语）；legal 区约本深链、llms 法律节。",
+      "tags": [
+        "legal"
+      ],
+      "public": true
+    },
+    {
+      "date": "2026-10-23",
+      "title": "SNT 脉搏主干 v1",
+      "summary": "corps 网关挂 ev/flags/board 三分支、pulse.js SDK、health snt-health-v1 上线。",
+      "tags": [
+        "platform"
+      ],
+      "public": true
+    },
+    {
+      "date": "2026-10-10",
+      "title": "主站商业改版：.tech 展示 → 高效能接单提案",
+      "summary": "全站从技术展示重构为接单导向；3D 总部（Orbit Tower）持续导流。",
+      "tags": [
+        "product"
+      ],
+      "public": true
+    }
   ]
 }
