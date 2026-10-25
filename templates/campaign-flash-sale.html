@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{CAMPAIGN_TITLE}} - 光曜星樞 SNT</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Microsoft JhengHei', 'PingFang TC', sans-serif;
+      background: #0a0a1a;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    
+    /* Hero with Timer */
+    .hero {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2a 50%, #0a0a1a 100%);
+      position: relative;
+      padding: 60px 20px;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 150%;
+      height: 150%;
+      background: radial-gradient(circle, rgba(0,212,255,0.15) 0%, transparent 60%);
+      animation: pulse 3s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.05); opacity: 0.8; }
+    }
+    .hero-content { position: relative; z-index: 1; }
+    .flash-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #ff0066, #ff6600);
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+      animation: flash 1.5s ease-in-out infinite;
+    }
+    @keyframes flash {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+    .hero h1 {
+      font-size: 3rem;
+      color: #00d4ff;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 30px rgba(0,212,255,0.6);
+    }
+    .hero .subtitle {
+      font-size: 1.3rem;
+      color: #b0b0b0;
+      margin-bottom: 2rem;
+    }
+    .hero-timer {
+      background: rgba(0,212,255,0.1);
+      border: 2px solid #00d4ff;
+      border-radius: 15px;
+      padding: 2rem;
+      display: inline-block;
+      margin-top: 2rem;
+    }
+    .timer-display {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      align-items: center;
+    }
+    .timer-item {
+      text-align: center;
+    }
+    .timer-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #00d4ff;
+      display: block;
+    }
+    .timer-label {
+      color: #b0b0b0;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+    }
+    .timer-separator {
+      font-size: 2.5rem;
+      color: #00d4ff;
+      font-weight: bold;
+    }
+    
+    /* Product Cards */
+    .products-section {
+      padding: 80px 0;
+      background: #0f0f2a;
+    }
+    .products-section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #00d4ff;
+      margin-bottom: 3rem;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .product-card {
+      background: rgba(0,212,255,0.05);
+      border: 2px solid rgba(0,212,255,0.2);
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-card:hover {
+      transform: translateY(-10px);
+      border-color: #00d4ff;
+      box-shadow: 0 15px 40px rgba(0,212,255,0.3);
+    }
+    .product-card.featured {
+      border-color: #ff0066;
+      background: rgba(255,0,102,0.05);
+    }
+    .product-badge {
+      position: absolute;
+      top: 15px;
+      right: -30px;
+      background: linear-gradient(135deg, #ff0066, #ff6600);
+      color: white;
+      padding: 0.5rem 2rem;
+      transform: rotate(45deg);
+      font-size: 0.85rem;
+      font-weight: bold;
+    }
+    .product-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+    .product-name {
+      font-size: 1.5rem;
+      color: #00d4ff;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+    .product-description {
+      color: #b0b0b0;
+      margin-bottom: 1.5rem;
+      min-height: 60px;
+    }
+    .product-features {
+      list-style: none;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+    .product-features li {
+      padding: 0.5rem 0;
+      color: #e0e0e0;
+    }
+    .product-features li:before {
+      content: "✓ ";
+      color: #00d4ff;
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+    
+    /* Pricing Comparison */
+    .pricing-comparison {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(0,212,255,0.2);
+    }
+    .price-original {
+      text-decoration: line-through;
+      color: #666;
+      font-size: 1.2rem;
+      margin-right: 1rem;
+    }
+    .price-sale {
+      font-size: 2.5rem;
+      color: #ff0066;
+      font-weight: bold;
+    }
+    .price-period {
+      color: #b0b0b0;
+      font-size: 0.9rem;
+    }
+    .btn-primary {
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, #00d4ff, #0099cc);
+      color: #0a0a1a;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 1.5rem;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(0,212,255,0.4);
+    }
+    .btn-featured {
+      background: linear-gradient(135deg, #ff0066, #ff6600);
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      padding: 80px 0;
+      text-align: center;
+      background: linear-gradient(135deg, #0a0a1a, #1a1a3a);
+    }
+    .cta-section h2 {
+      font-size: 2.5rem;
+      color: #00d4ff;
+      margin-bottom: 1.5rem;
+    }
+    .cta-section p {
+      font-size: 1.2rem;
+      color: #b0b0b0;
+      margin-bottom: 2rem;
+    }
+    .btn-large {
+      display: inline-block;
+      padding: 1.2rem 3rem;
+      background: linear-gradient(135deg, #00d4ff, #0099cc);
+      color: #0a0a1a;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .btn-large:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0,212,255,0.5);
+    }
+    
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      background: #050510;
+      color: #666;
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .timer-number { font-size: 1.8rem; }
+      .timer-separator { font-size: 1.8rem; }
+      .products-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero with Timer -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="flash-badge">⚡ {{FLASH_SALE_BADGE}}</div>
+      <h1>{{CAMPAIGN_TITLE}}</h1>
+      <p class="subtitle">{{CAMPAIGN_SUBTITLE}}</p>
+      <div class="hero-timer">
+        <p style="color: #00d4ff; margin-bottom: 1rem; font-size: 1.1rem;">{{TIMER_HEADING}}</p>
+        <div class="timer-display" id="countdown">
+          <div class="timer-item">
+            <span class="timer-number" id="days">00</span>
+            <span class="timer-label">天</span>
+          </div>
+          <span class="timer-separator">:</span>
+          <div class="timer-item">
+            <span class="timer-number" id="hours">00</span>
+            <span class="timer-label">時</span>
+          </div>
+          <span class="timer-separator">:</span>
+          <div class="timer-item">
+            <span class="timer-number" id="minutes">00</span>
+            <span class="timer-label">分</span>
+          </div>
+          <span class="timer-separator">:</span>
+          <div class="timer-item">
+            <span class="timer-number" id="seconds">00</span>
+            <span class="timer-label">秒</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Cards -->
+  <section class="products-section">
+    <div class="container">
+      <h2>{{PRODUCTS_SECTION_TITLE}}</h2>
+      <div class="products-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <div class="product-icon">{{PRODUCT_1_ICON}}</div>
+          <div class="product-name">{{PRODUCT_1_NAME}}</div>
+          <div class="product-description">{{PRODUCT_1_DESCRIPTION}}</div>
+          <ul class="product-features">
+            <li>{{PRODUCT_1_FEATURE_1}}</li>
+            <li>{{PRODUCT_1_FEATURE_2}}</li>
+            <li>{{PRODUCT_1_FEATURE_3}}</li>
+          </ul>
+          <div class="pricing-comparison">
+            <span class="price-original">{{PRODUCT_1_ORIGINAL_PRICE}}</span>
+            <span class="price-sale">{{PRODUCT_1_SALE_PRICE}}</span>
+            <div class="price-period">{{PRODUCT_1_PERIOD}}</div>
+          </div>
+          <button class="btn-primary" onclick="handlePurchase('{{PRODUCT_1_ID}}')">{{PRODUCT_1_CTA}}</button>
+        </div>
+
+        <!-- Product 2 - Featured -->
+        <div class="product-card featured">
+          <div class="product-badge">{{PRODUCT_2_BADGE}}</div>
+          <div class="product-icon">{{PRODUCT_2_ICON}}</div>
+          <div class="product-name">{{PRODUCT_2_NAME}}</div>
+          <div class="product-description">{{PRODUCT_2_DESCRIPTION}}</div>
+          <ul class="product-features">
+            <li>{{PRODUCT_2_FEATURE_1}}</li>
+            <li>{{PRODUCT_2_FEATURE_2}}</li>
+            <li>{{PRODUCT_2_FEATURE_3}}</li>
+            <li>{{PRODUCT_2_FEATURE_4}}</li>
+          </ul>
+          <div class="pricing-comparison">
+            <span class="price-original">{{PRODUCT_2_ORIGINAL_PRICE}}</span>
+            <span class="price-sale">{{PRODUCT_2_SALE_PRICE}}</span>
+            <div class="price-period">{{PRODUCT_2_PERIOD}}</div>
+          </div>
+          <button class="btn-primary btn-featured" onclick="handlePurchase('{{PRODUCT_2_ID}}')">{{PRODUCT_2_CTA}}</button>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+          <div class="product-icon">{{PRODUCT_3_ICON}}</div>
+          <div class="product-name">{{PRODUCT_3_NAME}}</div>
+          <div class="product-description">{{PRODUCT_3_DESCRIPTION}}</div>
+          <ul class="product-features">
+            <li>{{PRODUCT_3_FEATURE_1}}</li>
+            <li>{{PRODUCT_3_FEATURE_2}}</li>
+            <li>{{PRODUCT_3_FEATURE_3}}</li>
+          </ul>
+          <div class="pricing-comparison">
+            <span class="price-original">{{PRODUCT_3_ORIGINAL_PRICE}}</span>
+            <span class="price-sale">{{PRODUCT_3_SALE_PRICE}}</span>
+            <div class="price-period">{{PRODUCT_3_PERIOD}}</div>
+          </div>
+          <button class="btn-primary" onclick="handlePurchase('{{PRODUCT_3_ID}}')">{{PRODUCT_3_CTA}}</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>{{CTA_TITLE}}</h2>
+      <p>{{CTA_SUBTITLE}}</p>
+      <a href="#products" class="btn-large">{{CTA_BUTTON_TEXT}}</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; {{YEAR}} 光曜星樞 SNT. All rights reserved.</p>
+      <p>{{FOOTER_TEXT}}</p>
+    </div>
+  </footer>
+
+  <script>
+    // Countdown Timer - Set your sale end date here
+    const saleEndDate = new Date('{{SALE_END_DATE}}').getTime();
+    
+    const countdown = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = saleEndDate - now;
+      
+      if (distance < 0) {
+        clearInterval(countdown);
+        document.getElementById('countdown').innerHTML = '<p style="color: #ff0066; font-size: 1.5rem;">活動已結束</p>';
+        return;
+      }
+      
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      document.getElementById('days').textContent = String(days).padStart(2, '0');
+      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }, 1000);
+
+    // Purchase Handler
+    function handlePurchase(productId) {
+      console.log('Purchase initiated:', productId);
+      alert('{{PURCHASE_ALERT_MESSAGE}}');
+    }
+  </script>
+</body>
+</html>

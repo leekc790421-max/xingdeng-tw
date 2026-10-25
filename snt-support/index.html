@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNT 維修支援中心 | 光曜星樞</title>
+    <meta name="description" content="光曜星樞 SNT 專業維修支援服務，提供網站、應用程式快速修復與技術支援">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-cyan: #00d4ff;
+            --primary-blue: #0066ff;
+            --dark-bg: #0a0e1a;
+            --darker-bg: #050810;
+            --card-bg: #111827;
+            --text-primary: #e0e7ff;
+            --text-secondary: #9ca3af;
+            --border-color: #1f2937;
+            --gradient-1: linear-gradient(135deg, #00d4ff 0%, #0066ff 100%);
+            --gradient-2: linear-gradient(135deg, #0a0e1a 0%, #1a1f3a 100%);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: var(--darker-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--primary-cyan);
+        }
+
+        .hero {
+            padding: 6rem 0;
+            text-align: center;
+            background: var(--gradient-2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--primary-cyan);
+        }
+
+        .service-description {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 3rem;
+        }
+
+        .service-description p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            position: relative;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-cyan);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: var(--gradient-1);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .step-card h3 {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .step-card p {
+            color: var(--text-secondary);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: var(--card-bg);
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            border: 2px solid var(--border-color);
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .pricing-card:hover {
+            border-color: var(--primary-cyan);
+            transform: translateY(-10px);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary-cyan);
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(0, 102, 255, 0.05) 100%);
+        }
+
+        .pricing-card.featured::before {
+            content: '推薦';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gradient-1);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-cyan);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 1.5rem 0;
+            color: var(--text-primary);
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .pricing-features li {
+            padding: 0.75rem 0;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .pricing-features li:before {
+            content: '✓';
+            color: var(--primary-cyan);
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--gradient-1);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        .form-container {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: var(--darker-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-cyan);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-primary);
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: rgba(0, 212, 255, 0.05);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s;
+            color: var(--text-secondary);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 500px;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+            color: var(--primary-cyan);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .contact-info {
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .contact-info p {
+            margin: 1rem 0;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .chatbot-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .chatbot-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--gradient-1);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.4);
+            transition: transform 0.3s;
+        }
+
+        .chatbot-button:hover {
+            transform: scale(1.1);
+        }
+
+        .chatbot-button svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+        }
+
+        .chatbot-window {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 350px;
+            height: 500px;
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .chatbot-window.active {
+            display: flex;
+        }
+
+        .chatbot-header {
+            background: var(--gradient-1);
+            padding: 1rem;
+            color: white;
+            font-weight: 600;
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem;
+        }
+
+        .message {
+            margin-bottom: 1rem;
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            max-width: 80%;
+        }
+
+        .message.bot {
+            background: var(--darker-bg);
+            color: var(--text-primary);
+            margin-right: auto;
+        }
+
+        .message.user {
+            background: var(--gradient-1);
+            color: white;
+            margin-left: auto;
+        }
+
+        .chatbot-input {
+            display: flex;
+            padding: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            padding: 0.75rem;
+            background: var(--darker-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-primary);
+            margin-right: 0.5rem;
+        }
+
+        .chatbot-input button {
+            padding: 0.75rem 1.5rem;
+            background: var(--gradient-1);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        footer {
+            background: var(--darker-bg);
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            nav {
+                gap: 1rem;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .chatbot-window {
+                width: 300px;
+                height: 450px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">光曜星樞 SNT</div>
+            <nav>
+                <a href="/">首頁</a>
+                <a href="/kits/">資源套件</a>
+                <a href="#services">服務</a>
+                <a href="#contact">聯絡</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>SNT 維修支援中心</h1>
+            <p>專業、快速、可靠的技術維修服務，讓您的系統恢復最佳狀態</p>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>維修服務說明</h2>
+            <div class="service-description">
+                <p>
+                    光曜星樞 SNT 提供全方位的網站與應用程式維修服務。無論是文字內容更新、功能模組修復、效能優化，或是緊急系統復原，我們的專業團隊都能快速為您解決問題。
+                </p>
+                <p style="margin-top: 1rem;">
+                    我們採用最先進的技術架構，確保每一次維修都能達到最高品質標準。所有維修項目皆包含完整的測試與驗證流程，確保系統穩定運作。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: var(--darker-bg);">
+        <div class="container">
+            <h2>送修流程</h2>
+            <div class="process-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>提交需求</h3>
+                    <p>填寫維修表單，詳細描述您的問題與需求，並選擇緊急程度</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>問題評估</h3>
+                    <p>我們的技術團隊會在 2 小時內評估問題，並提供詳細的維修方案與報價</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>確認維修</h3>
+                    <p>確認維修方案與費用後，我們將立即開始處理您的問題</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>完成交付</h3>
+                    <p>維修完成後進行全面測試，確認無誤後交付，並提供後續技術支援</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <div class="container">
+            <h2>維修方案與價格</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>基本維修</h3>
+                    <div class="price">$1,500<span>起</span></div>
+                    <ul class="pricing-features">
+                        <li>文字/圖片內容更新</li>
+                        <li>Minor bug fixes</li>
+                        <li>簡易樣式調整</li>
+                        <li>3 個工作天內完成</li>
+                        <li>基本功能測試</li>
+                    </ul>
+                    <a href="#repair-form" class="btn">選擇方案</a>
+                </div>
+                <div class="pricing-card featured">
+                    <h3>標準維修</h3>
+                    <div class="price">$3,800<span>起</span></div>
+                    <ul class="pricing-features">
+                        <li>功能模組修復</li>
+                        <li>效能優化</li>
+                        <li>安全更新與漏洞修補</li>
+                        <li>資料庫優化</li>
+                        <li>5 個工作天內完成</li>
+                        <li>完整測試報告</li>
+                    </ul>
+                    <a href="#repair-form" class="btn">選擇方案</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>緊急維修</h3>
+                    <div class="price">$6,800<span>起</span></div>
+                    <ul class="pricing-features">
+                        <li>24 小時優先處理</li>
+                        <li>系統完整復原</li>
+                        <li>資料救援與備份</li>
+                        <li>即時通訊支援</li>
+                        <li>優先技術顧問</li>
+                        <li>完整事後報告</li>
+                    </ul>
+                    <a href="#repair-form" class="btn">選擇方案</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="repair-form" style="background: var(--darker-bg);">
+        <div class="container">
+            <h2>維修表單</h2>
+            <div class="form-container">
+                <form id="repairForm">
+                    <div class="form-group">
+                        <label for="domain">網域/產品名稱 *</label>
+                        <input type="text" id="domain" name="domain" required placeholder="例如：example.com 或 產品名稱">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">問題描述 *</label>
+                        <textarea id="description" name="description" required placeholder="請詳細描述您遇到的問題，包含錯誤訊息、發生時間等資訊"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="urgency">緊急程度 *</label>
+                        <select id="urgency" name="urgency" required>
+                            <option value="">請選擇</option>
+                            <option value="low">低 - 不影響運作，可等待</option>
+                            <option value="medium">中 - 部分功能受影響</option>
+                            <option value="high">高 - 嚴重影響運作</option>
+                            <option value="critical">緊急 - 系統完全無法使用</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact">聯絡方式 *</label>
+                        <input type="text" id="contact" name="contact" required placeholder="Email 或電話號碼">
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">提交維修需求</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>常見問題</h2>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>維修需要多長時間？</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>基本維修約 3 個工作天，標準維修約 5 個工作天，緊急維修則在 24 小時內開始處理。實際時間依問題複雜度而定。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>如何支付維修費用？</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>我們接受銀行轉帳、信用卡及數位支付。確認維修方案後需支付 50% 訂金，完成維修後支付剩餘款項。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>維修後有保固嗎？</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>所有維修項目皆提供 30 天保固。保固期內若出現相同問題，我們將免費再次維修。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>可以維修其他公司開發的網站嗎？</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>可以。我們支援各種技術架構的網站與應用程式，包含但不限於 WordPress、React、Vue、PHP、Node.js 等。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>如何追蹤維修進度？</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>提交維修需求後，您會收到專屬的維修編號。可透過此編號隨時查詢維修進度，我們也會主動通知您最新狀況。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="background: var(--darker-bg);">
+        <div class="container">
+            <h2>聯絡我們</h2>
+            <div class="contact-info">
+                <p><strong>電子郵件：</strong>support@snt.com</p>
+                <p><strong>服務專線：</strong>02-1234-5678</p>
+                <p><strong>服務時間：</strong>週一至週五 09:00-18:00</p>
+                <p><strong>緊急支援：</strong>24 小時（僅限緊急維修方案客戶）</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 光曜星樞 SNT. All rights reserved.</p>
+            <p style="margin-top: 1rem;">
+                <a href="/" style="color: var(--primary-cyan); text-decoration: none;">回首頁</a> | 
+                <a href="/kits/" style="color: var(--primary-cyan); text-decoration: none;">資源套件</a>
+            </p>
+        </div>
+    </footer>
+
+    <div class="chatbot-widget">
+        <button class="chatbot-button" id="chatbotToggle">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3 .97 4.29L2 22l5.71-.97C9 21.64 10.46 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.38 0-2.67-.33-3.82-.91l-.27-.15-3.18.54.54-3.18-.15-.27C4.33 14.67 4 13.38 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/>
+                <circle cx="8.5" cy="10.5" r="1.5"/>
+                <circle cx="12" cy="10.5" r="1.5"/>
+                <circle cx="15.5" cy="10.5" r="1.5"/>
+            </svg>
+        </button>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">SNT 智能客服</div>
+            <div class="chatbot-messages" id="chatMessages">
+                <div class="message bot">您好！我是 SNT 智能客服。請問有什麼可以幫您的嗎？</div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatInput" placeholder="輸入您的問題...">
+                <button id="chatSend">送出</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Form Submission
+        document.getElementById('repairForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('感謝您提交維修需求！我們會在 2 小時內與您聯絡。');
+            e.target.reset();
+        });
+
+        // Chatbot
+        const chatbotToggle = document.getElementById('chatbotToggle');
+        const chatbotWindow = document.getElementById('chatbotWindow');
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        const chatSend = document.getElementById('chatSend');
+
+        chatbotToggle.addEventListener('click', () => {
+            chatbotWindow.classList.toggle('active');
+        });
+
+        const responses = {
+            '價格': '我們的維修方案分為三種：基本維修 $1,500 起、標準維修 $3,800 起、緊急維修 $6,800 起。詳細內容請參考上方的價格方案區。',
+            '時間': '基本維修約 3 個工作天，標準維修約 5 個工作天，緊急維修則在 24 小時內開始處理。',
+            '聯絡': '您可以透過電子郵件 support@snt.com 或服務專線 02-1234-5678 聯絡我們。服務時間為週一至週五 09:00-18:00。',
+            '流程': '送修流程分為四步：1. 提交需求 2. 問題評估 3. 確認維修 4. 完成交付。詳細說明請參考上方的送修流程區。',
+            '保固': '所有維修項目皆提供 30 天保固。保固期內若出現相同問題，我們將免費再次維修。',
+            '付款': '我們接受銀行轉帳、信用卡及數位支付。確認維修方案後需支付 50% 訂金，完成維修後支付剩餘款項。',
+            '緊急': '如果您遇到緊急問題，建議選擇緊急維修方案，我們會在 24 小時內優先處理您的問題。',
+            '你好': '您好！請問有什麼可以幫您的嗎？',
+            'hello': '您好！請問有什麼可以幫您的嗎？',
+            'hi': '您好！請問有什麼可以幫您的嗎？'
+        };
+
+        function getBotResponse(message) {
+            const lowerMessage = message.toLowerCase();
+            for (const [key, value] of Object.entries(responses)) {
+                if (lowerMessage.includes(key.toLowerCase())) {
+                    return value;
+                }
+            }
+            return '感謝您的詢問。如需進一步協助，請填寫上方的維修表單或透過電子郵件 support@snt.com 與我們聯絡，我們會盡快回覆您。';
+        }
+
+        function addMessage(text, isUser) {
+            const message = document.createElement('div');
+            message.className = `message ${isUser ? 'user' : 'bot'}`;
+            message.textContent = text;
+            chatMessages.appendChild(message);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function sendMessage() {
+            const message = chatInput.value.trim();
+            if (message) {
+                addMessage(message, true);
+                chatInput.value = '';
+                setTimeout(() => {
+                    addMessage(getBotResponse(message), false);
+                }, 500);
+            }
+        }
+
+        chatSend.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

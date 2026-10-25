@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>T4 電商版 — 光曜星樞 SNT</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a1a;--bg2:#0f0f2a;--bg3:#141432;--cyan:#00d4ff;--cyan2:#00b8e6;--blue:#0066ff;--text:#e0e6f0;--text2:#8892a8;--card:#11112a;--border:#1a1a3e;--glow:0 0 30px rgba(0,212,255,.15)}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+a{color:var(--cyan);text-decoration:none;transition:opacity .2s}
+a:hover{opacity:.8}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,26,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-size:1.1rem;font-weight:700;background:linear-gradient(135deg,var(--cyan),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-links a{font-size:.9rem;color:var(--text2)}
+.nav-links a:hover{color:var(--cyan)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 4rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 50% 50%,rgba(0,212,255,.06) 0%,transparent 50%);animation:pulse 8s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.1);opacity:1}}
+.hero-badge{display:inline-block;padding:.4rem 1.2rem;border:1px solid var(--cyan);border-radius:999px;font-size:.8rem;color:var(--cyan);letter-spacing:.1em;margin-bottom:2rem;text-transform:uppercase}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;margin-bottom:1rem;background:linear-gradient(135deg,#fff 30%,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-price{font-size:clamp(1.8rem,4vw,3rem);font-weight:700;color:var(--cyan);margin-bottom:1.5rem}
+.hero-price span{font-size:1rem;color:var(--text2);font-weight:400}
+.hero-desc{max-width:600px;color:var(--text2);font-size:1.1rem;margin-bottom:2.5rem}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;border:none;transition:all .3s}
+.btn-primary{background:linear-gradient(135deg,var(--cyan),var(--blue));color:#fff;box-shadow:0 4px 20px rgba(0,212,255,.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 30px rgba(0,212,255,.4)}
+.btn-outline{background:transparent;color:var(--cyan);border:1px solid var(--cyan)}
+.btn-outline:hover{background:rgba(0,212,255,.1)}
+
+/* SECTIONS */
+.section{padding:5rem 2rem;max-width:1100px;margin:0 auto}
+.section-label{font-size:.8rem;color:var(--cyan);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.5rem}
+.section-title{font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:700;margin-bottom:1rem}
+.section-desc{color:var(--text2);max-width:600px;margin-bottom:3rem}
+
+/* FEATURE GRID */
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.feature-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:all .3s;position:relative;overflow:hidden}
+.feature-card:hover{border-color:var(--cyan);box-shadow:var(--glow);transform:translateY(-4px)}
+.feature-icon{width:48px;height:48px;border-radius:12px;background:rgba(0,212,255,.1);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1rem}
+.feature-card h3{font-size:1.15rem;margin-bottom:.5rem}
+.feature-card p{color:var(--text2);font-size:.9rem}
+
+/* CONTENT LIST */
+.content-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
+.content-item{display:flex;align-items:flex-start;gap:1rem;padding:1.2rem 1.5rem;background:var(--bg2);border:1px solid var(--border);border-radius:12px}
+.content-item .check{color:var(--cyan);font-size:1.2rem;flex-shrink:0;margin-top:2px}
+.content-item h4{font-size:1rem;margin-bottom:.25rem}
+.content-item p{color:var(--text2);font-size:.85rem}
+
+/* AUDIENCE */
+.audience-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+.audience-card{background:linear-gradient(135deg,var(--bg2),var(--bg3));border:1px solid var(--border);border-radius:16px;padding:2rem;text-align:center;transition:all .3s}
+.audience-card:hover{border-color:var(--cyan)}
+.audience-card .icon{font-size:2.5rem;margin-bottom:1rem}
+.audience-card h4{margin-bottom:.5rem}
+.audience-card p{color:var(--text2);font-size:.85rem}
+
+/* PRICING */
+.pricing-box{background:linear-gradient(135deg,var(--card),var(--bg2));border:2px solid var(--cyan);border-radius:20px;padding:3rem;text-align:center;max-width:500px;margin:0 auto;box-shadow:var(--glow)}
+.pricing-box .price{font-size:3rem;font-weight:800;color:var(--cyan);margin:1rem 0}
+.pricing-box .price span{font-size:1rem;color:var(--text2);font-weight:400}
+.pricing-features{list-style:none;text-align:left;margin:2rem 0}
+.pricing-features li{padding:.6rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.75rem;font-size:.95rem}
+.pricing-features li::before{content:'✓';color:var(--cyan);font-weight:700}
+
+/* CTA SECTION */
+.cta-section{text-align:center;padding:6rem 2rem;position:relative}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,212,255,.08),transparent 70%)}
+.cta-section h2{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;margin-bottom:1rem}
+.cta-section p{color:var(--text2);margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto}
+
+/* FOOTER */
+.footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--text2);font-size:.85rem}
+
+/* CHATBOT */
+.chat-toggle{position:fixed;bottom:2rem;right:2rem;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--blue));border:none;color:#fff;font-size:1.5rem;cursor:pointer;box-shadow:0 4px 20px rgba(0,212,255,.4);z-index:200;transition:transform .3s}
+.chat-toggle:hover{transform:scale(1.1)}
+.chat-window{position:fixed;bottom:6rem;right:2rem;width:360px;max-height:500px;background:var(--bg2);border:1px solid var(--border);border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,.5);z-index:200;display:none;flex-direction:column;overflow:hidden}
+.chat-window.open{display:flex}
+.chat-header{padding:1rem 1.2rem;background:var(--bg3);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.chat-header h4{font-size:.95rem}
+.chat-close{background:none;border:none;color:var(--text2);cursor:pointer;font-size:1.2rem}
+.chat-body{flex:1;padding:1rem;overflow-y:auto;max-height:340px}
+.chat-msg{margin-bottom:.8rem;display:flex;flex-direction:column}
+.chat-msg.bot .bubble{background:var(--bg3);border:1px solid var(--border);padding:.7rem 1rem;border-radius:12px;border-top-left-radius:4px;font-size:.9rem;max-width:85%}
+.chat-msg.user{align-items:flex-end}
+.chat-msg.user .bubble{background:rgba(0,212,255,.15);border:1px solid rgba(0,212,255,.3);padding:.7rem 1rem;border-radius:12px;border-top-right-radius:4px;font-size:.9rem}
+.chat-options{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem}
+.chat-options button{padding:.4rem .8rem;background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.3);border-radius:8px;color:var(--cyan);font-size:.8rem;cursor:pointer;transition:all .2s}
+.chat-options button:hover{background:rgba(0,212,255,.2)}
+.chat-input-wrap{padding:.8rem;border-top:1px solid var(--border);display:flex;gap:.5rem}
+.chat-input-wrap input{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:.5rem .8rem;color:var(--text);font-size:.9rem;outline:none}
+.chat-input-wrap input:focus{border-color:var(--cyan)}
+.chat-input-wrap button{background:var(--cyan);border:none;border-radius:8px;padding:.5rem .8rem;color:#fff;cursor:pointer;font-size:.9rem}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.nav{padding:0 1rem}
+.nav-links{gap:1rem}
+.section{padding:3rem 1.2rem}
+.hero{padding:6rem 1.2rem 3rem}
+.chat-window{right:1rem;left:1rem;width:auto;bottom:5rem}
+.chat-toggle{bottom:1.5rem;right:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+<div class="nav-brand">光曜星樞 SNT</div>
+<div class="nav-links">
+<a href="/pricing">方案總覽</a>
+<a href="/">回首頁</a>
+</div>
+</nav>
+
+<section class="hero">
+<div class="hero-badge">AI 電商整合方案</div>
+<h1>T4 電商版</h1>
+<div class="hero-price">NT$18,800 <span>/ 一次性建置</span></div>
+<p class="hero-desc">一站式 AI 電商解決方案，從商品管理到數據分析，為您的電商事業注入智慧動能。</p>
+<div class="hero-cta">
+<button class="btn btn-primary" onclick="openChat()">立即諮詢</button>
+<a href="#pricing" class="btn btn-outline">查看方案內容</a>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label">產品特色</div>
+<div class="section-title">全方位 AI 電商整合</div>
+<p class="section-desc">結合人工智慧與電商運營，打造高效自動化的線上銷售系統。</p>
+<div class="features">
+<div class="feature-card">
+<div class="feature-icon">📦</div>
+<h3>智慧商品管理</h3>
+<p>AI 自動分類、標籤優化、批量上架，大幅降低商品維護時間。</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">💳</div>
+<h3>金流無縫串接</h3>
+<p>支援信用卡、LINE Pay、Apple Pay 等多種支付方式，一鍵整合。</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">📊</div>
+<h3>訂單即時追蹤</h3>
+<p>從下單到出貨全流程追蹤，自動通知客戶物流狀態。</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🤖</div>
+<h3>AI 智慧客服</h3>
+<p>24/7 AI 客服自動回覆常見問題，提升客戶滿意度並降低人力成本。</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">📈</div>
+<h3>數據深度分析</h3>
+<p>銷售趨勢、客戶行為、轉換率分析，以數據驅動經營決策。</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🔒</div>
+<h3>安全合規保障</h3>
+<p>SSL 加密、個資保護、PCI DSS 合規，確保交易安全無虞。</p>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label">方案內容</div>
+<div class="section-title">您將獲得的服務</div>
+<div class="content-list">
+<div class="content-item">
+<span class="check">✦</span>
+<div><h4>電商平台建置</h4><p>客製化網路商店，支援 RWD 響應式設計</p></div>
+</div>
+<div class="content-item">
+<span class="check">✦</span>
+<div><h4>商品系統設定</h4><p>SKU 管理、庫存同步、變體商品支援</p></div>
+</div>
+<div class="content-item">
+<span class="check">✦</span>
+<div><h4>金流 / 物流整合</h4><p>串接主流金物流服務，自動化訂單處理</p></div>
+</div>
+<div class="content-item">
+<span class="check">✦</span>
+<div><h4>AI 客服機器人</h4><p>訓練專屬 AI 客服，處理售前售後問題</p></div>
+</div>
+<div class="content-item">
+<span class="check">✦</span>
+<div><h4>數據儀表板</h4><p>即時銷售數據、轉換漏斗、客戶分析報表</p></div>
+</div>
+<div class="content-item">
+<span class="check">✦</span>
+<div><h4>教育訓練</h4><p>2 小時線上操作教學，含操作手冊</p></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label">適用對象</div>
+<div class="section-title">專為電商賣家打造</div>
+<div class="audience-grid">
+<div class="audience-card">
+<div class="icon">🛒</div>
+<h4>電商新手賣家</h4>
+<p>剛起步想建立品牌官網的創業者</p>
+</div>
+<div class="audience-card">
+<div class="icon">📱</div>
+<h4>社群電商經營者</h4>
+<p>從 IG / FB 轉型的社群賣家</p>
+</div>
+<div class="audience-card">
+<div class="icon">🏪</div>
+<h4>實體店面轉型</h4>
+<p>想拓展線上通路的實體商家</p>
+</div>
+<div class="audience-card">
+<div class="icon">🚀</div>
+<h4>品牌電商升級</h4>
+<p>需要 AI 自動化升級的現有電商</p>
+</div>
+</div>
+</section>
+
+<section class="section" id="pricing">
+<div class="section-label">價格方案</div>
+<div class="section-title">T4 電商版方案價格</div>
+<div class="pricing-box">
+<div style="font-size:.9rem;color:var(--text2);letter-spacing:.1em">一次性建置費用</div>
+<div class="price">NT$18,800</div>
+<ul class="pricing-features">
+<li>完整電商平台建置</li>
+<li>AI 客服機器人設定</li>
+<li>金流物流串接</li>
+<li>數據分析儀表板</li>
+<li>2 小時教育訓練</li>
+<li>30 天免費技術支援</li>
+<li>SSL 安全憑證</li>
+</ul>
+<button class="btn btn-primary" style="width:100%" onclick="openChat()">立即訂購</button>
+</div>
+</section>
+
+<section class="cta-section">
+<h2>準備好升級您的電商事業了嗎？</h2>
+<p>讓 AI 成為您最強大的電商助手，提升營運效率、降低人力成本。</p>
+<button class="btn btn-primary" onclick="openChat()">聯絡諮詢</button>
+</section>
+
+<footer class="footer">
+<p>© 2026 光曜星樞 SNT — AI Digital Service. All rights reserved.</p>
+</footer>
+
+<button class="chat-toggle" onclick="toggleChat()" id="chatToggle">💬</button>
+<div class="chat-window" id="chatWindow">
+<div class="chat-header">
+<h4>🤖 SNT AI 助手</h4>
+<button class="chat-close" onclick="toggleChat()">✕</button>
+</div>
+<div class="chat-body" id="chatBody">
+<div class="chat-msg bot">
+<div class="bubble">您好！我是 SNT AI 助手。請問您對 T4 電商版有什麼想了解的吗？</div>
+<div class="chat-options">
+<button onclick="chatReply('price')">價格詳情</button>
+<button onclick="chatReply('feature')">功能介紹</button>
+<button onclick="chatReply('time')">建置時間</button>
+<button onclick="chatReply('contact')">聯絡人類</button>
+</div>
+</div>
+</div>
+<div class="chat-input-wrap">
+<input type="text" id="chatInput" placeholder="輸入您的問題..." onkeydown="if(event.key==='Enter')sendMsg()">
+<button onclick="sendMsg()">送出</button>
+</div>
+</div>
+
+<script>
+function toggleChat(){
+var w=document.getElementById('chatWindow');
+w.classList.toggle('open');
+}
+function openChat(){
+document.getElementById('chatWindow').classList.add('open');
+}
+var responses={
+price:{text:'T4 電商版一次性建置費用為 NT$18,800，包含完整電商平台、AI 客服、金流串接及數據分析。',opts:['功能介紹','建置時間','聯絡人類']},
+feature:{text:'T4 電商版包含：智慧商品管理、金流串接、訂單追蹤、AI 客服、數據分析等核心功能，滿足電商運營所有需求。',opts:['價格詳情','建置時間','聯絡人類']},
+time:{text:'標準建置時間約 7-14 個工作天，含測試與上線。如需加急服務可另行洽詢。',opts:['價格詳情','功能介紹','聯絡人類']},
+contact:{text:'好的！我們的專人將為您服務。請撥打 02-1234-5678 或填寫表單，我們將於 24 小時內回覆。',opts:[]},
+default:{text:'感謝您的來訊！這個問題我幫您轉接專人處理，請稍候。您也可以撥打 02-1234-5678 獲得即時協助。',opts:[]}
+};
+function chatReply(key){
+var r=responses[key]||responses['default'];
+addMsg('user',key==='price'?'價格詳情':key==='feature'?'功能介紹':key==='time'?'建置時間':'聯絡人類');
+setTimeout(function(){addMsg('bot',r.text,r.opts)},500);
+}
+function sendMsg(){
+var inp=document.getElementById('chatInput');
+var v=inp.value.trim();
+if(!v)return;
+addMsg('user',v);
+inp.value='';
+var key='default';
+if(v.match(/價|費|多少|錢/))key='price';
+else if(v.match(/功|能|特|做|含/))key='feature';
+else if(v.match(/時|天|久|快/))key='time';
+else if(v.match(/聯絡|電話|人|專/))key='contact';
+var r=responses[key];
+setTimeout(function(){addMsg('bot',r.text,r.opts)},600);
+}
+function addMsg(type,text,opts){
+var body=document.getElementById('chatBody');
+var div=document.createElement('div');
+div.className='chat-msg '+type;
+var html='<div class="bubble">'+text+'</div>';
+if(opts&&opts.length){
+html+='<div class="chat-options">';
+opts.forEach(function(o){
+var k=o==='價格詳情'?'price':o==='功能介紹'?'feature':o==='建置時間'?'time':'contact';
+html+='<button onclick="chatReply(\''+k+'\')">'+o+'</button>';
+});
+html+='</div>';
+}
+div.innerHTML=html;
+body.appendChild(div);
+body.scrollTop=body.scrollHeight;
+}
+</script>
+</body>
+</html>

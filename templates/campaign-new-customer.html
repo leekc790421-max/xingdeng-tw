@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{CAMPAIGN_TITLE}} - 光曜星樞 SNT</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Microsoft JhengHei', 'PingFang TC', sans-serif;
+      background: #0a0a1a;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 50%, #0a0a1a 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(0,212,255,0.1) 0%, transparent 70%);
+      animation: pulse 4s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+    }
+    .hero-content { position: relative; z-index: 1; }
+    .hero h1 {
+      font-size: 3.5rem;
+      color: #00d4ff;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 20px rgba(0,212,255,0.5);
+    }
+    .hero .subtitle {
+      font-size: 1.5rem;
+      color: #b0b0b0;
+      margin-bottom: 2rem;
+    }
+    .hero .offer-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #00d4ff, #0099cc);
+      color: #0a0a1a;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 30px rgba(0,212,255,0.4);
+    }
+    
+    /* Benefits Section */
+    .benefits {
+      padding: 80px 0;
+      background: #0f0f2a;
+    }
+    .benefits h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #00d4ff;
+      margin-bottom: 3rem;
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .benefit-card {
+      background: rgba(0,212,255,0.05);
+      border: 1px solid rgba(0,212,255,0.2);
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      border-color: #00d4ff;
+      box-shadow: 0 10px 30px rgba(0,212,255,0.2);
+    }
+    .benefit-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .benefit-card h3 {
+      color: #00d4ff;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+    
+    /* Countdown Timer */
+    .countdown-section {
+      padding: 60px 0;
+      text-align: center;
+      background: linear-gradient(135deg, #0a0a1a, #1a1a3a);
+    }
+    .countdown-section h2 {
+      color: #00d4ff;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .countdown-item {
+      background: rgba(0,212,255,0.1);
+      border: 2px solid #00d4ff;
+      border-radius: 10px;
+      padding: 1.5rem 2rem;
+      min-width: 120px;
+    }
+    .countdown-number {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #00d4ff;
+      display: block;
+    }
+    .countdown-label {
+      color: #b0b0b0;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+    
+    /* Signup Form */
+    .signup-section {
+      padding: 80px 0;
+      background: #0f0f2a;
+    }
+    .signup-section h2 {
+      text-align: center;
+      color: #00d4ff;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+    }
+    .signup-form {
+      max-width: 500px;
+      margin: 0 auto;
+      background: rgba(0,212,255,0.05);
+      border: 1px solid rgba(0,212,255,0.2);
+      border-radius: 15px;
+      padding: 3rem;
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .form-group label {
+      display: block;
+      color: #00d4ff;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 0.8rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(0,212,255,0.3);
+      border-radius: 8px;
+      color: #e0e0e0;
+      font-size: 1rem;
+    }
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #00d4ff;
+      box-shadow: 0 0 10px rgba(0,212,255,0.3);
+    }
+    .btn-primary {
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, #00d4ff, #0099cc);
+      color: #0a0a1a;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(0,212,255,0.4);
+    }
+    
+    /* FAQ Section */
+    .faq-section {
+      padding: 80px 0;
+      background: #0a0a1a;
+    }
+    .faq-section h2 {
+      text-align: center;
+      color: #00d4ff;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+    }
+    .faq-item {
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+      background: rgba(0,212,255,0.05);
+      border: 1px solid rgba(0,212,255,0.2);
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+    .faq-question {
+      color: #00d4ff;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .faq-answer {
+      color: #b0b0b0;
+    }
+    
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      background: #050510;
+      color: #666;
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .hero .subtitle { font-size: 1.2rem; }
+      .countdown { gap: 1rem; }
+      .countdown-item { min-width: 80px; padding: 1rem; }
+      .countdown-number { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>{{CAMPAIGN_TITLE}}</h1>
+      <p class="subtitle">{{CAMPAIGN_SUBTITLE}}</p>
+      <div class="offer-badge">🎁 7天免費試用 AI 接待員</div>
+      <p style="color: #b0b0b0; font-size: 1.1rem;">{{HERO_DESCRIPTION}}</p>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits">
+    <div class="container">
+      <h2>為什麼選擇光曜星樞 AI 接待員？</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">🤖</div>
+          <h3>24/7 智能客服</h3>
+          <p>{{BENEFIT_1_DESCRIPTION}}</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">⚡</div>
+          <h3>秒級回應速度</h3>
+          <p>{{BENEFIT_2_DESCRIPTION}}</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">📊</div>
+          <h3>數據分析洞察</h3>
+          <p>{{BENEFIT_3_DESCRIPTION}}</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🔧</div>
+          <h3>快速整合部署</h3>
+          <p>{{BENEFIT_4_DESCRIPTION}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Countdown Timer -->
+  <section class="countdown-section">
+    <div class="container">
+      <h2>限時優惠倒數</h2>
+      <div class="countdown" id="countdown">
+        <div class="countdown-item">
+          <span class="countdown-number" id="days">00</span>
+          <span class="countdown-label">天</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="hours">00</span>
+          <span class="countdown-label">時</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="minutes">00</span>
+          <span class="countdown-label">分</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="seconds">00</span>
+          <span class="countdown-label">秒</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Signup Form -->
+  <section class="signup-section">
+    <div class="container">
+      <h2>立即開始免費試用</h2>
+      <form class="signup-form" id="signupForm">
+        <div class="form-group">
+          <label for="companyName">公司名稱</label>
+          <input type="text" id="companyName" name="companyName" required placeholder="{{FORM_PLACEHOLDER_COMPANY}}">
+        </div>
+        <div class="form-group">
+          <label for="contactName">聯絡人姓名</label>
+          <input type="text" id="contactName" name="contactName" required placeholder="{{FORM_PLACEHOLDER_CONTACT}}">
+        </div>
+        <div class="form-group">
+          <label for="email">電子郵件</label>
+          <input type="email" id="email" name="email" required placeholder="{{FORM_PLACEHOLDER_EMAIL}}">
+        </div>
+        <div class="form-group">
+          <label for="phone">聯絡電話</label>
+          <input type="tel" id="phone" name="phone" required placeholder="{{FORM_PLACEHOLDER_PHONE}}">
+        </div>
+        <div class="form-group">
+          <label for="industry">產業類別</label>
+          <select id="industry" name="industry" required>
+            <option value="">{{FORM_PLACEHOLDER_INDUSTRY_DEFAULT}}</option>
+            <option value="ecommerce">電子商務</option>
+            <option value="service">服務業</option>
+            <option value="tech">科技業</option>
+            <option value="education">教育業</option>
+            <option value="other">其他</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-primary">🚀 立即開始 7 天免費試用</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <h2>常見問題</h2>
+      <div class="faq-item">
+        <div class="faq-question">{{FAQ_1_QUESTION}}</div>
+        <div class="faq-answer">{{FAQ_1_ANSWER}}</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">{{FAQ_2_QUESTION}}</div>
+        <div class="faq-answer">{{FAQ_2_ANSWER}}</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">{{FAQ_3_QUESTION}}</div>
+        <div class="faq-answer">{{FAQ_3_ANSWER}}</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">{{FAQ_4_QUESTION}}</div>
+        <div class="faq-answer">{{FAQ_4_ANSWER}}</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; {{YEAR}} 光曜星樞 SNT. All rights reserved.</p>
+      <p>{{FOOTER_TEXT}}</p>
+    </div>
+  </footer>
+
+  <script>
+    // Countdown Timer - Set your campaign end date here
+    const campaignEndDate = new Date('{{CAMPAIGN_END_DATE}}').getTime();
+    
+    const countdown = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = campaignEndDate - now;
+      
+      if (distance < 0) {
+        clearInterval(countdown);
+        document.getElementById('countdown').innerHTML = '<p style="color: #00d4ff; font-size: 1.5rem;">活動已結束</p>';
+        return;
+      }
+      
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      document.getElementById('days').textContent = String(days).padStart(2, '0');
+      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }, 1000);
+
+    // Form Submission
+    document.getElementById('signupForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData);
+      console.log('Form submitted:', data);
+      alert('{{FORM_SUBMISSION_MESSAGE}}');
+    });
+  </script>
+</body>
+</html>

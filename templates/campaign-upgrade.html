@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{CAMPAIGN_TITLE}} - 光曜星樞 SNT</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Microsoft JhengHei', 'PingFang TC', sans-serif;
+      background: #0a0a1a;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    
+    /* Personalized Greeting */
+    .greeting-section {
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 50%, #0a0a1a 100%);
+      padding: 60px 20px;
+      position: relative;
+    }
+    .greeting-section::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(0,212,255,0.1) 0%, transparent 70%);
+      animation: pulse 4s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+    }
+    .greeting-content { position: relative; z-index: 1; }
+    .greeting-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #00d4ff, #0099cc);
+      color: #0a0a1a;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+    }
+    .greeting-section h1 {
+      font-size: 3rem;
+      color: #00d4ff;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 20px rgba(0,212,255,0.5);
+    }
+    .customer-name {
+      color: #00d4ff;
+      font-weight: bold;
+    }
+    .greeting-section .personalized-message {
+      font-size: 1.3rem;
+      color: #b0b0b0;
+      margin-bottom: 2rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .loyalty-badge {
+      display: inline-block;
+      background: rgba(0,212,255,0.1);
+      border: 2px solid #00d4ff;
+      border-radius: 10px;
+      padding: 1rem 2rem;
+      margin-top: 1rem;
+    }
+    .loyalty-badge span {
+      color: #00d4ff;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    
+    /* Upgrade Benefits */
+    .benefits-section {
+      padding: 80px 0;
+      background: #0f0f2a;
+    }
+    .benefits-section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #00d4ff;
+      margin-bottom: 3rem;
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .benefit-card {
+      background: rgba(0,212,255,0.05);
+      border: 1px solid rgba(0,212,255,0.2);
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      border-color: #00d4ff;
+      box-shadow: 0 10px 30px rgba(0,212,255,0.2);
+    }
+    .benefit-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .benefit-card h3 {
+      color: #00d4ff;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+    .benefit-card p {
+      color: #b0b0b0;
+    }
+    
+    /* Comparison Table */
+    .comparison-section {
+      padding: 80px 0;
+      background: #0a0a1a;
+    }
+    .comparison-section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #00d4ff;
+      margin-bottom: 3rem;
+    }
+    .comparison-table {
+      max-width: 900px;
+      margin: 0 auto;
+      background: rgba(0,212,255,0.05);
+      border: 1px solid rgba(0,212,255,0.2);
+      border-radius: 15px;
+      overflow: hidden;
+    }
+    .table-header {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      background: rgba(0,212,255,0.1);
+      padding: 1.5rem;
+      font-weight: bold;
+      color: #00d4ff;
+      font-size: 1.1rem;
+    }
+    .table-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      padding: 1.5rem;
+      border-top: 1px solid rgba(0,212,255,0.1);
+      transition: background 0.3s ease;
+    }
+    .table-row:hover {
+      background: rgba(0,212,255,0.05);
+    }
+    .feature-name {
+      color: #e0e0e0;
+      font-weight: 500;
+    }
+    .current-plan {
+      text-align: center;
+      color: #b0b0b0;
+    }
+    .upgrade-plan {
+      text-align: center;
+      color: #00d4ff;
+      font-weight: bold;
+    }
+    .check {
+      color: #00d4ff;
+      font-size: 1.5rem;
+    }
+    .cross {
+      color: #666;
+      font-size: 1.5rem;
+    }
+    
+    /* One-Click Upgrade CTA */
+    .upgrade-cta {
+      padding: 80px 0;
+      text-align: center;
+      background: linear-gradient(135deg, #0f0f2a, #1a1a3a);
+    }
+    .upgrade-cta h2 {
+      font-size: 2.5rem;
+      color: #00d4ff;
+      margin-bottom: 1.5rem;
+    }
+    .upgrade-cta p {
+      font-size: 1.2rem;
+      color: #b0b0b0;
+      margin-bottom: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .upgrade-box {
+      max-width: 500px;
+      margin: 0 auto;
+      background: rgba(0,212,255,0.05);
+      border: 2px solid #00d4ff;
+      border-radius: 15px;
+      padding: 3rem;
+    }
+    .upgrade-price {
+      margin-bottom: 2rem;
+    }
+    .price-label {
+      color: #b0b0b0;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .price-amount {
+      font-size: 3rem;
+      color: #00d4ff;
+      font-weight: bold;
+    }
+    .price-period {
+      color: #b0b0b0;
+      font-size: 1rem;
+    }
+    .btn-upgrade {
+      width: 100%;
+      padding: 1.2rem;
+      background: linear-gradient(135deg, #00d4ff, #0099cc);
+      color: #0a0a1a;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-bottom: 1rem;
+    }
+    .btn-upgrade:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(0,212,255,0.4);
+    }
+    .upgrade-note {
+      color: #b0b0b0;
+      font-size: 0.9rem;
+    }
+    
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      background: #050510;
+      color: #666;
+    }
+    
+    @media (max-width: 768px) {
+      .greeting-section h1 { font-size: 2rem; }
+      .table-header, .table-row {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+      .table-header > *:not(:first-child),
+      .table-row > *:not(:first-child) {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Personalized Greeting -->
+  <section class="greeting-section">
+    <div class="greeting-content">
+      <div class="greeting-badge">{{GREETING_BADGE}}</div>
+      <h1>親愛的 <span class="customer-name">{{CUSTOMER_NAME}}</span>，您好！</h1>
+      <p class="personalized-message">{{PERSONALIZED_MESSAGE}}</p>
+      <div class="loyalty-badge">
+        <span>{{LOYALTY_MESSAGE}}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upgrade Benefits -->
+  <section class="benefits-section">
+    <div class="container">
+      <h2>{{BENEFITS_SECTION_TITLE}}</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">{{BENEFIT_1_ICON}}</div>
+          <h3>{{BENEFIT_1_TITLE}}</h3>
+          <p>{{BENEFIT_1_DESCRIPTION}}</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">{{BENEFIT_2_ICON}}</div>
+          <h3>{{BENEFIT_2_TITLE}}</h3>
+          <p>{{BENEFIT_2_DESCRIPTION}}</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">{{BENEFIT_3_ICON}}</div>
+          <h3>{{BENEFIT_3_TITLE}}</h3>
+          <p>{{BENEFIT_3_DESCRIPTION}}</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">{{BENEFIT_4_ICON}}</div>
+          <h3>{{BENEFIT_4_TITLE}}</h3>
+          <p>{{BENEFIT_4_DESCRIPTION}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="comparison-section">
+    <div class="container">
+      <h2>{{COMPARISON_SECTION_TITLE}}</h2>
+      <div class="comparison-table">
+        <div class="table-header">
+          <div>功能項目</div>
+          <div style="text-align: center;">{{CURRENT_PLAN_NAME}}</div>
+          <div style="text-align: center;">{{UPGRADE_PLAN_NAME}}</div>
+        </div>
+        <div class="table-row">
+          <div class="feature-name">{{FEATURE_1_NAME}}</div>
+          <div class="current-plan">{{FEATURE_1_CURRENT}}</div>
+          <div class="upgrade-plan">{{FEATURE_1_UPGRADE}}</div>
+        </div>
+        <div class="table-row">
+          <div class="feature-name">{{FEATURE_2_NAME}}</div>
+          <div class="current-plan">{{FEATURE_2_CURRENT}}</div>
+          <div class="upgrade-plan">{{FEATURE_2_UPGRADE}}</div>
+        </div>
+        <div class="table-row">
+          <div class="feature-name">{{FEATURE_3_NAME}}</div>
+          <div class="current-plan">{{FEATURE_3_CURRENT}}</div>
+          <div class="upgrade-plan">{{FEATURE_3_UPGRADE}}</div>
+        </div>
+        <div class="table-row">
+          <div class="feature-name">{{FEATURE_4_NAME}}</div>
+          <div class="current-plan">{{FEATURE_4_CURRENT}}</div>
+          <div class="upgrade-plan">{{FEATURE_4_UPGRADE}}</div>
+        </div>
+        <div class="table-row">
+          <div class="feature-name">{{FEATURE_5_NAME}}</div>
+          <div class="current-plan">{{FEATURE_5_CURRENT}}</div>
+          <div class="upgrade-plan">{{FEATURE_5_UPGRADE}}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- One-Click Upgrade CTA -->
+  <section class="upgrade-cta">
+    <div class="container">
+      <h2>{{UPGRADE_CTA_TITLE}}</h2>
+      <p>{{UPGRADE_CTA_SUBTITLE}}</p>
+      <div class="upgrade-box">
+        <div class="upgrade-price">
+          <div class="price-label">{{UPGRADE_PRICE_LABEL}}</div>
+          <div class="price-amount">{{UPGRADE_PRICE_AMOUNT}}</div>
+          <div class="price-period">{{UPGRADE_PRICE_PERIOD}}</div>
+        </div>
+        <button class="btn-upgrade" onclick="handleUpgrade()">{{UPGRADE_BUTTON_TEXT}}</button>
+        <p class="upgrade-note">{{UPGRADE_NOTE}}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; {{YEAR}} 光曜星樞 SNT. All rights reserved.</p>
+      <p>{{FOOTER_TEXT}}</p>
+    </div>
+  </footer>
+
+  <script>
+    // Upgrade Handler
+    function handleUpgrade() {
+      const customerId = '{{CUSTOMER_ID}}';
+      const upgradePlan = '{{UPGRADE_PLAN_ID}}';
+      console.log('Upgrade initiated:', { customerId, upgradePlan });
+      alert('{{UPGRADE_SUCCESS_MESSAGE}}');
+    }
+  </script>
+</body>
+</html>

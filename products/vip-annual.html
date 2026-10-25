@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIP 年度合約 — 光曜星樞 SNT</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a1a;--bg2:#0f0f2a;--bg3:#141432;--cyan:#00d4ff;--blue:#0066ff;--gold:#ffd700;--text:#e0e6f0;--text2:#8892a8;--card:#11112a;--border:#1a1a3e}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+a{color:var(--cyan);text-decoration:none;transition:opacity .2s}
+a:hover{opacity:.8}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,26,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-size:1.1rem;font-weight:700;background:linear-gradient(135deg,var(--cyan),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-links a{font-size:.9rem;color:var(--text2)}
+.nav-links a:hover{color:var(--cyan)}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 4rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 50% 50%,rgba(255,215,0,.04) 0%,rgba(0,212,255,.06) 30%,transparent 60%);animation:pulse 8s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.1);opacity:1}}
+.hero-badge{display:inline-block;padding:.4rem 1.2rem;border:1px solid var(--gold);border-radius:999px;font-size:.8rem;color:var(--gold);letter-spacing:.1em;margin-bottom:2rem;background:rgba(255,215,0,.08)}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;margin-bottom:1rem;background:linear-gradient(135deg,var(--gold) 30%,#fff 60%,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-price{font-size:clamp(1.8rem,4vw,3rem);font-weight:700;color:var(--gold);margin-bottom:1.5rem}
+.hero-price span{font-size:1rem;color:var(--text2);font-weight:400}
+.hero-desc{max-width:600px;color:var(--text2);font-size:1.1rem;margin-bottom:2.5rem}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;border:none;transition:all .3s}
+.btn-gold{background:linear-gradient(135deg,var(--gold),#ff8c00);color:#000;box-shadow:0 4px 20px rgba(255,215,0,.3)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 6px 30px rgba(255,215,0,.4)}
+.btn-outline{background:transparent;color:var(--cyan);border:1px solid var(--cyan)}
+.btn-outline:hover{background:rgba(0,212,255,.1)}
+.section{padding:5rem 2rem;max-width:1100px;margin:0 auto}
+.section-label{font-size:.8rem;color:var(--gold);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.5rem}
+.section-title{font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:700;margin-bottom:1rem}
+.section-desc{color:var(--text2);max-width:600px;margin-bottom:3rem}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.feature-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:all .3s}
+.feature-card:hover{border-color:var(--gold);box-shadow:0 0 30px rgba(255,215,0,.08);transform:translateY(-4px)}
+.feature-icon{width:48px;height:48px;border-radius:12px;background:rgba(255,215,0,.1);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1rem}
+.feature-card h3{font-size:1.15rem;margin-bottom:.5rem}
+.feature-card p{color:var(--text2);font-size:.9rem}
+.content-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
+.content-item{display:flex;align-items:flex-start;gap:1rem;padding:1.2rem 1.5rem;background:var(--bg2);border:1px solid var(--border);border-radius:12px}
+.content-item .check{color:var(--gold);font-size:1.2rem;flex-shrink:0;margin-top:2px}
+.content-item h4{font-size:1rem;margin-bottom:.25rem}
+.content-item p{color:var(--text2);font-size:.85rem}
+.audience-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+.audience-card{background:linear-gradient(135deg,var(--bg2),var(--bg3));border:1px solid var(--border);border-radius:16px;padding:2rem;text-align:center;transition:all .3s}
+.audience-card:hover{border-color:var(--gold)}
+.audience-card .icon{font-size:2.5rem;margin-bottom:1rem}
+.audience-card h4{margin-bottom:.5rem}
+.audience-card p{color:var(--text2);font-size:.85rem}
+.pricing-box{background:linear-gradient(135deg,var(--card),rgba(255,215,0,.04));border:2px solid var(--gold);border-radius:20px;padding:3rem;text-align:center;max-width:550px;margin:0 auto;box-shadow:0 0 40px rgba(255,215,0,.08)}
+.pricing-box .price{font-size:3rem;font-weight:800;color:var(--gold);margin:1rem 0}
+.pricing-box .price span{font-size:1rem;color:var(--text2);font-weight:400}
+.pricing-features{list-style:none;text-align:left;margin:2rem 0}
+.pricing-features li{padding:.6rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.75rem;font-size:.95rem}
+.pricing-features li::before{content:'★';color:var(--gold);font-weight:700}
+.value-table{max-width:600px;margin:2rem auto;list-style:none}
+.value-table li{padding:.8rem 0;display:flex;justify-content:space-between;border-bottom:1px solid var(--border);font-size:.95rem}
+.value-table li span:last-child{color:var(--gold);font-weight:600}
+.cta-section{text-align:center;padding:6rem 2rem;position:relative}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(255,215,0,.05),transparent 70%)}
+.cta-section h2{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;margin-bottom:1rem}
+.cta-section p{color:var(--text2);margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto}
+.footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--text2);font-size:.85rem}
+.chat-toggle{position:fixed;bottom:2rem;right:2rem;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#ff8c00);border:none;color:#000;font-size:1.5rem;cursor:pointer;box-shadow:0 4px 20px rgba(255,215,0,.4);z-index:200;transition:transform .3s}
+.chat-toggle:hover{transform:scale(1.1)}
+.chat-window{position:fixed;bottom:6rem;right:2rem;width:360px;max-height:500px;background:var(--bg2);border:1px solid rgba(255,215,0,.3);border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,.5);z-index:200;display:none;flex-direction:column;overflow:hidden}
+.chat-window.open{display:flex}
+.chat-header{padding:1rem 1.2rem;background:var(--bg3);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.chat-header h4{font-size:.95rem;color:var(--gold)}
+.chat-close{background:none;border:none;color:var(--text2);cursor:pointer;font-size:1.2rem}
+.chat-body{flex:1;padding:1rem;overflow-y:auto;max-height:340px}
+.chat-msg{margin-bottom:.8rem;display:flex;flex-direction:column}
+.chat-msg.bot .bubble{background:var(--bg3);border:1px solid var(--border);padding:.7rem 1rem;border-radius:12px;border-top-left-radius:4px;font-size:.9rem;max-width:85%}
+.chat-msg.user{align-items:flex-end}
+.chat-msg.user .bubble{background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.2);padding:.7rem 1rem;border-radius:12px;border-top-right-radius:4px;font-size:.9rem}
+.chat-options{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem}
+.chat-options button{padding:.4rem .8rem;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.3);border-radius:8px;color:var(--gold);font-size:.8rem;cursor:pointer;transition:all .2s}
+.chat-options button:hover{background:rgba(255,215,0,.15)}
+.chat-input-wrap{padding:.8rem;border-top:1px solid var(--border);display:flex;gap:.5rem}
+.chat-input-wrap input{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:.5rem .8rem;color:var(--text);font-size:.9rem;outline:none}
+.chat-input-wrap input:focus{border-color:var(--gold)}
+.chat-input-wrap button{background:var(--gold);border:none;border-radius:8px;padding:.5rem .8rem;color:#000;cursor:pointer;font-size:.9rem;font-weight:600}
+@media(max-width:768px){.nav{padding:0 1rem}.nav-links{gap:1rem}.section{padding:3rem 1.2rem}.hero{padding:6rem 1.2rem 3rem}.chat-window{right:1rem;left:1rem;width:auto;bottom:5rem}.chat-toggle{bottom:1.5rem;right:1.5rem}}
+</style>
+</head>
+<body>
+<nav class="nav">
+<div class="nav-brand">光曜星樞 SNT</div>
+<div class="nav-links"><a href="/pricing">方案總覽</a><a href="/">回首頁</a></div>
+</nav>
+
+<section class="hero">
+<div class="hero-badge">★ 全包式 VIP 服務</div>
+<h1>VIP 年度合約</h1>
+<div class="hero-price">NT$168,000 <span>/ 年</span></div>
+<p class="hero-desc">最高階客戶方案。專屬 PM、無限修改、優先技術支援、月度策略會議，讓您全年無後顧之憂。</p>
+<div class="hero-cta">
+<button class="btn btn-gold" onclick="openChat()">預約專屬簡報</button>
+<a href="#pricing" class="btn btn-outline">查看方案內容</a>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label">產品特色</div>
+<div class="section-title">全方位 VIP 禮遇</div>
+<p class="section-desc">不只是服務方案，更是您的全年數位策略夥伴。從規劃到執行，我們全程陪跑。</p>
+<div class="features">
+<div class="feature-card">
+<div class="feature-icon">👤</div>
+<h3>專屬專案經理</h3>
+<p>指派資深 PM 一對一服務，深入了解您的業務需求與目標。</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">♾️</div>
+<h3>無限次修改</h3>
+<p>所有專案不限修改次數，直到您完全滿意為止。</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">⚡</div>
+<h3>優先技術支援</h3>
+<p>VIP 專屬技術通道，2 小時內回應，4 小時內提出解決方案。</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">📅</div>
+<h3>月度策略會議</h3>
+<p>每月 1 小時線上策略會議，檢討成效、調整方向、規劃下月重點。</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🎯</div>
+<h3>季度策略規劃</h3>
+<p>每季提出完整數位策略報告，含市場分析、競品觀察、行動建議。</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🔐</div>
+<h3>保密協定保障</h3>
+<p>簽署 NDA 保密協定，確保您的商業機密與策略資訊安全。</p>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label">方案內容</div>
+<div class="section-title">VIP 全年服務涵蓋</div>
+<div class="content-list">
+<div class="content-item"><span class="check">★</span><div><h4>網站建置 / 改版</h4><p>全年不限次數的網站新增與修改需求</p></div></div>
+<div class="content-item"><span class="check">★</span><div><h4>內容引擎服務</h4><p>含 R2.5 內容引擎全部服務（SEO、社群、EDM、影片腳本）</p></div></div>
+<div class="content-item"><span class="check">★</span><div><h4>活動頁建置</h4><p>每月 1 頁快閃活動頁（全年 12 頁）</p></div></div>
+<div class="content-item"><span class="check">★</span><div><h4>AI 工具導入</h4><p>AI 客服、AI 名片等工具免費使用</p></div></div>
+<div class="content-item"><span class="check">★</span><div><h4>數據分析報告</h4><p>月度數據報告 + 季度深度分析</p></div></div>
+<div class="content-item"><span class="check">★</span><div><h4>教育訓練</h4><p>全年 4 場線上教育訓練（每季 1 場）</p></div></div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label">價值對比</div>
+<div class="section-title">VIP 合約的超值回饋</div>
+<p class="section-desc">獨立購買各項服務的總價 vs. VIP 年度合約，省下超過 40%。</p>
+<ul class="value-table">
+<li><span>電商建置（T4）</span><span>NT$18,800</span></li>
+<li><span>內容引擎 x 12 月（R2.5）</span><span>NT$81,600</span></li>
+<li><span>快閃活動頁 x 12（S1）</span><span>NT$66,000</span></li>
+<li><span>AI 名片 x 5（A1）</span><span>NT$6,000</span></li>
+<li><span>產業方案 x 2（B2B）</span><span>NT$4,000</span></li>
+<li style="font-weight:700"><span>獨立購買總計</span><span style="color:#ff6b6b">NT$176,400</span></li>
+<li style="font-weight:700;font-size:1.1rem"><span>VIP 年度合約</span><span>NT$168,000</span></li>
+<li style="border:none;color:var(--gold)"><span>您省下</span><span>NT$8,400 + 無限修改價值</span></li>
+</ul>
+</section>
+
+<section class="section">
+<div class="section-label">適用對象</div>
+<div class="section-title">適合重視長期價值的您</div>
+<div class="audience-grid">
+<div class="audience-card">
+<div class="icon">🏢</div>
+<h4>中大型企業</h4>
+<p>需要持續數位支援的企業客戶</p>
+</div>
+<div class="audience-card">
+<div class="icon">🚀</div>
+<h4>快速成長新創</h4>
+<p>需要全方位數位夥伴的成長期公司</p>
+</div>
+<div class="audience-card">
+<div class="icon">🏪</div>
+<h4>連鎖品牌</h4>
+<p>多據點需要統一數位策略的品牌</p>
+</div>
+<div class="audience-card">
+<div class="icon">🎯</div>
+<h4>重視 ROI 的決策者</h4>
+<p>理解長期投資價值的企業主</p>
+</div>
+</div>
+</section>
+
+<section class="section" id="pricing">
+<div class="section-label">價格方案</div>
+<div class="section-title">VIP 年度合約方案</div>
+<div class="pricing-box">
+<div style="font-size:.9rem;color:var(--text2);letter-spacing:.1em">年度合約費用</div>
+<div class="price">NT$168,000<span>/年</span></div>
+<ul class="pricing-features">
+<li>專屬專案經理</li>
+<li>無限次修改</li>
+<li>優先技術支援（2hr 回應）</li>
+<li>月度策略會議</li>
+<li>季度策略規劃報告</li>
+<li>內容引擎全年服務</li>
+<li>快閃活動頁 x 12 / 年</li>
+<li>AI 工具免費使用</li>
+<li>教育訓練 x 4 / 年</li>
+<li>NDA 保密協定</li>
+</ul>
+<button class="btn btn-gold" style="width:100%" onclick="openChat()">預約專屬簡報</button>
+<p style="margin-top:1rem;font-size:.8rem;color:var(--text2)">採約談制・可分期支付・含稅</p>
+</div>
+</section>
+
+<section class="cta-section">
+<h2>成為 VIP，讓數位轉型無後顧之憂</h2>
+<p>全年 dedicated 團隊支援，您只需專注核心事業。</p>
+<button class="btn btn-gold" onclick="openChat()">預約專屬簡報</button>
+</section>
+
+<footer class="footer"><p>© 2026 光曜星樞 SNT — AI Digital Service. All rights reserved.</p></footer>
+
+<button class="chat-toggle" onclick="toggleChat()" id="chatToggle">💬</button>
+<div class="chat-window" id="chatWindow">
+<div class="chat-header"><h4>★ SNT VIP 專屬助手</h4><button class="chat-close" onclick="toggleChat()">✕</button></div>
+<div class="chat-body" id="chatBody">
+<div class="chat-msg bot">
+<div class="bubble">您好！歡迎了解 VIP 年度合約方案。這是我們最高階的客戶方案，享有全方位服務與專屬禮遇。請問您想了解什麼？</div>
+<div class="chat-options">
+<button onclick="chatReply('price')">價格與付款</button>
+<button onclick="chatReply('service')">服務內容</button>
+<button onclick="chatReply('compare')">方案比較</button>
+<button onclick="chatReply('contact')">預約簡報</button>
+</div>
+</div>
+</div>
+<div class="chat-input-wrap">
+<input type="text" id="chatInput" placeholder="輸入您的問題..." onkeydown="if(event.key==='Enter')sendMsg()">
+<button onclick="sendMsg()">送出</button>
+</div>
+</div>
+
+<script>
+function toggleChat(){document.getElementById('chatWindow').classList.toggle('open')}
+function openChat(){document.getElementById('chatWindow').classList.add('open')}
+var responses={
+price:{text:'VIP 年度合約 NT$168,000/年（含稅），可採季分期支付。签约後將安排專屬 PM 進行需求訪談，制定全年數位策略規劃。',opts:['服務內容','方案比較','預約簡報']},
+service:{text:'VIP 方案涵蓋：專屬 PM、無限修改、優先技術支援、月度策略會議、內容引擎全年服務、快閃活動頁 x12、AI 工具免費使用、教育訓練 x4、季度策略報告。',opts:['價格與付款','方案比較','預約簡報']},
+compare:{text:'獨立購買同等服務總價約 NT$176,400，VIP 方案 NT$168,000 省下 NT$8,400，更享有無限修改、專屬 PM 等無法單獨購買的頂級服務。',opts:['價格與付款','服務內容','預約簡報']},
+contact:{text:'VIP 方案採約談制。請撥打 02-1234-5678 分機 1（VIP 專線），或留下您的聯繫方式，我們的客戶總監將於 4 小時內與您聯繫安排簡報。',opts:[]},
+default:{text:'感謝您的來訊！VIP 方案相關問題將由客戶總監親自回覆。請撥打 02-1234-5678 分機 1 獲得即時協助。',opts:[]}
+};
+function chatReply(key){
+var r=responses[key]||responses['default'];
+var labels={price:'價格與付款',service:'服務內容',compare:'方案比較',contact:'預約簡報'};
+addMsg('user',labels[key]||key);
+setTimeout(function(){addMsg('bot',r.text,r.opts)},500);
+}
+function sendMsg(){
+var inp=document.getElementById('chatInput');var v=inp.value.trim();if(!v)return;
+addMsg('user',v);inp.value='';
+var key='default';
+if(v.match(/價|費|多少|錢|付款|分期/))key='price';
+else if(v.match(/內|服|務|含|包/))key='service';
+else if(v.match(/比|較|差|省|獨/))key='compare';
+else if(v.match(/聯絡|電話|人|簡|約/))key='contact';
+var r=responses[key];
+setTimeout(function(){addMsg('bot',r.text,r.opts)},600);
+}
+function addMsg(type,text,opts){
+var body=document.getElementById('chatBody');var div=document.createElement('div');
+div.className='chat-msg '+type;
+var html='<div class="bubble">'+text+'</div>';
+if(opts&&opts.length){html+='<div class="chat-options">';opts.forEach(function(o){var k=o.includes('價格')?'price':o.includes('服務')?'service':o.includes('方案')?'compare':'contact';html+='<button onclick="chatReply(\''+k+'\')">'+o+'</button>'});html+='</div>'}
+div.innerHTML=html;body.appendChild(div);body.scrollTop=body.scrollHeight;
+}
+</script>
+</body>
+</html>

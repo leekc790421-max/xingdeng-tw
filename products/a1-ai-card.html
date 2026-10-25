@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A1 AI 名片 — 光曜星樞 SNT</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a1a;--bg2:#0f0f2a;--bg3:#141432;--cyan:#00d4ff;--cyan2:#00b8e6;--blue:#0066ff;--text:#e0e6f0;--text2:#8892a8;--card:#11112a;--border:#1a1a3e;--glow:0 0 30px rgba(0,212,255,.15)}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+a{color:var(--cyan);text-decoration:none;transition:opacity .2s}
+a:hover{opacity:.8}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,26,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-size:1.1rem;font-weight:700;background:linear-gradient(135deg,var(--cyan),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-links a{font-size:.9rem;color:var(--text2)}
+.nav-links a:hover{color:var(--cyan)}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 4rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 50% 50%,rgba(0,212,255,.06) 0%,transparent 50%);animation:pulse 8s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.1);opacity:1}}
+.hero-badge{display:inline-block;padding:.4rem 1.2rem;border:1px solid var(--cyan);border-radius:999px;font-size:.8rem;color:var(--cyan);letter-spacing:.1em;margin-bottom:2rem;text-transform:uppercase}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;margin-bottom:1rem;background:linear-gradient(135deg,#fff 30%,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-price{font-size:clamp(1.8rem,4vw,3rem);font-weight:700;color:var(--cyan);margin-bottom:1.5rem}
+.hero-price span{font-size:1rem;color:var(--text2);font-weight:400}
+.hero-desc{max-width:600px;color:var(--text2);font-size:1.1rem;margin-bottom:2.5rem}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;border:none;transition:all .3s}
+.btn-primary{background:linear-gradient(135deg,var(--cyan),var(--blue));color:#fff;box-shadow:0 4px 20px rgba(0,212,255,.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 30px rgba(0,212,255,.4)}
+.btn-outline{background:transparent;color:var(--cyan);border:1px solid var(--cyan)}
+.btn-outline:hover{background:rgba(0,212,255,.1)}
+.section{padding:5rem 2rem;max-width:1100px;margin:0 auto}
+.section-label{font-size:.8rem;color:var(--cyan);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.5rem}
+.section-title{font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:700;margin-bottom:1rem}
+.section-desc{color:var(--text2);max-width:600px;margin-bottom:3rem}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.feature-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:all .3s;position:relative;overflow:hidden}
+.feature-card:hover{border-color:var(--cyan);box-shadow:var(--glow);transform:translateY(-4px)}
+.feature-icon{width:48px;height:48px;border-radius:12px;background:rgba(0,212,255,.1);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1rem}
+.feature-card h3{font-size:1.15rem;margin-bottom:.5rem}
+.feature-card p{color:var(--text2);font-size:.9rem}
+.content-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
+.content-item{display:flex;align-items:flex-start;gap:1rem;padding:1.2rem 1.5rem;background:var(--bg2);border:1px solid var(--border);border-radius:12px}
+.content-item .check{color:var(--cyan);font-size:1.2rem;flex-shrink:0;margin-top:2px}
+.content-item h4{font-size:1rem;margin-bottom:.25rem}
+.content-item p{color:var(--text2);font-size:.85rem}
+.audience-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+.audience-card{background:linear-gradient(135deg,var(--bg2),var(--bg3));border:1px solid var(--border);border-radius:16px;padding:2rem;text-align:center;transition:all .3s}
+.audience-card:hover{border-color:var(--cyan)}
+.audience-card .icon{font-size:2.5rem;margin-bottom:1rem}
+.audience-card h4{margin-bottom:.5rem}
+.audience-card p{color:var(--text2);font-size:.85rem}
+.pricing-box{background:linear-gradient(135deg,var(--card),var(--bg2));border:2px solid var(--cyan);border-radius:20px;padding:3rem;text-align:center;max-width:500px;margin:0 auto;box-shadow:var(--glow)}
+.pricing-box .price{font-size:3rem;font-weight:800;color:var(--cyan);margin:1rem 0}
+.pricing-box .price span{font-size:1rem;color:var(--text2);font-weight:400}
+.pricing-features{list-style:none;text-align:left;margin:2rem 0}
+.pricing-features li{padding:.6rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.75rem;font-size:.95rem}
+.pricing-features li::before{content:'✓';color:var(--cyan);font-weight:700}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:700px;margin:0 auto}
+.compare-card{padding:2rem;border-radius:16px;text-align:center}
+.compare-card.old{background:var(--bg2);border:1px solid var(--border);opacity:.7}
+.compare-card.new{background:linear-gradient(135deg,rgba(0,212,255,.1),rgba(0,102,255,.1));border:2px solid var(--cyan)}
+.compare-card h4{font-size:1.1rem;margin-bottom:1rem}
+.compare-card ul{list-style:none;text-align:left}
+.compare-card ul li{padding:.4rem 0;font-size:.9rem;color:var(--text2)}
+.compare-card ul li::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:.5rem}
+.compare-card.old ul li::before{background:#ff4444}
+.compare-card.new ul li::before{background:var(--cyan)}
+.cta-section{text-align:center;padding:6rem 2rem;position:relative}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,212,255,.08),transparent 70%)}
+.cta-section h2{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;margin-bottom:1rem}
+.cta-section p{color:var(--text2);margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto}
+.footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--text2);font-size:.85rem}
+.chat-toggle{position:fixed;bottom:2rem;right:2rem;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--blue));border:none;color:#fff;font-size:1.5rem;cursor:pointer;box-shadow:0 4px 20px rgba(0,212,255,.4);z-index:200;transition:transform .3s}
+.chat-toggle:hover{transform:scale(1.1)}
+.chat-window{position:fixed;bottom:6rem;right:2rem;width:360px;max-height:500px;background:var(--bg2);border:1px solid var(--border);border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,.5);z-index:200;display:none;flex-direction:column;overflow:hidden}
+.chat-window.open{display:flex}
+.chat-header{padding:1rem 1.2rem;background:var(--bg3);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.chat-header h4{font-size:.95rem}
+.chat-close{background:none;border:none;color:var(--text2);cursor:pointer;font-size:1.2rem}
+.chat-body{flex:1;padding:1rem;overflow-y:auto;max-height:340px}
+.chat-msg{margin-bottom:.8rem;display:flex;flex-direction:column}
+.chat-msg.bot .bubble{background:var(--bg3);border:1px solid var(--border);padding:.7rem 1rem;border-radius:12px;border-top-left-radius:4px;font-size:.9rem;max-width:85%}
+.chat-msg.user{align-items:flex-end}
+.chat-msg.user .bubble{background:rgba(0,212,255,.15);border:1px solid rgba(0,212,255,.3);padding:.7rem 1rem;border-radius:12px;border-top-right-radius:4px;font-size:.9rem}
+.chat-options{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem}
+.chat-options button{padding:.4rem .8rem;background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.3);border-radius:8px;color:var(--cyan);font-size:.8rem;cursor:pointer;transition:all .2s}
+.chat-options button:hover{background:rgba(0,212,255,.2)}
+.chat-input-wrap{padding:.8rem;border-top:1px solid var(--border);display:flex;gap:.5rem}
+.chat-input-wrap input{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:.5rem .8rem;color:var(--text);font-size:.9rem;outline:none}
+.chat-input-wrap input:focus{border-color:var(--cyan)}
+.chat-input-wrap button{background:var(--cyan);border:none;border-radius:8px;padding:.5rem .8rem;color:#fff;cursor:pointer;font-size:.9rem}
+@media(max-width:768px){.nav{padding:0 1rem}.nav-links{gap:1rem}.section{padding:3rem 1.2rem}.hero{padding:6rem 1.2rem 3rem}.chat-window{right:1rem;left:1rem;width:auto;bottom:5rem}.chat-toggle{bottom:1.5rem;right:1.5rem}.compare{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+<div class="nav-brand">光曜星樞 SNT</div>
+<div class="nav-links">
+<a href="/pricing">方案總覽</a>
+<a href="/">回首頁</a>
+</div>
+</nav>
+
+<section class="hero">
+<div class="hero-badge">數位 AI 名片</div>
+<h1>A1 AI 名片</h1>
+<div class="hero-price">NT$1,200 <span>/ 組</span></div>
+<p class="hero-desc">NFC + QR Code 智慧名片，一碰即傳、動態更新、數據追蹤，取代傳統紙本名片。</p>
+<div class="hero-cta">
+<button class="btn btn-primary" onclick="openChat()">立即訂購</button>
+<a href="#pricing" class="btn btn-outline">查看方案內容</a>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label">產品特色</div>
+<div class="section-title">告別紙本，擁抱智慧</div>
+<p class="section-desc">一張卡片整合 NFC 與 QR Code，碰觸手機即可交換完整聯繫資訊。</p>
+<div class="features">
+<div class="feature-card">
+<div class="feature-icon">📡</div>
+<h3>NFC 碰觸傳輸</h3>
+<p>支援 iPhone & Android，碰觸即可傳輸名片資料，無需 App。</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">📲</div>
+<h3>QR Code 掃描</h3>
+<p>不支援 NFC 的裝置也能掃碼，確保所有人都能接收您的名片。</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🔄</div>
+<h3>動態即時更新</h3>
+<p>職位、電話、頭像隨時更改，名片內容即時同步，不需重新印製。</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">📊</div>
+<h3>數據追蹤分析</h3>
+<p>追蹤名片被查看次數、儲存次數，了解您的社交影響力。</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🎨</div>
+<h3>客製化設計</h3>
+<p>多種卡片風格可選，也可上傳自訂設計，展現個人品牌。</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🌐</div>
+<h3>多平台整合</h3>
+<p>整合 LINE、WhatsApp、LinkedIn、Instagram 等社群連結。</p>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label">方案內容</div>
+<div class="section-title">您將獲得的服務</div>
+<div class="content-list">
+<div class="content-item">
+<span class="check">✦</span>
+<div><h4>NFC 智慧卡片 x1</h4><p>PVC 材質，信用卡大小，內建 NFC 晶片</p></div>
+</div>
+<div class="content-item">
+<span class="check">✦</span>
+<div><h4>數位名片頁面</h4><p>個人化線上名片頁，含照片、職位、連結</p></div>
+</div>
+<div class="content-item">
+<span class="check">✦</span>
+<div><h4>專屬 QR Code</h4><p>高品質 QR Code 輸出，可用於印刷品</p></div>
+</div>
+<div class="content-item">
+<span class="check">✦</span>
+<div><h4>vCard 自動儲存</h4>
+<p>對方碰觸後可直接儲存聯絡人到通訊錄</p></div>
+</div>
+<div class="content-item">
+<span class="check">✦</span>
+<div><h4>後台管理面板</h4>
+<p>隨時編輯名片內容、查看數據統計</p></div>
+</div>
+<div class="content-item">
+<span class="check">✦</span>
+<div><h4>1 年免費服務</h4>
+<p>含 1 年雲端託管與數據分析服務</p></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label">新舊對比</div>
+<div class="section-title">為什麼選擇 AI 名片？</div>
+<div class="compare">
+<div class="compare-card old">
+<h4>❌ 傳統紙本名片</h4>
+<ul>
+<li>用完需重新印製</li>
+<li>資訊變更即作廢</li>
+<li>無法追蹤使用效果</li>
+<li>不環保、易丟失</li>
+<li>只能印有限資訊</li>
+</ul>
+</div>
+<div class="compare-card new">
+<h4>✨ A1 AI 名片</h4>
+<ul>
+<li>一張卡片永久使用</li>
+<li>資訊即時更新</li>
+<li>數據追蹤分析</li>
+<li>環保又專業</li>
+<li>整合所有社群連結</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label">適用對象</div>
+<div class="section-title">適合重視專業形象的您</div>
+<div class="audience-grid">
+<div class="audience-card">
+<div class="icon">💼</div>
+<h4>業務銷售人員</h4>
+<p>頻繁交換名片的業務精英</p>
+</div>
+<div class="audience-card">
+<div class="icon">🏠</div>
+<h4>房產經紀人</h4>
+<p>需要快速建立信任的房產顧問</p>
+</div>
+<div class="audience-card">
+<div class="icon">💇</div>
+<h4>美業從業者</h4>
+<p>設計師、造型師等個人品牌經營者</p>
+</div>
+<div class="audience-card">
+<div class="icon">🎤</div>
+<h4>講師 / 顧問</h4>
+<p>需要建立專業形象的知識工作者</p>
+</div>
+</div>
+</section>
+
+<section class="section" id="pricing">
+<div class="section-label">價格方案</div>
+<div class="section-title">A1 AI 名片方案價格</div>
+<div class="pricing-box">
+<div style="font-size:.9rem;color:var(--text2);letter-spacing:.1em">單組建置費用</div>
+<div class="price">NT$1,200</div>
+<ul class="pricing-features">
+<li>NFC 智慧卡片 x1</li>
+<li>數位名片頁面建置</li>
+<li>專屬 QR Code</li>
+<li>後台管理面板</li>
+<li>1 年免費雲端託管</li>
+<li>數據追蹤分析</li>
+<li>免費卡片設計</li>
+</ul>
+<button class="btn btn-primary" style="width:100%" onclick="openChat()">立即訂購</button>
+<p style="margin-top:1rem;font-size:.8rem;color:var(--text2)">續約年費 NT$600/年・3 張以上 9 折</p>
+</div>
+</section>
+
+<section class="cta-section">
+<h2>用科技重新定義您的第一印象</h2>
+<p>一張 AI 名片，讓每次相遇都留下深刻印象。</p>
+<button class="btn btn-primary" onclick="openChat()">立即訂購</button>
+</section>
+
+<footer class="footer">
+<p>© 2026 光曜星樞 SNT — AI Digital Service. All rights reserved.</p>
+</footer>
+
+<button class="chat-toggle" onclick="toggleChat()" id="chatToggle">💬</button>
+<div class="chat-window" id="chatWindow">
+<div class="chat-header"><h4>🤖 SNT AI 助手</h4><button class="chat-close" onclick="toggleChat()">✕</button></div>
+<div class="chat-body" id="chatBody">
+<div class="chat-msg bot">
+<div class="bubble">您好！A1 AI 名片是 NFC + QR Code 的智慧名片，碰觸手機就能交換聯繫資訊。想了解什麼呢？</div>
+<div class="chat-options">
+<button onclick="chatReply('price')">價格詳情</button>
+<button onclick="chatReply('nfc')">NFC 運作方式</button>
+<button onclick="chatReply('update')">如何更新內容</button>
+<button onclick="chatReply('contact')">聯絡人類</button>
+</div>
+</div>
+</div>
+<div class="chat-input-wrap">
+<input type="text" id="chatInput" placeholder="輸入您的問題..." onkeydown="if(event.key==='Enter')sendMsg()">
+<button onclick="sendMsg()">送出</button>
+</div>
+</div>
+
+<script>
+function toggleChat(){document.getElementById('chatWindow').classList.toggle('open')}
+function openChat(){document.getElementById('chatWindow').classList.add('open')}
+var responses={
+price:{text:'A1 AI 名片單組 NT$1,200，含 NFC 卡片、數位名片頁面、QR Code 及 1 年免費託管。續約年費 NT$600/年，3 張以上 9 折優惠。',opts:['NFC 運作方式','如何更新內容','聯絡人類']},
+nfc:{text:'NFC 名片內建晶片，只要將卡片碰觸手機背面（iPhone XS 以上、支援 NFC 的 Android），就會自動跳出名片頁面。不需要安裝任何 App！',opts:['價格詳情','如何更新內容','聯絡人類']},
+update:{text:'登入後台管理面板即可隨時修改名片內容，包含照片、職位、電話、社群連結等。修改後即時生效，不需要更換卡片。',opts:['價格詳情','NFC 運作方式','聯絡人類']},
+contact:{text:'好的！專人將為您服務。請撥打 02-1234-5678 或加入 LINE @snt-ai，我們將於 4 小時內回覆。',opts:[]},
+default:{text:'感謝您的來訊！此問題將由專人處理。請撥打 02-1234-5678 獲得即時協助。',opts:[]}
+};
+function chatReply(key){
+var r=responses[key]||responses['default'];
+var labels={price:'價格詳情',nfc:'NFC 運作方式',update:'如何更新內容',contact:'聯絡人類'};
+addMsg('user',labels[key]);
+setTimeout(function(){addMsg('bot',r.text,r.opts)},500);
+}
+function sendMsg(){
+var inp=document.getElementById('chatInput');var v=inp.value.trim();if(!v)return;
+addMsg('user',v);inp.value='';
+var key='default';
+if(v.match(/價|費|多少|錢/))key='price';
+else if(v.match(/NFC|碰|觸|感應/))key='nfc';
+else if(v.match(/更|改|換|編輯/))key='update';
+else if(v.match(/聯絡|電話|人/))key='contact';
+var r=responses[key];
+setTimeout(function(){addMsg('bot',r.text,r.opts)},600);
+}
+function addMsg(type,text,opts){
+var body=document.getElementById('chatBody');var div=document.createElement('div');
+div.className='chat-msg '+type;
+var html='<div class="bubble">'+text+'</div>';
+if(opts&&opts.length){html+='<div class="chat-options">';opts.forEach(function(o){var k=o==='價格詳情'?'price':o==='NFC 運作方式'?'nfc':o==='如何更新內容'?'update':'contact';html+='<button onclick="chatReply(\''+k+'\')">'+o+'</button>'});html+='</div>'}
+div.innerHTML=html;body.appendChild(div);body.scrollTop=body.scrollHeight;
+}
+</script>
+</body>
+</html>

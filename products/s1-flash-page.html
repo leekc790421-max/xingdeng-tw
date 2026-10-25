@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S1 快閃活動頁 — 光曜星樞 SNT</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a1a;--bg2:#0f0f2a;--bg3:#141432;--cyan:#00d4ff;--cyan2:#00b8e6;--blue:#0066ff;--text:#e0e6f0;--text2:#8892a8;--card:#11112a;--border:#1a1a3e;--glow:0 0 30px rgba(0,212,255,.15)}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+a{color:var(--cyan);text-decoration:none;transition:opacity .2s}
+a:hover{opacity:.8}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,10,26,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-size:1.1rem;font-weight:700;background:linear-gradient(135deg,var(--cyan),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-links a{font-size:.9rem;color:var(--text2)}
+.nav-links a:hover{color:var(--cyan)}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 4rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 50% 50%,rgba(0,212,255,.06) 0%,transparent 50%);animation:pulse 8s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.1);opacity:1}}
+.hero-badge{display:inline-block;padding:.4rem 1.2rem;border:1px solid var(--cyan);border-radius:999px;font-size:.8rem;color:var(--cyan);letter-spacing:.1em;margin-bottom:2rem;text-transform:uppercase}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;margin-bottom:1rem;background:linear-gradient(135deg,#fff 30%,var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-price{font-size:clamp(1.8rem,4vw,3rem);font-weight:700;color:var(--cyan);margin-bottom:1.5rem}
+.hero-price span{font-size:1rem;color:var(--text2);font-weight:400}
+.hero-desc{max-width:600px;color:var(--text2);font-size:1.1rem;margin-bottom:2.5rem}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;border-radius:8px;font-size:1rem;font-weight:600;cursor:pointer;border:none;transition:all .3s}
+.btn-primary{background:linear-gradient(135deg,var(--cyan),var(--blue));color:#fff;box-shadow:0 4px 20px rgba(0,212,255,.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 30px rgba(0,212,255,.4)}
+.btn-outline{background:transparent;color:var(--cyan);border:1px solid var(--cyan)}
+.btn-outline:hover{background:rgba(0,212,255,.1)}
+.section{padding:5rem 2rem;max-width:1100px;margin:0 auto}
+.section-label{font-size:.8rem;color:var(--cyan);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.5rem}
+.section-title{font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:700;margin-bottom:1rem}
+.section-desc{color:var(--text2);max-width:600px;margin-bottom:3rem}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
+.feature-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:all .3s;position:relative;overflow:hidden}
+.feature-card:hover{border-color:var(--cyan);box-shadow:var(--glow);transform:translateY(-4px)}
+.feature-icon{width:48px;height:48px;border-radius:12px;background:rgba(0,212,255,.1);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1rem}
+.feature-card h3{font-size:1.15rem;margin-bottom:.5rem}
+.feature-card p{color:var(--text2);font-size:.9rem}
+.content-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem}
+.content-item{display:flex;align-items:flex-start;gap:1rem;padding:1.2rem 1.5rem;background:var(--bg2);border:1px solid var(--border);border-radius:12px}
+.content-item .check{color:var(--cyan);font-size:1.2rem;flex-shrink:0;margin-top:2px}
+.content-item h4{font-size:1rem;margin-bottom:.25rem}
+.content-item p{color:var(--text2);font-size:.85rem}
+.audience-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+.audience-card{background:linear-gradient(135deg,var(--bg2),var(--bg3));border:1px solid var(--border);border-radius:16px;padding:2rem;text-align:center;transition:all .3s}
+.audience-card:hover{border-color:var(--cyan)}
+.audience-card .icon{font-size:2.5rem;margin-bottom:1rem}
+.audience-card h4{margin-bottom:.5rem}
+.audience-card p{color:var(--text2);font-size:.85rem}
+.pricing-box{background:linear-gradient(135deg,var(--card),var(--bg2));border:2px solid var(--cyan);border-radius:20px;padding:3rem;text-align:center;max-width:500px;margin:0 auto;box-shadow:var(--glow)}
+.pricing-box .price{font-size:3rem;font-weight:800;color:var(--cyan);margin:1rem 0}
+.pricing-box .price span{font-size:1rem;color:var(--text2);font-weight:400}
+.pricing-features{list-style:none;text-align:left;margin:2rem 0}
+.pricing-features li{padding:.6rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.75rem;font-size:.95rem}
+.pricing-features li::before{content:'✓';color:var(--cyan);font-weight:700}
+.timeline{max-width:600px;margin:0 auto;position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--cyan),var(--blue))}
+.timeline-item{position:relative;padding:1.2rem 0 1.2rem 2rem}
+.timeline-item::before{content:'';position:absolute;left:-2rem;top:1.5rem;width:12px;height:12px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);transform:translateX(-5px)}
+.timeline-item h4{font-size:1rem;margin-bottom:.25rem}
+.timeline-item p{color:var(--text2);font-size:.9rem}
+.cta-section{text-align:center;padding:6rem 2rem;position:relative}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,212,255,.08),transparent 70%)}
+.cta-section h2{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;margin-bottom:1rem}
+.cta-section p{color:var(--text2);margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto}
+.footer{border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--text2);font-size:.85rem}
+.chat-toggle{position:fixed;bottom:2rem;right:2rem;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--blue));border:none;color:#fff;font-size:1.5rem;cursor:pointer;box-shadow:0 4px 20px rgba(0,212,255,.4);z-index:200;transition:transform .3s}
+.chat-toggle:hover{transform:scale(1.1)}
+.chat-window{position:fixed;bottom:6rem;right:2rem;width:360px;max-height:500px;background:var(--bg2);border:1px solid var(--border);border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,.5);z-index:200;display:none;flex-direction:column;overflow:hidden}
+.chat-window.open{display:flex}
+.chat-header{padding:1rem 1.2rem;background:var(--bg3);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.chat-header h4{font-size:.95rem}
+.chat-close{background:none;border:none;color:var(--text2);cursor:pointer;font-size:1.2rem}
+.chat-body{flex:1;padding:1rem;overflow-y:auto;max-height:340px}
+.chat-msg{margin-bottom:.8rem;display:flex;flex-direction:column}
+.chat-msg.bot .bubble{background:var(--bg3);border:1px solid var(--border);padding:.7rem 1rem;border-radius:12px;border-top-left-radius:4px;font-size:.9rem;max-width:85%}
+.chat-msg.user{align-items:flex-end}
+.chat-msg.user .bubble{background:rgba(0,212,255,.15);border:1px solid rgba(0,212,255,.3);padding:.7rem 1rem;border-radius:12px;border-top-right-radius:4px;font-size:.9rem}
+.chat-options{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem}
+.chat-options button{padding:.4rem .8rem;background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.3);border-radius:8px;color:var(--cyan);font-size:.8rem;cursor:pointer;transition:all .2s}
+.chat-options button:hover{background:rgba(0,212,255,.2)}
+.chat-input-wrap{padding:.8rem;border-top:1px solid var(--border);display:flex;gap:.5rem}
+.chat-input-wrap input{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:.5rem .8rem;color:var(--text);font-size:.9rem;outline:none}
+.chat-input-wrap input:focus{border-color:var(--cyan)}
+.chat-input-wrap button{background:var(--cyan);border:none;border-radius:8px;padding:.5rem .8rem;color:#fff;cursor:pointer;font-size:.9rem}
+@media(max-width:768px){.nav{padding:0 1rem}.nav-links{gap:1rem}.section{padding:3rem 1.2rem}.hero{padding:6rem 1.2rem 3rem}.chat-window{right:1rem;left:1rem;width:auto;bottom:5rem}.chat-toggle{bottom:1.5rem;right:1.5rem}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+<div class="nav-brand">光曜星樞 SNT</div>
+<div class="nav-links">
+<a href="/pricing">方案總覽</a>
+<a href="/">回首頁</a>
+</div>
+</nav>
+
+<section class="hero">
+<div class="hero-badge">快速建置活動著陸頁</div>
+<h1>S1 快閃活動頁</h1>
+<div class="hero-price">NT$5,500 <span>/ 單頁</span></div>
+<p class="hero-desc">7 天內上線的精美活動頁，含 AI 文案生成，讓您的限時活動、節慶促銷瞬間聚焦。</p>
+<div class="hero-cta">
+<button class="btn btn-primary" onclick="openChat()">立即訂購</button>
+<a href="#pricing" class="btn btn-outline">查看方案內容</a>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label">產品特色</div>
+<div class="section-title">极速上线，精準轉換</div>
+<p class="section-desc">從發想到上線只要 7 天，AI 輔助文案生成，讓活動頁兼具美感與轉換率。</p>
+<div class="features">
+<div class="feature-card">
+<div class="feature-icon">⚡</div>
+<h3>7 天快速上線</h3>
+<p>標準化流程確保快速交付，緊急案件可加急至 3 天。</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🤖</div>
+<h3>AI 文案生成</h3>
+<p>AI 自動生成高轉換文案，含標題、內文、CTA 按鈕文字。</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">📱</div>
+<h3>完美響應式</h3>
+<p>手機、平板、桌機完美呈現，確保所有裝置的最佳體驗。</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🎨</div>
+<h3>精美設計模板</h3>
+<p>多種風格模板可選，也可完全客製化設計。</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">📊</div>
+<h3>轉換追蹤</h3>
+<p>內建 GA 追蹤、表單數據收集、轉換率分析。</p>
+</div>
+<div class="feature-card">
+<div class="feature-icon">🔗</div>
+<h3>整合行銷工具</h3>
+<p>串接 LINE OA、Mailchimp、Google 表單等工具。</p>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label">方案內容</div>
+<div class="section-title">您將獲得的服務</div>
+<div class="content-list">
+<div class="content-item">
+<span class="check">✦</span>
+<div><h4>單頁活動網站</h4><p>完整 HTML/CSS/JS 活動頁，含動畫效果</p></div>
+</div>
+<div class="content-item">
+<span class="check">✦</span>
+<div><h4>AI 文案撰寫</h4><p>主標題、副標題、產品說明、CTA 文字</p></div>
+</div>
+<div class="content-item">
+<span class="check">✦</span>
+<div><h4>表單 / 報名系統</h4><p>線上報名、預約、問卷功能</p></div>
+</div>
+<div class="content-item">
+<span class="check">✦</span>
+<div><h4>倒數計時器</h4><p>限時活動倒數，創造緊迫感提升轉換</p></div>
+</div>
+<div class="content-item">
+<span class="check">✦</span>
+<div><h4>域名與託管</h4><p>提供 30 天免費託管，可綁自訂域名</p></div>
+</div>
+<div class="content-item">
+<span class="check">✦</span>
+<div><h4>2 次修改機會</h4><p>含 2 次免費修改，確保滿意度</p></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label">建置流程</div>
+<div class="section-title">7 天快速交付</div>
+<div class="timeline">
+<div class="timeline-item">
+<h4>Day 1 — 需求確認</h4>
+<p>填寫需求表單，確認活動目標、風格偏好、必要元素。</p>
+</div>
+<div class="timeline-item">
+<h4>Day 2-3 — AI 文案生成</h4>
+<p>AI 生成文案初稿，客戶確認或調整。</p>
+</div>
+<div class="timeline-item">
+<h4>Day 4-5 — 設計開發</h4>
+<p>頁面設計、切版、互動效果開發。</p>
+</div>
+<div class="timeline-item">
+<h4>Day 6 — 客戶審稿</h4>
+<p>提供預覽連結，收集修改意見。</p>
+</div>
+<div class="timeline-item">
+<h4>Day 7 — 上線發佈</h4>
+<p>正式上線、追蹤碼部署、數據監控啟動。</p>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-label">適用對象</div>
+<div class="section-title">適合快速推出活動的您</div>
+<div class="audience-grid">
+<div class="audience-card">
+<div class="icon">🎉</div>
+<h4>節慶促銷活動</h4>
+<p>雙11、年中慶、週年慶等季節性活動</p>
+</div>
+<div class="audience-card">
+<div class="icon">🚀</div>
+<h4>產品發佈會</h4>
+<p>新產品、新服務上線宣傳</p>
+</div>
+<div class="audience-card">
+<div class="icon">📋</div>
+<h4>線上報名活動</h4>
+<p>研討會、講座、工作坊報名頁</p>
+</div>
+<div class="audience-card">
+<div class="icon">🎁</div>
+<h4>限時優惠活動</h4>
+<p>閃購、限量、早鳥等促銷頁面</p>
+</div>
+</div>
+</section>
+
+<section class="section" id="pricing">
+<div class="section-label">價格方案</div>
+<div class="section-title">S1 快閃活動頁方案價格</div>
+<div class="pricing-box">
+<div style="font-size:.9rem;color:var(--text2);letter-spacing:.1em">單頁建置費用</div>
+<div class="price">NT$5,500</div>
+<ul class="pricing-features">
+<li>單頁活動網站建置</li>
+<li>AI 文案生成</li>
+<li>響應式設計</li>
+<li>表單 / 報名功能</li>
+<li>30 天免費託管</li>
+<li>GA 追蹤碼部署</li>
+<li>2 次免費修改</li>
+</ul>
+<button class="btn btn-primary" style="width:100%" onclick="openChat()">立即訂購</button>
+<p style="margin-top:1rem;font-size:.8rem;color:var(--text2)">加急 3 天上線 +NT$2,000</p>
+</div>
+</section>
+
+<section class="cta-section">
+<h2>活動即將開始？讓我們幫您快速上線</h2>
+<p>7 天內交付精美活動頁，讓您的行銷活動不再倉促。</p>
+<button class="btn btn-primary" onclick="openChat()">立即訂購</button>
+</section>
+
+<footer class="footer">
+<p>© 2026 光曜星樞 SNT — AI Digital Service. All rights reserved.</p>
+</footer>
+
+<button class="chat-toggle" onclick="toggleChat()" id="chatToggle">💬</button>
+<div class="chat-window" id="chatWindow">
+<div class="chat-header"><h4>🤖 SNT AI 助手</h4><button class="chat-close" onclick="toggleChat()">✕</button></div>
+<div class="chat-body" id="chatBody">
+<div class="chat-msg bot">
+<div class="bubble">您好！S1 快閃活動頁可以在 7 天內幫您上線精美的活動頁面。有什麼想了解的吗？</div>
+<div class="chat-options">
+<button onclick="chatReply('price')">價格詳情</button>
+<button onclick="chatReply('time')">建置時間</button>
+<button onclick="chatReply('revise')">修改方案</button>
+<button onclick="chatReply('contact')">聯絡人類</button>
+</div>
+</div>
+</div>
+<div class="chat-input-wrap">
+<input type="text" id="chatInput" placeholder="輸入您的問題..." onkeydown="if(event.key==='Enter')sendMsg()">
+<button onclick="sendMsg()">送出</button>
+</div>
+</div>
+
+<script>
+function toggleChat(){document.getElementById('chatWindow').classList.toggle('open')}
+function openChat(){document.getElementById('chatWindow').classList.add('open')}
+var responses={
+price:{text:'S1 快閃活動頁單頁建置費用 NT$5,500，含 AI 文案、設計開發、表單功能及 30 天託管。加急 3 天上線 +NT$2,000。',opts:['建置時間','修改方案','聯絡人類']},
+time:{text:'標準建置時間 7 個工作天。如需加急可 3 天完成（+NT$2,000）。從確認需求開始計算。',opts:['價格詳情','修改方案','聯絡人類']},
+revise:{text:'方案含 2 次免費修改。如需更多修改次數，每次 +NT$500。我們會在確認後 24 小時內完成修改。',opts:['價格詳情','建置時間','聯絡人類']},
+contact:{text:'好的！專人將為您服務。請撥打 02-1234-5678，或留下您的聯繫方式，我們將於 4 小時內回覆。',opts:[]},
+default:{text:'感謝您的來訊！此問題將由專人處理。請撥打 02-1234-5678 獲得即時協助。',opts:[]}
+};
+function chatReply(key){
+var r=responses[key]||responses['default'];
+var labels={price:'價格詳情',time:'建置時間',revise:'修改方案',contact:'聯絡人類'};
+addMsg('user',labels[key]);
+setTimeout(function(){addMsg('bot',r.text,r.opts)},500);
+}
+function sendMsg(){
+var inp=document.getElementById('chatInput');var v=inp.value.trim();if(!v)return;
+addMsg('user',v);inp.value='';
+var key='default';
+if(v.match(/價|費|多少|錢/))key='price';
+else if(v.match(/時|天|久|快|急/))key='time';
+else if(v.match(/改|修|調/))key='revise';
+else if(v.match(/聯絡|電話|人/))key='contact';
+var r=responses[key];
+setTimeout(function(){addMsg('bot',r.text,r.opts)},600);
+}
+function addMsg(type,text,opts){
+var body=document.getElementById('chatBody');var div=document.createElement('div');
+div.className='chat-msg '+type;
+var html='<div class="bubble">'+text+'</div>';
+if(opts&&opts.length){html+='<div class="chat-options">';opts.forEach(function(o){var k=o==='價格詳情'?'price':o==='建置時間'?'time':o==='修改方案'?'revise':'contact';html+='<button onclick="chatReply(\''+k+'\')">'+o+'</button>'});html+='</div>'}
+div.innerHTML=html;body.appendChild(div);body.scrollTop=body.scrollHeight;
+}
+</script>
+</body>
+</html>

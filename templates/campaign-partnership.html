@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{CAMPAIGN_TITLE}} - 光曜星樞 SNT</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Microsoft JhengHei', 'PingFang TC', sans-serif;
+      background: #0a0a1a;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    
+    /* Hero Section */
+    .hero {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 50%, #0a0a1a 100%);
+      padding: 60px 20px;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(0,212,255,0.1) 0%, transparent 70%);
+      animation: pulse 4s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+    }
+    .hero-content { position: relative; z-index: 1; }
+    .partnership-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #00d4ff, #0099cc);
+      color: #0a0a1a;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      color: #00d4ff;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 20px rgba(0,212,255,0.5);
+    }
+    .hero .subtitle {
+      font-size: 1.3rem;
+      color: #b0b0b0;
+      margin-bottom: 2rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Partner Logos */
+    .partners-section {
+      padding: 80px 0;
+      background: #0f0f2a;
+    }
+    .partners-section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #00d4ff;
+      margin-bottom: 3rem;
+    }
+    .partners-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 3rem;
+    }
+    .partner-logo {
+      background: rgba(0,212,255,0.05);
+      border: 1px solid rgba(0,212,255,0.2);
+      border-radius: 15px;
+      padding: 2rem 3rem;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+    .partner-logo:hover {
+      transform: translateY(-5px);
+      border-color: #00d4ff;
+      box-shadow: 0 10px 30px rgba(0,212,255,0.2);
+    }
+    .partner-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .partner-name {
+      color: #00d4ff;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    
+    /* Joint Offer Details */
+    .offer-section {
+      padding: 80px 0;
+      background: #0a0a1a;
+    }
+    .offer-section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #00d4ff;
+      margin-bottom: 3rem;
+    }
+    .offer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .offer-card {
+      background: rgba(0,212,255,0.05);
+      border: 2px solid rgba(0,212,255,0.2);
+      border-radius: 15px;
+      padding: 2.5rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .offer-card:hover {
+      transform: translateY(-5px);
+      border-color: #00d4ff;
+      box-shadow: 0 10px 30px rgba(0,212,255,0.2);
+    }
+    .offer-card.featured {
+      border-color: #ff0066;
+      background: rgba(255,0,102,0.05);
+    }
+    .offer-badge {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #ff0066, #ff6600);
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+    .offer-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .offer-title {
+      font-size: 1.5rem;
+      color: #00d4ff;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+    .offer-description {
+      color: #b0b0b0;
+      margin-bottom: 1.5rem;
+    }
+    .offer-value {
+      font-size: 2rem;
+      color: #00d4ff;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    .offer-terms {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    
+    /* Co-Branded CTA */
+    .cta-section {
+      padding: 80px 0;
+      text-align: center;
+      background: linear-gradient(135deg, #0f0f2a, #1a1a3a);
+    }
+    .cta-section h2 {
+      font-size: 2.5rem;
+      color: #00d4ff;
+      margin-bottom: 1.5rem;
+    }
+    .cta-section p {
+      font-size: 1.2rem;
+      color: #b0b0b0;
+      margin-bottom: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-box {
+      max-width: 600px;
+      margin: 0 auto;
+      background: rgba(0,212,255,0.05);
+      border: 2px solid #00d4ff;
+      border-radius: 15px;
+      padding: 3rem;
+    }
+    .referral-code {
+      background: rgba(0,212,255,0.1);
+      border: 2px dashed #00d4ff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .referral-label {
+      color: #b0b0b0;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+    .referral-code-display {
+      font-size: 2rem;
+      color: #00d4ff;
+      font-weight: bold;
+      letter-spacing: 3px;
+      font-family: 'Courier New', monospace;
+    }
+    .btn-primary {
+      width: 100%;
+      padding: 1.2rem;
+      background: linear-gradient(135deg, #00d4ff, #0099cc);
+      color: #0a0a1a;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-bottom: 1rem;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(0,212,255,0.4);
+    }
+    .cta-note {
+      color: #b0b0b0;
+      font-size: 0.9rem;
+    }
+    
+    /* Referral Tracking */
+    .tracking-section {
+      padding: 80px 0;
+      background: #0a0a1a;
+    }
+    .tracking-section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #00d4ff;
+      margin-bottom: 3rem;
+    }
+    .tracking-steps {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .tracking-step {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+      padding: 2rem;
+      background: rgba(0,212,255,0.05);
+      border: 1px solid rgba(0,212,255,0.2);
+      border-radius: 15px;
+    }
+    .step-number {
+      flex-shrink: 0;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #00d4ff, #0099cc);
+      color: #0a0a1a;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-right: 1.5rem;
+    }
+    .step-content h3 {
+      color: #00d4ff;
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+    }
+    .step-content p {
+      color: #b0b0b0;
+    }
+    
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      background: #050510;
+      color: #666;
+    }
+    
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .partners-grid { gap: 1.5rem; }
+      .partner-logo { padding: 1.5rem 2rem; }
+      .tracking-step { flex-direction: column; }
+      .step-number { margin-bottom: 1rem; margin-right: 0; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="partnership-badge">{{PARTNERSHIP_BADGE}}</div>
+      <h1>{{CAMPAIGN_TITLE}}</h1>
+      <p class="subtitle">{{CAMPAIGN_SUBTITLE}}</p>
+    </div>
+  </section>
+
+  <!-- Partner Logos -->
+  <section class="partners-section">
+    <div class="container">
+      <h2>{{PARTNERS_SECTION_TITLE}}</h2>
+      <div class="partners-grid">
+        <div class="partner-logo">
+          <div class="partner-icon">{{PARTNER_1_ICON}}</div>
+          <div class="partner-name">{{PARTNER_1_NAME}}</div>
+        </div>
+        <div class="partner-logo">
+          <div class="partner-icon">{{PARTNER_2_ICON}}</div>
+          <div class="partner-name">{{PARTNER_2_NAME}}</div>
+        </div>
+        <div class="partner-logo">
+          <div class="partner-icon">{{PARTNER_3_ICON}}</div>
+          <div class="partner-name">{{PARTNER_3_NAME}}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Joint Offer Details -->
+  <section class="offer-section">
+    <div class="container">
+      <h2>{{OFFERS_SECTION_TITLE}}</h2>
+      <div class="offer-grid">
+        <div class="offer-card">
+          <div class="offer-icon">{{OFFER_1_ICON}}</div>
+          <div class="offer-title">{{OFFER_1_TITLE}}</div>
+          <div class="offer-description">{{OFFER_1_DESCRIPTION}}</div>
+          <div class="offer-value">{{OFFER_1_VALUE}}</div>
+          <div class="offer-terms">{{OFFER_1_TERMS}}</div>
+        </div>
+        <div class="offer-card featured">
+          <div class="offer-badge">{{OFFER_2_BADGE}}</div>
+          <div class="offer-icon">{{OFFER_2_ICON}}</div>
+          <div class="offer-title">{{OFFER_2_TITLE}}</div>
+          <div class="offer-description">{{OFFER_2_DESCRIPTION}}</div>
+          <div class="offer-value">{{OFFER_2_VALUE}}</div>
+          <div class="offer-terms">{{OFFER_2_TERMS}}</div>
+        </div>
+        <div class="offer-card">
+          <div class="offer-icon">{{OFFER_3_ICON}}</div>
+          <div class="offer-title">{{OFFER_3_TITLE}}</div>
+          <div class="offer-description">{{OFFER_3_DESCRIPTION}}</div>
+          <div class="offer-value">{{OFFER_3_VALUE}}</div>
+          <div class="offer-terms">{{OFFER_3_TERMS}}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Co-Branded CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>{{CTA_TITLE}}</h2>
+      <p>{{CTA_SUBTITLE}}</p>
+      <div class="cta-box">
+        <div class="referral-code">
+          <div class="referral-label">{{REFERRAL_CODE_LABEL}}</div>
+          <div class="referral-code-display" id="referralCode">{{REFERRAL_CODE}}</div>
+        </div>
+        <button class="btn-primary" onclick="handleClaim()">{{CTA_BUTTON_TEXT}}</button>
+        <p class="cta-note">{{CTA_NOTE}}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Referral Tracking -->
+  <section class="tracking-section">
+    <div class="container">
+      <h2>{{TRACKING_SECTION_TITLE}}</h2>
+      <div class="tracking-steps">
+        <div class="tracking-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>{{STEP_1_TITLE}}</h3>
+            <p>{{STEP_1_DESCRIPTION}}</p>
+          </div>
+        </div>
+        <div class="tracking-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>{{STEP_2_TITLE}}</h3>
+            <p>{{STEP_2_DESCRIPTION}}</p>
+          </div>
+        </div>
+        <div class="tracking-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>{{STEP_3_TITLE}}</h3>
+            <p>{{STEP_3_DESCRIPTION}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; {{YEAR}} 光曜星樞 SNT. All rights reserved.</p>
+      <p>{{FOOTER_TEXT}}</p>
+    </div>
+  </footer>
+
+  <script>
+    // Claim Offer Handler
+    function handleClaim() {
+      const referralCode = document.getElementById('referralCode').textContent;
+      const partnerId = '{{PARTNER_ID}}';
+      console.log('Claim initiated:', { referralCode, partnerId });
+      alert('{{CLAIM_SUCCESS_MESSAGE}}');
+    }
+
+    // Copy referral code to clipboard
+    document.getElementById('referralCode').addEventListener('click', function() {
+      const code = this.textContent;
+      navigator.clipboard.writeText(code).then(() => {
+        alert('{{COPY_CODE_MESSAGE}}');
+      });
+    });
+  </script>
+</body>
+</html>
