@@ -291,8 +291,8 @@ var responses={
 price:{text:'S1 快閃活動頁單頁建置費用 NT$5,500，含 AI 文案、設計開發、表單功能及 30 天託管。加急 3 天上線 +NT$2,000。',opts:['建置時間','修改方案','聯絡人類']},
 time:{text:'標準建置時間 7 個工作天。如需加急可 3 天完成（+NT$2,000）。從確認需求開始計算。',opts:['價格詳情','修改方案','聯絡人類']},
 revise:{text:'方案含 2 次免費修改。如需更多修改次數，每次 +NT$500。我們會在確認後 24 小時內完成修改。',opts:['價格詳情','建置時間','聯絡人類']},
-contact:{text:'好的！專人將為您服務。請撥打 02-1234-5678，或留下您的聯繫方式，我們將於 4 小時內回覆。',opts:[]},
-default:{text:'感謝您的來訊！此問題將由專人處理。請撥打 02-1234-5678 獲得即時協助。',opts:[]}
+contact:{text:'好的！請透過<a href="/contact" style="color:#00d4ff;text-decoration:underline">聯繫表單</a>留下您的需求，或寄信至 service@xingdeng.tw，我們將於 4 小時內回覆。',opts:[]},
+default:{text:'感謝您的來訊！此問題將由專人處理。請透過<a href="/contact" style="color:#00d4ff;text-decoration:underline">聯繫表單</a>或 Email 聯繫我們。',opts:[]}
 };
 function chatReply(key){
 var r=responses[key]||responses['default'];

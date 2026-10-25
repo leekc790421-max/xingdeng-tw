@@ -268,8 +268,8 @@ var responses={
 price:{text:'R2.5 內容引擎月費 NT$6,800，最低訂閱 3 個月。包含每月 SEO 文章 4 篇、社群貼文 12 則、EDM 2 封、影片腳本 2 份。',opts:['產出內容','修改次數','聯絡人類']},
 content:{text:'每月產出：SEO 文章 x4、社群貼文 x12（跨平台）、EDM x2、影片腳本 x2。所有內容皆經 AI 生成後由編輯審核。',opts:['價格詳情','修改次數','聯絡人類']},
 revise:{text:'文字內容無限次修改，直到您滿意為止。我們會在收到反饋後 24 小時內完成修改。',opts:['價格詳情','產出內容','聯絡人類']},
-contact:{text:'好的！專人將為您服務。請撥打 02-1234-5678 或留下聯繫方式，我們將於 24 小時內回覆。',opts:[]},
-default:{text:'感謝您的來訊！此問題將由專人處理。請撥打 02-1234-5678 獲得即時協助。',opts:[]}
+contact:{text:'好的！請透過<a href="/contact" style="color:#00d4ff;text-decoration:underline">聯繫表單</a>留下您的需求，或寄信至 service@xingdeng.tw，我們將於 24 小時內回覆。',opts:[]},
+default:{text:'感謝您的來訊！此問題將由專人處理。請透過<a href="/contact" style="color:#00d4ff;text-decoration:underline">聯繫表單</a>或 Email 聯繫我們。',opts:[]}
 };
 function chatReply(key){
 var r=responses[key]||responses['default'];

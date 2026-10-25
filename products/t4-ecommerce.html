@@ -296,8 +296,8 @@ var responses={
 price:{text:'T4 電商版一次性建置費用為 NT$18,800，包含完整電商平台、AI 客服、金流串接及數據分析。',opts:['功能介紹','建置時間','聯絡人類']},
 feature:{text:'T4 電商版包含：智慧商品管理、金流串接、訂單追蹤、AI 客服、數據分析等核心功能，滿足電商運營所有需求。',opts:['價格詳情','建置時間','聯絡人類']},
 time:{text:'標準建置時間約 7-14 個工作天，含測試與上線。如需加急服務可另行洽詢。',opts:['價格詳情','功能介紹','聯絡人類']},
-contact:{text:'好的！我們的專人將為您服務。請撥打 02-1234-5678 或填寫表單，我們將於 24 小時內回覆。',opts:[]},
-default:{text:'感謝您的來訊！這個問題我幫您轉接專人處理，請稍候。您也可以撥打 02-1234-5678 獲得即時協助。',opts:[]}
+contact:{text:'好的！請透過<a href="/contact" style="color:#00d4ff;text-decoration:underline">聯繫表單</a>留下您的需求，或寄信至 service@xingdeng.tw，我們將於 24 小時內回覆。',opts:[]},
+default:{text:'感謝您的來訊！這個問題我幫您轉接專人處理。請透過<a href="/contact" style="color:#00d4ff;text-decoration:underline">聯繫表單</a>或 Email 聯繫我們，將由專人為您服務。',opts:[]}
 };
 function chatReply(key){
 var r=responses[key]||responses['default'];

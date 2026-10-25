@@ -11,6 +11,7 @@
     { "source": "/cookie", "destination": "/cookie.html" },
     { "source": "/admin", "destination": "/admin.html" },
     { "source": "/sdk-config", "destination": "/sdk-config.html" },
+    { "source": "/search", "destination": "/search.html" },
     { "source": "/articles/a14", "destination": "/articles/a14.html" },
     { "source": "/articles/a15", "destination": "/articles/a15.html" },
     { "source": "/articles/a16", "destination": "/articles/a16.html" },

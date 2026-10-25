@@ -298,8 +298,8 @@ var responses={
 price:{text:'A1 AI 名片單組 NT$1,200，含 NFC 卡片、數位名片頁面、QR Code 及 1 年免費託管。續約年費 NT$600/年，3 張以上 9 折優惠。',opts:['NFC 運作方式','如何更新內容','聯絡人類']},
 nfc:{text:'NFC 名片內建晶片，只要將卡片碰觸手機背面（iPhone XS 以上、支援 NFC 的 Android），就會自動跳出名片頁面。不需要安裝任何 App！',opts:['價格詳情','如何更新內容','聯絡人類']},
 update:{text:'登入後台管理面板即可隨時修改名片內容，包含照片、職位、電話、社群連結等。修改後即時生效，不需要更換卡片。',opts:['價格詳情','NFC 運作方式','聯絡人類']},
-contact:{text:'好的！專人將為您服務。請撥打 02-1234-5678 或加入 LINE @snt-ai，我們將於 4 小時內回覆。',opts:[]},
-default:{text:'感謝您的來訊！此問題將由專人處理。請撥打 02-1234-5678 獲得即時協助。',opts:[]}
+contact:{text:'好的！請透過<a href="/contact" style="color:#00d4ff;text-decoration:underline">聯繫表單</a>留下您的需求，或加入 LINE @snt-ai，或寄信至 service@xingdeng.tw，我們將於 4 小時內回覆。',opts:[]},
+default:{text:'感謝您的來訊！此問題將由專人處理。請透過<a href="/contact" style="color:#00d4ff;text-decoration:underline">聯繫表單</a>、LINE 或 Email 聯繫我們。',opts:[]}
 };
 function chatReply(key){
 var r=responses[key]||responses['default'];

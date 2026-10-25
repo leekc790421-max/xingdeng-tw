@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>站內搜尋 — 光曜星樞 SNT</title>
+<style>
+  :root {
+    --bg-deep: #05060f;
+    --bg-card: #0d1025;
+    --cyan: #00d4ff;
+    --cyan-glow: rgba(0,212,255,0.25);
+    --purple: #8b5cf6;
+    --text-primary: #e2e8f0;
+    --text-muted: #94a3b8;
+    --border: rgba(0,212,255,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-deep);
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+  .search-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .search-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .search-header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--cyan), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .search-header p {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+  }
+  .search-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .search-input-wrapper {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .search-input {
+    flex: 1;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    color: var(--text-primary);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .search-input:focus {
+    border-color: var(--cyan);
+  }
+  .search-input::placeholder {
+    color: var(--text-muted);
+  }
+  .search-btn {
+    background: linear-gradient(135deg, var(--cyan), var(--purple));
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .search-btn:hover {
+    opacity: 0.9;
+  }
+  .mode-toggle {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    font-size: 0.875rem;
+  }
+  .mode-toggle label {
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+  .mode-toggle input[type="radio"] {
+    accent-color: var(--cyan);
+  }
+  .mode-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-left: 0.5rem;
+  }
+  .mode-badge.locate {
+    background: rgba(0,212,255,0.15);
+    color: var(--cyan);
+    border: 1px solid rgba(0,212,255,0.3);
+  }
+  .mode-badge.analyze {
+    background: rgba(139,92,246,0.15);
+    color: var(--purple);
+    border: 1px solid rgba(139,92,246,0.3);
+  }
+  .results-container {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    min-height: 200px;
+  }
+  .results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .results-count {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+  }
+  .result-item {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    background: rgba(0,0,0,0.2);
+    border: 1px solid transparent;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .result-item:hover {
+    background: rgba(0,212,255,0.05);
+    border-color: var(--border);
+  }
+  .result-title {
+    font-weight: 600;
+    color: var(--cyan);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .result-category {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    background: rgba(139,92,246,0.15);
+    color: var(--purple);
+    font-weight: 500;
+  }
+  .result-summary {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+  }
+  .result-path {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    opacity: 0.7;
+  }
+  .analysis-result {
+    line-height: 1.8;
+  }
+  .analysis-result p {
+    margin-bottom: 1rem;
+  }
+  .analysis-result strong {
+    color: var(--cyan);
+  }
+  .analysis-sources {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .analysis-sources h4 {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+  }
+  .source-link {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    background: rgba(0,0,0,0.2);
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    color: var(--cyan);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: background 0.2s;
+  }
+  .source-link:hover {
+    background: rgba(0,212,255,0.1);
+  }
+  .empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--text-muted);
+  }
+  .empty-state svg {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+  }
+  .loading {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-muted);
+  }
+  .loading::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border);
+    border-top-color: var(--cyan);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+</style>
+</head>
+<body>
+<div class="search-container">
+  <div class="search-header">
+    <h1>🔍 站內搜尋</h1>
+    <p>快速定位產品、文章、服務，或讓 AI 分析內容</p>
+  </div>
+
+  <div class="search-box">
+    <div class="search-input-wrapper">
+      <input type="text" class="search-input" id="searchInput" placeholder="輸入搜尋內容..." autocomplete="off">
+      <button class="search-btn" id="searchBtn">搜尋</button>
+    </div>
+    <div class="mode-toggle">
+      <label>
+        <input type="radio" name="mode" value="auto" checked>
+        自動判斷
+      </label>
+      <label>
+        <input type="radio" name="mode" value="locate">
+        🎯 定位模式
+      </label>
+      <label>
+        <input type="radio" name="mode" value="analyze">
+        🧠 AI 分析
+      </label>
+      <span class="mode-badge" id="modeBadge"></span>
+    </div>
+  </div>
+
+  <div class="results-container" id="resultsContainer">
+    <div class="empty-state">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+      </svg>
+      <p>輸入關鍵詞開始搜尋</p>
+    </div>
+  </div>
+</div>
+
+<script>
+const ANALYZE_KEYWORDS = [
+  '為什麼', '如何', '怎麼', '怎樣', '推薦', '建議', '比較', '分析',
+  '規劃', '差異', '區別', '優缺點', '適合', '應該', '可以', '能不能',
+  '怎麼做', '如何做', '有哪些', '什麼是', '是不是',
+  'why', 'how', 'recommend', 'compare', 'analyze'
+];
+
+function detectMode(query) {
+  const q = query.trim().toLowerCase();
+  for (const keyword of ANALYZE_KEYWORDS) {
+    if (q.includes(keyword.toLowerCase())) return 'ANALYZE';
+  }
+  if (q.includes('？') || q.includes('?')) return 'ANALYZE';
+  return 'LOCATE';
+}
+
+function updateModeBadge(mode) {
+  const badge = document.getElementById('modeBadge');
+  badge.textContent = mode === 'LOCATE' ? '🎯 定位模式' : '🧠 AI 分析';
+  badge.className = 'mode-badge ' + mode.toLowerCase();
+}
+
+function renderLocateResults(data) {
+  const container = document.getElementById('resultsContainer');
+  
+  if (data.results.length === 0) {
+    container.innerHTML = `
+      <div class="empty-state">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        <p>未找到相關結果</p>
+        <p style="font-size: 0.875rem; margin-top: 0.5rem;">請嘗試其他關鍵詞</p>
+      </div>
+    `;
+    return;
+  }
+
+  const categoryMap = {
+    product: '產品',
+    article: '文章',
+    pricing: '定價',
+    faq: 'FAQ',
+    services: '服務',
+    template: '模板',
+    domain: '網域',
+    home: '首頁',
+    contact: '聯繫',
+  };
+
+  let html = `
+    <div class="results-header">
+      <span class="results-count">找到 ${data.count} 個結果</span>
+      <span class="mode-badge locate">🎯 定位模式</span>
+    </div>
+  `;
+
+  for (const result of data.results) {
+    const category = categoryMap[result.category] || result.category;
+    html += `
+      <div class="result-item" onclick="window.location.href='${result.path}'">
+        <div class="result-title">
+          ${result.title}
+          <span class="result-category">${category}</span>
+        </div>
+        <div class="result-summary">${result.summary || ''}</div>
+        <div class="result-path">${result.path}</div>
+      </div>
+    `;
+  }
+
+  container.innerHTML = html;
+}
+
+function renderAnalyzeResults(data) {
+  const container = document.getElementById('resultsContainer');
+  
+  let html = `
+    <div class="results-header">
+      <span class="results-count">AI 分析結果</span>
+      <span class="mode-badge analyze">🧠 AI 分析</span>
+    </div>
+    <div class="analysis-result">
+      ${data.analysis.split('\n').map(line => {
+        if (line.startsWith('**') && line.endsWith('**')) {
+          return `<p><strong>${line.slice(2, -2)}</strong></p>`;
+        }
+        if (line.startsWith('---')) {
+          return '<hr style="border-color: var(--border); margin: 1rem 0;">';
+        }
+        if (line.trim()) {
+          return `<p>${line}</p>`;
+        }
+        return '';
+      }).join('')}
+    </div>
+  `;
+
+  if (data.sources && data.sources.length > 0) {
+    html += `
+      <div class="analysis-sources">
+        <h4>📚 參考來源</h4>
+        ${data.sources.map(s => `
+          <a href="${s.path}" class="source-link">${s.title}</a>
+        `).join('')}
+      </div>
+    `;
+  }
+
+  container.innerHTML = html;
+}
+
+async function performSearch() {
+  const input = document.getElementById('searchInput');
+  const query = input.value.trim();
+  
+  if (!query) return;
+
+  const modeSelection = document.querySelector('input[name="mode"]:checked').value;
+  const detectedMode = detectMode(query);
+  const mode = modeSelection === 'auto' ? detectedMode : modeSelection.toUpperCase();
+
+  updateModeBadge(mode);
+
+  const container = document.getElementById('resultsContainer');
+  container.innerHTML = '<div class="loading">搜尋中</div>';
+
+  try {
+    const response = await fetch('/api/search', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query, mode }),
+    });
+
+    const data = await response.json();
+
+    if (data.mode === 'LOCATE') {
+      renderLocateResults(data);
+    } else {
+      renderAnalyzeResults(data);
+    }
+  } catch (error) {
+    container.innerHTML = `
+      <div class="empty-state">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        <p>搜尋失敗，請稍後再試</p>
+      </div>
+    `;
+  }
+}
+
+// Event listeners
+document.getElementById('searchBtn').addEventListener('click', performSearch);
+document.getElementById('searchInput').addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') performSearch();
+});
+
+// Update mode badge on radio change
+document.querySelectorAll('input[name="mode"]').forEach(radio => {
+  radio.addEventListener('change', () => {
+    const query = document.getElementById('searchInput').value.trim();
+    if (query) {
+      const modeSelection = document.querySelector('input[name="mode"]:checked').value;
+      const detectedMode = detectMode(query);
+      const mode = modeSelection === 'auto' ? detectedMode : modeSelection.toUpperCase();
+      updateModeBadge(mode);
+    }
+  });
+});
+</script>
+</body>
+</html>
