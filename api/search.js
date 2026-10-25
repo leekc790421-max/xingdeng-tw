@@ -261,10 +261,14 @@ module.exports = function handler(req, res) {
     return res.status(200).end();
   }
   
-  const { query, mode } = req.method === 'POST' ? req.body : req.query;
+  // 相容參數：query / q / keyword（外部機器人歷史用 q，前端用 query）
+  const params = req.method === 'POST' ? (req.body || {}) : (req.query || {});
+  const query = params.query || params.q || params.keyword || '';
+  const mode = params.mode || params.src || '';
   
   if (!query || typeof query !== 'string' || query.trim().length === 0) {
     return res.status(400).json({
+      ok: false,
       error: 'Missing query parameter',
       message: '請輸入搜尋內容',
     });
@@ -276,6 +280,7 @@ module.exports = function handler(req, res) {
   if (searchMode === 'LOCATE') {
     const results = locateSearch(query);
     return res.status(200).json({
+      ok: true,
       mode: 'LOCATE',
       query,
       results,
@@ -283,6 +288,6 @@ module.exports = function handler(req, res) {
     });
   } else {
     const analysis = analyzeSearch(query);
-    return res.status(200).json(analysis);
+    return res.status(200).json(Object.assign({ ok: true }, analysis));
   }
 };
