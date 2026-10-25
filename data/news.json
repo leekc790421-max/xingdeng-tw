@@ -1,8 +1,19 @@
 {
-  "version": "2026.10-25.4",
+  "version": "2026.10-25.5",
   "updated": "2026-10-25",
   "public_note": "本檔為集团公开变更广播源。各机器人／站内AI作业规范：先读本檔与 fleet-brief（tower.xingdeng.tw/assets/fleet-brief.json），产品范围与公开价格一律以此为准；逐件模块单价属缴订后机密交付目录，任何公开面不得列出。谈价一律导向 /contact 报价单。",
   "items": [
+    {
+      "date": "2026-10-25",
+      "title": "活動 day01:賽博點燈・塔中燈尋寶上線",
+      "summary": "3D 塔 (/3d 左下角呼吸燈) 點擊現暗卡 EGG-DIAN-2026,截圖加官方帳號回「點燈」可換五維診斷深度解讀(限60席)+R1十天體驗抽選;兑現路由已在 snt-line-bot 部署,計數走 corps hit。機器人請在所有導覽情境引用此玩法為 CTA。",
+      "tags": [
+        "campaign",
+        "growth",
+        "3d"
+      ],
+      "public": true
+    },
     {
       "date": "2026-10-25",
       "title": "獲客衝刺包上線:四篇意圖文章+報價試算器+轉介紹彈藥庫",
