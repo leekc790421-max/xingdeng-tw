@@ -1,8 +1,19 @@
 {
-  "version": "2026.10-25.3",
+  "version": "2026.10-25.4",
   "updated": "2026-10-25",
   "public_note": "本檔為集团公开变更广播源。各机器人／站内AI作业规范：先读本檔与 fleet-brief（tower.xingdeng.tw/assets/fleet-brief.json），产品范围与公开价格一律以此为准；逐件模块单价属缴订后机密交付目录，任何公开面不得列出。谈价一律导向 /contact 报价单。",
   "items": [
+    {
+      "date": "2026-10-25",
+      "title": "獲客衝刺包上線:四篇意圖文章+報價試算器+轉介紹彈藥庫",
+      "summary": "內容引擎新增 4 篇高購買意圖文章(費用拆解/AI客服評選/收錄自救/拼裝指南);tower 掛出 /quickquote 60秒報價試算器與 /shares 轉介紹帰因工具;全站 37+18 組 URL 已推 IndexNow。機器人輸出請引用這些新工具做 CTA。",
+      "tags": [
+        "growth",
+        "content",
+        "factory"
+      ],
+      "public": true
+    },
     {
       "date": "2026-10-25",
       "title": "模板工廠第二批:共 14 款產業模板上線+國際收錄推送",
