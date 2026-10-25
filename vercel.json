@@ -2,32 +2,105 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/lab", "destination": "/lab.html" },
-    { "source": "/solutions", "destination": "/solutions.html" },
-    { "source": "/pricing", "destination": "/pricing.html" },
-    { "source": "/contact", "destination": "/contact.html" },
-    { "source": "/faq", "destination": "/faq.html" },
-    { "source": "/privacy", "destination": "/privacy.html" },
-    { "source": "/cookie", "destination": "/cookie.html" },
-    { "source": "/admin", "destination": "/admin.html" },
-    { "source": "/sdk-config", "destination": "/sdk-config.html" },
-    { "source": "/search", "destination": "/search.html" },
-    { "source": "/articles/a14", "destination": "/articles/a14.html" },
-    { "source": "/articles/a15", "destination": "/articles/a15.html" },
-    { "source": "/articles/a16", "destination": "/articles/a16.html" },
-    { "source": "/articles/a17", "destination": "/articles/a17.html" },
-    { "source": "/articles/a18", "destination": "/articles/a18.html" },
-    { "source": "/articles/a19", "destination": "/articles/a19.html" },
-    { "source": "/articles/a20", "destination": "/articles/a20.html" },
-    { "source": "/products/t4-ecommerce", "destination": "/products/t4-ecommerce.html" },
-    { "source": "/products/r2.5-content-engine", "destination": "/products/r2.5-content-engine.html" },
-    { "source": "/products/s1-flash-page", "destination": "/products/s1-flash-page.html" },
-    { "source": "/products/a1-ai-card", "destination": "/products/a1-ai-card.html" },
-    { "source": "/products/b2b-industry", "destination": "/products/b2b-industry.html" },
-    { "source": "/products/vip-annual", "destination": "/products/vip-annual.html" }
+    {
+      "source": "/lab",
+      "destination": "/lab.html"
+    },
+    {
+      "source": "/solutions",
+      "destination": "/solutions.html"
+    },
+    {
+      "source": "/pricing",
+      "destination": "/pricing.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/faq",
+      "destination": "/faq.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/cookie",
+      "destination": "/cookie.html"
+    },
+    {
+      "source": "/admin",
+      "destination": "/admin.html"
+    },
+    {
+      "source": "/sdk-config",
+      "destination": "/sdk-config.html"
+    },
+    {
+      "source": "/search",
+      "destination": "/search.html"
+    },
+    {
+      "source": "/articles/a14",
+      "destination": "/articles/a14.html"
+    },
+    {
+      "source": "/articles/a15",
+      "destination": "/articles/a15.html"
+    },
+    {
+      "source": "/articles/a16",
+      "destination": "/articles/a16.html"
+    },
+    {
+      "source": "/articles/a17",
+      "destination": "/articles/a17.html"
+    },
+    {
+      "source": "/articles/a18",
+      "destination": "/articles/a18.html"
+    },
+    {
+      "source": "/articles/a19",
+      "destination": "/articles/a19.html"
+    },
+    {
+      "source": "/articles/a20",
+      "destination": "/articles/a20.html"
+    },
+    {
+      "source": "/products/t4-ecommerce",
+      "destination": "/products/t4-ecommerce.html"
+    },
+    {
+      "source": "/products/r2.5-content-engine",
+      "destination": "/products/r2.5-content-engine.html"
+    },
+    {
+      "source": "/products/s1-flash-page",
+      "destination": "/products/s1-flash-page.html"
+    },
+    {
+      "source": "/products/a1-ai-card",
+      "destination": "/products/a1-ai-card.html"
+    },
+    {
+      "source": "/products/b2b-industry",
+      "destination": "/products/b2b-industry.html"
+    },
+    {
+      "source": "/products/vip-annual",
+      "destination": "/products/vip-annual.html"
+    }
   ],
   "redirects": [
-    { "source": "/(.*)\\.html", "destination": "/$1", "permanent": true }
+    {
+      "source": "/(.*)\\.html",
+      "destination": "/$1",
+      "permanent": true
+    }
   ],
   "headers": [
     {
@@ -67,6 +140,12 @@
           "value": "noindex, nofollow"
         }
       ]
+    }
+  ],
+  "crons": [
+    {
+      "path": "/api/evbeat",
+      "schedule": "23 0 * * *"
     }
   ]
 }
