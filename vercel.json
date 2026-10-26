@@ -100,6 +100,11 @@
       "source": "/(.*)\\.html",
       "destination": "/$1",
       "permanent": true
+    },
+    {
+      "source": "/t",
+      "destination": "https://tower.xingdeng.tw/firstlight",
+      "permanent": true
     }
   ],
   "headers": [
