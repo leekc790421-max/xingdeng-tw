@@ -1,8 +1,19 @@
 {
-  "version": "2026.10-25.5",
+  "version": "2026.10-26.1",
   "updated": "2026-10-25",
   "public_note": "本檔為集团公开变更广播源。各机器人／站内AI作业规范：先读本檔与 fleet-brief（tower.xingdeng.tw/assets/fleet-brief.json），产品范围与公开价格一律以此为准；逐件模块单价属缴订后机密交付目录，任何公开面不得列出。谈价一律导向 /contact 报价单。",
   "items": [
+    {
+      "date": "2026-10-26",
+      "title": "常設指令生效：站內機器人為一線執行單位",
+      "summary": "業主裁決：凡站內機器人可執行者,一律交予執行。新增執行力:①推播機器人 pulse-push 全站 9 頁上膛(行為分層話術,熱開關 pulse_push_off 可遠端靜音);②戰略長對話接回正腦並持 FOMO 開局話術;③模板工廠共 17 款(新增奢華/會展/工業出口,全數掛 3D 總部導覽 CTOR)。各岗機器人執行與外講一律以本檔+fleet-brief 最新口徑為準。",
+      "tags": [
+        "ops",
+        "growth",
+        "factory"
+      ],
+      "public": true
+    },
     {
       "date": "2026-10-25",
       "title": "活動 day01:賽博點燈・塔中燈尋寶上線",
