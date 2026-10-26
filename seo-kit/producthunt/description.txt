@@ -1,0 +1,5 @@
+Problem: small brands buy brochure-sites that sleep; big brands rent SaaS that reports nothing. Their websites are cost centers with a domain name.
+
+Solution: XingDeng/Orbit ships a 3D WebGL headquarters that staffs itself — nine in-house robots on git-first rails: 30-minute patrol clock, nightly repo→prod reconciliation, Saturday auto-dispatch, ATM/OTC settlement AI, Traditional-Chinese firewall, behaviour-tiered offers, and a quote-sheet funnel with no fake stats. 17+ industry templates launch in 30 minutes.
+
+Proof you can GET right now: live counters at tower.xingdeng.tw/wind (“[PH gallery: screenshot today’s numbers]”), a versioned public changelog at xingdeng.tw/api/news, load sanity at 1,400-req/0% error, and a founder who answers every comment personally — because there is no one else. Pricing: TWD T1–T4 & USD tracks dual-pegged, no invented metrics, no scraped leads; export your data any day. [NEEDS REAL DATA at ship time: first-week visitor/lead tallies.]

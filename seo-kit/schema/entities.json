@@ -1,0 +1,143 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://xingdeng.tw/#organization",
+  "name": "XingDeng Network 光曜星樞",
+  "alternateName": "SNT",
+  "url": "https://xingdeng.tw",
+  "logo": "https://xingdeng.tw/og-image.svg",
+  "foundingDate": "[NEEDS HUMAN REVIEW]",
+  "founders": [
+   {
+    "@type": "Person",
+    "name": "A.c LEE",
+    "alternateName": "李光展"
+   }
+  ],
+  "contactPoint": {
+   "@type": "ContactPoint",
+   "contactType": "customer support",
+   "email": "service@xingdeng.tw",
+   "url": "https://xingdeng.tw/contact"
+  },
+  "sameAs": [
+   "https://github.com/leekc790421-max"
+  ],
+  "subOrganization": [
+   {
+    "@id": "https://orbit.xingdeng.tw/#product"
+   },
+   {
+    "@id": "https://vip.xingdeng.tw/#service"
+   }
+  ],
+  "knowsAbout": [
+   "AI agent operations",
+   "Self-operating websites",
+   "3D WebGL experiences",
+   "GEO / llms readiness"
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://xingdeng.tw/#website",
+  "url": "https://xingdeng.tw",
+  "name": "XingDeng LightHub",
+  "inLanguage": [
+   "zh-Hant",
+   "en",
+   "ja"
+  ],
+  "publisher": {
+   "@id": "https://xingdeng.tw/#organization"
+  },
+  "potentialAction": {
+   "@type": "SearchAction",
+   "target": "https://xingdeng.tw/api/search?query={query}",
+   "query-input": "required name=query"
+  }
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": "https://orbit.xingdeng.tw/#product",
+  "name": "Orbit Tower 3D Digital HQ",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web (WebGL2)",
+  "url": "https://orbit.xingdeng.tw",
+  "creator": {
+   "@type": "Person",
+   "name": "A.c LEE"
+  },
+  "isPartOf": {
+   "@id": "https://xingdeng.tw/#organization"
+  },
+  "featureList": [
+   "Walkable 3D showroom floors",
+   "24/7 AI reception & quote funnel",
+   "Easter-egg campaign engine",
+   "Mobile auto-degrade WebGL",
+   "IndexNow + llms.txt wired"
+  ],
+  "offers": [
+   {
+    "@type": "Offer",
+    "price": "3000",
+    "priceCurrency": "TWD",
+    "name": "T1 Starter"
+   },
+   {
+    "@type": "Offer",
+    "price": "6600",
+    "priceCurrency": "TWD",
+    "name": "T2 Shop"
+   },
+   {
+    "@type": "Offer",
+    "price": "13900",
+    "priceCurrency": "TWD",
+    "name": "T3 Enterprise"
+   },
+   {
+    "@type": "Offer",
+    "price": "36900",
+    "priceCurrency": "TWD",
+    "name": "T4 Flagship"
+   }
+  ],
+  "sameAs": [
+   "https://tower.xingdeng.tw/factory"
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://vip.xingdeng.tw/#service",
+  "name": "CosmoSphere VIP Compute Lounge",
+  "url": "https://vip.xingdeng.tw",
+  "provider": {
+   "@id": "https://xingdeng.tw/#organization"
+  },
+  "areaServed": "Worldwide",
+  "serviceType": "AI metaphysics computing",
+  "offers": {
+   "@type": "AggregateOffer",
+   "priceCurrency": "USD",
+   "lowPrice": "688",
+   "highPrice": "6888",
+   "offerCount": "3"
+  }
+ },
+ {
+  "@context": "https://schema.org",
+  "@id": "https://xingdeng.tw/#person",
+  "@type": "Person",
+  "name": "A.c LEE",
+  "alternateName": "李光展",
+  "founderOf": {
+   "@id": "https://xingdeng.tw/#organization"
+  }
+ }
+]

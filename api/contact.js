@@ -171,10 +171,10 @@ ${formData.name} 您好，
 2. 瀏覽我們的服務介紹
    👉 https://xingdeng.tw/solutions
 
-3. 查看 8K 科技藝廊，了解我們的技術實力
+3. 查看 8K 科技藝廊，瞭解我們的技術實力
    👉 https://xingdeng.tw/lab
 
-4. 免費進行 GEO 檢測，了解您的網站在 AI 搜尋中的表現
+4. 免費進行 GEO 檢測，瞭解您的網站在 AI 搜尋中的表現
    👉 https://xingdeng.tw/#geo-detector
 
 ━━━━━━━━━━━━━━━━━━━━━

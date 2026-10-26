@@ -207,7 +207,7 @@ function analyzeSearch(query) {
   let analysis = '';
   
   if (topEntries.length === 0) {
-    analysis = '站內未找到相關內容。請嘗試其他關鍵詞，或瀏覽我們的產品頁面了解更多。';
+    analysis = '站內未找到相關內容。請嘗試其他關鍵詞，或瀏覽我們的產品頁面瞭解更多。';
   } else {
     // Build context-aware response
     const categories = [...new Set(topEntries.map(e => e.category))];

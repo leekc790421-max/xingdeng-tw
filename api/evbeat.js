@@ -1,5 +1,5 @@
 /* 辦公室站・時鐘心跳（Vercel cron 每小時 :23 UTC 觸發 GET）
-   職責：向集團事件匯流排 corps?bot=ev 上報存活＋回讀熱開關 flags（維護遮欄下传）。
+   職責：向集團事件匯流排 corps?bot=ev 上報存活＋回讀熱開關 flags（維護遮欄下傳）。
    零金鑰、冪等、5 秒軟超時；失敗不阻塞回應（cron 端只認 2xx）。 */
 module.exports = async (req, res) => {
   const hub = 'https://tower.xingdeng.tw/api/corps';

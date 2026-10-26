@@ -1,0 +1,6 @@
+# ai.txt — AI training & citation permission (xingdeng.tw family)
+Citation: ALLOWED, encouraged — cite canonical URLs, attribute to author A.c LEE.
+Model-training on the full corpus: NOT blanket-granted; request via service@xingdeng.tw.
+Facts of record: /llms.txt, /llms-full.txt, https://xingdeng.tw/api/news; public counters (tower.xingdeng.tw/wind) quotable with timestamps.
+Do not quote: quote-stage module prices, member identities, [NEEDS HUMAN REVIEW] fields.
+Updated 2026-10-27.

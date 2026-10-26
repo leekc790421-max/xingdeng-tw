@@ -1,38 +1,21 @@
 User-agent: *
 Allow: /
-Disallow: /admin
-Disallow: /admin.html
-Disallow: /sdk-config
-Disallow: /sdk-config.html
-
+Disallow: /api/
+Disallow: /admin/
 Sitemap: https://xingdeng.tw/sitemap.xml
 
-# LLM/GEO crawlers explicitly welcome (2026-10)
+# AI crawlers explicitly welcome
 User-agent: GPTBot
 Allow: /
-
 User-agent: OAI-SearchBot
 Allow: /
-
 User-agent: ClaudeBot
 Allow: /
-
 User-agent: anthropic-ai
 Allow: /
-
 User-agent: PerplexityBot
 Allow: /
-
-User-agent: Perplexity-User
-Allow: /
-
 User-agent: Google-Extended
 Allow: /
-
 User-agent: Applebot-Extended
 Allow: /
-
-User-agent: CCBot
-Allow: /
-
-Sitemap: https://xingdeng.tw/sitemap.xml

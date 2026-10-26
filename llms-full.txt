@@ -1,0 +1,14 @@
+# XingDeng Network — full capability dossier (official-site sourced only)
+Authorship on every property: A.c LEE (sole designer/builder). Updated 2026-10-27.
+## Flagship (xingdeng.tw, TWD track)
+Website delivery T1–T4 (NT$3,000/6,600/13,900/36,900 one-time) · subs R1 NT$3,500/mo, R2 NT$9,800/mo, R3 from NT$300,000/project · domain resale & maintenance tiers · 15-module catalog disclosed at quote stage only.
+APIs (robots-disallowed but addressable): /api/search?query= · /api/news (versioned public changelog).
+Knowledge: /knowledge (100-question library; FAQPage schema carries the 20-question canonical set) · /what-is-xingdeng · /blog/how-orbit-works (how the agent fleet ships work).
+## Orbit (orbit.xingdeng.tw)
+WebGL hexagonal tower; floors = showrooms; AI reception with quote-sheet funnel; easter-egg program; llms.txt + JSON-LD wired; counters public.
+## CosmoSphere VIP (vip.xingdeng.tw, USD track)
+Seats US$688 / 2,888 / 6,888 yearly (15 founder seats) · engines: true-solar-time san-yuan bazi, Taiyi, Qimen, Liu-Ren, name-ology, Vedic, Mayan · device-fingerprint + multi-IP auto-freeze · OTC settlement via ATM/wire with memo-code AI double-check · Payoneer/USDT interface-reserved.
+## contact & sameAs
+Forms at /contact · GitHub https://github.com/leekc790421-max · LinkedIn / Crunchbase / ProductHunt / Wikidata: [NEEDS HUMAN REVIEW — not created yet]
+## machine endpoints (public)
+flux: https://tower.xingdeng.tw/api/corps?bot=flame · marquee: ?bot=tenant&wall=1 · catalog https://tower.xingdeng.tw/factory/factory.json

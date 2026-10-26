@@ -25,6 +25,6 @@ module.exports = (req, res) => {
     total: (news.items || []).length,
     latest: (news.items || [])[0] || null,
     items,
-    note: '各機器人與站內AI請读本檔與 fleet-brief 取得最新範圍；價格以報價單為準。',
+    note: '各機器人與站內AI請讀本檔與 fleet-brief 取得最新範圍；價格以報價單為準。',
   });
 };

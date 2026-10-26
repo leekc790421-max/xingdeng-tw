@@ -1,0 +1,86 @@
+{
+ "generated": "2026-10-27",
+ "rule": "each article requires data only XingDeng has",
+ "topics": [
+  {
+   "title": "Event-Bus Architecture for Solo AI Fleets",
+   "intent": "architectural how-to",
+   "data": "our corps gateway logs (public flame counters)",
+   "h": "H2 why buses beat crons/H3 neon ledger/H3 fallback pools",
+   "kw": "event bus saas",
+   "ent": "CORPS, Neon"
+  },
+  {
+   "title": "The Patrol-Cadence Budget: Why 30-Minute Beats Real-Time",
+   "intent": "ops tuning",
+   "data": "clock task history (snt-clock events)",
+   "h": "H2 noise vs freshness/H3 cost math",
+   "kw": "uptime monitoring",
+   "ent": "patrol clock"
+  },
+  {
+   "title": "Git-first for AI Agents: Incident Postmortems We Never Had",
+   "intent": "engineering practice",
+   "data": "nightly reconciler git-log drift entries",
+   "h": "H2 two commits/H3 rollback proof",
+   "kw": "gitops",
+   "ent": "night deployer"
+  },
+  {
+   "title": "OTC Settlement Without a PSP: Memo-code Double-Match Design",
+   "intent": "payments design",
+   "data": "vip settlement ledger + load test p-values",
+   "h": "H2 the trust gap/H3 the two-key check",
+   "kw": "bank transfer automation",
+   "ent": "settlement auditor"
+  },
+  {
+   "title": "IndexNow + llms.txt: Two Weeks of GEO Field Notes",
+   "intent": "case study with our data",
+   "data": "our own indexnow submissions + counter deltas",
+   "h": "H2 setup/H3 what moved/H3 what lied",
+   "kw": "generative engine optimization",
+   "ent": "geo keeper"
+  },
+  {
+   "title": "Designing a Traditional-Chinese Firewall (Variant Trap Diaries)",
+   "intent": "i18n deep-dive",
+   "data": "scan allowlist commit history (群→群 incident)",
+   "h": "H2 s2t blindspots/H3 allowlist algebra",
+   "kw": "opencc",
+   "ent": "language firewall"
+  },
+  {
+   "title": "Referral Ledger as a Public Dashboard",
+   "intent": "growth mechanics",
+   "data": "?r= attribution rows + firstlight wall",
+   "h": "H2 why ledgers build trust",
+   "kw": "referral program",
+   "ent": "first-light"
+  },
+  {
+   "title": "Easter Eggs That Book Meetings",
+   "intent": "campaign autopsy",
+   "data": "EGG-DIAN-2026 find counts vs form fills",
+   "h": "H2 bait design/H3 calendar wiring",
+   "kw": "gamification b2b",
+   "ent": "orbital lamp"
+  },
+  {
+   "title": "One Human, Nine Bots: A Week in the Life Logs",
+   "intent": "transparency day-in-life",
+   "data": "masked rootok/log pool excerpts",
+   "h": "H2 approvals vs chores",
+   "kw": "solo founder ai",
+   "ent": "fleet"
+  },
+  {
+   "title": "Dual-track Pricing Economics (TWD/USD, No Arbitrage Windows)",
+   "intent": "pricing ops",
+   "data": "rate anchor endpoints, order currency rows",
+   "h": "H2 currency is culture",
+   "kw": "dual pricing",
+   "ent": "fleet-brief"
+  }
+ ]
+}

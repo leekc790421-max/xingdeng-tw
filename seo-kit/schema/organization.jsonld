@@ -1,0 +1,40 @@
+{
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "@id": "https://xingdeng.tw/#organization",
+ "name": "XingDeng Network 光曜星樞",
+ "alternateName": "SNT",
+ "url": "https://xingdeng.tw",
+ "logo": "https://xingdeng.tw/og-image.svg",
+ "foundingDate": "[NEEDS HUMAN REVIEW]",
+ "founders": [
+  {
+   "@type": "Person",
+   "name": "A.c LEE",
+   "alternateName": "李光展"
+  }
+ ],
+ "contactPoint": {
+  "@type": "ContactPoint",
+  "contactType": "customer support",
+  "email": "service@xingdeng.tw",
+  "url": "https://xingdeng.tw/contact"
+ },
+ "sameAs": [
+  "https://github.com/leekc790421-max"
+ ],
+ "subOrganization": [
+  {
+   "@id": "https://orbit.xingdeng.tw/#product"
+  },
+  {
+   "@id": "https://vip.xingdeng.tw/#service"
+  }
+ ],
+ "knowsAbout": [
+  "AI agent operations",
+  "Self-operating websites",
+  "3D WebGL experiences",
+  "GEO / llms readiness"
+ ]
+}

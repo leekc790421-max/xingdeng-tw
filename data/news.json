@@ -1,7 +1,7 @@
 {
   "version": "2026.10-28.2",
   "updated": "2026-10-25",
-  "public_note": "本檔為集团公开变更广播源。各机器人／站内AI作业规范：先读本檔与 fleet-brief（tower.xingdeng.tw/assets/fleet-brief.json），产品范围与公开价格一律以此为准；逐件模块单价属缴订后机密交付目录，任何公开面不得列出。谈价一律导向 /contact 报价单。",
+  "public_note": "本檔為集團公開變更廣播源。各機器人／站內AI作業規範：先讀本檔與 fleet-brief（tower.xingdeng.tw/assets/fleet-brief.json），產品範圍與公開價格一律以此為準；逐件模塊單價屬繳訂後機密交付目錄，任何公開面不得列出。談價一律導向 /contact 報價單。",
   "items": [
     {
       "date": "2026-10-28",
@@ -17,7 +17,7 @@
     {
       "date": "2026-10-28",
       "title": "郵件通道換鑰完成:Resend 新鑰全面上線(域名驗證前=帳戶收件模式)",
-      "summary": "舊外洩 Resend 鑰已從全專案輪換下架(marketing/office/vip/aurora 四處 env 已刷)。驗證信已實發送達(allen790421@gmail.com)。現行模式:新單/覆核通知推至業主收件匣;对外客户发信(熱單快攻/週報/水單通知)待 xingdeng.tw 於 Resend 控制台完成域名驗證後解鎖——該鍵為 send-only 權限,域名註冊須後台手動。機器人於驗證完成前,對外話術不得承諾即時郵件回覆时效。",
+      "summary": "舊外洩 Resend 鑰已從全專案輪換下架(marketing/office/vip/aurora 四處 env 已刷)。驗證信已實發送達(allen790421@gmail.com)。現行模式:新單/覆核通知推至業主收件匣;對外客戶發信(熱單快攻/週報/水單通知)待 xingdeng.tw 於 Resend 控制台完成域名驗證後解鎖——該鍵為 send-only 權限,域名註冊須後台手動。機器人於驗證完成前,對外話術不得承諾即時郵件回覆時效。",
       "tags": [
         "fleet",
         "safekeeping"
@@ -37,8 +37,8 @@
     },
     {
       "date": "2026-10-27",
-      "title": "首燈計畫啟動:10 塊商戶牌+15 個燈騎席,第一塊牌已点亮",
-      "summary": "tower.xingdeng.tw/firstlight 線上:商戶免費掛牌(限10,核准制)與創始燈騎(限15,120日帰因+10% credit)開放遞帖,進度和名錄即時公開(/wind wall=1)。首塊牌為自家體驗店(流程佐證,不充數)。機器人外講新增第五 CTA:『首燈計畫,本週 10 塊牌』;邀約函 6 份在 firstlight 頁可直接複製。",
+      "title": "首燈計畫啟動:10 塊商戶牌+15 個燈騎席,第一塊牌已點亮",
+      "summary": "tower.xingdeng.tw/firstlight 線上:商戶免費掛牌(限10,核準制)與創始燈騎(限15,120日帰因+10% credit)開放遞帖,進度和名錄即時公開(/wind wall=1)。首塊牌為自家體驗店(流程佐證,不充數)。機器人外講新增第五 CTA:『首燈計畫,本週 10 塊牌』;邀約函 6 份在 firstlight 頁可直接複製。",
       "tags": [
         "growth",
         "campaign"
@@ -48,7 +48,7 @@
     {
       "date": "2026-10-27",
       "title": "國際軌門面上線:/en 英語落頁三檔 US$ 掛牌",
-      "summary": "tower.xingdeng.tw/en 英語落頁上線(Starter US$15K/Pro US$58K/Enterprise US$128K,成交以報價單為準);繁中/EN hreflang 交叉完成;主域 4 新頁已推 IndexNow(202)。tenant 批准通道與 egg 燈盞計數修復上線。機器人外講:國際訪盤導 /en,國內導 /kits,風向只引用 /wind 實數。",
+      "summary": "tower.xingdeng.tw/en 英語落頁上線(Starter US$15K/Pro US$58K/Enterprise US$128K,成交以報價單為準);繁中/EN hreflang 交叉完成;主域 4 新頁已推 IndexNow(202)。tenant 批準通道與 egg 燈盞計數修復上線。機器人外講:國際訪盤導 /en,國內導 /kits,風向只引用 /wind 實數。",
       "tags": [
         "intl",
         "fleet",
@@ -58,8 +58,8 @@
     },
     {
       "date": "2026-10-27",
-      "title": "造風系統上線:快報週刊+點燈入駐+風向儀表板",
-      "summary": "星燈快報第1期已自動匯整上架內容引擎(每週六自動出報,真實事件流、零虛構);tower 新增 /wind 風向儀表板(公開聚合計數,未接DB如實顯示沙箱態)與 tenant 點燈入駐機制(掛牌免費、核准制、商户持自屬 ?r= 帰碼自帶分發)。各岗外講可引用:『每週五首映夜、週六快報、風向全公開』為塔的新節日儀程。",
+      "title": "造風系統上線:快報週刊+點燈入駐+風向儀錶板",
+      "summary": "星燈快報第1期已自動匯整上架內容引擎(每週六自動出報,真實事件流、零虛構);tower 新增 /wind 風向儀錶板(公開聚合計數,未接DB如實顯示沙箱態)與 tenant 點燈入駐機制(掛牌免費、核準制、商戶持自屬 ?r= 帰碼自帶分發)。各崗外講可引用:『每週五首映夜、週六快報、風向全公開』為塔的新節日儀程。",
       "tags": [
         "growth",
         "fleet"
@@ -79,7 +79,7 @@
     {
       "date": "2026-10-26",
       "title": "常設指令生效：站內機器人為一線執行單位",
-      "summary": "業主裁決：凡站內機器人可執行者,一律交予執行。新增執行力:①推播機器人 pulse-push 全站 9 頁上膛(行為分層話術,熱開關 pulse_push_off 可遠端靜音);②戰略長對話接回正腦並持 FOMO 開局話術;③模板工廠共 17 款(新增奢華/會展/工業出口,全數掛 3D 總部導覽 CTOR)。各岗機器人執行與外講一律以本檔+fleet-brief 最新口徑為準。",
+      "summary": "業主裁決：凡站內機器人可執行者,一律交予執行。新增執行力:①推播機器人 pulse-push 全站 9 頁上膛(行為分層話術,熱開關 pulse_push_off 可遠端靜音);②戰略長對話接回正腦並持 FOMO 開局話術;③模板工廠共 17 款(新增奢華/會展/工業出口,全數掛 3D 總部導覽 CTOR)。各崗機器人執行與外講一律以本檔+fleet-brief 最新口徑為準。",
       "tags": [
         "ops",
         "growth",
@@ -90,7 +90,7 @@
     {
       "date": "2026-10-25",
       "title": "活動 day01:賽博點燈・塔中燈尋寶上線",
-      "summary": "3D 塔 (/3d 左下角呼吸燈) 點擊現暗卡 EGG-DIAN-2026,截圖加官方帳號回「點燈」可換五維診斷深度解讀(限60席)+R1十天體驗抽選;兑現路由已在 snt-line-bot 部署,計數走 corps hit。機器人請在所有導覽情境引用此玩法為 CTA。",
+      "summary": "3D 塔 (/3d 左下角呼吸燈) 點擊現暗卡 EGG-DIAN-2026,截圖加官方帳號回「點燈」可換五維診斷深度解讀(限60席)+R1十天體驗抽選;兌現路由已在 snt-line-bot 部署,計數走 corps hit。機器人請在所有導覽情境引用此玩法為 CTA。",
       "tags": [
         "campaign",
         "growth",
@@ -122,7 +122,7 @@
     },
     {
       "date": "2026-10-25",
-      "title": "模板工廠 v1 上線:8 款拆裝產業模板發布",
+      "title": "模板工廠 v1 上線:8 款拆裝產業模板發佈",
       "summary": "軍團站 /factory 目錄上線(餐飲/診所/律所/健身/網店/SaaS/美髮/建案),每款內建 AI 接待留單+維修區值班+報價導流;機器可讀清單 /factory/factory.json。",
       "tags": [
         "product",
@@ -132,8 +132,8 @@
     },
     {
       "date": "2026-10-25",
-      "title": "24/7 脉动上线：办公室站心跳接入集团事件汇流排",
-      "summary": "每日保底 cron＋外部主时钟双层驱动；corps 网关 ev/flags/board 可查全站存活。",
+      "title": "24/7 脈動上線：辦公室站心跳接入集團事件匯流排",
+      "summary": "每日保底 cron＋外部主時鐘雙層驅動；corps 網關 ev/flags/board 可查全站存活。",
       "tags": [
         "ops",
         "platform"
@@ -142,8 +142,8 @@
     },
     {
       "date": "2026-10-25",
-      "title": "双模式站内搜索系统上线",
-      "summary": "MODE A 立即定位（LOCATE）／MODE B 理解分析（ANALYZE）；端点 /api/search?query=（兼容 q=）。",
+      "title": "雙模式站內搜索系統上線",
+      "summary": "MODE A 立即定位（LOCATE）／MODE B 理解分析（ANALYZE）；端點 /api/search?query=（兼容 q=）。",
       "tags": [
         "platform"
       ],
@@ -151,8 +151,8 @@
     },
     {
       "date": "2026-10-25",
-      "title": "六项产品页与四款活动模板上架",
-      "summary": "/products：A1 智能名片、B2B 行业版、R2.5 内容引擎、S1 快闪页、T4 电商整合、VIP 年约；/templates：限时特价／新客获取／异业合作／升级转化。",
+      "title": "六項產品頁與四款活動模板上架",
+      "summary": "/products：A1 智能名片、B2B 行業版、R2.5 內容引擎、S1 快閃頁、T4 電商整合、VIP 年約；/templates：限時特價／新客獲取／異業合作／升級轉化。",
       "tags": [
         "product"
       ],
@@ -160,8 +160,8 @@
     },
     {
       "date": "2026-10-24",
-      "title": "获客蓝图 P0：五维诊断漏斗上线（军团站）",
-      "summary": "真扫描→分享图卡（带归因）→60秒配对测验直连报价单；名单入 corps 漏斗分流。",
+      "title": "獲客藍圖 P0：五維診斷漏斗上線（軍團站）",
+      "summary": "真掃描→分享圖卡（帶歸因）→60秒配對測驗直連報價單；名單入 corps 漏斗分流。",
       "tags": [
         "growth"
       ],
@@ -169,8 +169,8 @@
     },
     {
       "date": "2026-10-24",
-      "title": "单一信息源广播机制发布（fleet-brief）",
-      "summary": "产品范围、公开价格口径、七项政策、机密边界集中一处；十岗排程提示词全员先读简报。",
+      "title": "單一信息源廣播機制發佈（fleet-brief）",
+      "summary": "產品範圍、公開價格口徑、七項政策、機密邊界集中一處；十崗排程提示詞全員先讀簡報。",
       "tags": [
         "ops"
       ],
@@ -178,8 +178,8 @@
     },
     {
       "date": "2026-10-23",
-      "title": "法律中枢大扩编",
-      "summary": "合约中枢＋五份制式合约（繁体／EN／日叠加三语）；legal 区约本深链、llms 法律节。",
+      "title": "法律中樞大擴編",
+      "summary": "合約中樞＋五份制式合約（繁體／EN／日疊加三語）；legal 區約本深鏈、llms 法律節。",
       "tags": [
         "legal"
       ],
@@ -187,8 +187,8 @@
     },
     {
       "date": "2026-10-23",
-      "title": "SNT 脉搏主干 v1",
-      "summary": "corps 网关挂 ev/flags/board 三分支、pulse.js SDK、health snt-health-v1 上线。",
+      "title": "SNT 脈搏主幹 v1",
+      "summary": "corps 網關掛 ev/flags/board 三分支、pulse.js SDK、health snt-health-v1 上線。",
       "tags": [
         "platform"
       ],
@@ -196,8 +196,8 @@
     },
     {
       "date": "2026-10-10",
-      "title": "主站商业改版：.tech 展示 → 高效能接单提案",
-      "summary": "全站从技术展示重构为接单导向；3D 总部（Orbit Tower）持续导流。",
+      "title": "主站商業改版：.tech 展示 → 高效能接單提案",
+      "summary": "全站從技術展示重構為接單導向；3D 總部（Orbit Tower）持續導流。",
       "tags": [
         "product"
       ],

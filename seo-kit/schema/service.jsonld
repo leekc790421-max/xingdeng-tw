@@ -1,0 +1,19 @@
+{
+ "@context": "https://schema.org",
+ "@type": "Service",
+ "@id": "https://vip.xingdeng.tw/#service",
+ "name": "CosmoSphere VIP Compute Lounge",
+ "url": "https://vip.xingdeng.tw",
+ "provider": {
+  "@id": "https://xingdeng.tw/#organization"
+ },
+ "areaServed": "Worldwide",
+ "serviceType": "AI metaphysics computing",
+ "offers": {
+  "@type": "AggregateOffer",
+  "priceCurrency": "USD",
+  "lowPrice": "688",
+  "highPrice": "6888",
+  "offerCount": "3"
+ }
+}

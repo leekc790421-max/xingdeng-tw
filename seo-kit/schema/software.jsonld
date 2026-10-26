@@ -1,0 +1,52 @@
+{
+ "@context": "https://schema.org",
+ "@type": "SoftwareApplication",
+ "@id": "https://orbit.xingdeng.tw/#product",
+ "name": "Orbit Tower 3D Digital HQ",
+ "applicationCategory": "BusinessApplication",
+ "operatingSystem": "Web (WebGL2)",
+ "url": "https://orbit.xingdeng.tw",
+ "creator": {
+  "@type": "Person",
+  "name": "A.c LEE"
+ },
+ "isPartOf": {
+  "@id": "https://xingdeng.tw/#organization"
+ },
+ "featureList": [
+  "Walkable 3D showroom floors",
+  "24/7 AI reception & quote funnel",
+  "Easter-egg campaign engine",
+  "Mobile auto-degrade WebGL",
+  "IndexNow + llms.txt wired"
+ ],
+ "offers": [
+  {
+   "@type": "Offer",
+   "price": "3000",
+   "priceCurrency": "TWD",
+   "name": "T1 Starter"
+  },
+  {
+   "@type": "Offer",
+   "price": "6600",
+   "priceCurrency": "TWD",
+   "name": "T2 Shop"
+  },
+  {
+   "@type": "Offer",
+   "price": "13900",
+   "priceCurrency": "TWD",
+   "name": "T3 Enterprise"
+  },
+  {
+   "@type": "Offer",
+   "price": "36900",
+   "priceCurrency": "TWD",
+   "name": "T4 Flagship"
+  }
+ ],
+ "sameAs": [
+  "https://tower.xingdeng.tw/factory"
+ ]
+}

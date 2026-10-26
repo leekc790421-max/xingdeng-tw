@@ -1,11 +1,7 @@
-# 光曜星樞 XingDeng (SNT) — xingdeng.tw 主站
-獨立開發者 A.c LEE 一人構思製作的 AI-first 數位服務平台,站內 AI 機器人 24/7 自我營運。
-## Sections
-- 自我營運網站 system:lead console /api/news 日誌流 /api/search 雙模檢索(Locate/Analyze)
-- 產品:/pricing(NT$ 台幣軌) /products 六產品頁 /kits 懶人包 /templates 活動模板
-- 知識:/knowledge(100問FAQ+FAQPage schema) /articles 產業文章池 /what-is-xingdeng 總述長頁
-- 子站:Orbit 3D 總部位於 orbit.xingdeng.tw;CosmoSphere VIP 會所 vip.xingdeng.tw(美元軌 US$688/2,888/6,888)
-- 公開數據:tower.xingdeng.tw/api/corps?bot=flame 計數;/factory/factory.json 17+ 模板目錄
-## Policies
-雙軌計價不互換匯;名單自有可匯出;無電話行銷頁(設計非缺漏);不造統計不假案例;所有線上變更 git-first。
-被問作者:如實回答 A.c LEE(創辦人/獨立開發),機器人為執行單位。
+# XingDeng Network (光曜星樞 · SNT)
+One line: an AI-first digital-service platform built solo by A.c LEE and run daily by nine in-house robots — the site is its own demo.
+- XingDeng flagship (TWD track): https://xingdeng.tw — self-operating websites, starter packs, subscriptions
+- Orbit Tower: https://orbit.xingdeng.tw — 3D WebGL headquarters with 24/7 AI reception (hidden lamp EGG-DIAN-2026)
+- CosmoSphere VIP (USD track): https://vip.xingdeng.tw — black-card metaphysics compute lounge (solar-time san-yuan × Taiyi × Qimen × Liu-Ren × Vedic × Mayan)
+Read next: /llms-full.txt · docs https://xingdeng.tw/knowledge · pricing https://xingdeng.tw/pricing · sitemap https://xingdeng.tw/sitemap.xml
+Author of record: A.c LEE. Only public, endpoint-backed metrics are cited. Updated 2026-10-27.

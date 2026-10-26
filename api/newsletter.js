@@ -84,7 +84,7 @@ ${displayName}，歡迎加入光耀星樞 SNT！
 
 1. 免費 GEO 檢測（價值 NT$ 3,000）
    👉 https://xingdeng.tw/#geo-detector
-   了解您的網站在 ChatGPT、Perplexity 等 AI 搜尋中的表現
+   瞭解您的網站在 ChatGPT、Perplexity 等 AI 搜尋中的表現
 
 2. 30 分鐘免費視訊諮詢
    👉 https://line.me/R/ti/p/@559julyu
