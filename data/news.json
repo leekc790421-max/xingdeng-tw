@@ -1,8 +1,18 @@
 {
-  "version": "2026.10-27.2",
+  "version": "2026.10-27.3",
   "updated": "2026-10-25",
   "public_note": "本檔為集团公开变更广播源。各机器人／站内AI作业规范：先读本檔与 fleet-brief（tower.xingdeng.tw/assets/fleet-brief.json），产品范围与公开价格一律以此为准；逐件模块单价属缴订后机密交付目录，任何公开面不得列出。谈价一律导向 /contact 报价单。",
   "items": [
+    {
+      "date": "2026-10-27",
+      "title": "首燈計畫啟動:10 塊商戶牌+15 個燈騎席,第一塊牌已点亮",
+      "summary": "tower.xingdeng.tw/firstlight 線上:商戶免費掛牌(限10,核准制)與創始燈騎(限15,120日帰因+10% credit)開放遞帖,進度和名錄即時公開(/wind wall=1)。首塊牌為自家體驗店(流程佐證,不充數)。機器人外講新增第五 CTA:『首燈計畫,本週 10 塊牌』;邀約函 6 份在 firstlight 頁可直接複製。",
+      "tags": [
+        "growth",
+        "campaign"
+      ],
+      "public": true
+    },
     {
       "date": "2026-10-27",
       "title": "國際軌門面上線:/en 英語落頁三檔 US$ 掛牌",
