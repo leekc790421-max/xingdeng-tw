@@ -12,7 +12,7 @@
       }
     ],
     "category": "pricing",
-    "lastUpdated": "2026-10-25T11:30:21.086Z"
+    "lastUpdated": "2026-10-26T00:23:56.553Z"
   },
   {
     "path": "/solutions",
@@ -27,7 +27,7 @@
       }
     ],
     "category": "services",
-    "lastUpdated": "2026-10-25T11:30:21.086Z"
+    "lastUpdated": "2026-10-26T00:23:56.553Z"
   },
   {
     "path": "/faq",
@@ -42,7 +42,7 @@
       }
     ],
     "category": "faq",
-    "lastUpdated": "2026-10-25T11:30:21.086Z"
+    "lastUpdated": "2026-10-26T00:23:56.553Z"
   },
   {
     "path": "/contact",
@@ -61,7 +61,7 @@
       }
     ],
     "category": "contact",
-    "lastUpdated": "2026-10-25T11:30:21.086Z"
+    "lastUpdated": "2026-10-26T00:23:56.553Z"
   },
   {
     "path": "/",
@@ -120,7 +120,7 @@
       }
     ],
     "category": "home",
-    "lastUpdated": "2026-10-25T11:30:21.086Z"
+    "lastUpdated": "2026-10-26T00:23:56.553Z"
   },
   {
     "path": "/products/a1-ai-card",
@@ -135,7 +135,7 @@
       }
     ],
     "category": "product",
-    "lastUpdated": "2026-10-25T11:30:19.015Z"
+    "lastUpdated": "2026-10-26T00:21:36.124Z"
   },
   {
     "path": "/products/b2b-industry",
@@ -150,7 +150,7 @@
       }
     ],
     "category": "product",
-    "lastUpdated": "2026-10-25T11:30:19.015Z"
+    "lastUpdated": "2026-10-26T00:21:36.124Z"
   },
   {
     "path": "/products/r2.5-content-engine",
@@ -165,7 +165,7 @@
       }
     ],
     "category": "product",
-    "lastUpdated": "2026-10-25T11:30:19.015Z"
+    "lastUpdated": "2026-10-26T00:21:36.124Z"
   },
   {
     "path": "/products/s1-flash-page",
@@ -180,7 +180,7 @@
       }
     ],
     "category": "product",
-    "lastUpdated": "2026-10-25T11:30:19.015Z"
+    "lastUpdated": "2026-10-26T00:21:36.124Z"
   },
   {
     "path": "/products/t4-ecommerce",
@@ -195,7 +195,7 @@
       }
     ],
     "category": "product",
-    "lastUpdated": "2026-10-25T11:30:19.015Z"
+    "lastUpdated": "2026-10-26T00:21:36.124Z"
   },
   {
     "path": "/products/vip-annual",
@@ -210,7 +210,7 @@
       }
     ],
     "category": "product",
-    "lastUpdated": "2026-10-25T11:30:19.015Z"
+    "lastUpdated": "2026-10-26T00:21:36.124Z"
   },
   {
     "path": "/articles/a14",
@@ -249,7 +249,7 @@
       }
     ],
     "category": "article",
-    "lastUpdated": "2026-10-25T11:30:18.791Z"
+    "lastUpdated": "2026-10-26T00:21:35.896Z"
   },
   {
     "path": "/articles/a15",
@@ -284,7 +284,7 @@
       }
     ],
     "category": "article",
-    "lastUpdated": "2026-10-25T11:30:18.791Z"
+    "lastUpdated": "2026-10-26T00:21:35.896Z"
   },
   {
     "path": "/articles/a16",
@@ -319,7 +319,7 @@
       }
     ],
     "category": "article",
-    "lastUpdated": "2026-10-25T11:30:18.791Z"
+    "lastUpdated": "2026-10-26T00:21:35.896Z"
   },
   {
     "path": "/articles/a17",
@@ -358,7 +358,7 @@
       }
     ],
     "category": "article",
-    "lastUpdated": "2026-10-25T11:30:18.791Z"
+    "lastUpdated": "2026-10-26T00:21:35.896Z"
   },
   {
     "path": "/articles/a18",
@@ -397,7 +397,7 @@
       }
     ],
     "category": "article",
-    "lastUpdated": "2026-10-25T11:30:18.791Z"
+    "lastUpdated": "2026-10-26T00:21:35.896Z"
   },
   {
     "path": "/articles/a19",
@@ -436,7 +436,7 @@
       }
     ],
     "category": "article",
-    "lastUpdated": "2026-10-25T11:30:18.791Z"
+    "lastUpdated": "2026-10-26T00:21:35.896Z"
   },
   {
     "path": "/articles/a20",
@@ -475,7 +475,7 @@
       }
     ],
     "category": "article",
-    "lastUpdated": "2026-10-25T11:30:18.791Z"
+    "lastUpdated": "2026-10-26T00:21:35.896Z"
   },
   {
     "path": "/templates/campaign-flash-sale",
@@ -494,7 +494,7 @@
       }
     ],
     "category": "template",
-    "lastUpdated": "2026-10-25T11:30:19.016Z"
+    "lastUpdated": "2026-10-26T00:21:36.125Z"
   },
   {
     "path": "/templates/campaign-new-customer",
@@ -521,7 +521,7 @@
       }
     ],
     "category": "template",
-    "lastUpdated": "2026-10-25T11:30:19.016Z"
+    "lastUpdated": "2026-10-26T00:21:36.125Z"
   },
   {
     "path": "/templates/campaign-partnership",
@@ -548,7 +548,7 @@
       }
     ],
     "category": "template",
-    "lastUpdated": "2026-10-25T11:30:19.016Z"
+    "lastUpdated": "2026-10-26T00:21:36.125Z"
   },
   {
     "path": "/templates/campaign-upgrade",
@@ -571,6 +571,6 @@
       }
     ],
     "category": "template",
-    "lastUpdated": "2026-10-25T11:30:19.016Z"
+    "lastUpdated": "2026-10-26T00:21:36.125Z"
   }
 ]
