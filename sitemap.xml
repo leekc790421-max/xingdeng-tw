@@ -48,4 +48,12 @@
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
+  <url>
+    <loc>https://xingdeng.tw/knowledge</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
+  <url>
+    <loc>https://xingdeng.tw/what-is-xingdeng</loc>
+    <lastmod>2026-10-28</lastmod>
+  </url>
 </urlset>

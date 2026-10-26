@@ -20,6 +20,8 @@ const INCLUDE = [
   { pattern: 'pricing.html', path: '/pricing', category: 'pricing' },
   { pattern: 'solutions.html', path: '/solutions', category: 'services' },
   { pattern: 'faq.html', path: '/faq', category: 'faq' },
+  { pattern: 'knowledge.html', path: '/knowledge', category: 'faq' },
+  { pattern: 'what-is-xingdeng.html', path: '/what-is-xingdeng', category: 'article' },
   { pattern: 'contact.html', path: '/contact', category: 'contact' },
   { pattern: 'index.html', path: '/', category: 'home' },
 ];
