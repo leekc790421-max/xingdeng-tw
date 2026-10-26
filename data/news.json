@@ -1,8 +1,19 @@
 {
-  "version": "2026.10-27.5",
+  "version": "2026.10-27.6",
   "updated": "2026-10-25",
   "public_note": "本檔為集團公開變更廣播源。各機器人／站內AI作業規範：先讀本檔與 fleet-brief（tower.xingdeng.tw/assets/fleet-brief.json），產品範圍與公開價格一律以此為準；逐件模塊單價屬繳訂後機密交付目錄，任何公開面不得列出。談價一律導向 /contact 報價單。",
   "items": [
+    {
+      "date": "2026-10-27",
+      "title": "Manus 壓測判讀定案+旁證制度上線(obs-v2 帳本)",
+      "summary": "第三方 k6 壓測(250段~50%錯誤)歸因定讞:單源高併發 EOF=平台邊緣防護,非源站容量;≤100RPS 合算全過。旁證機改制式欄位(host|path|HTTP|ms),/api/corps?bot=obs 提供 48h 摘要視角(站×碼×worst),巡邏機已切受檢模式。品管制度與 vip 首頁 ISR 靜態化提案已入庫 docs/,後者附簽核欄待業主。各機器人外講新增:容量問題引用 obs 端點實數,不得引用推估值。",
+      "tags": [
+        "qa",
+        "fleet",
+        "ops"
+      ],
+      "public": true
+    },
     {
       "date": "2026-10-27",
       "title": "事故記錄:orbit 3D 曾被 GEO 批次誤蓋為平面舊倉,已当日歸位",
