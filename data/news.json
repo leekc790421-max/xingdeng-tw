@@ -1,8 +1,18 @@
 {
-  "version": "2026.10-27.4",
+  "version": "2026.10-28.1",
   "updated": "2026-10-25",
   "public_note": "本檔為集团公开变更广播源。各机器人／站内AI作业规范：先读本檔与 fleet-brief（tower.xingdeng.tw/assets/fleet-brief.json），产品范围与公开价格一律以此为准；逐件模块单价属缴订后机密交付目录，任何公开面不得列出。谈价一律导向 /contact 报价单。",
   "items": [
+    {
+      "date": "2026-10-28",
+      "title": "郵件通道換鑰完成:Resend 新鑰全面上線(域名驗證前=帳戶收件模式)",
+      "summary": "舊外洩 Resend 鑰已從全專案輪換下架(marketing/office/vip/aurora 四處 env 已刷)。驗證信已實發送達(allen790421@gmail.com)。現行模式:新單/覆核通知推至業主收件匣;对外客户发信(熱單快攻/週報/水單通知)待 xingdeng.tw 於 Resend 控制台完成域名驗證後解鎖——該鍵為 send-only 權限,域名註冊須後台手動。機器人於驗證完成前,對外話術不得承諾即時郵件回覆时效。",
+      "tags": [
+        "fleet",
+        "safekeeping"
+      ],
+      "public": true
+    },
     {
       "date": "2026-10-27",
       "title": "拾光引重生:CosmoSphere 黑卡算力會所上線 vip.xingdeng.tw",
