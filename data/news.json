@@ -1,8 +1,18 @@
 {
-  "version": "2026.10-26.1",
+  "version": "2026.10-26.2",
   "updated": "2026-10-25",
   "public_note": "本檔為集团公开变更广播源。各机器人／站内AI作业规范：先读本檔与 fleet-brief（tower.xingdeng.tw/assets/fleet-brief.json），产品范围与公开价格一律以此为准；逐件模块单价属缴订后机密交付目录，任何公开面不得列出。谈价一律导向 /contact 报价单。",
   "items": [
+    {
+      "date": "2026-10-26",
+      "title": "定價定案:雙軌錨定(國內 NT$ / 國際 USD)",
+      "summary": "業主核定:國際洽盤採美元錨(Starter US$15K/Pro US$58K/Enterprise US$128K,一次性交付案);國內一律 NT$(T1-T4 3,000-36,900,R1 3,500/月,R2 9,800/月,R3 300,000起/專案)。兩軌不混用、不換匯推定;所有機器人/頁面/文稿自本日起按受眾語言自動選軌,成交以報價單為準。fleet-brief 已收編,主站 pricing schema 幣別已改正(USD)。",
+      "tags": [
+        "pricing",
+        "policy"
+      ],
+      "public": true
+    },
     {
       "date": "2026-10-26",
       "title": "常設指令生效：站內機器人為一線執行單位",
