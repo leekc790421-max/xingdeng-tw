@@ -167,7 +167,7 @@ A: 提供免費 GEO 檢測 + LINE 顧問諮詢
 
 // 預設回覆
 const DEFAULT_REPLIES = [
-  '感謝你的訊息！你可以問我關於：\n\n🔹 服務項目\n🔹 方案價格\n🔹 AI 客服\n🔹 SEO / GEO 霸榜\n🔹 架網站\n🔹 客戶案例\n\n或直接說你的需求，我來幫你評估 😊',
+  '謝你的訊息！你可以問我關於：\n\n🔹 服務項目\n🔹 方案價格\n🔹 AI 客服\n🔹 SEO / GEO 霸榜\n🔹 架網站\n🔹 客戶案例\n\n或直接說你的需求，我來幫你評估 😊',
   '你好！我是 SNT 光耀星樞的 AI 助手 🤖\n\n我可以幫你瞭解我們的服務、價格、或者回答任何關於 AI 雲端辦公室的問題。\n\n想先瞭解什麼呢？',
 ];
 
@@ -194,7 +194,7 @@ function detectIntent(text) {
   }
 
   // 謝謝
-  if (/^(謝謝|感謝|thanks|thank you|3q|thx)/.test(lower)) {
+  if (/^(謝謝|謝|thanks|thank you|3q|thx)/.test(lower)) {
     return { type: 'thanks' };
   }
 
