@@ -147,6 +147,11 @@
 <section class="bg-white p-8 rounded-2xl border border-gray-200 space-y-4 text-center">
 <h1 class="text-3xl md:text-4xl font-black text-gray-900">常見問題 <span class="bg-gradient-to-r from-snt-400 via-cyan-400 to-amber-300 bg-clip-text text-transparent">FAQ</span></h1>
 <p class="text-gray-500">關於 AI 雲端辦公室建置，你可能想知道的事</p>
+<div class="flex items-center justify-center gap-2 pt-2" id="faqLangSwitch">
+<button onclick="faqLang('zh-Hant')" class="px-3 py-1.5 rounded-lg border-2 border-gray-300 hover:bg-gray-900 hover:text-white text-xs font-bold transition" data-lang="zh-Hant">繁中</button>
+<button onclick="faqLang('en')" class="px-3 py-1.5 rounded-lg border-2 border-gray-300 hover:bg-gray-900 hover:text-white text-xs font-bold transition" data-lang="en">EN</button>
+<button onclick="faqLang('ja')" class="px-3 py-1.5 rounded-lg border-2 border-gray-300 hover:bg-gray-900 hover:text-white text-xs font-bold transition" data-lang="ja">日本語</button>
+</div>
 </section>
 
 <section class="space-y-3">
@@ -239,6 +244,17 @@ SNT Nexus SDK 是輕量化的 JavaScript 腳本，嵌入客戶網站後可實現
 </p>
 </div>
 
+<div class="faq-item bg-white p-6 rounded-xl border border-gray-200">
+<h3 class="font-bold text-gray-900 flex items-center gap-2 cursor-pointer" onclick="this.nextElementSibling.classList.toggle('hidden')">
+<i class="fa-solid fa-circle-question text-snt-400"></i>
+<span data-faq-i18n="payment_q">為什麼你們不接信用卡刷卡？</span>
+<i class="fa-solid fa-chevron-down ml-auto text-xs text-gray-500"></i>
+</h3>
+<p class="text-sm text-gray-600 mt-3 leading-relaxed" data-faq-i18n="payment_a">
+光曜星樞全程自動化，但只接受 ATM 匯款與 Payoneer 跨境收款，不接第三方刷卡。四個原因：一、開通流程靠匯款備註碼與金額比對驗證，不需第三方刷卡 API 介入，多一層依賴只會增加故障點；二、信用卡 180 天爭議期會讓已自動開通的席位被追回款項，對自動化系統是不可承受的風險；三、我們不碰卡號、CVV、3DS 認證資料，只處理匯款備註碼與金額，符合資料最小化承諾；四、Payoneer 跨境手續費比信用卡聚合器低，省下的成本反映在定價上。
+</p>
+</div>
+
 </section>
 
 <section class="bg-gradient-to-br from-snt-50 to-cyan-50 p-8 rounded-2xl border border-snt-300 text-center space-y-4">
@@ -263,6 +279,52 @@ SNT Nexus SDK 是輕量化的 JavaScript 腳本，嵌入客戶網站後可實現
 </div>
 </div>
 </footer>
+
+<script>
+/* FAQ mini i18n — 只翻譯 FAQ 區塊,不動整站其他文字 */
+(function(){
+  var FAQ_I18N = {
+    'zh-Hant': {
+      payment_q: '為什麼你們不接信用卡刷卡？',
+      payment_a: '光曜星樞全程自動化，但只接受 ATM 匯款與 Payoneer 跨境收款，不接第三方刷卡。四個原因：一、開通流程靠匯款備註碼與金額比對驗證，不需第三方刷卡 API 介入，多一層依賴只會增加故障點；二、信用卡 180 天爭議期會讓已自動開通的席位被追回款項，對自動化系統是不可承受的風險；三、我們不碰卡號、CVV、3DS 認證資料，只處理匯款備註碼與金額，符合資料最小化承諾；四、Payoneer 跨境手續費比信用卡聚合器低，省下的成本反映在定價上。'
+    },
+    'en': {
+      payment_q: "Why don't you accept credit cards?",
+      payment_a: "SNT is fully automated yet accepts only ATM transfers and Payoneer for cross-border payments — no third-party card processing. Four reasons: (1) our activation flow verifies payment by reference code and amount matching, so adding a card processor introduces another dependency and failure point; (2) credit cards have a 180-day dispute window, and a chargeback would claw back funds for seats we've already auto-activated — an unacceptable risk for an automated system; (3) we never touch card numbers, CVVs, or 3DS data, only payment reference codes and amounts, per our data-minimization commitment; (4) Payoneer's cross-border fees are lower than card aggregators, and the savings are reflected in our pricing."
+    },
+    'ja': {
+      payment_q: 'なぜクレジットカード決済を導入しないのですか？',
+      payment_a: 'SNTは完全自動化されていますが、ATM振込とPayoneerの国際送金のみを受け付け、第三者決済代行は利用しません。理由は四つあります：(1) 開通フローは振込備考コードと金額照合で検証するため、カード決済APIは依存先と故障点を増やすだけです；(2) クレジットカードには180日間の異議申立期間があり、既に自動開通した会員席の代金が引き落とされるリスクは自動化システムにとって耐えられません；(3) カード番号・CVV・3DS認証データを一切扱わず、振込備考コードと金額のみを処理し、データ最小化の約束を守ります；(4) Payoneerの国際受取手数料はカード決済代行より低く、削減コストは料金に反映されています。'
+    }
+  };
+  var STORE = 'faq.lang';
+  var current = 'zh-Hant';
+  try { var s = localStorage.getItem(STORE); if (s && FAQ_I18N[s]) current = s; } catch(e){}
+  try { var p = new URLSearchParams(location.search).get('hl'); if (p && FAQ_I18N[p]) { current = p; localStorage.setItem(STORE, p); } } catch(e){}
+
+  window.faqLang = function(lang){
+    if (!FAQ_I18N[lang]) return;
+    current = lang;
+    try { localStorage.setItem(STORE, lang); } catch(e){}
+    applyLang();
+  };
+
+  function applyLang(){
+    var dict = FAQ_I18N[current] || FAQ_I18N['zh-Hant'];
+    document.querySelectorAll('[data-faq-i18n]').forEach(function(el){
+      var key = el.getAttribute('data-faq-i18n');
+      if (dict[key]) el.textContent = dict[key];
+    });
+    document.querySelectorAll('#faqLangSwitch button').forEach(function(btn){
+      var isActive = btn.getAttribute('data-lang') === current;
+      btn.style.background = isActive ? '#0f172a' : '';
+      btn.style.color = isActive ? '#fff' : '';
+      btn.style.borderColor = isActive ? '#0f172a' : '';
+    });
+  }
+  applyLang();
+})();
+</script>
 
 </body>
 </html>
