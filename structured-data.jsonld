@@ -1,0 +1,7 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type":"Organization","@id":"https://xingdeng.tw/#org","name":"光曜星樞 SNT","url":"https://xingdeng.tw","description":"AI 數位總部,專為 B2B 企業打造 24H 自動接待、解說、追蹤與轉換的數位基礎建設。","foundingDate":"2026","founder":{"@type":"Person","name":"A.c LEE"}},
+    {"@type":"WebSite","@id":"https://xingdeng.tw/#website","url":"https://xingdeng.tw","name":"光曜星樞 SNT","publisher":{"@id":"https://xingdeng.tw/#org"},"inLanguage":["zh-Hant","zh-CN","en"]}
+  ]
+}
