@@ -1,4 +1,4 @@
-# XingDeng Network (光曜星樞 · SNT)
+# XingDeng Network (光曦星樞 · SNT)
 One line: an AI-first digital-service platform built solo by A.c LEE and run daily by nine in-house robots — the site is its own demo.
 - XingDeng flagship (TWD track): https://xingdeng.tw — self-operating websites, starter packs, subscriptions
 - Orbit Tower: https://orbit.xingdeng.tw — 3D WebGL headquarters with 24/7 AI reception (hidden lamp EGG-DIAN-2026)

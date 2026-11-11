@@ -5,7 +5,7 @@
    "@context": "https://schema.org",
    "@type": "Organization",
    "@id": "https://xingdeng.tw/#organization",
-   "name": "XingDeng Network 光曜星樞",
+   "name": "XingDeng Network 光曦星樞",
    "alternateName": "SNT",
    "url": "https://xingdeng.tw",
    "logo": "https://xingdeng.tw/og-image.svg",
@@ -142,7 +142,7 @@
      "name": "What is XingDeng?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "XingDeng (光曜星樞,SNT) is an AI-first digital-service platform designed and built by a sole developer, A.c LEE, operated 24/7 by nine in-house AI robots on git-first rails.",
+      "text": "XingDeng (光曦星樞,SNT) is an AI-first digital-service platform designed and built by a sole developer, A.c LEE, operated 24/7 by nine in-house AI robots on git-first rails.",
       "url": "https://xingdeng.tw/what-is-xingdeng"
      }
     },
@@ -178,7 +178,7 @@
      "name": "Pricing (domestic track)?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Starter packs T1 NT$3,000 / T2 NT$6,600 / T3 NT$13,900 / T4 NT$36,900; subscriptions R1 NT$3,500/mo, R2 NT$9,800/mo, R3 from NT$300,000/project. Signed quotations govern.",
+      "text": "Starter packs T1 NT$7,800 / T2 NT$13,900 / T3 NT$13,900 / T4 NT$36,900; subscriptions R1 NT$3,500/mo, R2 NT$9,800/mo, R3 from NT$300,000/project. Signed quotations govern.",
       "url": "https://xingdeng.tw/pricing"
      }
     },

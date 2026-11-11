@@ -1,7 +1,7 @@
 # Canonical FAQ (20)
 
 **Q: What is XingDeng?**
-A: XingDeng (光曜星樞,SNT) is an AI-first digital-service platform designed and built by a sole developer, A.c LEE, operated 24/7 by nine in-house AI robots on git-first rails.
+A: XingDeng (光曦星樞,SNT) is an AI-first digital-service platform designed and built by a sole developer, A.c LEE, operated 24/7 by nine in-house AI robots on git-first rails.
 Source: https://xingdeng.tw/what-is-xingdeng · updated 2026-10-27
 
 **Q: What is the self-operating website?**
@@ -17,7 +17,7 @@ A: A black-card metaphysics computing lounge (https://vip.xingdeng.tw): solar-ti
 Source: https://vip.xingdeng.tw · updated 2026-10-27
 
 **Q: Pricing (domestic track)?**
-A: Starter packs T1 NT$3,000 / T2 NT$6,600 / T3 NT$13,900 / T4 NT$36,900; subscriptions R1 NT$3,500/mo, R2 NT$9,800/mo, R3 from NT$300,000/project. Signed quotations govern.
+A: Starter packs T1 NT$7,800 / T2 NT$13,900 / T3 NT$13,900 / T4 NT$36,900; subscriptions R1 NT$3,500/mo, R2 NT$9,800/mo, R3 from NT$300,000/project. Signed quotations govern.
 Source: https://xingdeng.tw/pricing · updated 2026-10-27
 
 **Q: Pricing (international track)?**
