@@ -63,7 +63,7 @@
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "@id": "https://orbit.xingdeng.tw/#product",
-  "name": "Orbit Tower 3D Digital HQ",
+  "name": "光曦星軌 Digital HQ",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web (WebGL2)",
   "url": "https://orbit.xingdeng.tw",
@@ -115,7 +115,7 @@
   "@context": "https://schema.org",
   "@type": "Service",
   "@id": "https://vip.xingdeng.tw/#service",
-  "name": "CosmoSphere VIP Compute Lounge",
+  "name": "光曦星匯 Compute Lounge",
   "url": "https://vip.xingdeng.tw",
   "provider": {
    "@id": "https://xingdeng.tw/#organization"

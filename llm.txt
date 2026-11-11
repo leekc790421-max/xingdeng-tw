@@ -6,7 +6,7 @@
 
 1. **Office 雲端辦公室 — https://xingdeng.tw**
    24/7 自主辦公站:名單中控台、雙模式站內搜尋(/api/search)、公開變更日誌(/api/news)、夜間機器人自我部署。
-2. **Orbit Tower 3D 鋼骨軌道塔 — https://orbit.xingdeng.tw · https://xingdeng.tw/3d**
+2. **光曦星軌 鋼骨軌道塔 — https://orbit.xingdeng.tw · https://xingdeng.tw/3d**
    純前端 Three.js/WebGL 六角晶體大樓,內含尋寶燈彩蛋機制;AI 深夜接待直連中控台。
 3. **點燈入駐計畫 — https://tower.xingdeng.tw/firstlight**
    10 個免費商戶掛牌席(人工核准制,未核准不預列)+ 15 個創始燈騎席;`?r=` 帰因 120 日、成交回 10% credit。歸因採站內中控台公開可對帳(不作去中心化宣稱)。

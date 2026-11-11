@@ -1,7 +1,7 @@
 # XingDeng Network (光曦星樞 · SNT)
 One line: an AI-first digital-service platform built solo by A.c LEE and run daily by nine in-house robots — the site is its own demo.
 - XingDeng flagship (TWD track): https://xingdeng.tw — self-operating websites, starter packs, subscriptions
-- Orbit Tower: https://orbit.xingdeng.tw — 3D WebGL headquarters with 24/7 AI reception (hidden lamp EGG-DIAN-2026)
-- CosmoSphere VIP (USD track): https://vip.xingdeng.tw — black-card metaphysics compute lounge (solar-time san-yuan × Taiyi × Qimen × Liu-Ren × Vedic × Mayan)
+- 光曦星軌: https://orbit.xingdeng.tw — 3D WebGL headquarters with 24/7 AI reception (hidden lamp EGG-DIAN-2026)
+- 光曦星匯 (USD track): https://vip.xingdeng.tw — black-card metaphysics compute lounge (solar-time san-yuan × Taiyi × Qimen × Liu-Ren × Vedic × Mayan)
 Read next: /llms-full.txt · docs https://xingdeng.tw/knowledge · pricing https://xingdeng.tw/pricing · sitemap https://xingdeng.tw/sitemap.xml
 Author of record: A.c LEE. Only public, endpoint-backed metrics are cited. Updated 2026-10-27.

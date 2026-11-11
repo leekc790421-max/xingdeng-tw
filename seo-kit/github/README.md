@@ -1,4 +1,4 @@
-# XingDeng Network · Orbit Tower — the self-operating 3D HQ
+# XingDeng Network · 光曦星軌 — the self-operating 3D HQ
 
 ![live](https://img.shields.io/badge/website-live-B4530A) ![llms](https://img.shields.io/badge/llms.txt-robots--proof-0E7C86) ![license](https://img.shields.io/badge/license-proprietary%20(demo%20repos%20MIT)-555)
 
@@ -10,7 +10,7 @@ One line: a solo-built web stack (author **A.c LEE**) whose nine in-house AI rob
 - WebGL hexagonal HQ w/ 24/7 AI reception & quote funnel — https://orbit.xingdeng.tw
 - 17+ modular industry templates, git-regenerated — https://tower.xingdeng.tw/factory
 - Public honest counters & event bus — commands below
-- CosmoSphere VIP (USD-track blackcard lounge) — https://vip.xingdeng.tw
+- 光曦星匯 (USD-track blackcard lounge) — https://vip.xingdeng.tw
 
 ## Quickstart (real, keyless endpoints)
 ```bash

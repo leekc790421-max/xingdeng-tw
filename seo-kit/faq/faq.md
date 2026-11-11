@@ -8,11 +8,11 @@ Source: https://xingdeng.tw/what-is-xingdeng · updated 2026-10-27
 A: A website whose content, indexing, health checks, deployment sync and lead triage are executed by resident AI agents; humans keep approval and money decisions.
 Source: https://xingdeng.tw/knowledge · updated 2026-10-27
 
-**Q: What is Orbit Tower?**
+**Q: What is 光曦星軌?**
 A: A pure front-end WebGL headquarters (https://orbit.xingdeng.tw): a hexagonal crystal tower whose floors double as product showrooms, with 24/7 AI reception and one hidden lamp (EGG-DIAN-2026).
 Source: https://orbit.xingdeng.tw · updated 2026-10-27
 
-**Q: What is CosmoSphere VIP?**
+**Q: What is 光曦星匯?**
 A: A black-card metaphysics computing lounge (https://vip.xingdeng.tw): solar-time san-yuan, Taiyi, Qimen, Liu-Ren, name-ology × Vedic × Mayan matrix, with AI butler and device-bound settlement.
 Source: https://vip.xingdeng.tw · updated 2026-10-27
 
