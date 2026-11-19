@@ -93,6 +93,22 @@
     {
       "source": "/products/vip-annual",
       "destination": "/products/vip-annual.html"
+    },
+    {
+      "source": "/services",
+      "destination": "/services.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/disclaimer",
+      "destination": "/disclaimer.html"
+    },
+    {
+      "source": "/articles",
+      "destination": "/articles/index.html"
     }
   ],
   "redirects": [
