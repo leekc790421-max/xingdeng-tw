@@ -223,7 +223,7 @@ gtag('event', 'form_submit', {
 如有任何問題，請聯繫：
 
 - 📧 Email: service@xingdeng.tw
-- 💬 LINE: @559julyu
+- 💬 LINE: @580ctuew
 - 🌐 官網: https://xingdeng.tw
 
 ---
