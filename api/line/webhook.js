@@ -177,11 +177,34 @@ const GREETING_REPLIES = [
 ];
 
 // ─── 簽章驗證 ───
-async function verifySignature(body, signature, secret) {
+// 必須對「原始 body 位元組」計算 HMAC。Vercel 若已解析 body，
+// JSON.stringify 重組後鍵序／空白／Unicode escape 都會變，HMAC 必然不符。
+async function verifySignature(rawBody, signature, secret) {
   if (!secret) return true; // 未設定 secret 則跳過驗證
   const crypto = await import('crypto');
-  const hash = crypto.createHmac('sha256', secret).update(body).digest('base64');
-  return hash === signature;
+  const hash = crypto.createHmac('sha256', secret).update(rawBody).digest('base64');
+  const a = Buffer.from(hash, 'utf8');
+  const b = Buffer.from(String(signature || ''), 'utf8');
+  if (a.length !== b.length) return false;
+  return crypto.timingSafeEqual(a, b);
+}
+
+// 讀取未經解析的原始 body
+async function readRawBody(req) {
+  if (Buffer.isBuffer(req.body)) return req.body;
+  if (typeof req.body === 'string') return Buffer.from(req.body, 'utf8');
+  const chunks = [];
+  await new Promise((r) => { req.on('data', (x) => chunks.push(x)); req.on('end', r); });
+  return Buffer.concat(chunks);
+}
+
+// 支援多組 secret（LINE_CHANNEL_SECRET / _1 / _2），任一組通過即合法
+function channelSecrets() {
+  return [
+    process.env.LINE_CHANNEL_SECRET,
+    process.env.LINE_CHANNEL_SECRET_1,
+    process.env.LINE_CHANNEL_SECRET_2,
+  ].filter(Boolean);
 }
 
 // ─── 意圖辨識 ───
@@ -324,19 +347,25 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  // 簽章驗證
+  // 簽章驗證（對原始 body 位元組計算）
   const signature = req.headers['x-line-signature'];
-  const body = typeof req.body === 'string' ? req.body : JSON.stringify(req.body);
+  const rawBody = await readRawBody(req);
+  const secrets = channelSecrets();
 
-  if (process.env.LINE_CHANNEL_SECRET) {
-    const valid = await verifySignature(body, signature, process.env.LINE_CHANNEL_SECRET);
+  if (secrets.length) {
+    let valid = false;
+    for (const s of secrets) {
+      if (await verifySignature(rawBody, signature, s)) { valid = true; break; }
+    }
     if (!valid) {
       return res.status(401).json({ error: 'Invalid signature' });
     }
   }
 
   // 處理事件
-  const events = req.body?.events || [];
+  let parsed = {};
+  try { parsed = JSON.parse(rawBody.toString('utf8') || '{}'); } catch { parsed = {}; }
+  const events = parsed.events || [];
 
   for (const event of events) {
     const replyToken = event.replyToken;
@@ -395,6 +424,9 @@ module.exports = async function handler(req, res) {
 
   return res.status(200).json({ status: 'ok' });
 };
+
+// 關閉 Vercel 內建 body 解析，才能取得原始位元組做簽章驗證
+module.exports.config = { api: { bodyParser: false } };
 
 // 匯出供其他模組使用
 module.exports.generateReply = generateReply;
