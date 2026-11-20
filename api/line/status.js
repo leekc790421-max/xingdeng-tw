@@ -34,7 +34,7 @@ module.exports = async function handler(req, res) {
         quota: quota,
         botInfo: {
           basicInfo: '已連線',
-          lineOfficialAccount: '@580ctuew'
+          lineOfficialAccount: process.env.LINE_OFFICIAL_ACCOUNT_ID || '@559julyu'
         }
       });
     } else {

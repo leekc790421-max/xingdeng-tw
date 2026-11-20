@@ -87,7 +87,7 @@ ${displayName}，歡迎加入光耀星樞 SNT！
    瞭解您的網站在 ChatGPT、Perplexity 等 AI 搜尋中的表現
 
 2. 30 分鐘免費視訊諮詢
-   👉 https://line.me/R/ti/p/@580ctuew
+   👉 https://line.me/R/ti/p/@559julyu
    加 LINE 預約專屬顧問時間
 
 3. AI 導入評估報告（PDF）
@@ -117,7 +117,7 @@ ${displayName}，歡迎加入光耀星樞 SNT！
 ━━━━━━━━━━━━━━━━━━━━━
 📧 service@xingdeng.tw
 🌐 https://xingdeng.tw
-💬 LINE: @580ctuew
+💬 LINE: @559julyu
   `.trim();
   
   try {

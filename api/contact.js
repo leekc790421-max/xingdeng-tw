@@ -72,7 +72,7 @@ UTM 活動：${formData.utm_campaign || '無'}
 🔗 快速操作
 ━━━━━━━━━━━━━━━━━━━━━
 回覆 Email：mailto:${formData.email}
-LINE 聯繫：https://line.me/R/ti/p/@580ctuew
+LINE 聯繫：https://line.me/R/ti/p/@559julyu
   `.trim();
   
   try {
@@ -165,8 +165,8 @@ ${formData.name} 您好，
 ━━━━━━━━━━━━━━━━━━━━━
 🚀 在等待期間，您可以：
 ━━━━━━━━━━━━━━━━━━━━━
-1. 加入 LINE 官方帳號 @580ctuew，立即與 AI 顧問對話
-   👉 https://line.me/R/ti/p/@580ctuew
+1. 加入 LINE 官方帳號 @559julyu，立即與 AI 顧問對話
+   👉 https://line.me/R/ti/p/@559julyu
 
 2. 瀏覽我們的服務介紹
    👉 https://xingdeng.tw/solutions
@@ -197,7 +197,7 @@ A: 完全可以，我們會根據您的需求提供最佳方案
 ━━━━━━━━━━━━━━━━━━━━━
 📧 service@xingdeng.tw
 🌐 https://xingdeng.tw
-💬 LINE: @580ctuew
+💬 LINE: @559julyu
   `.trim();
   
   try {
