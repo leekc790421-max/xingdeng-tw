@@ -667,12 +667,14 @@ async function submitLead(e) {
     var f = document.getElementById('leadForm');
     var btn = document.getElementById('leadBtn');
     var err = document.getElementById('leadErr');
+    var el = function (n) { return f.elements.namedItem(n); };
+    var val = function (n) { var e = el(n); return e && e.value ? e.value.trim() : ''; };
     var d = {
-        name: (f.name.value || '').trim(),
-        company: (f.company.value || '').trim(),
-        title: (f.title.value || '').trim(),
-        email: (f.email.value || '').trim(),
-        phone: (f.phone.value || '').trim(),
+        name: val('name'),
+        company: val('company'),
+        title: val('title'),
+        email: val('email'),
+        phone: val('phone'),
         topic: 'AI 導入評估報告',
         site: 'xingdeng',
         page: location.pathname,
