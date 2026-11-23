@@ -501,20 +501,22 @@
         <h2 class="text-2xl md:text-3xl font-black text-gray-900 mb-3">免費取得 <span class="text-blue-600">AI 導入評估報告</span></h2>
         <p class="text-gray-500 text-sm mb-8">輸入基本資料，立即獲得專屬 AI 導入評估報告。</p>
         <div class="glass rounded-2xl p-6 md:p-8 max-w-lg mx-auto">
-            <form id="leadForm" onsubmit="submitLead(event)" class="space-y-4 text-left">
-                <div><label class="text-xs text-gray-500 mb-1 block">公司名稱 *</label><input type="text" required placeholder="你的公司名稱" class="w-full bg-white/80 border border-gray-300 rounded-lg px-4 py-2.5 text-sm text-gray-900 focus:border-blue-500 focus:outline-none"></div>
+            <form id="leadForm" onsubmit="submitLead(event)" class="space-y-4 text-left" novalidate>
+                <div><label class="text-xs text-gray-500 mb-1 block">公司名稱 *</label><input type="text" name="company" required placeholder="你的公司名稱" class="w-full bg-white/80 border border-gray-300 rounded-lg px-4 py-2.5 text-sm text-gray-900 focus:border-blue-500 focus:outline-none"></div>
                 <div class="grid grid-cols-2 gap-3">
-                    <div><label class="text-xs text-gray-500 mb-1 block">姓名 *</label><input type="text" required placeholder="你的姓名" class="w-full bg-white/80 border border-gray-300 rounded-lg px-4 py-2.5 text-sm text-gray-900 focus:border-blue-500 focus:outline-none"></div>
-                    <div><label class="text-xs text-gray-500 mb-1 block">職稱</label><input type="text" placeholder="例如：創辦人" class="w-full bg-white/80 border border-gray-300 rounded-lg px-4 py-2.5 text-sm text-gray-900 focus:border-blue-500 focus:outline-none"></div>
+                    <div><label class="text-xs text-gray-500 mb-1 block">姓名 *</label><input type="text" name="name" required placeholder="你的姓名" class="w-full bg-white/80 border border-gray-300 rounded-lg px-4 py-2.5 text-sm text-gray-900 focus:border-blue-500 focus:outline-none"></div>
+                    <div><label class="text-xs text-gray-500 mb-1 block">職稱</label><input type="text" name="title" placeholder="例如：創辦人" class="w-full bg-white/80 border border-gray-300 rounded-lg px-4 py-2.5 text-sm text-gray-900 focus:border-blue-500 focus:outline-none"></div>
                 </div>
-                <div><label class="text-xs text-gray-500 mb-1 block">Email *</label><input type="email" required placeholder="your@email.com" class="w-full bg-white/80 border border-gray-300 rounded-lg px-4 py-2.5 text-sm text-gray-900 focus:border-blue-500 focus:outline-none"></div>
-                <div><label class="text-xs text-gray-500 mb-1 block">手機 *</label><input type="tel" required placeholder="0912-345-678" class="w-full bg-white/80 border border-gray-300 rounded-lg px-4 py-2.5 text-sm text-gray-900 focus:border-blue-500 focus:outline-none"></div>
-                <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-bold py-3 rounded-xl hover:shadow-lg transition text-sm">免費下載 AI 評估報告</button>
+                <div><label class="text-xs text-gray-500 mb-1 block">Email *</label><input type="email" name="email" required placeholder="your@email.com" class="w-full bg-white/80 border border-gray-300 rounded-lg px-4 py-2.5 text-sm text-gray-900 focus:border-blue-500 focus:outline-none"></div>
+                <div><label class="text-xs text-gray-500 mb-1 block">手機 *</label><input type="tel" name="phone" required placeholder="0912-345-678" class="w-full bg-white/80 border border-gray-300 rounded-lg px-4 py-2.5 text-sm text-gray-900 focus:border-blue-500 focus:outline-none"></div>
+                <p id="leadErr" class="hidden text-xs text-red-600"></p>
+                <button type="submit" id="leadBtn" class="w-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-bold py-3 rounded-xl hover:shadow-lg transition text-sm">免費下載 AI 評估報告</button>
             </form>
             <div id="leadSuccess" class="hidden text-center py-8">
                 <div class="text-4xl mb-4">🎉</div>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">報告已送出！</h3>
-                <p class="text-gray-500 text-sm">請至 Email 信箱查收</p>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">收到了，謝謝你！</h3>
+                <p class="text-gray-500 text-sm">評估報告將寄至你留下的 Email，顧問會在工作日內與你聯繫。</p>
+                <p class="text-gray-400 text-xs mt-2">案件編號：<span id="leadRef">—</span></p>
             </div>
         </div>
     </div>
@@ -660,10 +662,49 @@
 function toggleMobileMenu() {
     document.getElementById('mobileMenu').classList.toggle('hidden');
 }
-function submitLead(e) {
+async function submitLead(e) {
     e.preventDefault();
-    document.getElementById('leadForm').classList.add('hidden');
-    document.getElementById('leadSuccess').classList.remove('hidden');
+    var f = document.getElementById('leadForm');
+    var btn = document.getElementById('leadBtn');
+    var err = document.getElementById('leadErr');
+    var d = {
+        name: (f.name.value || '').trim(),
+        company: (f.company.value || '').trim(),
+        title: (f.title.value || '').trim(),
+        email: (f.email.value || '').trim(),
+        phone: (f.phone.value || '').trim(),
+        topic: 'AI 導入評估報告',
+        site: 'xingdeng',
+        page: location.pathname,
+        lang: 'zh-Hant'
+    };
+    err.classList.add('hidden');
+    if (!d.name) { err.textContent = '請填一下怎麼稱呼你。'; err.classList.remove('hidden'); return false; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(d.email)) { err.textContent = 'Email 看起來不對，請確認有沒有打錯字。'; err.classList.remove('hidden'); return false; }
+    if (!d.phone) { err.textContent = '留個手機，我們才好跟你約時間。'; err.classList.remove('hidden'); return false; }
+
+    btn.disabled = true;
+    var old = btn.textContent;
+    btn.textContent = '送出中…';
+    try {
+        var r = await fetch('/api/leads', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(d)
+        });
+        var j = {};
+        try { j = await r.json(); } catch (x) {}
+        if (!r.ok || !j.ok) throw new Error(j.error || '送出時卡住了，請再試一次。');
+        document.getElementById('leadRef').textContent = j.ref || '—';
+        f.classList.add('hidden');
+        document.getElementById('leadSuccess').classList.remove('hidden');
+    } catch (ex) {
+        err.textContent = (ex && ex.message) || '連線不穩，資料沒送出去。請直接加 LINE，或稍後再試。';
+        err.classList.remove('hidden');
+        btn.disabled = false;
+        btn.textContent = old;
+    }
+    return false;
 }
 </script>
 
