@@ -19,9 +19,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <script>tailwind.config={darkMode:'class',theme:{extend:{colors:{snt:{400:'#2dd4bf',500:'#14b8a6',600:'#0d9488',cyan:'#06b6d4',purple:'#a855f7',amber:'#fbbf24'},cyberDark:'#070a12',cyberPanel:'#0f172a'},fontFamily:{sans:['Inter','Noto Sans TC','sans-serif']}}}}</script>
 <style>body{font-family:'Inter','Noto Sans TC',sans-serif}.chat-widget{position:fixed;bottom:24px;right:24px;z-index:9999}.chat-bubble{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#0d9488,#06b6d4);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.15);transition:all 0.3s}.chat-bubble:hover{transform:scale(1.1);box-shadow:0 6px 20px rgba(0,0,0,0.2)}.chat-window{position:absolute;bottom:80px;right:0;width:360px;max-width:calc(100vw - 48px);height:500px;max-height:calc(100vh - 120px);background:white;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,0.2);display:none;flex-direction:column;overflow:hidden}.chat-window.active{display:flex}</style>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XXXXXXXXXX',{send_page_view:!0});</script>
+<!-- Google Analytics 4
+     2026-11-23 稽核：原為佔位符 G-XXXXXXXXXX，會向 GA 送出無效請求且完全沒有數據。
+     已先移除無效載入，避免污染報表；正式 Measurement ID 待人工確認「主站是否共用
+     tower 的 G-9YEQZMYNH5，或另開獨立資源」後填入。填入前本頁不送 GA4 事件。 -->
 </head>
 <body class="bg-gray-50 text-gray-800 min-h-screen">
 
